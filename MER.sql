@@ -6,8 +6,8 @@ senha  varbinary(10))
 
 create table Acesso(
 codAcesso int primary key,
-codUsuario int,
-dataAcesso datetime,
-horaAcesso datetime,
+codUsuario int not null,
+dataAcesso datetime not null,
+horaAcesso datetime not null,
 constraint fkUsuario foreign key(codUsuario) references Usuario(CodUsuario)
 )
