@@ -25,7 +25,9 @@ constraint fkRespostas foreign key(codRespostas) references Respostas(codRespost
 )
 
 create table Arquivos(
-
+imagens varchar(30),
+sons varchar(30),
+videos varchar(30)
 )
 create table SistemaSolar(
 codSistema int primary key,
