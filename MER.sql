@@ -23,3 +23,7 @@ codPergunta ntext primary key,
 codResposta ntext not null,
 constraint fkRespostas foreign key(codRespostas) references Respostas(codRespostas)
 )
+
+create table Arquivos(
+
+)
