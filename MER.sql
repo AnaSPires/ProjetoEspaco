@@ -4,4 +4,10 @@ Nome varchar(30),
 dataNascimento datetime,
 senha  varbinary(10))
 
-create
+create table Acesso(
+codAcesso int primary key,
+codUsuario int,
+dataAcesso datetime,
+horaAcesso datetime,
+constraint fkUsuario foreign key(codUsuario) references Usuario(CodUsuario)
+)
