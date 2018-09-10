@@ -1,0 +1,108 @@
+
+body
+{
+   background-image: url('imagens/fundo.gif');
+}
+
+
+
+#sol
+{
+	position: absolute;
+	top: -10px;
+	left: 0px;
+	width: 26%;
+	height: 880px;
+}
+
+#mercurio
+{
+	position: absolute;
+	top: 170px;
+	left: 50px;
+	width: 30%;
+	height: 98px;
+}
+
+#venus
+{
+	position: absolute;
+	top: 160px;
+	left: 105px;
+	width: 36%;
+	height: 150px;
+}
+
+#terra
+{
+	position: absolute;
+	top: 160px;
+	left: 220px;
+	width: 34%;
+	height: 183px;
+}
+
+#marte
+{
+	position: absolute;
+	top: 175px;
+	left: 340px;
+	width: 39%;
+	height: 130px;
+}
+
+#jupiter
+{
+	position: absolute;
+	top: 67px;
+	left: 410px;
+	width: 60%;
+	height: 620px;
+}
+
+#saturno
+{
+	position: absolute;
+	top: 100px;
+	left: 718px;
+	width: 67%;
+	height: 340px;
+}
+#urano
+{
+	position: absolute;
+	top: 100px;
+	left: 1080px;
+	width: 60%;
+	height: 390px;
+}
+#netuno
+{
+	position: absolute;
+	top: 150px;
+	left: 1320px;
+	width: 38%;
+	height: 200px;
+}
+#plutao
+{
+	position: absolute;
+	top: 180px;
+	left: 1450px;
+	width: 24%;
+	height: 80px;
+}
+/*
+
+Problema: clicar nas bordas dos planetas
+
+jupiter
+saturno
+urano
+netuno
+terra
+venus
+marte
+mercurio
+plutao
+*/
