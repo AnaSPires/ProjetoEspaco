@@ -1,0 +1,18 @@
+body
+{
+    background-image: url("fundo.gif");
+}
+
+header
+{
+    background-image: url("ain.png");
+    height: 200px;
+    width: 100%;
+}
+
+.logo
+{
+    background-image: url("oii.png");
+    height: 200px;
+    width: 200px;
+}
