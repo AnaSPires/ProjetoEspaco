@@ -1,0 +1,72 @@
+
+
+body
+{
+	background-image: url("imagens/fundo.gif");
+}
+
+nav
+{
+	display: inline;
+}
+
+/*.quiz
+{
+ position : absolute;
+ top : 50px;
+ left : 50px;
+ border : 25px solid red;
+ border-radius: 74px;	
+ box-sizing : border-box;
+ width      : 70%;
+ height :75% ;
+ background-color: lightgreen;
+}*/
+
+#terra
+{
+	position: absolute;
+	top:50px;
+	left:1200px;
+}
+
+#gif
+{
+	position: absolute;
+	top:10px;
+	left: 30px;
+	border-radius: 90%;
+	border: 5px solid blue;
+}
+
+/*#caminhoNaoPercorrido
+{
+	position: absolute;
+	top:600px;
+	left: 30px;
+}
+
+#caminhoPercorrido
+{
+	position: absolute;
+	top:800px;
+	left: 30px;
+}*/
+
+#caminho
+{
+	position: absolute;
+	top: 460px;
+	left: 100px;
+	width: 1200px;
+	height: 200px;
+}
+
+#bolinhaAzul
+{
+	position: absolute;
+	left: 80px;
+	top: 600px;
+}
+
+
