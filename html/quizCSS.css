@@ -27,7 +27,7 @@ nav
 {
 	position: absolute;
 	top:50px;
-	left:1200px;
+	left:1400px;
 }
 
 #gif
@@ -39,19 +39,6 @@ nav
 	border: 5px solid blue;
 }
 
-/*#caminhoNaoPercorrido
-{
-	position: absolute;
-	top:600px;
-	left: 30px;
-}
-
-#caminhoPercorrido
-{
-	position: absolute;
-	top:800px;
-	left: 30px;
-}*/
 
 #caminho
 {
@@ -62,11 +49,20 @@ nav
 	height: 200px;
 }
 
-#bolinhaAzul
+#jogar
 {
 	position: absolute;
-	left: 80px;
-	top: 600px;
+	top: 120px;
+	left: 100px;
+	width: 10%;
+	height: 20%;
+	border-width: 20px;
+	border-radius: 70%;
+	background-color: lightgreen;
 }
 
+#tela
+{
 
+	display: none;
+}

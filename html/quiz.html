@@ -3,23 +3,157 @@
 	<title>QUIZ</title>
 
 	<script type="text/javascript">
-		
-/*
-  <img id="caminhoNaoPercorrido" src="imagens/caminhoNaoPercorrido.png">  
-  <img id="caminhoPercorrido" src="imagens/caminhoPercorrido.png">  
-*/
+  
+  var nivel = 0;
+   
 
+     var img = function trocarCaminho(){
+       if(document.getElementById("caminho").src == "imagens/caminho1.png")
+       {
+          document.getElementById("caminho").src = "imagens/caminho2.png";
+          nivel = 1;
+       }
+       else if(document.getElementById("caminho").src == "imagens/caminho2.png")   
+                 {
+                  document.getElementById("caminho").src == "imagens/caminho3.png";
+                  nivel = 2;
+                 }
+            else if(document.getElementById("caminho").src == "imagens/caminho3.png"){
+                     document.getElementById("caminho").src == "imagens/caminho4.png";
+                     nivel = 3;
+                    }
+                  else if(document.getElementById("caminho").src == "imagens/caminho4.png"){
+                                            getElementById("caminho").src == "imagens/caminho5.png";
+                                            nivel = 4;
+                                          }
+                        else if(document.getElementById("caminho").src == "imagens/caminho5.png"){
+                                 document.getElementById("caminho").src == "imagens/caminho6.png";
+                                 nivel = 5;
+                                 }
+                              else if(document.getElementById("caminho").src == "imagens/caminho6.png"){
+                                 document.getElementById("caminho").src == "imagens/caminho7.png";
+                                 nivel = 6;
+                                 }
+                                    else if(document.getElementById("caminho").src == "imagens/caminho7.png"){
+                                            document.getElementById("caminho").src == "imagens/caminho8.png";
+                                            nivel = 7;
+                                            }
+                                          else if(document.getElementById("caminho").src == "imagens/caminho8.png"){
+                                                 document.getElementById("caminho").src == "imagens/caminho9.png";
+                                                 nivel = 8;
+                                                 }
+                                                else if(document.getElementById("caminho").src == "imagens/caminho9.png"){
+                                                    document.getElementById("caminho").src == "imagens/caminho10.png";
+                                                    nivel = 9;
+                                                    }
+                                                       else if(document.getElementById("caminho").src == "imagens/caminho10.png"){
+                                                            document.getElementById("caminho").src == "imagens/caminho11.png";
+                                                            nivel = 10;
+                                                            }
+                                                           else
+                                                             alert("erro img");
+    }
 
+    function jogar(){
+    if(nivel == 0)
+    {
+     //var node = getElementById("tela");
+     document.body.appendChild(getElementById("tela"));
+     //var a = document.getElementById('caminho');
+     //a.appendChild(node);
+     //node.innerHTML = 'ola';
+     
+    }
+    else
+    {
+      if(nivel < 5)
+              {
+                 if(nivel < 3)
+                 {
+                     if(nivel == 1)
+                     {
+                       
+                     }
+                     else
+                     {
+                       if(nivel == 2)
+                       {
+                              
+                       }
+                       else
+                         alert("erro nivel");
+                     }
+                 }
+                 else
+                 {
+                   if(nivel == 3)
+                   {
+       
+                   }
+                   else
+                   {
+                     if(nivel == 4)
+                     {
+       
+                     }
+                     else
+                     {
+                       if(nivel == 5)
+                       {
+       
+                       }
+                       else
+                         alert("erro nivel");
+                     }
+                   }
+                 }
+               }
+               else
+               {
+                 if(nivel == 5)
+                 {
+       
+                 }
+                 else
+                 {
+                   if(nivel == 6)
+                   {
+       
+                   }
+                   else
+                   {
+                     if(nivel = 7)
+                     {
+       
+                     }
+                     else(nivel == 8)
+                     {
+                       if(nivel == 9)
+                       {
+       
+                       }
+                       if(nivel == 10)
+                       {
+                         alert("Parabéns, você ganhou!!");
+                       }
+                     }
+                   }
+                 }
+               }
+        }
+
+    }
 	</script>
 	</head>
 <link href="quizCSS.css" rel="stylesheet" type="text/css">
-<body>
+<body id="body">
     
 
      <img id="terra" src="imagens/terraQuiz.png" width="200px" height="250px">
      <img id="gif" src="imagens/emoji.gif" width=85px height=50px>
-     <img id="caminho" src="imagens/caminho.png" width=85px height=50px>
-     <img id="bolinhaAzul" src="imagens/bolinhaAzul.png" width= 40px height=50px>  
+     <img id="caminho" src="imagens/caminho1.png" width=85px height=50px>
+     <button id="jogar" onclick="jogar()">JOGAR</button>
+     <div id="tela" style="background-color: white"></div>
 </body>
 
 </html>
