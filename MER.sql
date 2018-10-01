@@ -4,6 +4,8 @@ Nome varchar(30),
 dataNascimento datetime,
 senha  varbinary(10))
 
+select * from Usuario
+
 create table Acesso(
 codAcesso int primary key,
 codUsuario int not null,
@@ -12,17 +14,23 @@ horaAcesso datetime not null,
 constraint fkUsuario foreign key(codUsuario) references Usuario(CodUsuario)
 )
    
+select * from Acesso
 
 create table Respostas(
 codResposta ntext primary key,
 pontuacao int not null
 )
+
+insert into Respostas values();
                  
 create table Quiz(
 codPergunta ntext primary key,
 codResposta ntext not null,
-constraint fkRespostas foreign key(codRespostas) references Respostas(codRespostas)
+constraint fkRespostas foreign key(codResposta) references Respostas(codResposta)
 )
+select * from Quiz
+
+insert into Quiz values()
 
 create table Arquivos(
 imagens varchar(30),
