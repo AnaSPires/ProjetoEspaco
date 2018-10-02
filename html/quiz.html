@@ -71,9 +71,9 @@
      document.getElementById("pergunta").innerHTML = p;
 
      document.getElementById("r_Primeira").innerHTML = a;
-     document.getElementById("r_Segunda").value = b;
-     document.getElementById("r_Terceira").value = c;
-     document.getElementById("r_Quarta").value = d;
+     document.getElementById("r_Segunda").innerHTML = b;
+     document.getElementById("r_Terceira").innerHTML = c;
+     document.getElementById("r_Quarta").innerHTML = d;
     }
     else
     {
@@ -193,25 +193,42 @@
          <b>Quiz</b>
 
           <form name = "form" method="post">
-        <center>
+        
         
         <table>
+          <center>
         <h1 id="pergunta" 
          style=" text-align: center;
          font-size: 40px;
          color: red; "><b>Pergunta Aqui</b></h1>
+         </center>
         
-         <input onclick="Selecionada('primeira')" type="radio" name="res" id="r_Primeira" value="">
-         <input onclick="Selecionada('segunda')" type="radio" name="res" id="r_Segunda" value="">
-         <input onclick="Selecionada('terceira')" type="radio" name="res" id="r_Terceira" value="">
-         <input onclick="Selecionada('quarta')" type="radio" name="res" id="r_Quarta" value="">
+         <input onclick="Selecionada('primeira')" type="radio" name="res"  value=""><span id="r_Primeira"></span>
+         <br>
+         <input onclick="Selecionada('segunda')" type="radio" name="res"  value=""><span id="r_Segunda"></span>
+         <br>     
+         <input onclick="Selecionada('terceira')" type="radio" name="res"  value=""><span id="r_Terceira"></span>
+         <br>
+         <input onclick="Selecionada('quarta')" type="radio" name="res"  value=""><span id="r_Quarta"></span>
+         <br>
         
          <button id="btnVer" onclick="Verificar()">Verificar</button>
 
             </table>
-            </center>
+            
              </form>
      </div>
+     <button id="btn1" onclick=""></button>
+     <button id="btn2" onclick=""></button>
+     <button id="btn3" onclick=""></button>
+     <button id="btn4" onclick=""></button>
+     <button id="btn5" onclick=""></button>
+     <button id="btn6" onclick=""></button>
+     <button id="btn7" onclick=""></button>
+     <button id="btn8" onclick=""></button>
+     <button id="btn9" onclick=""></button>
+     <button id="btn10" onclick=""></button>
+
 </body>
 
 </html>

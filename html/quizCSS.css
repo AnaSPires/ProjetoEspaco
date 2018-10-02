@@ -47,3 +47,104 @@ nav
 	border-radius: 70%;
 	background-color: lightgreen;
 }
+#btn1
+{
+	position: absolute;
+	left: 100px;
+	top: 670px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+
+#btn2
+{
+	position: absolute;
+	left: 230px;
+	top: 620px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn3
+{
+	position: absolute;
+	left: 370px;
+	top: 580px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn4
+{
+	position: absolute;
+	left: 526px;
+	top: 600px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn5
+{
+	position: absolute;
+	left: 630px;
+	top: 672px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn6
+{
+	position: absolute;
+	left: 770px;
+	top: 650px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn7
+{
+	position: absolute;
+	left: 880px;
+	top: 590px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn8
+{
+	position: absolute;
+	left: 1020px;
+	top: 555px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn9
+{
+	position: absolute;
+	left: 1140px;
+	top: 610px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn10
+{
+	position: absolute;
+	left: 1300px;
+	top: 600px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
