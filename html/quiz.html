@@ -5,6 +5,15 @@
 	<script type="text/javascript">
   
   var nivel = 0;
+  var certa = "primeira";
+
+  var pergunta = "pre";
+  var pr = "ba";
+  var se = "bla";
+  var ter= "blac";
+  var qua= "blaca";
+ 
+  var escolhida;
    
 
      var img = function trocarCaminho(){
@@ -54,15 +63,17 @@
                                                              alert("erro img");
     }
 
-    function jogar(){
+    function jogar(p,a,b,c,d){
     if(nivel == 0)
     {
-     //var node = getElementById("tela");
-     //document.body.appendChild(getElementById("tela"));
-     //var a = document.getElementById('caminho');
-     //a.appendChild(node);
-     //node.innerHTML = 'ola';
      document.getElementById("tela").style.display = "block";
+
+     document.getElementById("pergunta").innerHTML = p;
+
+     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Segunda").value = b;
+     document.getElementById("r_Terceira").value = c;
+     document.getElementById("r_Quarta").value = d;
     }
     else
     {
@@ -143,6 +154,24 @@
         }
 
     }
+
+    function Selecionada(qual)
+    {
+      escolhida = qual;
+    }
+
+    function Verificar()
+    {
+      if(escolhida == certa)
+      {
+        alert("Acertou");
+      }
+      else
+      {
+        alert("errou");
+      }
+    }
+
 	</script>
 	</head>
 <link href="quizCSS.css" rel="stylesheet" type="text/css">
@@ -152,8 +181,37 @@
      <img id="terra" src="imagens/terraQuiz.png" width="200px" height="250px">
      <img id="gif" src="imagens/emoji.gif" width=85px height=50px>
      <img id="caminho" src="imagens/caminho1.png" width=85px height=50px>
-     <button id="jogar" onclick="jogar()">JOGAR</button>
-     <div id="tela" style="background-color: lightgreen;position: absolute; align-self: center;align-items: center; display: none;">Quiz</div>
+     <button id="jogar" onclick="jogar(pergunta,pr,se,ter,qua)">JOGAR</button>
+     <div id="tela" 
+     style="background-color: lightgreen;position: absolute; 
+         left: 400px; 
+         top: 20px; 
+         width: 50%; 
+         height: 500px; 
+         border-radius: 20%; 
+         display: none;">
+         <b>Quiz</b>
+
+          <form name = "form" method="post">
+        <center>
+        
+        <table>
+        <h1 id="pergunta" 
+         style=" text-align: center;
+         font-size: 40px;
+         color: red; "><b>Pergunta Aqui</b></h1>
+        
+         <input onclick="Selecionada('primeira')" type="radio" name="res" id="r_Primeira" value="">
+         <input onclick="Selecionada('segunda')" type="radio" name="res" id="r_Segunda" value="">
+         <input onclick="Selecionada('terceira')" type="radio" name="res" id="r_Terceira" value="">
+         <input onclick="Selecionada('quarta')" type="radio" name="res" id="r_Quarta" value="">
+        
+         <button id="btnVer" onclick="Verificar()">Verificar</button>
+
+            </table>
+            </center>
+             </form>
+     </div>
 </body>
 
 </html>
