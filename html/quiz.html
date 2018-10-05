@@ -12,148 +12,124 @@
   var se = "bla";
   var ter= "blac";
   var qua= "blaca";
+
+  var quantosAcertos = 0;
+  var quantosErros = 0;
  
   var escolhida;
-   
 
-     var img = function trocarCaminho(){
-       if(document.getElementById("caminho").src == "imagens/caminho1.png")
-       {
-          document.getElementById("caminho").src = "imagens/caminho2.png";
-          nivel = 1;
-       }
-       else if(document.getElementById("caminho").src == "imagens/caminho2.png")   
-                 {
-                  document.getElementById("caminho").src == "imagens/caminho3.png";
-                  nivel = 2;
-                 }
-            else if(document.getElementById("caminho").src == "imagens/caminho3.png"){
-                     document.getElementById("caminho").src == "imagens/caminho4.png";
-                     nivel = 3;
-                    }
-                  else if(document.getElementById("caminho").src == "imagens/caminho4.png"){
-                                            getElementById("caminho").src == "imagens/caminho5.png";
-                                            nivel = 4;
-                                          }
-                        else if(document.getElementById("caminho").src == "imagens/caminho5.png"){
-                                 document.getElementById("caminho").src == "imagens/caminho6.png";
-                                 nivel = 5;
-                                 }
-                              else if(document.getElementById("caminho").src == "imagens/caminho6.png"){
-                                 document.getElementById("caminho").src == "imagens/caminho7.png";
-                                 nivel = 6;
-                                 }
-                                    else if(document.getElementById("caminho").src == "imagens/caminho7.png"){
-                                            document.getElementById("caminho").src == "imagens/caminho8.png";
-                                            nivel = 7;
-                                            }
-                                          else if(document.getElementById("caminho").src == "imagens/caminho8.png"){
-                                                 document.getElementById("caminho").src == "imagens/caminho9.png";
-                                                 nivel = 8;
-                                                 }
-                                                else if(document.getElementById("caminho").src == "imagens/caminho9.png"){
-                                                    document.getElementById("caminho").src == "imagens/caminho10.png";
-                                                    nivel = 9;
-                                                    }
-                                                       else if(document.getElementById("caminho").src == "imagens/caminho10.png"){
-                                                            document.getElementById("caminho").src == "imagens/caminho11.png";
-                                                            nivel = 10;
-                                                            }
-                                                           else
-                                                             alert("erro img");
-    }
+   function jogar(p,a,b,c,d){
+    document.getElementById("tela").style.display = "block";
+    
+    switch(nivel){
 
-    function jogar(p,a,b,c,d){
-    if(nivel == 0)
-    {
-     document.getElementById("tela").style.display = "block";
-
-     document.getElementById("pergunta").innerHTML = p;
+      case 0:
+      document.getElementById("pergunta").innerHTML = p;
 
      document.getElementById("r_Primeira").innerHTML = a;
      document.getElementById("r_Segunda").innerHTML = b;
      document.getElementById("r_Terceira").innerHTML = c;
      document.getElementById("r_Quarta").innerHTML = d;
-    }
-    else
-    {
-      if(nivel < 5)
-              {
-                 if(nivel < 3)
-                 {
-                     if(nivel == 1)
-                     {
-                       
-                     }
-                     else
-                     {
-                       if(nivel == 2)
-                       {
-                              
-                       }
-                       else
-                         alert("erro nivel");
-                     }
-                 }
-                 else
-                 {
-                   if(nivel == 3)
-                   {
-       
-                   }
-                   else
-                   {
-                     if(nivel == 4)
-                     {
-       
-                     }
-                     else
-                     {
-                       if(nivel == 5)
-                       {
-       
-                       }
-                       else
-                         alert("erro nivel");
-                     }
-                   }
-                 }
-               }
-               else
-               {
-                 if(nivel == 5)
-                 {
-       
-                 }
-                 else
-                 {
-                   if(nivel == 6)
-                   {
-       
-                   }
-                   else
-                   {
-                     if(nivel = 7)
-                     {
-       
-                     }
-                     else(nivel == 8)
-                     {
-                       if(nivel == 9)
-                       {
-       
-                       }
-                       if(nivel == 10)
-                       {
-                         alert("Parabéns, você ganhou!!");
-                       }
-                     }
-                   }
-                 }
-               }
-        }
+     break;
 
+     case 1:
+      document.getElementById("pergunta").innerHTML = p;
+
+     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Segunda").innerHTML = b;
+     document.getElementById("r_Terceira").innerHTML = c;
+     document.getElementById("r_Quarta").innerHTML = d;
+     break;
+
+     case 2:
+      document.getElementById("pergunta").innerHTML = p;
+
+     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Segunda").innerHTML = b;
+     document.getElementById("r_Terceira").innerHTML = c;
+     document.getElementById("r_Quarta").innerHTML = d;
+     break;
+
+     case 3:
+      document.getElementById("pergunta").innerHTML = p;
+
+     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Segunda").innerHTML = b;
+     document.getElementById("r_Terceira").innerHTML = c;
+     document.getElementById("r_Quarta").innerHTML = d;
+     break;
+
+     case 4:
+      document.getElementById("pergunta").innerHTML = p;
+
+     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Segunda").innerHTML = b;
+     document.getElementById("r_Terceira").innerHTML = c;
+     document.getElementById("r_Quarta").innerHTML = d;
+     break;
+
+     case 5:
+      document.getElementById("pergunta").innerHTML = p;
+
+     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Segunda").innerHTML = b;
+     document.getElementById("r_Terceira").innerHTML = c;
+     document.getElementById("r_Quarta").innerHTML = d;
+     break;
+
+     case 6:
+      document.getElementById("pergunta").innerHTML = p;
+
+     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Segunda").innerHTML = b;
+     document.getElementById("r_Terceira").innerHTML = c;
+     document.getElementById("r_Quarta").innerHTML = d;
+     break;
+
+     case 7:
+      document.getElementById("pergunta").innerHTML = p;
+
+     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Segunda").innerHTML = b;
+     document.getElementById("r_Terceira").innerHTML = c;
+     document.getElementById("r_Quarta").innerHTML = d;
+     break;
+
+     case 8:
+      document.getElementById("pergunta").innerHTML = p;
+
+     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Segunda").innerHTML = b;
+     document.getElementById("r_Terceira").innerHTML = c;
+     document.getElementById("r_Quarta").innerHTML = d;
+     break;
+
+     case 9:
+      document.getElementById("pergunta").innerHTML = p;
+
+     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Segunda").innerHTML = b;
+     document.getElementById("r_Terceira").innerHTML = c;
+     document.getElementById("r_Quarta").innerHTML = d;
+     break;
+
+     case 10:
+      document.getElementById("pergunta").innerHTML = p;
+
+     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Segunda").innerHTML = b;
+     document.getElementById("r_Terceira").innerHTML = c;
+     document.getElementById("r_Quarta").innerHTML = d;
+
+     break;
+         
+     default:
+     alert("errooooo");
+      break;
     }
+        nivel++;
+    
+  }
 
     function Selecionada(qual)
     {
@@ -165,13 +141,20 @@
       if(escolhida == certa)
       {
         alert("Acertou");
+        quantosAcertos++;
       }
       else
       {
         alert("errou");
+        quantosErros++;
       }
-    }
 
+      if(nivel == 10)
+        alert("Acertos: " + quantosAcertos + "Erros: " + quantosErros);
+      else
+        jogar(pergunta,pr,se,ter,qua);
+    }
+// window.onload = jogar(perguntas[0].pergunta,perguntas[1].pr,perguntas[2].se,perguntas[3].ter,perguntas[4].qua);
 	</script>
 	</head>
 <link href="quizCSS.css" rel="stylesheet" type="text/css">
@@ -181,7 +164,8 @@
      <img id="terra" src="imagens/terraQuiz.png" width="200px" height="250px">
      <img id="gif" src="imagens/emoji.gif" width=85px height=50px>
      <img id="caminho" src="imagens/caminho1.png" width=85px height=50px>
-     <button id="jogar" onclick="jogar(pergunta,pr,se,ter,qua)">JOGAR</button>
+     <button id="jogar" onclick="jogar(pergunta,pr,se,ter,qua)
+     ">JOGAR</button>
      <div id="tela" 
      style="background-color: lightgreen;position: absolute; 
          left: 400px; 
@@ -203,13 +187,13 @@
          color: red; "><b>Pergunta Aqui</b></h1>
          </center>
         
-         <input onclick="Selecionada('primeira')" type="radio" name="res"  value=""><span id="r_Primeira"></span>
+         <input onclick="Selecionada('primeira')" type="radio" name="res"  value="" style="margin-left: 40px;"><span id="r_Primeira" style="color:blue;font-weight:bold;font-size: 38px;"></span>
          <br>
-         <input onclick="Selecionada('segunda')" type="radio" name="res"  value=""><span id="r_Segunda"></span>
+         <input onclick="Selecionada('segunda')" type="radio" name="res"  value="" style="margin-left: 40px;"><span id="r_Segunda" style="color:blue;font-weight:bold;font-size: 38px;"></span>
          <br>     
-         <input onclick="Selecionada('terceira')" type="radio" name="res"  value=""><span id="r_Terceira"></span>
+         <input onclick="Selecionada('terceira')" type="radio" name="res"  value="" style="margin-left: 40px;"><span id="r_Terceira" style="color:blue;font-weight:bold;font-size: 38px;"></span>
          <br>
-         <input onclick="Selecionada('quarta')" type="radio" name="res"  value=""><span id="r_Quarta"></span>
+         <input onclick="Selecionada('quarta')" type="radio" name="res"  value="" style="margin-left: 40px;"><span id="r_Quarta" style="color:blue;font-weight:bold;font-size: 38px;"></span>
          <br>
         
          <button id="btnVer" onclick="Verificar()">Verificar</button>
