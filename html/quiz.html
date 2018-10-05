@@ -30,6 +30,7 @@
      document.getElementById("r_Segunda").innerHTML = b;
      document.getElementById("r_Terceira").innerHTML = c;
      document.getElementById("r_Quarta").innerHTML = d;
+
      break;
 
      case 1:
@@ -142,11 +143,14 @@
       {
         alert("Acertou");
         quantosAcertos++;
+        //document.getElementById("#btn1").innerHTML = escolhida;
       }
       else
       {
         alert("errou");
         quantosErros++;
+        //document.getElementById("#btn1").style.background-color = "red";
+
       }
 
       if(nivel == 10)
@@ -154,7 +158,7 @@
       else
         jogar(pergunta,pr,se,ter,qua);
     }
-// window.onload = jogar(perguntas[0].pergunta,perguntas[1].pr,perguntas[2].se,perguntas[3].ter,perguntas[4].qua);
+
 	</script>
 	</head>
 <link href="quizCSS.css" rel="stylesheet" type="text/css">
