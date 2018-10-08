@@ -2,31 +2,34 @@
 <head>
 	<title>QUIZ</title>
 
+  <!--btn nao muda de cor bg
+      exibir pargunta e resposta
+  -->
+
 	<script type="text/javascript">
   
   var nivel = 0;
   var certa = "primeira";
 
-  var pergunta = "pre";
-  var pr = "ba";
-  var se = "bla";
-  var ter= "blac";
-  var qua= "blaca";
+  var p = "pre";
+  var a = "ba";
+  var b = "bla";
+  var c= "blac";
+  var d= "blaca";
 
   var quantosAcertos = 0;
   var quantosErros = 0;
  
   var escolhida;
 
-   function jogar(p,a,b,c,d){
-    document.getElementById("tela").style.display = "block";
+   window.onload = function jogar(p,a,b,c,d){
     
     switch(nivel){
 
       case 0:
       document.getElementById("pergunta").innerHTML = p;
 
-     document.getElementById("r_Primeira").innerHTML = a;
+     document.getElementById("r_Primeira").innerHTML= a;
      document.getElementById("r_Segunda").innerHTML = b;
      document.getElementById("r_Terceira").innerHTML = c;
      document.getElementById("r_Quarta").innerHTML = d;
@@ -143,21 +146,106 @@
       {
         alert("Acertou");
         quantosAcertos++;
-        //document.getElementById("#btn1").innerHTML = escolhida;
+        trocarCorBtn('acertou');
       }
       else
       {
         alert("errou");
         quantosErros++;
-        //document.getElementById("#btn1").style.background-color = "red";
+        trocarCorBtn('errou');
 
       }
 
       if(nivel == 10)
         alert("Acertos: " + quantosAcertos + "Erros: " + quantosErros);
       else
-        jogar(pergunta,pr,se,ter,qua);
+        alert("Acertos: " + quantosAcertos + "Erros: " + quantosErros);
     }
+
+    function trocarCorBtn(se){
+
+     if(nivel == 1){
+       if(se == "acertou")
+         document.getElementById("btn1").style.background = "green";
+       else
+        document.getElementById("btn1").style.background = "red";
+  
+      }
+
+     if(nivel == 2){
+       if(se == "acertou")
+         document.getElementById("btn2").style.background = "green";
+       else
+        document.getElementById("btn2").style.background = "red";
+  
+      }
+
+     if(nivel == 3){
+       if(se == "acertou")
+         document.getElementById("btn3").style.background = "green";
+       else
+        document.getElementById("btn3").style.background = "red";
+  
+      }
+
+      if(nivel == 4){
+       if(se == "acertou")
+         document.getElementById("btn4").style.background = "green";
+       else
+        document.getElementById("btn4").style.background = "red";
+  
+      }
+
+      if(nivel == 5){
+       if(se == "acertou")
+         document.getElementById("btn5").style.background = "green";
+       else
+        document.getElementById("btn5").style.background = "red";
+  
+      }
+
+     if(nivel == 6){
+       if(se == "acertou")
+         document.getElementById("btn6").style.background = "green";
+       else
+        document.getElementById("btn6").style.background = "red";
+  
+      }
+
+     if(nivel == 7){
+       if(se == "acertou")
+         document.getElementById("btn7").style.background = "green";
+       else
+        document.getElementById("btn7").style.background = "red";
+  
+      }
+
+     if(nivel == 8){
+       if(se == "acertou")
+         document.getElementById("btn8").style.background = "green";
+       else
+        document.getElementById("btn8").style.background = "red";
+  
+      }
+
+     if(nivel == 9){
+       if(se == "acertou")
+         document.getElementById("btn9").style.background = "green";
+       else
+        document.getElementById("btn9").style.background = "red";
+  
+      }
+
+      if(nivel == 10){
+       if(se == "acertou")
+         document.getElementById("btn10").style.background = "green";
+       else
+        document.getElementById("btn10").style.background = "red";
+  
+      }
+
+    }
+
 
 	</script>
 	</head>
@@ -168,30 +256,27 @@
      <img id="terra" src="imagens/terraQuiz.png" width="200px" height="250px">
      <img id="gif" src="imagens/emoji.gif" width=85px height=50px>
      <img id="caminho" src="imagens/caminho1.png" width=85px height=50px>
-     <button id="jogar" onclick="jogar(pergunta,pr,se,ter,qua)
-     ">JOGAR</button>
-     <div id="tela" 
+     <section id="tela" 
      style="background-color: lightgreen;position: absolute; 
          left: 400px; 
          top: 20px; 
-         width: 50%; 
+         width: 48%; 
          height: 500px; 
-         border-radius: 20%; 
-         display: none;">
-         <b>Quiz</b>
+         border-radius: 20%; ">
 
           <form name = "form" method="post">
         
         
-        <table>
           <center>
         <h1 id="pergunta" 
          style=" text-align: center;
          font-size: 40px;
-         color: red; "><b>Pergunta Aqui</b></h1>
+         color: red; "></h1>
          </center>
+         <br><br>
         
-         <input onclick="Selecionada('primeira')" type="radio" name="res"  value="" style="margin-left: 40px;"><span id="r_Primeira" style="color:blue;font-weight:bold;font-size: 38px;"></span>
+        <input onclick="Selecionada('primeira')" type="radio" name="res"  value="" style="margin-left: 40px;"><span id="r_Primeira" value="" style="color:blue;font-weight:bold;font-size: 38px;">
+         </span>
          <br>
          <input onclick="Selecionada('segunda')" type="radio" name="res"  value="" style="margin-left: 40px;"><span id="r_Segunda" style="color:blue;font-weight:bold;font-size: 38px;"></span>
          <br>     
@@ -202,20 +287,20 @@
         
          <button id="btnVer" onclick="Verificar()">Verificar</button>
 
-            </table>
+            </section>
             
              </form>
-     </div>
-     <button id="btn1" onclick=""></button>
-     <button id="btn2" onclick=""></button>
-     <button id="btn3" onclick=""></button>
-     <button id="btn4" onclick=""></button>
-     <button id="btn5" onclick=""></button>
-     <button id="btn6" onclick=""></button>
-     <button id="btn7" onclick=""></button>
-     <button id="btn8" onclick=""></button>
-     <button id="btn9" onclick=""></button>
-     <button id="btn10" onclick=""></button>
+     
+     <button id="btn1"></button>
+     <button id="btn2"></button>
+     <button id="btn3"></button>
+     <button id="btn4"></button>
+     <button id="btn5"></button>
+     <button id="btn6"></button>
+     <button id="btn7"></button>
+     <button id="btn8"></button>
+     <button id="btn9"></button>
+     <button id="btn10"></button>
 
 </body>
 

@@ -4,9 +4,47 @@
  <title>Projeto Pr&aacute;ticas Profissionais</title>
 
   <script>
+ 
+    window.onclick = function se(){
+      
+    } 
+
      function Quiz(nome)
      {
      	alert(nome);
+        if(nome == "mercurio"){
+         document.getElementById("tela").style.display = "block";
+        }
+        else
+            if(nome == "venus"){
+              document.getElementById("tela").style.display = "block";
+            }
+            else
+                if(nome == "terra"){
+                document.getElementById("tela").style.display = "block";
+                }
+                else
+                    if(nome == "marte"){
+                       document.getElementById("tela").style.display = "block";                       
+                    }
+                    else
+                        if(nome == "saturno"){
+                          document.getElementById("tela").style.display = "block";
+                        }
+                        else
+                            if(nome == "urano"){
+                                document.getElementById("tela").style.display = "block";
+                            }
+                            else
+                                if(nome == "netuno"){
+                                   document.getElementById("tela").style.display = "block";
+                                }
+                                else
+                                    if(nome == "plutao"){
+                                      document.getElementById("tela").style.display = "block";
+                                    }
+                                    else
+                                        alert("erro");
      }
   </script>
 
@@ -47,6 +85,34 @@
     </div>
 
     <button type="button" id="quiz" class="classeBotao" onclick="window.open('quiz.html')">QUIZ</button>
+
+      <div id="tela" 
+     style="background-color: lightgreen;position: absolute; 
+         left: 400px; 
+         top: 20px; 
+         width: 50%; 
+         height: 500px; 
+         border-radius: 20%; 
+         display: none;">
+
+          <form name = "form" method="post">
+        
+        
+        <table>
+          <center>
+        <h1 id="" 
+         style=" text-align: center;
+         font-size: 40px;
+         color: red; "></h1>
+
+         <p id="conteudo"></p>
+         </center>
+        
+
+            </table>
+            
+             </form>
+     </div>
 
   <!--
      <div class="parallax-container">

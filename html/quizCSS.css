@@ -14,7 +14,7 @@ nav
 {
 	position: absolute;
 	top:50px;
-	left:1400px;
+	left:1300px;
 }
 
 #gif
@@ -38,18 +38,6 @@ nav
 	height: 200px;
 }
 
-#jogar
-{
-	position: absolute;
-	top: 280px;
-	left: 20px;
-	width: 10%;
-	height: 20%;
-	border-width: 20px;
-	border-radius: 70%;
-	background-color: lightgreen;
-	font-weight:bold;
-}
 #btn1
 {
 	position: absolute;
