@@ -4,6 +4,33 @@ body
    background-image: url('imagens/fundo.gif');
 }
 
+  #draggable {
+   cursor: grab;
+   cursor: -webkit-grab;
+   cursor:-moz-grab;
+}
+
+.wrapper {
+        position: relative;
+    }
+    
+    .grab-cursor {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        cursor: grab;
+        cursor: -webkit-grab;
+        cursor:-moz-grab;
+        z-index: 100;
+    }
+    .grab-cursor:active {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+        cursor:-moz-grabbing;
+    }
+
 
 
 #sol
