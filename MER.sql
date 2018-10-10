@@ -27,23 +27,32 @@ alternativaD ntext not null,
 correta char not null
 )
 
-insert into Perguntas values();
+select * from Perguntas
+
+insert into Perguntas values('Qual o maior planeta do sistema solar?', 'Plutão', 'Júpiter', 'Saturno', 'Terra', 'b');
+insert into Perguntas values('Qual o menor planeta do sistema solar?', 'Mercúrio', 'Netuno', 'Marte', 'Terra', 'a');
+insert into Perguntas values('Qual o planeta mais legal do sistema solar?', 'Plutão', 'Júpiter', 'Saturno', 'Terra', 'd');
 
 create table Arquivos(
 imagens varchar(30),
 sons varchar(30),
 videos varchar(30)
 )
+
+select * from Arquivos
+
 create table SistemaSolar(
 codSistema int primary key,
 descricao ntext)
 
+select * from SistemaSolar
+
 create table Elementos(
 codAcesso int not null,
 nome varchar(30) not null,
-descricao ntext,
-tamanho varchar(15),
-massa varchar(15),
+descricao varchar(30),
+tamanho varchar(45),
+massa varchar(45),
 distancia varchar(15),
 periodoOrbital varchar(15),
 periodoRotacao varchar(15),
@@ -52,5 +61,9 @@ temperatura varchar(15),
 composicao varchar(30),
 estrutura varchar(15)
 )
+ 
+select * from Elementos
+
+insert into Elementos values(1, 'Mercúrio', 'Mais perto do sol', 'Mercúrio', 'Menor do sistema', 'fds', 'ds', 'fd', 'fd','fd','s','dd')
 
 

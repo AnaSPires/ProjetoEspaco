@@ -2,10 +2,6 @@
 <head>
 	<title>QUIZ</title>
 
-  <!--btn nao muda de cor bg
-      exibir pargunta e resposta
-  -->
-
 	<script type="text/javascript">
   
   var nivel = 0;
@@ -22,117 +18,27 @@
  
   var escolhida;
 
-   window.onload = function jogar(p,a,b,c,d){
-    
-    switch(nivel){
+ /* function carregar(p,a,b,c,d){
 
-      case 0:
+   
       document.getElementById("pergunta").innerHTML = this.p;
 
      document.getElementById("r_Primeira").innerText = this.a;
      document.getElementById("r_Segunda").innerText = this.b;
      document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;
+     document.getElementById("r_Quarta").innerText = this.d;*/
+ 
+ function carregar(){
 
-     break;
+    document.getElementById("pergunta").innerHTML = "this.p";
 
-     case 1:
-      document.getElementById("pergunta").innerHTML = this.p;
+     document.getElementById("r_Primeira").innerHTML = "this.a";
+     document.getElementById("r_Segunda").innerText = "this.b";
+     document.getElementById("r_Terceira").innerText = "this.c";
+     document.getElementById("r_Quarta").innerText = "this.d";
 
-     document.getElementById("r_Primeira").innerText = this.a;
-     document.getElementById("r_Segunda").innerText = this.b;
-     document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;
-     break;
 
-     case 2:
-      document.getElementById("pergunta").innerHTML = this.p;
-
-     document.getElementById("r_Primeira").innerText = this.a;
-     document.getElementById("r_Segunda").innerText = this.b;
-     document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;
-     break;
-
-     case 3:
-      document.getElementById("pergunta").innerHTML = this.p;
-
-     document.getElementById("r_Primeira").innerText = this.a;
-     document.getElementById("r_Segunda").innerText = this.b;
-     document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;
-     break;
-
-     case 4:
-      document.getElementById("pergunta").innerHTML = this.p;
-
-     document.getElementById("r_Primeira").innerText = this.a;
-     document.getElementById("r_Segunda").innerText = this.b;
-     document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;
-     break;
-
-     case 5:
-      document.getElementById("pergunta").innerHTML = this.p;
-
-     document.getElementById("r_Primeira").innerText = this.a;
-     document.getElementById("r_Segunda").innerText = this.b;
-     document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;
-     break;
-
-     case 6:
-      document.getElementById("pergunta").innerHTML = this.p;
-
-     document.getElementById("r_Primeira").innerText = this.a;
-     document.getElementById("r_Segunda").innerText = this.b;
-     document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;
-     break;
-
-     case 7:
-      document.getElementById("pergunta").innerHTML = this.p;
-
-     document.getElementById("r_Primeira").innerText = this.a;
-     document.getElementById("r_Segunda").innerText = this.b;
-     document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;
-     break;
-
-     case 8:
-      document.getElementById("pergunta").innerHTML = this.p;
-
-     document.getElementById("r_Primeira").innerText = this.a;
-     document.getElementById("r_Segunda").innerText = this.b;
-     document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;
-     break;
-
-     case 9:
-      document.getElementById("pergunta").innerHTML = this.p;
-
-     document.getElementById("r_Primeira").innerText = this.a;
-     document.getElementById("r_Segunda").innerText = this.b;
-     document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;
-     break;
-
-     case 10:
-      document.getElementById("pergunta").innerHTML = this.p;
-
-     document.getElementById("r_Primeira").innerText = this.a;
-     document.getElementById("r_Segunda").innerText = this.b;
-     document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;
-
-     break;
-         
-     default:
-     alert("errooooo");
-      break;
-    }
-        nivel++;
-    
+    nivel++;
   }
 
     function Selecionada(qual)
@@ -142,18 +48,22 @@
 
     function Verificar()
     {
-      if(escolhida == certa)
-      {
-        alert("Acertou");
-        quantosAcertos++;
-        trocarCorBtn('acertou');
-      }
-      else
-      {
-        alert("errou");
-        quantosErros++;
-        trocarCorBtn('errou');
+      var opcoes = document.getElementsByName("res");
 
+      for(x in opcoes){
+        if(opcoes[x].selected){
+           if(escolhida == certa){
+            alert("Acertou");
+            quantosAcertos++;
+            trocarCorBtn('acertou');
+           }
+          else
+          {
+           alert("errou");
+           quantosErros++;
+           trocarCorBtn('errou');
+          }
+        }
       }
 
       if(nivel == 10)
@@ -163,7 +73,6 @@
     }
 
     function trocarCorBtn(se){
-
      if(nivel == 1){
        if(se == "acertou")
          document.getElementById("btn1").style.background = "green";
@@ -291,7 +200,7 @@
             
              </form>
      
-     <button id="btn1"></button>
+     <button id="btn1" style="background-color: #5858FA"></button>
      <button id="btn2"></button>
      <button id="btn3"></button>
      <button id="btn4"></button>
