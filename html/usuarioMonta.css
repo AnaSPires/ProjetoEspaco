@@ -1,0 +1,117 @@
+
+html
+{
+   background-image: url('imagens/fundo.gif');
+   cursor: grab;
+}
+
+html:active
+{
+   cursor: grabbing;
+   cursor: -webkit-grabbing;
+   cursor:-moz-grabbing; 
+}
+
+.dragme
+{
+	position:relative;
+}
+
+
+#sol
+{
+	position: absolute;
+	top: 5px;
+	left: -400px;
+	width: 68%;
+	height: 880px;
+}
+
+#mercurio
+{
+	position: absolute;
+	top: 170px;
+	left: 50px;
+	width: 30%;
+	height: 98px;
+}
+
+#venus
+{
+	position: absolute;
+	top: 160px;
+	left: 105px;
+	width: 36%;
+	height: 150px;
+}
+
+#terra
+{
+	position: absolute;
+	top: 160px;
+	left: 220px;
+	width: 34%;
+	height: 183px;
+}
+
+#marte
+{
+	position: absolute;
+	top: 175px;
+	left: 340px;
+	width: 39%;
+	height: 130px;
+}
+
+#jupiter
+{
+	position: absolute;
+	top: 67px;
+	left: 410px;
+	width: 60%;
+	height: 620px;
+}
+
+#saturno
+{
+	position: absolute;
+	top: 100px;
+	left: 718px;
+	width: 67%;
+	height: 340px;
+}
+#urano
+{
+	position: absolute;
+	top: 140px;
+	left: 1100px;
+	width: 40%;
+	height: 240px;
+}
+#netuno
+{
+	position: absolute;
+	top: 150px;
+	left: 1320px;
+	width: 38%;
+	height: 215px;
+}
+#plutao
+{
+	position: absolute;
+	top: 180px;
+	left: 1450px;
+	width: 24%;
+	height: 80px;
+}
+
+#quiz
+{
+	position: absolute;
+	top: 30px;
+	left:800px;
+	width:30%;
+	height: 30px;
+	border-radius: 70%;
+
+}

@@ -1,44 +1,29 @@
 
-body
+html
 {
    background-image: url('imagens/fundo.gif');
-}
-
-  #draggable {
    cursor: grab;
-   cursor: -webkit-grab;
-   cursor:-moz-grab;
 }
 
-.wrapper {
-        position: relative;
-    }
-    
-    .grab-cursor {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        cursor: grab;
-        cursor: -webkit-grab;
-        cursor:-moz-grab;
-        z-index: 100;
-    }
-    .grab-cursor:active {
-        cursor: grabbing;
-        cursor: -webkit-grabbing;
-        cursor:-moz-grabbing;
-    }
+html:active
+{
+   cursor: grabbing;
+   cursor: -webkit-grabbing;
+   cursor:-moz-grabbing; 
+}
 
+.dragme
+{
+	position:relative;
+}
 
 
 #sol
 {
 	position: absolute;
 	top: 5px;
-	left: 0px;
-	width: 28%;
+	left: -400px;
+	width: 68%;
 	height: 880px;
 }
 
@@ -130,17 +115,6 @@ body
 	border-radius: 70%;
 
 }
-/*
-jupiter
-saturno
-urano
-netuno
-terra
-venus
-marte
-mercurio
-plutao
-*/
 
 #quiz{
 	font-family: Arial, Helvetica, sans-serif;

@@ -3,6 +3,10 @@
 
  <title>Projeto Pr&aacute;ticas Profissionais</title>
 
+ <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
   <script>
  
     window.onclick = function se(){
@@ -46,10 +50,50 @@
                                     else
                                         alert("erro");
      }
+<!--********************************************************************************************************************************************************************************************-->
+var ie=document.all;
+var nn6=document.getElementById&&!document.all;
+var isdrag=false;
+var x,y;
+var dobj;
+ 
+function movemouse(e)
+{
+  if (isdrag)
+  {
+    dobj.style.left = nn6 ? tx + e.clientX - x : tx + event.clientX - x;
+    dobj.style.top  = nn6 ? ty + e.clientY - y : ty + event.clientY - y;
+    return false;
+  }
+}
+ 
+function selectmouse(e)
+{
+  var fobj       = nn6 ? e.target : event.srcElement;
+  var topelement = nn6 ? "HTML" : "BODY";
+  while (fobj.tagName != topelement && fobj.className != "dragme")
+  {
+    fobj = nn6 ? fobj.parentNode : fobj.parentElement;
+  }
+ 
+  if (fobj.className=="dragme")
+  {
+    isdrag = true;
+    dobj = fobj;
+    tx = parseInt(dobj.style.left+0);
+    ty = parseInt(dobj.style.top+0);
+    x = nn6 ? e.clientX : event.clientX;
+    y = nn6 ? e.clientY : event.clientY;
+    document.onmousemove=movemouse;
+    return false;
+  }
+ 
+}
+ 
+document.onmousedown=selectmouse;
+document.onmouseup=new Function("isdrag=false");
 
-
-$( "#draggable" ).draggable();
-
+<!--********************************************************************************************************************************************************************************************-->
 
   </script>
 
@@ -57,11 +101,7 @@ $( "#draggable" ).draggable();
 
  <link href="pp.css" rel="stylesheet" type="text/css">
 
-   <body>
-
-    <div class="wrapper">
-        <iframe src="http://doc.jsfiddle.net/"></iframe>
-        <div class="grab-cursor"></div>
+   <body class="dragme" >
 
     <div id = "jupiter">
      <img id = "jupiter" src="imagens/jupiter.gif" onclick="Quiz(this.id)">
@@ -116,6 +156,8 @@ $( "#draggable" ).draggable();
          color: red; "></h1>
 
          <p id="conteudo"></p>
+         <button id="btn" onclick="sair()">OK</button>
+
          </center>
         
 
@@ -124,27 +166,12 @@ $( "#draggable" ).draggable();
              </form>
      </div>
 
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<img id="draggable" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Junonia_lemonias_DSF_upper_by_Kadavoor.JPG" />
 
-  <!--
-     <div class="parallax-container">
-      <div class="parallax"><img src="https://www.google.com.br/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjh2ZG6zuXdAhVClZAKHVpfB6YQjRx6BAgBEAU&url=https%3A%2F%2Fcanaltech.com.br%2Fciencia%2Fas-10-fotos-mais-bonitas-que-a-ciencia-nos-proporcionou-em-2017-105848%2F&psig=AOvVaw02Jw2Zx_RqJWVOz7ojrBhE&ust=1538496018021086"></div>
-    </div>
-    <div class="section white">
-      <div class="row container">
-        <h2 class="header">Parallax</h2>
-        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-      </div>
-    </div>
-    <div class="parallax-container">
-      <div class="parallax"><img src="https://www.google.com.br/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiS4vzZzuXdAhUCUJAKHbsSDWIQjRx6BAgBEAU&url=http%3A%2F%2Fwww.fotoseimagens.net%2Ffotos-de-paisagens%2F&psig=AOvVaw02Jw2Zx_RqJWVOz7ojrBhE&ust=1538496018021086"></div>
-    </div>-->
-
-    
-    </div>
-    
+  
+<!--<div align="center">
+<img src="imagens/mercurio.gif" width="202" height="212" class="dragme">
+</div>-->
+   
    </body>
 
 </html>
