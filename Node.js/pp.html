@@ -1,0 +1,228 @@
+<html>
+ <head>
+
+ <title>Projeto Pr&aacute;ticas Profissionais</title>
+  <link rel="shortcut icon" href="favicon.ico" >
+ <!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script>
+
+    /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+   function Quiz() {
+
+    var xmlhttp = new XMLHttpRequest();
+    var url = "file:///C:/Users/u18173/Documents/GitHub/ProjetoEspaco/Node.js/pp.html";
+
+    xmlhttp.onreadystatechange=function() {
+        if (this.readyState == 4 && this.status == 200) {
+            //quando os dados retornarem da requisição serão enviados para a função ExibeDados()
+            ExibeDados(this.responseText);
+
+        }
+    }
+
+    //if (document.getElementById("conteudo").length == 0 ) {
+        xmlhttp.open("GET", url, true);
+   /* } else {
+        var conteudo = document.getElementById("conteudo").value;
+        xmlhttp.open("GET", url, true);
+        */
+    
+    
+    xmlhttp.send();
+} 
+
+function ExibeDados(response) {
+
+
+  document.getElementById("tela").style.display = "block";
+
+    var arr = JSON.parse(response);
+    
+    var out = "<h1>";
+
+    for(var i = 0; i < arr.length; i++) 
+    {
+        out += 
+        arr[i].nome +
+        arr[i].descricao +
+        arr[i].tamanho +
+        arr[i].massa +
+        arr[i].distancia +
+        arr[i].periodoOrbital +
+        arr[i].periodoRotacao +
+        arr[i].gravidade +
+        arr[i].temperatura +
+        arr[i].composicao +
+        arr[i].estrutura;
+    }
+    out += "</h1>";
+    document.getElementById("escrever").innerHTML = out + "oi";
+} //function ExibeDados()
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ 
+    window.onclick = function se(){
+      }
+     
+
+    /* function Quiz(nome)
+     {
+     	alert(nome);
+        if(nome == "mercurio"){
+         document.getElementById("tela").style.display = "block";
+
+        }
+        else{
+                    if(nome == "venus"){
+                      document.getElementById("tela").style.display = "block";
+                    }
+                    else{
+                           if(nome == "terra"){
+                           document.getElementById("tela").style.display = "block";
+                           }
+                            else{
+                                   if(nome == "marte"){
+                                   document.getElementById("tela").style.display = "block";                       
+                                   }
+                                    else{
+                                           if(nome == "saturno"){
+                                           document.getElementById("tela").style.display = "block";
+                                            }
+                                           else{
+                                                 if(nome == "urano"){
+                                                     document.getElementById("tela").style.display = "block";
+                                                  }
+                                                  else{
+                                                    if(nome == "netuno"){
+                                                       document.getElementById("tela").style.display = "block";
+                                                         }
+                                                    else{
+                                                      if(nome == "plutao"){
+                                                       document.getElementById("tela").style.display = "block";
+                                                      }
+                                                      else
+                                                         alert("erro");}}}}}}}
+    }*/
+<!--********************************************************************************************************************************************************************************************-->
+var ie=document.all;
+var nn6=document.getElementById&&!document.all;
+var isdrag=false;
+var x,y;
+var dobj;
+ 
+function movemouse(e)
+{
+  if (isdrag)
+  {
+    dobj.style.left = nn6 ? tx + e.clientX - x : tx + event.clientX - x;
+    dobj.style.top  = nn6 ? ty + e.clientY - y : ty + event.clientY - y;
+    return false;
+  }
+}
+ 
+function selectmouse(e)
+{
+  var fobj       = nn6 ? e.target : event.srcElement;
+  var topelement = nn6 ? "HTML" : "BODY";
+  while (fobj.tagName != topelement && fobj.className != "dragme")
+  {
+    fobj = nn6 ? fobj.parentNode : fobj.parentElement;
+  }
+ 
+  if (fobj.className=="dragme")
+  {
+    isdrag = true;
+    dobj = fobj;
+    tx = parseInt(dobj.style.left+0);
+    ty = parseInt(dobj.style.top+0);
+    x = nn6 ? e.clientX : event.clientX;
+    y = nn6 ? e.clientY : event.clientY;
+    document.onmousemove=movemouse;
+    return false;
+  }
+ 
+}
+ 
+document.onmousedown=selectmouse;
+document.onmouseup=new Function("isdrag=false");
+
+<!--********************************************************************************************************************************************************************************************-->
+
+  </script>
+
+ </head>
+
+ <link href="pp.css" rel="stylesheet" type="text/css">
+
+   <body class="dragme" >
+
+    <div id = "jupiter">
+     <img id = "jupiter" src="imagens/jupiter.gif" onclick="Quiz()">
+    </div>
+    <div id = "netuno">
+     <img id = "netuno" src="imagens/netuno.gif" onclick="Quiz()">
+    </div>
+    <div id = "mercurio">
+     <img id = "mercurio" src="imagens/mercurio.gif" onclick="Quiz()">
+    </div>
+    <div id = "marte">
+     <img id = "marte" src="imagens/marte.gif" onclick="Quiz()">
+    </div>
+    <div id = "plutao">
+     <img id = "plutao" src="imagens/plutao.gif" onclick="Quiz()">
+    </div>
+     <div id = "venus">
+     <img id = "venus" src="imagens/venus.gif" onclick="Quiz()">
+    </div>
+    <div id = "terra">
+     <img id = "terra" src="imagens/terra.gif" onclick="Quiz()">
+    </div> 
+    <div id = "saturno">
+     <img id = "saturno" src="imagens/saturno.gif" onclick="Quiz()">
+    </div>
+     <div id = "urano">
+     <img id = "urano" src="imagens/urano.gif" onclick="Quiz()">
+    </div>
+     <div id = "sol">
+     <img id = "sol" src="imagens/sol.gif" onclick="Quiz()">
+    </div>
+
+    <button type="button" id="quiz" class="classeBotao" onclick="window.open('quiz.html')">QUIZ</button>
+
+      <div id="tela" 
+     style="background-color: lightgreen;position: absolute; 
+         left: 400px; 
+         top: 20px; 
+         width: 50%; 
+         height: 500px; 
+         border-radius: 20%; 
+         display: none;">
+
+          <form name = "form" method="post">
+        
+        
+        <table>
+          <center>
+        <h1 id="escrever" 
+         style=" text-align: center;
+         font-size: 40px;
+         color: red; "></h1>
+
+         <p id="conteudo"></p>
+         <button id="btn" onclick="sair()">OK</button>
+
+         </center>
+        
+
+            </table>
+            
+             </form>
+     </div>
+
+   </body>
+
+</html>
