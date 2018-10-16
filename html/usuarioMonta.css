@@ -52,6 +52,8 @@ html:active
 	left: 220px;
 	width: 34%;
 	height: 183px;
+	border-radius: 30%;
+	border-color: red;
 }
 
 #marte
