@@ -2,8 +2,9 @@ create table Usuario(
 CodUsuario int primary key,
 Nome varchar(30),
 dataNascimento datetime,
-senha  varbinary(10))
+senha  varchar(10))
 
+drop table Usuario
 select * from Usuario
 insert into Usuario values( 1, 'Amanda', '03/05/2009',25632514)
 

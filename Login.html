@@ -3,13 +3,157 @@
     <title> MAGNIFIG SPACE
         </title>
         <link rel="shortcut icon" href="favicon.ico" >
+        <script>
+            function Cadastrar()
+            {
+                var bloco = document.createElement("div");
+                bloco.setAttribute('class', 'blocoCad');
+                var x = document.getElementsByTagName("body");
+                 var content = x[0].innerHTML;
+                 bloco.innerHTML = content;
+                 x[0].appendChild(bloco);
+                 var seta = document.createElement("div");
+                 seta.setAttribute('class','seta');
+                 seta.setAttribute('onclick','removerCad()');
+                 bloco.appendChild(seta);
+                  var br = document.createElement("br");
+                  bloco.appendChild(br);
+                  bloco.appendChild(br);
+                   var frase = document.createElement("div");
+                 frase.setAttribute('class', 'frase');
+                 bloco.appendChild(frase);
+                  frase.innerText = "Preencha o formulário com seus dados pessoais" ;
+                   bloco.appendChild(br);
+                    bloco.appendChild(br);
+                /*
+                <a href = "Login.html"> <div class="seta"></div></a>
+                <div class="tit"></div>
+                <br><br>
+                <div class="dados">
+                Preencha o formulário com seus dados pessoais
+                </div>
+                <div class="posicao">  
+                <br><br>
+            
+                <form id="frmCont" method="post" action="">                   
+                Usuário*<br>
+                <input type="text" id = "nome" required><br><br>
+                Email*<br>
+                <input type="email" id = "email"  required><br><br>
+                <label for="lb_Telefone">Telefone : (99-99999-9999)</label><br>
+                <input type ="tel" name ="txt_Tel" pattern="^\d{2}-\d{5}-\d{4}$"><br><br>
+                <td>Data de nascimento*</td><br>
+                <td><input type="date" name="txt_Data" required></td><br><br>
+                Senha*<br>
+                <input type="password" name="senha" required><br><br>
+                 Confirmar senha* <br>
+                <input type="password" name="senhaconf" required><br>
+                <button  onclick="Verificar('frmCont')" class="css3button" id = "botao"> Enviar </button><br><br><br>  
+                        </form>        
+                    </div>
+                    </div>
+                    */
+            }
+
+            function Focar()
+            {
+                document.getElementById("usuario").focus();
+            }
+            
+            function ParaBaixo()
+            {
+                if (event.keyCode == 13 || event.keyCode == 40){
+
+                 document.getElementById("senha").focus();
+
+                    }
+
+            }
+            
+            function ParaCima()
+            {
+                if (event.keyCode == 38){
+
+                 document.getElementById("usuario").focus();
+                }
+                
+                if(event.keyCode ==13)
+                    {
+                    Verificar();
+
+                    }
+            }
+            
+            
+            function Verificar()
+            {
+                var usuario = document.getElementById("usuario").value;
+                 var senha = document.getElementById("senha").value;
+                if(usuario =="" || senha == "" )
+                    {
+                    alert(" Por favor preencher todos os campos");
+                   document.getElementById("usuario").value = "";
+                    document.getElementById("senha").value = "";
+                    document.getElementById("usuario").focus();
+                    }
+                else
+                {
+                    if(usuario.length <5 || senha.length<6)
+                        {
+                        alert(" Seu usu\u00e1rio ou senha est\u00e3o incorretos. Por favor, tente novamente");
+                            document.getElementById("usuario").value = "";
+                            document.getElementById("senha").value = "";
+                            document.getElementById("usuario").focus();
+                        }
+                    else
+                        {
+                        window.open("./html/pp.html");
+                        }
+                    
+        
+                }
+            }
+            
+        </script>
 
     </head>
     <link href="Login.css" rel="stylesheet" type="text/css">
-        <body>
+        <body onload="Focar()">
     <header>
         <p class = "logo"></p>
+        <center>
+        <div class="titulo"></div>
+    </center>
+        
+                        <center>
+                <div class="user"></div><br>
+                Ol&aacute;! Digite o seu usu&aacute;rio e senha
+        </center>
+        
+        <div class="contato">
+            |
+        <a href="Contato.html" class="cont"> Contato </a>
+        </div>
     </header>
+    
+            <div class="bloco">
+                
+                    <div class="peq">
+                    
+                    Usu&aacute;rio
+                        <center>
+                    <input type="text" id = "usuario" onkeydown="ParaBaixo()">
+                        </center>
+                       <CENTER> </CENTER>
+                    Senha
+                         <center>
+                    <input type="password" id = "senha" onkeydown="ParaCima()">
+                    
+                             <button  onclick="Verificar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
+                         <a href="Cadastro.html" class="cad"> Ainda n&atilde;o tem cadastro?! </a>    
+                             </center>
+                    </div>
+            </div>
 
     </body>
 </html>

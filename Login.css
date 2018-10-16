@@ -1,18 +1,161 @@
 body
 {
-    background-image: url("fundo.gif");
+    background-image: url("./html/imagens/fundo.gif");
 }
 
 header
 {
+    position: absolute;
+    left: -1px;
     background-image: url("ain.png");
-    height: 200px;
+    height: 330px;
     width: 100%;
+    top: -1px;
+    font-size: 25px;
+    font-family:"Century Gothic";
+    font-weight: 400;
 }
 
 .logo
 {
-    background-image: url("oii.png");
+    background-image: url("logo.png");
+    height: 150px;
+    width: 150px;
+}
+
+.contato
+{
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    left: 90%;
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+}
+.cont
+{
+    color: white;
+    font-family:"Century Gothic";
+    font-weight: 600;
+    font-size: 25px;
+    
+  }
+
+
+.cad
+{
+     color: #0B3861;
+    font-family:"Century Gothic";
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.titulo
+{
+    
+    background: url("TITULO.png");
+    width: 500px;
     height: 200px;
+    position: absolute;
+    top: -20px;
+    left:37%;
+    color: red;
+    
+}
+
+.peq
+{
     width: 200px;
+    height: 500px;
+    font-family:"Century Gothic";
+    font-weight: 300;
+    font-size: 15px;
+    color: gray;
+    position: relative;
+    top: 20px;
+    left: 10%;
+}
+
+button.css3button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #123d54;
+	padding: 10px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#afd9fa 0%,
+		#ffffff 75%,
+		#588fad);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#afd9fa),
+		color-stop(0.75, #ffffff),
+		to(#588fad));
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #003366;
+	-moz-box-shadow:
+		4px 3px 10px rgba(137,78,204,1),
+		inset 0px 0px 1px rgba(144,192,209,1);
+	-webkit-box-shadow:
+		4px 3px 10px rgba(137,78,204,1),
+		inset 0px 0px 1px rgba(144,192,209,1);
+	box-shadow:
+		4px 3px 10px rgba(137,78,204,1),
+		inset 0px 0px 1px rgba(144,192,209,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.7),
+		-1px 1px 0px rgba(240,247,250,1);
+
+    position: relative;
+    top: 25px;
+    font-family:"Century Gothic";
+    font-weight: 600;
+    font-size: 20px;
+    
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid purple;
+    font-family:"Century Gothic";
+    font-weight: 700;
+    font-size: 15px;
+    
+}
+
+input[type=password] {
+    border: none;
+    border-bottom: 2px solid purple;
+      font-family:"Century Gothic";
+    font-weight: 700;
+    font-size: 15px;
+}
+.bloco
+{
+    background: white;
+    width: 250px;
+    height: 240px;
+    position: relative;
+    top: 260px;
+    left: 42%;
+    font-size: 25px;
+    font-family:"Century Gothic";
+    font-weight: 400;
+}
+
+.user
+{
+    background: url("user.png");
+    width: 72px;
+    height: 66px;
+    position: absolute;
+    left: 48%;
+    top: 150px;
+    
+
+    
 }
