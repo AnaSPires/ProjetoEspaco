@@ -2,207 +2,141 @@
 <head>
 	<title>QUIZ</title>
 
-	<script type="text/javascript">
-  
-  var nivel = 0;
-  var certa = "primeira";
+ <link rel="shortcut icon" href="favicon.ico">
 
-  var p = "pre";
-  var a = "ba";
-  var b = "bla";
-  var c= "blac";
-  var d= "blaca";
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script>
+
+    //Atualizar -- AJAX
+
+
+  var nivel = 1;
+  var certa;
+
+  var p;
+  var a;
+  var b;
+  var c;
+  var d;
 
   var quantosAcertos = 0;
   var quantosErros = 0;
+
  
   var escolhida;
 
-<<<<<<< HEAD
-   window.onload = function jogar(p,a,b,c,d){
-    
-    switch(nivel){
+    /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-      case 0:
-      document.getElementById("pergunta").innerHTML = p;
+   window.onload = function pegarInfo() {
 
-     document.getElementById("r_Primeira").innerHTML= a;
-     document.getElementById("r_Segunda").innerHTML = b;
-     document.getElementById("r_Terceira").innerHTML = c;
-     document.getElementById("r_Quarta").innerHTML = d;
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://localhost:3000/perguntas";
 
-     break;
+    xmlhttp.onreadystatechange=function() {
+        if (this.readyState == 4 && this.status == 200) {
+            //quando os dados retornarem da requisição serão enviados para a função ExibeDados()
+            ExibeDados(this.responseText);
 
-     case 1:
-      document.getElementById("pergunta").innerHTML = p;
-
-     document.getElementById("r_Primeira").innerHTML = a;
-     document.getElementById("r_Segunda").innerHTML = b;
-     document.getElementById("r_Terceira").innerHTML = c;
-     document.getElementById("r_Quarta").innerHTML = d;
-     break;
-
-     case 2:
-      document.getElementById("pergunta").innerHTML = p;
-
-     document.getElementById("r_Primeira").innerHTML = a;
-     document.getElementById("r_Segunda").innerHTML = b;
-     document.getElementById("r_Terceira").innerHTML = c;
-     document.getElementById("r_Quarta").innerHTML = d;
-     break;
-
-     case 3:
-      document.getElementById("pergunta").innerHTML = p;
-
-     document.getElementById("r_Primeira").innerHTML = a;
-     document.getElementById("r_Segunda").innerHTML = b;
-     document.getElementById("r_Terceira").innerHTML = c;
-     document.getElementById("r_Quarta").innerHTML = d;
-     break;
-
-     case 4:
-      document.getElementById("pergunta").innerHTML = p;
-
-     document.getElementById("r_Primeira").innerHTML = a;
-     document.getElementById("r_Segunda").innerHTML = b;
-     document.getElementById("r_Terceira").innerHTML = c;
-     document.getElementById("r_Quarta").innerHTML = d;
-     break;
-
-     case 5:
-      document.getElementById("pergunta").innerHTML = p;
-
-     document.getElementById("r_Primeira").innerHTML = a;
-     document.getElementById("r_Segunda").innerHTML = b;
-     document.getElementById("r_Terceira").innerHTML = c;
-     document.getElementById("r_Quarta").innerHTML = d;
-     break;
-
-     case 6:
-      document.getElementById("pergunta").innerHTML = p;
-
-     document.getElementById("r_Primeira").innerHTML = a;
-     document.getElementById("r_Segunda").innerHTML = b;
-     document.getElementById("r_Terceira").innerHTML = c;
-     document.getElementById("r_Quarta").innerHTML = d;
-     break;
-
-     case 7:
-      document.getElementById("pergunta").innerHTML = p;
-
-     document.getElementById("r_Primeira").innerHTML = a;
-     document.getElementById("r_Segunda").innerHTML = b;
-     document.getElementById("r_Terceira").innerHTML = c;
-     document.getElementById("r_Quarta").innerHTML = d;
-     break;
-
-     case 8:
-      document.getElementById("pergunta").innerHTML = p;
-
-     document.getElementById("r_Primeira").innerHTML = a;
-     document.getElementById("r_Segunda").innerHTML = b;
-     document.getElementById("r_Terceira").innerHTML = c;
-     document.getElementById("r_Quarta").innerHTML = d;
-     break;
-
-     case 9:
-      document.getElementById("pergunta").innerHTML = p;
-
-     document.getElementById("r_Primeira").innerHTML = a;
-     document.getElementById("r_Segunda").innerHTML = b;
-     document.getElementById("r_Terceira").innerHTML = c;
-     document.getElementById("r_Quarta").innerHTML = d;
-     break;
-
-     case 10:
-      document.getElementById("pergunta").innerHTML = p;
-
-     document.getElementById("r_Primeira").innerHTML = a;
-     document.getElementById("r_Segunda").innerHTML = b;
-     document.getElementById("r_Terceira").innerHTML = c;
-     document.getElementById("r_Quarta").innerHTML = d;
-
-     break;
-         
-     default:
-     alert("errooooo");
-      break;
+        }
     }
-        nivel++;
-    
-=======
- /* function carregar(p,a,b,c,d){
 
+        xmlhttp.open("GET", url, true);
    
-      document.getElementById("pergunta").innerHTML = this.p;
+    xmlhttp.send();
+} 
 
-     document.getElementById("r_Primeira").innerText = this.a;
-     document.getElementById("r_Segunda").innerText = this.b;
-     document.getElementById("r_Terceira").innerText = this.c;
-     document.getElementById("r_Quarta").innerText = this.d;*/
- 
- function carregar(){
-
-    document.getElementById("pergunta").innerHTML = "this.p";
-
-     document.getElementById("r_Primeira").innerHTML = "this.a";
-     document.getElementById("r_Segunda").innerText = "this.b";
-     document.getElementById("r_Terceira").innerText = "this.c";
-     document.getElementById("r_Quarta").innerText = "this.d";
+function ExibeDados(response) {
 
 
-    nivel++;
->>>>>>> 5136a8d60fa10e362611e42260c15c999702f464
-  }
+  document.getElementById("tela").style.display = "block";/*
+  document.getElementById("tela").style.left = document.getElementById().innerHTML.style.left + 'px;'; 
+  document.getElementById("tela").style.top = document.getElementById().innerHTML.style.top + 'px;'; */
 
-    function Selecionada(qual)
+    var arr = JSON.parse(response);
+    
+    p = "<h1>";
+    a = "<span>";
+    b = "<span>";
+    c = "<span>";
+    d = "<span>";
+
+
+    for(var i = 0; i < arr.length; i++) 
     {
-      escolhida = qual;
+      if(nivel == arr[i].codPergunta)
+      {
+        p += arr[i].enunciado;
+        a += arr[i].alternativaA;  
+        b += arr[i].alternativaB;
+        c += arr[i].alternativaC;
+        d += arr[i].alternativaD;
+        certa = arr[i].correta;  
+      }   
     }
+
+    p += "</h1>";
+    a += "</span>";
+    b += "</span>";
+    c += "</span>";
+    d += "</span>";
+    
+    document.getElementById("pergunta").innerHTML = p;   
+    document.getElementById("r_Primeira").innerHTML = a;
+    document.getElementById("r_Segunda").innerHTML = b;
+    document.getElementById("r_Terceira").innerHTML = c;
+    document.getElementById("r_Quarta").innerHTML = d;
+} 
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
     function Verificar()
     {
       var opcoes = document.getElementsByName("res");
 
       for(x in opcoes){
-        if(opcoes[x].selected){
-           if(escolhida == certa){
+          if((opcoes.options[opcoes[x].id] =="a" && 'a' == certa)||(opcoes.options[opcoes[x].id] =="b" && 'b'== certa)||(opcoes.options[opcoes[x].id] == "c" && 'c' == certa)||(opcoes.options[opcoes[x].id] == "d" && 'd' == certa)){
             alert("Acertou");
             quantosAcertos++;
             trocarCorBtn('acertou');
+            break;
            }
           else
           {
            alert("errou");
            quantosErros++;
            trocarCorBtn('errou');
+           break;
           }
-        }
       }
 
+
+
       if(nivel == 10)
-        alert("Acertos: " + quantosAcertos + "Erros: " + quantosErros);
+        alert("Acertos: " + quantosAcertos +"\n" +  "Erros: " + quantosErros);
       else
-        alert("Acertos: " + quantosAcertos + "Erros: " + quantosErros);
+        alert("Acertos: " + quantosAcertos +"\n" + "Erros: " + quantosErros);
+
     }
 
     function trocarCorBtn(se){
      if(nivel == 1){
-       if(se == "acertou")
+       if(se == 'acertou')
          document.getElementById("btn1").style.background = "green";
        else
         document.getElementById("btn1").style.background = "red";
   
       }
-
+    else
      if(nivel == 2){
-       if(se == "acertou")
+       if(se == 'acertou')
          document.getElementById("btn2").style.background = "green";
        else
         document.getElementById("btn2").style.background = "red";
   
       }
-
+    else
      if(nivel == 3){
        if(se == "acertou")
          document.getElementById("btn3").style.background = "green";
@@ -210,7 +144,7 @@
         document.getElementById("btn3").style.background = "red";
   
       }
-
+     else
       if(nivel == 4){
        if(se == "acertou")
          document.getElementById("btn4").style.background = "green";
@@ -218,55 +152,48 @@
         document.getElementById("btn4").style.background = "red";
   
       }
-
+    else
       if(nivel == 5){
        if(se == "acertou")
          document.getElementById("btn5").style.background = "green";
        else
         document.getElementById("btn5").style.background = "red";
-  
       }
-
+    else
      if(nivel == 6){
        if(se == "acertou")
          document.getElementById("btn6").style.background = "green";
        else
         document.getElementById("btn6").style.background = "red";
-  
       }
-
+    else
      if(nivel == 7){
        if(se == "acertou")
          document.getElementById("btn7").style.background = "green";
        else
-        document.getElementById("btn7").style.background = "red";
-  
+        document.getElementById("btn7").style.background = "red";  
       }
-
+     else
      if(nivel == 8){
        if(se == "acertou")
          document.getElementById("btn8").style.background = "green";
        else
         document.getElementById("btn8").style.background = "red";
-  
       }
-
+      else
      if(nivel == 9){
        if(se == "acertou")
          document.getElementById("btn9").style.background = "green";
        else
         document.getElementById("btn9").style.background = "red";
-  
       }
-
+      else
       if(nivel == 10){
        if(se == "acertou")
          document.getElementById("btn10").style.background = "green";
        else
         document.getElementById("btn10").style.background = "red";
-  
       }
-
     }
 
 
@@ -298,24 +225,28 @@
          </center>
          <br><br>
         
-        <input onclick="Selecionada('primeira')" type="radio" name="res"  value="" style="margin-left: 40px;"><span id="r_Primeira" value=" " style="color:blue;font-weight:bold;font-size: 38px;">
+        <input id="a" style="position: absolute; left: 50px; top: 230px;" type="radio" name="res" style="margin-left: 40px;">  <span id="r_Primeira" style="color:blue;font-weight:bold;font-size: 38px;
+          position: absolute; left: 80px; top: 220px;">
          </span>
          <br>
-         <input onclick="Selecionada('segunda')" type="radio" name="res"  value="" style="margin-left: 40px;"><span id="r_Segunda" value=" " style="color:blue;font-weight:bold;font-size: 38px;"></span>
+         <input id="b" type="radio" name="res" style="position: absolute; left: 50px; top: 280px;"><span id="r_Segunda" style="color:blue;font-weight:bold;font-size: 38px;
+           position: absolute; left: 80px; top: 270px;"></span>
          <br>     
-         <input onclick="Selecionada('terceira')" type="radio" name="res"  value="" style="margin-left: 40px;"><span id="r_Terceira" value=" " style="color:blue;font-weight:bold;font-size: 38px;"></span>
+         <input id="" ="c" type="radio" name="res" style="position: absolute; left: 50px; top: 330px;"><span id="r_Terceira" style="color:blue;font-weight:bold;font-size: 38px;
+            position: absolute; left: 80px; top: 320px;"></span>
          <br>
-         <input onclick="Selecionada('quarta')" type="radio" name="res"  value="" style="margin-left: 40px;"><span id="r_Quarta" value=" " style="color:blue;font-weight:bold;font-size: 38px;"></span>
+         <input id="" ="d" type="radio" name="res" style="position: absolute; left: 50px; top: 380px;"><span id="r_Quarta" style="color:blue;font-weight:bold;font-size: 38px;
+            position: absolute; left: 80px; top: 370px;"></span>
          <br>
         
-         <button id="btnVer" onclick="Verificar()">Verificar</button>
+         <button id="btnVer" onclick="Verificar()" style="position: absolute; left: 300px; top: 430px;">Verificar</button>
 
             </section>
             
              </form>
      
      <button id="btn1" style="background-color: #5858FA"></button>
-     <button id="btn2"></button>
+     <button id="btn2" onclick="Jogar()"></button>
      <button id="btn3"></button>
      <button id="btn4"></button>
      <button id="btn5"></button>

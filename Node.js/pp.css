@@ -22,16 +22,16 @@ html:active
 {
 	position: absolute;
 	top: 5px;
-	left: -400px;
+	left: -700px;
 	width: 68%;
-	height: 880px;
+	height: 780px;
 }
 
 #mercurio
 {
 	position: absolute;
 	top: 170px;
-	left: 50px;
+	left: -240px;
 	width: 30%;
 	height: 98px;
 }
@@ -40,7 +40,7 @@ html:active
 {
 	position: absolute;
 	top: 160px;
-	left: 105px;
+	left: -65px;
 	width: 36%;
 	height: 150px;
 }
@@ -49,7 +49,7 @@ html:active
 {
 	position: absolute;
 	top: 160px;
-	left: 220px;
+	left: 120px;
 	width: 34%;
 	height: 183px;
 }
@@ -58,7 +58,7 @@ html:active
 {
 	position: absolute;
 	top: 175px;
-	left: 340px;
+	left: 300px;
 	width: 39%;
 	height: 130px;
 }
@@ -67,7 +67,7 @@ html:active
 {
 	position: absolute;
 	top: 67px;
-	left: 410px;
+	left: 510px;
 	width: 60%;
 	height: 620px;
 }
@@ -76,7 +76,7 @@ html:active
 {
 	position: absolute;
 	top: 100px;
-	left: 718px;
+	left: 918px;
 	width: 67%;
 	height: 340px;
 }
@@ -84,7 +84,7 @@ html:active
 {
 	position: absolute;
 	top: 140px;
-	left: 1100px;
+	left: 1400px;
 	width: 40%;
 	height: 240px;
 }
@@ -92,7 +92,7 @@ html:active
 {
 	position: absolute;
 	top: 150px;
-	left: 1320px;
+	left: 1700px;
 	width: 38%;
 	height: 215px;
 }
@@ -100,7 +100,7 @@ html:active
 {
 	position: absolute;
 	top: 180px;
-	left: 1450px;
+	left: 2050px;
 	width: 24%;
 	height: 80px;
 }
