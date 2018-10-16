@@ -11,7 +11,7 @@
 
     /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-   function Quiz() {
+   function Quiz(qual) {
 
     var xmlhttp = new XMLHttpRequest();
     var url = "http://localhost:3000/elementos";
@@ -19,95 +19,54 @@
     xmlhttp.onreadystatechange=function() {
         if (this.readyState == 4 && this.status == 200) {
             //quando os dados retornarem da requisição serão enviados para a função ExibeDados()
-            ExibeDados(this.responseText);
+            ExibeDados(this.responseText, qual);
 
         }
     }
 
-    //if (document.getElementById("conteudo").length == 0 ) {
         xmlhttp.open("GET", url, true);
-   /* } else {
-        var conteudo = document.getElementById("conteudo").value;
-        xmlhttp.open("GET", url, true);
-        */
-    
-    
+   
     xmlhttp.send();
 } 
 
-function ExibeDados(response) {
+function ExibeDados(response, qual) {
 
 
-  document.getElementById("tela").style.display = "block";
+  document.getElementById("tela").style.display = "block";/*
+  document.getElementById("tela").style.left = document.getElementById().innerHTML.style.left + 'px;'; 
+  document.getElementById("tela").style.top = document.getElementById().innerHTML.style.top + 'px;'; */
 
     var arr = JSON.parse(response);
     
     var out = "<h1>";
+    var out2 = "<h2>";
 
     for(var i = 0; i < arr.length; i++) 
     {
-        out += 
-        arr[i].nome +
-        arr[i].descricao +
-        arr[i].tamanho +
-        arr[i].massa +
-        arr[i].distancia +
-        arr[i].periodoOrbital +
-        arr[i].periodoRotacao +
-        arr[i].gravidade +
-        arr[i].temperatura +
-        arr[i].composicao +
+      if(qual == arr[i].nome){
+        out += arr[i].nome;
+        out2 += 
+        arr[i].descricao + "<br>" +  
+        arr[i].tamanho +  "<br>" +
+        arr[i].massa +  "<br>" +
+        arr[i].distancia +  "<br>" +
+        arr[i].periodoOrbital +  "<br>" +
+        arr[i].periodoRotacao +  "<br>" +
+        arr[i].gravidade +  "<br>" +
+        arr[i].temperatura +  "<br>" +
+        arr[i].composicao +  "<br>" +
         arr[i].estrutura;
+      }
+
     }
     out += "</h1>";
-    document.getElementById("escrever").innerHTML = out + "oi";
+    out2 += "</h2>";
+    document.getElementById("qual").innerHTML = out;   
+    document.getElementById("escrever").innerHTML = out2;
 } //function ExibeDados()
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
- 
-    window.onclick = function se(){
-      }
-     
 
-    /* function Quiz(nome)
-     {
-     	alert(nome);
-        if(nome == "mercurio"){
-         document.getElementById("tela").style.display = "block";
-
-        }
-        else{
-                    if(nome == "venus"){
-                      document.getElementById("tela").style.display = "block";
-                    }
-                    else{
-                           if(nome == "terra"){
-                           document.getElementById("tela").style.display = "block";
-                           }
-                            else{
-                                   if(nome == "marte"){
-                                   document.getElementById("tela").style.display = "block";                       
-                                   }
-                                    else{
-                                           if(nome == "saturno"){
-                                           document.getElementById("tela").style.display = "block";
-                                            }
-                                           else{
-                                                 if(nome == "urano"){
-                                                     document.getElementById("tela").style.display = "block";
-                                                  }
-                                                  else{
-                                                    if(nome == "netuno"){
-                                                       document.getElementById("tela").style.display = "block";
-                                                         }
-                                                    else{
-                                                      if(nome == "plutao"){
-                                                       document.getElementById("tela").style.display = "block";
-                                                      }
-                                                      else
-                                                         alert("erro");}}}}}}}
-    }*/
-<!--********************************************************************************************************************************************************************************************-->
 var ie=document.all;
 var nn6=document.getElementById&&!document.all;
 var isdrag=false;
@@ -161,64 +120,54 @@ document.onmouseup=new Function("isdrag=false");
    <body class="dragme" >
 
     <div id = "jupiter">
-     <img id = "jupiter" src="imagens/jupiter.gif" onclick="Quiz()">
+     <img id = "jupiter" src="imagens/jupiter.gif" ondblclick="Quiz('Júpiter')" >
     </div>
     <div id = "netuno">
-     <img id = "netuno" src="imagens/netuno.gif" onclick="Quiz()">
+     <img id = "netuno" src="imagens/netuno.gif" ondblclick="Quiz('Netuno')" >
     </div>
     <div id = "mercurio">
-     <img id = "mercurio" src="imagens/mercurio.gif" onclick="Quiz()">
+     <img id = "mercurio" src="imagens/mercurio.gif" ondblclick="Quiz('Mercúrio')">
     </div>
     <div id = "marte">
-     <img id = "marte" src="imagens/marte.gif" onclick="Quiz()">
+     <img id = "marte" src="imagens/marte.gif" ondblclick="Quiz('Marte')">
     </div>
     <div id = "plutao">
-     <img id = "plutao" src="imagens/plutao.gif" onclick="Quiz()">
+     <img id = "plutao" src="imagens/plutao.gif" ondblclick="Quiz('Plutão')">
     </div>
      <div id = "venus">
-     <img id = "venus" src="imagens/venus.gif" onclick="Quiz()">
+     <img id = "venus" src="imagens/venus.gif" ondblclick="Quiz('Vênus')">
     </div>
     <div id = "terra">
-     <img id = "terra" src="imagens/terra.gif" onclick="Quiz()">
+     <img id = "terra" src="imagens/terra.gif" ondblclick="Quiz('Terra')">
     </div> 
     <div id = "saturno">
-     <img id = "saturno" src="imagens/saturno.gif" onclick="Quiz()">
+     <img id = "saturno" src="imagens/saturno.gif" ondblclick="Quiz('Saturno')">
     </div>
      <div id = "urano">
-     <img id = "urano" src="imagens/urano.gif" onclick="Quiz()">
+     <img id = "urano" src="imagens/urano.gif" ondblclick="Quiz('Urano')">
     </div>
      <div id = "sol">
-     <img id = "sol" src="imagens/sol.gif" onclick="Quiz()">
+     <img id = "sol" src="imagens/sol.gif" ondblclick="Quiz('Sol')">
     </div>
 
     <button type="button" id="quiz" class="classeBotao" onclick="window.open('quiz.html')">QUIZ</button>
 
       <div id="tela" 
-     style="background-color: lightgreen;position: absolute; 
-         left: 400px; 
-         top: 20px; 
+     style="background-color: lightgreen;position: absolute;
          width: 50%; 
          height: 500px; 
          border-radius: 20%; 
          display: none;">
 
           <form name = "form" method="post">
-        
-        
-        <table>
-          <center>
-        <h1 id="escrever" 
-         style=" text-align: center;
-         font-size: 40px;
-         color: red; "></h1>
 
-         <p id="conteudo"></p>
-         <button id="btn" onclick="sair()">OK</button>
+         <center> <h1 id="qual" style="font-size: 30px;color: blue; "></h1> </center>
 
-         </center>
+         <h2 id="escrever" style="font-size: 18px; color: black; position: absolute; left: 40px; top: 80px;"></h2>
+
+         <button id="btn" style="position: absolute; left: 360px; top: 460px; width: 5%; height: 5%;" onclick="sair()">OK</button>
+
         
-
-            </table>
             
              </form>
      </div>
