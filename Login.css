@@ -1,6 +1,6 @@
 body
 {
-
+	background:  url("./Node.js/imagens/fundo.gif"); 
 }
 
 
@@ -35,7 +35,7 @@ header
     color: white;
     font-size: 25px;
     font-weight: 900;
-    z-index: 100;
+   
 }
 
 .tit
@@ -84,10 +84,10 @@ header
      box-shadow: 0 1px 0 0 red;
    }
 
-.tranparencia
+.transparencia
 {
     
-    filter: brightness(20%);
+    filter: brightness(100%);
     z-index: 10;
 	position: absolute;
 	top: -10px;
@@ -95,7 +95,7 @@ header
 	width: 100%;
 	height:1800;
     background-image: url("./Node.js/imagens/fundo.gif"); 
-    display:block;
+    /*display:none;*/
 }
 
 
@@ -112,6 +112,7 @@ header
     top: 200px;
     left: 550px;
     z-index: 100;
+    display: none;
 }
 
 .peq

@@ -6,61 +6,18 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script>
-            function Cadastrar()
+            function Cadastro()
             {
-                /*
-                var bloco = document.createElement("div");
-                bloco.setAttribute('class', 'blocoCad');
-                var x = document.getElementsByTagName("body");
-                 var content = x[0].innerHTML;
-                 bloco.innerHTML = content;
-                 x[0].appendChild(bloco);
-                 var seta = document.createElement("div");
-                 seta.setAttribute('class','seta');
-                 seta.setAttribute('onclick','removerCad()');
-                 bloco.appendChild(seta);
-                  var br = document.createElement("br");
-                  bloco.appendChild(br);
-                  bloco.appendChild(br);
-                   var frase = document.createElement("div");
-                 frase.setAttribute('class', 'frase');
-                 bloco.appendChild(frase);
-                  frase.innerText = "Preencha o formulário com seus dados pessoais" ;
-                   bloco.appendChild(br);
-                    bloco.appendChild(br);
-                
-                <a href = "Login.html"> <div class="seta"></div></a>
-                <div class="tit"></div>
-                <br><br>
-                <div class="dados">
-                Preencha o formulário com seus dados pessoais
-                </div>
-                <div class="posicao">  
-                <br><br>
-            
-                <form id="frmCont" method="post" action="">                   
-                Usuário*<br>
-                <input type="text" id = "nome" required><br><br>
-                Email*<br>
-                <input type="email" id = "email"  required><br><br>
-                <label for="lb_Telefone">Telefone : (99-99999-9999)</label><br>
-                <input type ="tel" name ="txt_Tel" pattern="^\d{2}-\d{5}-\d{4}$"><br><br>
-                <td>Data de nascimento*</td><br>
-                <td><input type="date" name="txt_Data" required></td><br><br>
-                Senha*<br>
-                <input type="password" name="senha" required><br><br>
-                 Confirmar senha* <br>
-                <input type="password" name="senhaconf" required><br>
-                <button  onclick="Verificar('frmCont')" class="css3button" id = "botao"> Enviar </button><br><br><br>  
-                        </form>        
-                    </div>
-                    </div>
-                    */
+            	debugger;
+               document.getElementsByTagName("body")[0].style.backgroundColor = "white";
+               document.getElementsByClassName("cadastro")[0].display = "block";
+               document.getElementsByClassName("transparencia")[0].filter = "brightness(20%)";
+
             }
 
             function Focar()
             {
-                document.getElementById("usuario").focus();
+                document.getElementById("user").focus();
             }
             
             function ParaBaixo()
@@ -124,7 +81,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <body onload="Focar()">
     
-            <div class="tranparencia">
+            <div class="transparencia">
     <header>
         <p class = "logo"></p>
         <center>
@@ -156,7 +113,7 @@
                     <input type="password" id = "senha" onkeydown="ParaCima()">
                     
                              <button  onclick="Verificar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
-                         <a href="Cadastro.html" class="cad"> Ainda n&atilde;o tem cadastro?! </a>    
+                         <a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a>    
                              </center>
                     </div>
             </div>
@@ -174,7 +131,7 @@
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="icon_prefix" type="text" class="validate" required pattern=".{6,10}" title="De 6 a 10 caracteres">
+                  <input id="user" type="text" class="validate" required pattern=".{6,10}" title="De 6 a 10 caracteres">
                   <label for="icon_prefix">Username</label>
                 </div>
                 </div>
