@@ -3,9 +3,12 @@
     <title> MAGNIFIG SPACE
         </title>
         <link rel="shortcut icon" href="favicon.ico" >
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script>
             function Cadastrar()
             {
+                /*
                 var bloco = document.createElement("div");
                 bloco.setAttribute('class', 'blocoCad');
                 var x = document.getElementsByTagName("body");
@@ -25,7 +28,7 @@
                   frase.innerText = "Preencha o formulário com seus dados pessoais" ;
                    bloco.appendChild(br);
                     bloco.appendChild(br);
-                /*
+                
                 <a href = "Login.html"> <div class="seta"></div></a>
                 <div class="tit"></div>
                 <br><br>
@@ -91,7 +94,7 @@
                  var senha = document.getElementById("senha").value;
                 if(usuario =="" || senha == "" )
                     {
-                    alert(" Por favor preencher todos os campos");
+                    
                    document.getElementById("usuario").value = "";
                     document.getElementById("senha").value = "";
                     document.getElementById("usuario").focus();
@@ -118,7 +121,10 @@
 
     </head>
     <link href="Login.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <body onload="Focar()">
+    
+            <div class="tranparencia">
     <header>
         <p class = "logo"></p>
         <center>
@@ -154,6 +160,74 @@
                              </center>
                     </div>
             </div>
+                </div>
+            <div class="cadastro">
+                <div class="tit"></div>
+                <br><br>
+                <div class="dados">
+                Preencha o formulário com seus dados pessoais
+                </div>
+                <div class="posicao">  
+                <br><br>
+                <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="icon_prefix" type="text" class="validate" required pattern=".{6,10}" title="De 6 a 10 caracteres">
+                  <label for="icon_prefix">Username</label>
+                </div>
+                </div>
+             <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                  <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required>
+                  <label for="email">Email</label>
+                </div>
+              </div>
+                
+                <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                  <input id="tel" type="tel" pattern="^\d{2}-\d{5}-\d{4}$" class="validate" required >
+                  <label for="tel">Telefone(99-99999-9999)</label>
+                </div>
+              </div>
+                
+            <div class="row">    
+            <div class="input-field col s6">
+                 <i class="material-icons prefix">insert_invitation</i>
+                <input type="date" name='aniversario' class="datepicker">
+                <label for="aniversario">Data Nascimento</label>
+            </div>
+                </div>
+                
+              <div class="row">
+                <div class="input-field col s16">
+                    <i class="material-icons prefix">lock</i>
+                  <input id="password" type="password" class="validate" required pattern=".{8,}" >
+                  <label for="password">Senha</label>
+                </div>
+              </div>
+                  <div class="row">
+                <div class="input-field col s16">
+                    <i class="material-icons prefix">lock</i>
+                  <input id="password2" type="password" class="validate">
+                  <label for="password2">Confirmar senha</label>
+                </div>
+              </div>
+              <button  onclick="Verificar('frmCont')" class="css3button" id = "botao"> Cadastrar </button><br><br><br> 
+              
+            </form>
+          </div>
+                    
+				
 
+                             
+                    </div>
+            </div>
+       
     </body>
 </html>
+
+                
