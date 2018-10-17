@@ -16,3 +16,57 @@ header
     height: 200px;
     width: 200px;
 }
+
+.bg
+{
+    background-image:url("fundo.gif");
+    width:1200px;
+    height:500px;
+    position:relative;
+}
+
+.fg
+{
+    width:1200px;
+    height:500px;
+    position:absolute;
+    top:154px;
+    left:69px;
+    border: 4px solid black;•552
+    border-radius:6px;
+    overflow:hidden;
+}
+
+.fg .conteudo
+{
+     color: white;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.fg .bg
+{
+    color: white;
+    position:absolute;
+    background-image:url("fundo.gif");
+    top:-154px;
+    left:-69px;
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+    display:none;
+     width:1200px;
+    height:500px;
+}
+
+.fg:hover .bg
+{
+    display:inherit;
+}
+.titulo
+{
+    font-size: 50px;
+}
