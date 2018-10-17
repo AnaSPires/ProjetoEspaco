@@ -95,8 +95,25 @@ function ExibeDados(response) {
     {
       var opcoes = document.getElementsByName("res");
 
+      if(certa == "a")
+        certa = 0;
+      else
+        if(certa == "b")
+          certa = 1;
+        else
+          if(certa == "c")
+            certa = 2;
+          else
+            if(certa == "d")
+              certa = 3;
+            else
+              alert("ahhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+
+
+
+            alert(certa);
       for(x in opcoes){
-          if((opcoes.options[opcoes[x].id] =="a" && 'a' == certa)||(opcoes.options[opcoes[x].id] =="b" && 'b'== certa)||(opcoes.options[opcoes[x].id] == "c" && 'c' == certa)||(opcoes.options[opcoes[x].id] == "d" && 'd' == certa)){
+          if(opcoes[parseInt(x)].checked && x == certa){
             alert("Acertou");
             quantosAcertos++;
             trocarCorBtn('acertou');
@@ -104,6 +121,7 @@ function ExibeDados(response) {
            }
           else
           {
+            alert(x);
            alert("errou");
            quantosErros++;
            trocarCorBtn('errou');
