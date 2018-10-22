@@ -6,64 +6,42 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script>
+
+        	
+
             function Cadastro()
             {
-            	debugger;
-               document.getElementsByTagName("body")[0].style.backgroundColor = "white";
-               document.getElementsByClassName("cadastro")[0].display = "block";
-               document.getElementsByClassName("transparencia")[0].filter = "brightness(20%)";
+               document.getElementsByTagName("body")[0].style.background = "white";
+               document.getElementsByClassName("cadastro")[0].style.display = "block";
+               document.getElementsByClassName("transparencia")[0].style.filter = "brightness(20%)";
 
             }
 
             function Focar()
             {
-                document.getElementById("user").focus();
-            }
-            
-            function ParaBaixo()
-            {
-                if (event.keyCode == 13 || event.keyCode == 40){
-
-                 document.getElementById("senha").focus();
-
-                    }
-
-            }
-            
-            function ParaCima()
-            {
-                if (event.keyCode == 38){
-
-                 document.getElementById("usuario").focus();
-                }
-                
-                if(event.keyCode ==13)
-                    {
-                    Verificar();
-
-                    }
+                document.getElementById("username").focus();
             }
             
             
             function Verificar()
             {
-                var usuario = document.getElementById("usuario").value;
+                var username = document.getElementById("username").value;
                  var senha = document.getElementById("senha").value;
-                if(usuario =="" || senha == "" )
+                if(username =="" || senha == "" )
                     {
                     
-                   document.getElementById("usuario").value = "";
+                   document.getElementById("username").value = "";
                     document.getElementById("senha").value = "";
-                    document.getElementById("usuario").focus();
+                    document.getElementById("username").focus();
                     }
                 else
                 {
                     if(usuario.length <5 || senha.length<6)
                         {
                         alert(" Seu usu\u00e1rio ou senha est\u00e3o incorretos. Por favor, tente novamente");
-                            document.getElementById("usuario").value = "";
+                            document.getElementById("username").value = "";
                             document.getElementById("senha").value = "";
-                            document.getElementById("usuario").focus();
+                            document.getElementById("username").focus();
                         }
                     else
                         {
@@ -145,6 +123,7 @@
                     <input type="password" id = "senha" onkeydown="ParaCima()">
                     
                              <button  onclick="Verificar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
+                             <button  onclick="Ola()" id = "na"> Ola </button><br>
                          <a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a>    
                              </center>
                     </div>
@@ -163,8 +142,8 @@
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="user" type="text" class="validate" required pattern=".{6,10}" title="De 6 a 10 caracteres">
-                  <label for="icon_prefix">Username</label>
+                  <input id="username2" type="text" class="validate" required pattern=".{6,10}" title="De 6 a 10 caracteres">
+                  <label for="username2">Username</label>
                 </div>
                 </div>
              <div class="row">
@@ -201,11 +180,12 @@
                   <div class="row">
                 <div class="input-field col s16">
                     <i class="material-icons prefix">lock</i>
-                  <input id="password2" type="password" class="validate">
+                  <input id="password2" type="password" class="validate" required>
                   <label for="password2">Confirmar senha</label>
                 </div>
               </div>
               <button  onclick="Verificar('frmCont')" class="css3button" id = "botao"> Cadastrar </button><br><br><br> 
+               
               
             </form>
           </div>

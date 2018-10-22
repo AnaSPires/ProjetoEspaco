@@ -9,6 +9,10 @@
 
   <script>
 
+
+//Arrumar CSS
+//Contatenar codigo perguntas
+
     //Atualizar -- AJAX
 
 
@@ -29,10 +33,10 @@
 
     /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-   window.onload = function pegarInfo() {
+   function pegarInfo() {
 
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://localhost:3000/perguntas";
+    var url = "http://localhost:3000/perguntas/";
 
     xmlhttp.onreadystatechange=function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -48,11 +52,6 @@
 } 
 
 function ExibeDados(response) {
-
-
-  document.getElementById("tela").style.display = "block";/*
-  document.getElementById("tela").style.left = document.getElementById().innerHTML.style.left + 'px;'; 
-  document.getElementById("tela").style.top = document.getElementById().innerHTML.style.top + 'px;'; */
 
     var arr = JSON.parse(response);
     
@@ -87,28 +86,52 @@ function ExibeDados(response) {
     document.getElementById("r_Segunda").innerHTML = b;
     document.getElementById("r_Terceira").innerHTML = c;
     document.getElementById("r_Quarta").innerHTML = d;
-} 
-
-/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+  }
+ 
 
     function Verificar()
     {
+      debugger;
       var opcoes = document.getElementsByName("res");
 
-      for(x in opcoes){
-          if((opcoes.options[opcoes[x].id] =="a" && 'a' == certa)||(opcoes.options[opcoes[x].id] =="b" && 'b'== certa)||(opcoes.options[opcoes[x].id] == "c" && 'c' == certa)||(opcoes.options[opcoes[x].id] == "d" && 'd' == certa)){
+     if(certa == "a")
+        certa = 0;
+      else
+        if(certa == "b")
+          certa = 1;
+        else
+          if(certa == "c")
+            certa = 2;
+          else
+            if(certa == "d")
+              certa = 3;
+            else
+              alert("ahhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+
+
+
+            alert(certa);
+      for(x in opcoes)
+      {
+        var valor = Number(x);
+          if(opcoes[parseInt(x)].checked)
+          {
+          if(valor == certa)
+          {
             alert("Acertou");
             quantosAcertos++;
             trocarCorBtn('acertou');
             break;
-           }
+          }
           else
           {
-           alert("errou");
+            alert("AH:" +  typeof valor);
+            alert(valor);
+           alert("Errou");
            quantosErros++;
-           trocarCorBtn('errou');
-           break;
+           trocarCorBtn('errou'); 
           }
+        }
       }
 
 
@@ -196,7 +219,6 @@ function ExibeDados(response) {
       }
     }
 
-
 	</script>
 	</head>
 <link href="quizCSS.css" rel="stylesheet" type="text/css">
@@ -225,21 +247,21 @@ function ExibeDados(response) {
          </center>
          <br><br>
         
-        <input id="a" style="position: absolute; left: 50px; top: 230px;" type="radio" name="res" style="margin-left: 40px;">  <span id="r_Primeira" style="color:blue;font-weight:bold;font-size: 38px;
+        <input id="a"  style="position: absolute; left: 50px; top: 230px;display: none" type="radio" name="res" style="margin-left: 40px;">  <span id="r_Primeira" style="color:blue;font-weight:bold;font-size: 38px;
           position: absolute; left: 80px; top: 220px;">
          </span>
          <br>
-         <input id="b" type="radio" name="res" style="position: absolute; left: 50px; top: 280px;"><span id="r_Segunda" style="color:blue;font-weight:bold;font-size: 38px;
+         <input id="b" type="radio" name="res" style="position: absolute; left: 50px; top: 280px;display: none"><span id="r_Segunda" style="color:blue;font-weight:bold;font-size: 38px;
            position: absolute; left: 80px; top: 270px;"></span>
          <br>     
-         <input id="" ="c" type="radio" name="res" style="position: absolute; left: 50px; top: 330px;"><span id="r_Terceira" style="color:blue;font-weight:bold;font-size: 38px;
+         <input id="" ="c" type="radio" name="res" style="position: absolute; left: 50px; top: 330px;display: none"><span id="r_Terceira" style="color:blue;font-weight:bold;font-size: 38px;
             position: absolute; left: 80px; top: 320px;"></span>
          <br>
-         <input id="" ="d" type="radio" name="res" style="position: absolute; left: 50px; top: 380px;"><span id="r_Quarta" style="color:blue;font-weight:bold;font-size: 38px;
+         <input id="" ="d" type="radio" name="res" style="position: absolute; left: 50px; top: 380px;display: none"><span id="r_Quarta" style="color:blue;font-weight:bold;font-size: 38px;
             position: absolute; left: 80px; top: 370px;"></span>
          <br>
         
-         <button id="btnVer" onclick="Verificar()" style="position: absolute; left: 300px; top: 430px;">Verificar</button>
+         <button id="btnVer" onclick="Verificar()" style="position: absolute; left: 300px; top: 430px;display: none">Verificar</button>
 
             </section>
             
