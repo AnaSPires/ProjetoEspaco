@@ -36,8 +36,8 @@ nav
 	position: absolute;
 	top: 560px;
 	left: 100px;
-	width:85px; 
-	height:50px;
+	width:1202px; 
+	height:190px;
 }
 
 #btn1
@@ -180,8 +180,7 @@ nav
 {
 position: absolute; 
 left: 50px; 
-top: 
-280px;
+top: 280px;
 display: none;
 }
 
@@ -189,7 +188,7 @@ display: none;
 {
   position: absolute; 
   left: 50px; 
-  top: 330px;
+  top: 335px;
   display: none;
 }
 
@@ -197,7 +196,7 @@ display: none;
 {
 	position: absolute; 
 	left: 50px; 
-	top: 380px;
+	top: 385px;
 	display: none;
 }
 
