@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <script>
+         
+            rotate = 0; 
+             
+            document.addEventListener("DOMContentLoaded", function(){ 
+             
+                document.getElementById("next").addEventListener("click", function(){ //Quando houver um clique no botão next..
+                 
+                    if(rotate== 360){rotate = 0} //Verificamos se o valor da variável rotate é 360, se for zeramos o valor.
+                 
+                    rotate = rotate + 30; 
+                     
+                    document.getElementById("img").style.transform = "rotate("+rotate+"deg)";
+                });
+                 
+                document.getElementById("back").addEventListener("click", function(){ 
+                    if(rotate== -360){rotate = 0} 
+                    rotate = rotate + -30 ;
+                     
+                    document.getElementById("img").style.transform = "rotate("+rotate+"deg)"; 
+                });     
+            });
+             
+        </script>
+    </head>
+    <body>
+        <img src="F:/urso.jpg" class="" id="img" alt="Teste" />
+      
+        <br />
+        <button id="back">Voltar </button> <!--botão voltar-->
+        <button id="next">avançar</button> <!--botão avançar-->
+    </body>
+</html>

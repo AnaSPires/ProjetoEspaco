@@ -3,13 +3,102 @@
     <title> MAGNIFIG SPACE
         </title>
         <link rel="shortcut icon" href="favicon.ico" >
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script>
+            function Cadastro()
+            {
+            	debugger;
+               document.getElementsByTagName("body")[0].style.backgroundColor = "white";
+               document.getElementsByClassName("cadastro")[0].display = "block";
+               document.getElementsByClassName("transparencia")[0].filter = "brightness(20%)";
+
+            }
+
+            function Focar()
+            {
+                document.getElementById("user").focus();
+            }
+            
+            function ParaBaixo()
+            {
+                if (event.keyCode == 13 || event.keyCode == 40){
+
+                 document.getElementById("senha").focus();
+
+                    }
+
+            }
+            
+            function ParaCima()
+            {
+                if (event.keyCode == 38){
+
+                 document.getElementById("usuario").focus();
+                }
+                
+                if(event.keyCode ==13)
+                    {
+                    Verificar();
+
+                    }
+            }
+            
+            
+            function Verificar()
+            {
+                var usuario = document.getElementById("usuario").value;
+                 var senha = document.getElementById("senha").value;
+                if(usuario =="" || senha == "" )
+                    {
+                    
+                   document.getElementById("usuario").value = "";
+                    document.getElementById("senha").value = "";
+                    document.getElementById("usuario").focus();
+                    }
+                else
+                {
+                    if(usuario.length <5 || senha.length<6)
+                        {
+                        alert(" Seu usu\u00e1rio ou senha est\u00e3o incorretos. Por favor, tente novamente");
+                            document.getElementById("usuario").value = "";
+                            document.getElementById("senha").value = "";
+                            document.getElementById("usuario").focus();
+                        }
+                    else
+                        {
+                        window.open("./html/pp.html");
+                        }
+                    
+        
+                }
+            }
+            
+        </script>
 
     </head>
     <link href="Login.css" rel="stylesheet" type="text/css">
-        <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <body onload="Focar()">
+    
+            <div class="transparencia">
     <header>
         <p class = "logo"></p>
+        <center>
+        <div class="titulo"></div>
+    </center>
+        
+                        <center>
+                <div class="user"></div><br>
+                Ol&aacute;! Digite o seu usu&aacute;rio e senha
+        </center>
+        
+        <div class="contato">
+            |
+        <a href="Contato.html" class="cont"> Contato </a>
+        </div>
     </header>
+<<<<<<< HEAD
     <center>
   
        <div class="bg">  
@@ -40,3 +129,95 @@
  </center>
     </body>
 </html>
+=======
+    
+            <div class="bloco">
+                
+                    <div class="peq">
+                    
+                    Usu&aacute;rio
+                        <center>
+                    <input type="text" id = "usuario" onkeydown="ParaBaixo()">
+                        </center>
+                       <CENTER> </CENTER>
+                    Senha
+                         <center>
+                    <input type="password" id = "senha" onkeydown="ParaCima()">
+                    
+                             <button  onclick="Verificar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
+                         <a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a>    
+                             </center>
+                    </div>
+            </div>
+                </div>
+            <div class="cadastro">
+                <div class="tit"></div>
+                <br><br>
+                <div class="dados">
+                Preencha o formulário com seus dados pessoais
+                </div>
+                <div class="posicao">  
+                <br><br>
+                <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="user" type="text" class="validate" required pattern=".{6,10}" title="De 6 a 10 caracteres">
+                  <label for="icon_prefix">Username</label>
+                </div>
+                </div>
+             <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                  <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required>
+                  <label for="email">Email</label>
+                </div>
+              </div>
+                
+                <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                  <input id="tel" type="tel" pattern="^\d{2}-\d{5}-\d{4}$" class="validate" required >
+                  <label for="tel">Telefone(99-99999-9999)</label>
+                </div>
+              </div>
+                
+            <div class="row">    
+            <div class="input-field col s6">
+                 <i class="material-icons prefix">insert_invitation</i>
+                <input type="date" name='aniversario' class="datepicker">
+                <label for="aniversario">Data Nascimento</label>
+            </div>
+                </div>
+                
+              <div class="row">
+                <div class="input-field col s16">
+                    <i class="material-icons prefix">lock</i>
+                  <input id="password" type="password" class="validate" required pattern=".{8,}" >
+                  <label for="password">Senha</label>
+                </div>
+              </div>
+                  <div class="row">
+                <div class="input-field col s16">
+                    <i class="material-icons prefix">lock</i>
+                  <input id="password2" type="password" class="validate">
+                  <label for="password2">Confirmar senha</label>
+                </div>
+              </div>
+              <button  onclick="Verificar('frmCont')" class="css3button" id = "botao"> Cadastrar </button><br><br><br> 
+              
+            </form>
+          </div>
+                    
+				
+
+                             
+                    </div>
+            </div>
+       
+    </body>
+</html>
+
+                
+>>>>>>> 3e5cfd291e336cdbb1eb61f693b2e4ed3079d370

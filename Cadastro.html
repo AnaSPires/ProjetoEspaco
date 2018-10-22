@@ -1,0 +1,64 @@
+<html>
+    <head>
+    <title> MAGNIFIG SPACE
+        </title>
+        <link rel="shortcut icon" href="favicon.ico" >
+        <script>
+
+           function senha()
+           {
+                 title="8 caracteres ou mais";
+           }
+              
+
+            function Verificar()
+            {
+
+            } 
+
+        //placeholder
+    
+			window.onload = function(){
+            document.getElementById("nome").focus();
+            }
+            
+       	 </script>
+
+   		 </head>
+   		 <link href="Cadastro.css" rel="stylesheet" type="text/css">
+    <body>
+        <div class="transparencia">
+        <div class="pag">
+            <div class="bloco" >
+               <a href = "Login.html"> <div class="seta"></div></a>
+                <div class="tit"></div>
+                <br><br>
+                <div class="dados">
+                Preencha o formulário com seus dados pessoais
+                </div>
+                <div class="posicao">  
+                <br><br>
+            
+				<form id="frmCont" method="post" action="">                   
+				Username<br>
+                <input type="text" id = "nome" required pattern=".{6,10}" title="De 6 a 10 caracteres"><br><br>
+                Email<br>
+                <input type="email" id = "email"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ><br><br>
+                <label for="lb_Telefone">Telefone : (99-99999-9999)</label><br>
+                <input type ="tel" name ="txt_Tel" id ="telefone" required pattern="^\d{2}-\d{5}-\d{4}$"><br><br>
+                <td>Data de nascimento</td><br>
+                <td><input type="date" name="txt_Data" required></td><br><br>
+                Senha<br>
+                <input type="password" name="senha" required pattern=".{8,}" title="8 caracteres ou mais"><br><br>
+                 Confirmar senha <br>
+                <input type="password" name="senhaconf" onblur="senha()"  required }><br>
+      			<button  onclick="Verificar('frmCont')" class="css3button" id = "botao"> Enviar </button><br><br><br>  
+
+                        </form>        
+                    </div>
+                    </div>
+           			 </div>
+                     
+
+	    </body>
+	</html>
