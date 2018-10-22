@@ -15,6 +15,8 @@ nav
 	position: absolute;
 	top:50px;
 	left:1300px;
+	width:200px; 
+	height:250px;
 }
 
 #gif
@@ -24,8 +26,8 @@ nav
 	left: 30px;
 	border-radius: 100%;
 	border: 5px solid blue;
-	width: 4%;
-	height: 7%;
+	width:85px; 
+	height:50px;
 }
 
 
@@ -34,8 +36,8 @@ nav
 	position: absolute;
 	top: 560px;
 	left: 100px;
-	width: 1200px;
-	height: 200px;
+	width:85px; 
+	height:50px;
 }
 
 #btn1
@@ -44,6 +46,7 @@ nav
 	left: 100px;
 	top: 670px;
 	border-radius: 130%;
+	background-color: #5858FA;
 	width: 60px;
 	height: 50px;
 }
@@ -139,12 +142,101 @@ nav
 	height: 50px;
 }
 
+#pergunta
+{
+	text-align: center;
+    font-size: 40px;
+    color: red; 
+}
+
+#tela
+{
+	background-color: lightgreen;
+	position: absolute; 
+    left: 400px; 
+    top: 20px; 
+    width: 48%; 
+    height: 500px; 
+    border-radius: 20%; 
+}
+
 #btnVer
 {
 	position: absolute;
-	left: 340px;
-	top: 365px;
-	border-radius: 20%;
-	width: 90px;
-	height: 50px;
+	 left: 300px; 
+	 top: 430px;
+	 display: none;
+}
+
+#a
+{
+  position: absolute; 
+  left: 50px; 
+  top: 230px;
+  display: none;
+}
+
+#b
+{
+position: absolute; 
+left: 50px; 
+top: 
+280px;
+display: none;
+}
+
+#c
+{
+  position: absolute; 
+  left: 50px; 
+  top: 330px;
+  display: none;
+}
+
+#d
+{
+	position: absolute; 
+	left: 50px; 
+	top: 380px;
+	display: none;
+}
+
+#r_Primeira
+{
+  color:blue;
+  font-weight:bold;
+  font-size: 38px;
+  position: absolute; 
+  left: 80px; 
+  top: 220px;
+}
+
+#r_Segunda
+{
+  color:blue;
+  font-weight:bold;
+  font-size: 38px;
+  position: absolute; 
+  left: 80px; 
+  top: 270px;
+}
+
+#r_Terceira
+{
+   color:blue;
+   font-weight:bold;
+   font-size: 38px;
+   position: absolute; 
+   left: 80px; 
+   top: 320px;
+}
+
+#r_Quarta
+{
+	color:blue;
+	font-weight:bold;
+	font-size: 38px;
+    position: absolute; 
+    left: 80px; 
+    top: 370px;
 }

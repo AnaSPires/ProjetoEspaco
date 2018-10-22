@@ -12,6 +12,7 @@
 
 //Arrumar CSS
 //Contatenar codigo perguntas
+//https://materializecss.com/media.html
 
     //Atualizar -- AJAX
 
@@ -225,49 +226,35 @@ function ExibeDados(response) {
 <body id="body">
     
 
-     <img id="terra" src="imagens/terraQuiz.png" width="200px" height="250px">
-     <img id="gif" src="imagens/emoji.gif" width=85px height=50px>
-     <img id="caminho" src="imagens/caminho1.png" width=85px height=50px>
-     <section id="tela" 
-     style="background-color: lightgreen;position: absolute; 
-         left: 400px; 
-         top: 20px; 
-         width: 48%; 
-         height: 500px; 
-         border-radius: 20%; ">
+     <img id="terra" src="imagens/terraQuiz.png">
+     <img id="gif" src="imagens/emoji.gif">
+     <img id="caminho" src="imagens/caminho1.png">
+     <section id="tela">
 
           <form name = "form" method="post">
         
         
           <center>
-        <h1 id="pergunta" 
-         style=" text-align: center;
-         font-size: 40px;
-         color: red; "></h1>
+        <h1 id="pergunta"></h1>
          </center>
          <br><br>
         
-        <input id="a"  style="position: absolute; left: 50px; top: 230px;display: none" type="radio" name="res" style="margin-left: 40px;">  <span id="r_Primeira" style="color:blue;font-weight:bold;font-size: 38px;
-          position: absolute; left: 80px; top: 220px;">
-         </span>
+        <input id="a" type="radio" name="res"> <span id="r_Primeira"></span>
          <br>
-         <input id="b" type="radio" name="res" style="position: absolute; left: 50px; top: 280px;display: none"><span id="r_Segunda" style="color:blue;font-weight:bold;font-size: 38px;
-           position: absolute; left: 80px; top: 270px;"></span>
+         <input id="b" type="radio" name="res"><span id="r_Segunda"></span>
          <br>     
-         <input id="" ="c" type="radio" name="res" style="position: absolute; left: 50px; top: 330px;display: none"><span id="r_Terceira" style="color:blue;font-weight:bold;font-size: 38px;
-            position: absolute; left: 80px; top: 320px;"></span>
+         <input id="c" type="radio" name="res"><span id="r_Terceira"></span>
          <br>
-         <input id="" ="d" type="radio" name="res" style="position: absolute; left: 50px; top: 380px;display: none"><span id="r_Quarta" style="color:blue;font-weight:bold;font-size: 38px;
-            position: absolute; left: 80px; top: 370px;"></span>
+         <input id="d" type="radio" name="res"><span id="r_Quarta"></span>
          <br>
         
-         <button id="btnVer" onclick="Verificar()" style="position: absolute; left: 300px; top: 430px;display: none">Verificar</button>
+         <button id="btnVer" onclick="Verificar()">Verificar</button>
 
             </section>
             
              </form>
      
-     <button id="btn1" style="background-color: #5858FA"></button>
+     <button id="btn1"></button>
      <button id="btn2" onclick="Jogar()"></button>
      <button id="btn3"></button>
      <button id="btn4"></button>
