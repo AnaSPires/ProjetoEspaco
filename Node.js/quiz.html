@@ -9,7 +9,6 @@
 
   <script>
 
-//Contatenar codigo perguntas
 //https://materializecss.com/media.html
 
     //Atualizar -- AJAX
@@ -30,13 +29,14 @@
  
   var escolhida;
 
-    /*----------------------------------------------------------------------------------------------------------------------------------------*/
+ window.onbeforeunload = function() {
 
-   window.onload = function ah()
-   {
-    if(nivel == 1){
-     var xmlhttp = new XMLHttpRequest();
-
+    /*document.getElementById("a").toggle();
+    document.getElementById("b").toggle();
+    document.getElementById("c").toggle();
+    document.getElementById("d").toggle();*/
+ 
+    var xmlhttp = new XMLHttpRequest();
     var url = "http://localhost:3000/perguntas/" + nivel;
 
     xmlhttp.onreadystatechange=function()
@@ -47,29 +47,17 @@
 
     xmlhttp.open("GET", url, true);
    
-    xmlhttp.send();
-    }
-  }
+    xmlhttp.send(); 
+ 
+     return "Os dados do formulário serão perdidos.";
 
-   
-/*
-   document.getElementById("btnVer").addEventListener("click", function () {
-  getElementById("body").submit(function(){
-     if(nivel > 1){
-      alert("entrou");
-      return false;}
-    else{
-      alert("blz");
-      pegarInfo();
-      return true;
-    }
-  });
-});*/
+ 
 
+}
 
-   function pegarInfo() {
-    if(nivel > 1){
+    /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
+  window.onload =  function pegarInfo() {
     var xmlhttp = new XMLHttpRequest();
     var url = "http://localhost:3000/perguntas/" + nivel;
 
@@ -82,8 +70,9 @@
     xmlhttp.open("GET", url, true);
    
     xmlhttp.send();
+  
    }
-  } 
+
 
 function ExibeDados(response) {
 
@@ -150,22 +139,19 @@ function ExibeDados(response) {
       for(x in opcoes)
       {
         var valor = Number(x);
-          if(opcoes[parseInt(x)].checked)
+        if(opcoes[parseInt(x)].checked)
           {
           if(valor == certa)
           {
-            alert("Acertou");
             quantosAcertos++;
             trocarCorBtn('acertou');
             break;
           }
           else
           {
-            alert("AH:" +  typeof valor);
-            alert(valor);
-           alert("Errou");
            quantosErros++;
            trocarCorBtn('errou'); 
+           break;
           }
         }
       }
@@ -176,7 +162,19 @@ function ExibeDados(response) {
         alert("Acertos: " + quantosAcertos +"\n" + "Erros: " + quantosErros);
 
       nivel++;
-      alert(nivel);
+      alert("Nível: " + nivel);
+
+      if(nivel > 10){
+        alert('Acabou');
+        window.onbeforeunload = function() {
+        document.getElementById("a").style.display = "none";
+        document.getElementById("b").style.display = "none";
+        document.getElementById("c").style.display = "none";
+        document.getElementById("d").style.display = "none";
+        document.getElementById("btnVer").style.display = "none";
+     }
+      else
+         pegarInfo();
     }
 
     function trocarCorBtn(se){
@@ -252,7 +250,7 @@ function ExibeDados(response) {
          document.getElementById("btn10").style.background = "green";
        else
         document.getElementById("btn10").style.background = "red";
-      }
+      } 
     }
 
 	</script>
@@ -299,6 +297,7 @@ function ExibeDados(response) {
      <button id="btn9"></button>
      <button id="btn10"></button>
 
+    <button type="button" id="pp" onclick="window.open('pp.html')">Página Principal</button>
 </body>
 
 </html>
