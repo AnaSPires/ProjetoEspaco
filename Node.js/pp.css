@@ -162,7 +162,7 @@ html:active
 #tela
 {
 	background-color: lightgreen;
-	position: absolute;
+	position: sticky;
     width: 50%; 
     height: 500px; 
     border-radius: 20%; 

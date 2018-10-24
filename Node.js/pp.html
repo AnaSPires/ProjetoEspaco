@@ -10,28 +10,47 @@
 
     /*-----------------------------------------------------------------------------------------------------------------------------------------*/
 
-   function Quiz(qual, obj) {
+    function aquiii(qual)
+    {
+      //alert(event.clientX);
+      //alert(event.clientY);
+
+      if (qual == 0)
+        return event.clientX;
+      else
+        return event.clientY;
+    }
+
+   function Quiz(qual, x, y) {
+
+    alert(y);
 
     var xmlhttp = new XMLHttpRequest();
     var url = "http://localhost:3000/elementos";
 
     xmlhttp.onreadystatechange=function(){
         if (this.readyState == 4 && this.status == 200){
-            ExibeDados(this.responseText, obj);
+            ExibeDados(this.responseText, aquiii(0), aquiii(27));
           }
         }
-
 
         xmlhttp.open("GET", url, true);
    
     xmlhttp.send();
 } 
 
-function ExibeDados(response, obj) {
+function ExibeDados(response, x, y) {
 
-   document.getElementById("tela").style.display = "block";
-  document.getElementById("tela").style.left = obj.style.left + "px"; 
-  document.getElementById("tela").style.top = obj.style.top + "px"; 
+  var sy = document.getElementById("body").scrollY;
+
+  var sx = document.getElementById("body").scrollX;
+
+  //alert(typeof sx + sx);
+
+  document.getElementById("tela").style.display = "block";
+  document.getElementById("tela").style.position = "absolute";
+  document.getElementById("tela").style.left = x; 
+  document.getElementById("tela").style.top = y;
 
     var arr = JSON.parse(response);
     
@@ -112,37 +131,37 @@ document.onmouseup=new Function("isdrag=false");
 
  <link href="pp.css" rel="stylesheet" type="text/css">
 
-   <body class="dragme" >
+   <body id="body" class="dragme" onclick="aquiii()">
 
     <div id = "jupiter">
-     <img id = "jupiter" src="imagens/jupiter.gif" ondblclick="Quiz('Júpiter', this)" >
+     <img id = "jupiter" src="imagens/jupiter.gif" ondblclick="Quiz('Júpiter', 510, 67)" >
     </div>
     <div id = "netuno">
-     <img id = "netuno" src="imagens/netuno.gif" ondblclick="Quiz('Netuno', this)" >
+     <img id = "netuno" src="imagens/netuno.gif" ondblclick="Quiz('Netuno', 1700, 150)" >
     </div>
     <div id = "mercurio">
-     <img id = "mercurio" src="imagens/mercurio.gif" ondblclick="Quiz('Mercúrio', this)">
+     <img id = "mercurio" src="imagens/mercurio.gif" ondblclick="Quiz('Mercúrio', -240, 170)">
     </div>
     <div id = "marte">
-     <img id = "marte" src="imagens/marte.gif" ondblclick="Quiz('Marte', this)">
+     <img id = "marte" src="imagens/marte.gif" ondblclick="Quiz('Marte', 300, 175)">
     </div>
     <div id = "plutao">
-     <img id = "plutao" src="imagens/plutao.gif" ondblclick="Quiz('Plutão', this)">
+     <img id = "plutao" src="imagens/plutao.gif" ondblclick="Quiz('Plutão', 2050, 180)">
     </div>
      <div id = "venus">
-     <img id = "venus" src="imagens/venus.gif" ondblclick="Quiz('Vênus', this)">
+     <img id = "venus" src="imagens/venus.gif" ondblclick="Quiz('Vênus', -65, 160)">
     </div>
     <div id = "terra">
-     <img id = "terra" src="imagens/terra.gif" ondblclick="Quiz('Terra', this)">
+     <img id = "terra" src="imagens/terra.gif" ondblclick="Quiz('Terra', 120, 160)">
     </div> 
     <div id = "saturno">
-     <img id = "saturno" src="imagens/saturno.gif" ondblclick="Quiz('Saturno',this)">
+     <img id = "saturno" src="imagens/saturno.gif" ondblclick="Quiz('Saturno',918, 100)">
     </div>
      <div id = "urano">
-     <img id = "urano" src="imagens/urano.gif" ondblclick="Quiz('Urano', this)">
+     <img id = "urano" src="imagens/urano.gif" ondblclick="Quiz('Urano', 1400, 140)">
     </div>
      <div id = "sol">
-     <img id = "sol" src="imagens/sol.gif" ondblclick="Quiz('Sol', this)">
+     <img id = "sol" src="imagens/sol.gif" ondblclick="Quiz('Sol', -700, 5)">
     </div>
 
     <button type="button" id="quiz" class="classeBotao" onclick="window.open('quiz.html')">QUIZ</button>
