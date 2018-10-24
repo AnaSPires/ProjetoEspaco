@@ -134,3 +134,37 @@ html:active
 	width: 70px;
 	height: 50px;
 }
+
+#escrever
+{
+	font-size: 18px; 
+	color: black; 
+	position: absolute; 
+	left: 40px; 
+	top: 80px;
+}
+
+#btn
+{
+	position: absolute; 
+	left: 360px; 
+	top: 460px; 
+	width: 5%; 
+	height: 5%;
+}
+
+#qual
+{
+	font-size: 30px;
+	color: blue; 
+}
+
+#tela
+{
+	background-color: lightgreen;
+	position: absolute;
+    width: 50%; 
+    height: 500px; 
+    border-radius: 20%; 
+    display: none;
+}

@@ -156,11 +156,11 @@ function ExibeDados(response) {
         }
       }
 
-      if(nivel == 10)
+     /* if(nivel == 10)
         alert("Acertos: " + quantosAcertos +"\n" +  "Erros: " + quantosErros);
       else
         alert("Acertos: " + quantosAcertos +"\n" + "Erros: " + quantosErros);
-
+           */
       nivel++;
       alert("Nível: " + nivel);
 
@@ -172,6 +172,8 @@ function ExibeDados(response) {
         document.getElementById("c").style.display = "none";
         document.getElementById("d").style.display = "none";
         document.getElementById("btnVer").style.display = "none";
+
+       }
      }
       else
          pegarInfo();
