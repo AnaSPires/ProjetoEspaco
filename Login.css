@@ -18,6 +18,13 @@ header
     font-weight: 400;
 }
 
+.senha
+{
+    background-image: url("senha.png");
+    width: 100px;
+    height: 100px;
+}
+
 .logo
 {
     background-image: url("logo.png");
