@@ -9,9 +9,6 @@
 
   <script>
 
-
-//Arrumar CSS
-//Contatenar codigo perguntas
 //https://materializecss.com/media.html
 
     //Atualizar -- AJAX
@@ -32,25 +29,50 @@
  
   var escolhida;
 
-    /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ window.onbeforeunload = function() {
 
-   function pegarInfo() {
-
+    /*document.getElementById("a").toggle();
+    document.getElementById("b").toggle();
+    document.getElementById("c").toggle();
+    document.getElementById("d").toggle();*/
+ 
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://localhost:3000/perguntas/";
+    var url = "http://localhost:3000/perguntas/" + nivel;
 
-    xmlhttp.onreadystatechange=function() {
-        if (this.readyState == 4 && this.status == 200) {
-            //quando os dados retornarem da requisição serão enviados para a função ExibeDados()
+    xmlhttp.onreadystatechange=function()
+    {
+        if (this.readyState == 4 && this.status == 200) 
             ExibeDados(this.responseText);
-
         }
-    }
 
-        xmlhttp.open("GET", url, true);
+    xmlhttp.open("GET", url, true);
+   
+    xmlhttp.send(); 
+ 
+     return "Os dados do formulário serão perdidos.";
+
+ 
+
+}
+
+    /*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+  window.onload =  function pegarInfo() {
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://localhost:3000/perguntas/" + nivel;
+
+    xmlhttp.onreadystatechange=function()
+    {
+        if (this.readyState == 4 && this.status == 200) 
+            ExibeDados(this.responseText);
+        }
+
+    xmlhttp.open("GET", url, true);
    
     xmlhttp.send();
-} 
+  
+   }
+
 
 function ExibeDados(response) {
 
@@ -81,6 +103,12 @@ function ExibeDados(response) {
     b += "</span>";
     c += "</span>";
     d += "</span>";
+
+    document.getElementById("a").style.display = "block";
+    document.getElementById("b").style.display = "block";
+    document.getElementById("c").style.display = "block";
+    document.getElementById("d").style.display = "block";
+    document.getElementById("btnVer").style.display = "block";
     
     document.getElementById("pergunta").innerHTML = p;   
     document.getElementById("r_Primeira").innerHTML = a;
@@ -92,7 +120,6 @@ function ExibeDados(response) {
 
     function Verificar()
     {
-      debugger;
       var opcoes = document.getElementsByName("res");
 
      if(certa == "a")
@@ -109,39 +136,47 @@ function ExibeDados(response) {
             else
               alert("ahhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
 
-
-
-            alert(certa);
       for(x in opcoes)
       {
         var valor = Number(x);
-          if(opcoes[parseInt(x)].checked)
+        if(opcoes[parseInt(x)].checked)
           {
           if(valor == certa)
           {
-            alert("Acertou");
             quantosAcertos++;
             trocarCorBtn('acertou');
             break;
           }
           else
           {
-            alert("AH:" +  typeof valor);
-            alert(valor);
-           alert("Errou");
            quantosErros++;
            trocarCorBtn('errou'); 
+           break;
           }
         }
       }
 
-
-
-      if(nivel == 10)
+     /* if(nivel == 10)
         alert("Acertos: " + quantosAcertos +"\n" +  "Erros: " + quantosErros);
       else
         alert("Acertos: " + quantosAcertos +"\n" + "Erros: " + quantosErros);
+           */
+      nivel++;
+      alert("Nível: " + nivel);
 
+      if(nivel > 10){
+        alert('Acabou');
+        window.onbeforeunload = function() {
+        document.getElementById("a").style.display = "none";
+        document.getElementById("b").style.display = "none";
+        document.getElementById("c").style.display = "none";
+        document.getElementById("d").style.display = "none";
+        document.getElementById("btnVer").style.display = "none";
+
+       }
+     }
+      else
+         pegarInfo();
     }
 
     function trocarCorBtn(se){
@@ -217,7 +252,7 @@ function ExibeDados(response) {
          document.getElementById("btn10").style.background = "green";
        else
         document.getElementById("btn10").style.background = "red";
-      }
+      } 
     }
 
 	</script>
@@ -233,29 +268,28 @@ function ExibeDados(response) {
 
           <form name = "form" method="post">
         
-        
           <center>
         <h1 id="pergunta"></h1>
          </center>
          <br><br>
         
-        <input id="a" type="radio" name="res"> <span id="r_Primeira"></span>
+         <input id="a" type="radio" name="res" style="display: none"><span id="r_Primeira"></span>
          <br>
-         <input id="b" type="radio" name="res"><span id="r_Segunda"></span>
+         <input id="b" type="radio" name="res" style="display: none"><span id="r_Segunda"></span>
          <br>     
-         <input id="c" type="radio" name="res"><span id="r_Terceira"></span>
+         <input id="c" type="radio" name="res" style="display: none"><span id="r_Terceira"></span>
          <br>
-         <input id="d" type="radio" name="res"><span id="r_Quarta"></span>
+         <input id="d" type="radio" name="res" style="display: none"><span id="r_Quarta"></span>
          <br>
         
-         <button id="btnVer" onclick="Verificar()">Verificar</button>
+         <button id="btnVer" onclick="Verificar()" style="display: none">Verificar</button>
 
             </section>
             
              </form>
      
      <button id="btn1"></button>
-     <button id="btn2" onclick="Jogar()"></button>
+     <button id="btn2""></button>
      <button id="btn3"></button>
      <button id="btn4"></button>
      <button id="btn5"></button>
@@ -265,6 +299,7 @@ function ExibeDados(response) {
      <button id="btn9"></button>
      <button id="btn10"></button>
 
+    <button type="button" id="pp" onclick="window.open('pp.html')">Página Principal</button>
 </body>
 
 </html>

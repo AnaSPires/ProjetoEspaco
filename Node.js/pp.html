@@ -3,38 +3,54 @@
 
  <title>Projeto Pr&aacute;ticas Profissionais</title>
   <link rel="shortcut icon" href="favicon.ico" >
- <!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <script>
 
-    /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+    /*-----------------------------------------------------------------------------------------------------------------------------------------*/
 
-   function Quiz(qual) {
+    function aquiii(qual)
+    {
+      //alert(event.clientX);
+      //alert(event.clientY);
+
+      if (qual == 0)
+        return event.clientX;
+      else
+        return event.clientY;
+    }
+
+   function Quiz(qual, x, y) {
+
+    alert(y);
 
     var xmlhttp = new XMLHttpRequest();
     var url = "http://localhost:3000/elementos";
 
-    xmlhttp.onreadystatechange=function() {
-        if (this.readyState == 4 && this.status == 200) {
-            //quando os dados retornarem da requisição serão enviados para a função ExibeDados()
-            ExibeDados(this.responseText, qual);
-
+    xmlhttp.onreadystatechange=function(){
+        if (this.readyState == 4 && this.status == 200){
+            ExibeDados(this.responseText, aquiii(0), aquiii(27));
+          }
         }
-    }
 
         xmlhttp.open("GET", url, true);
    
     xmlhttp.send();
 } 
 
-function ExibeDados(response, qual) {
+function ExibeDados(response, x, y) {
 
+  var sy = document.getElementById("body").scrollY;
 
-  document.getElementById("tela").style.display = "block";/*
-  document.getElementById("tela").style.left = document.getElementById().innerHTML.style.left + 'px;'; 
-  document.getElementById("tela").style.top = document.getElementById().innerHTML.style.top + 'px;'; */
+  var sx = document.getElementById("body").scrollX;
+
+  //alert(typeof sx + sx);
+
+  document.getElementById("tela").style.display = "block";
+  document.getElementById("tela").style.position = "absolute";
+  document.getElementById("tela").style.left = x; 
+  document.getElementById("tela").style.top = y;
 
     var arr = JSON.parse(response);
     
@@ -63,9 +79,9 @@ function ExibeDados(response, qual) {
     out2 += "</h2>";
     document.getElementById("qual").innerHTML = out;   
     document.getElementById("escrever").innerHTML = out2;
-} //function ExibeDados()
+}
 
-/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 var ie=document.all;
 var nn6=document.getElementById&&!document.all;
@@ -109,66 +125,57 @@ function selectmouse(e)
 document.onmousedown=selectmouse;
 document.onmouseup=new Function("isdrag=false");
 
-<!--********************************************************************************************************************************************************************************************-->
-
   </script>
 
  </head>
 
  <link href="pp.css" rel="stylesheet" type="text/css">
 
-   <body class="dragme" >
+   <body id="body" class="dragme" onclick="aquiii()">
 
     <div id = "jupiter">
-     <img id = "jupiter" src="imagens/jupiter.gif" ondblclick="Quiz('Júpiter')" >
+     <img id = "jupiter" src="imagens/jupiter.gif" ondblclick="Quiz('Júpiter', 510, 67)" >
     </div>
     <div id = "netuno">
-     <img id = "netuno" src="imagens/netuno.gif" ondblclick="Quiz('Netuno')" >
+     <img id = "netuno" src="imagens/netuno.gif" ondblclick="Quiz('Netuno', 1700, 150)" >
     </div>
     <div id = "mercurio">
-     <img id = "mercurio" src="imagens/mercurio.gif" ondblclick="Quiz('Mercúrio')">
+     <img id = "mercurio" src="imagens/mercurio.gif" ondblclick="Quiz('Mercúrio', -240, 170)">
     </div>
     <div id = "marte">
-     <img id = "marte" src="imagens/marte.gif" ondblclick="Quiz('Marte')">
+     <img id = "marte" src="imagens/marte.gif" ondblclick="Quiz('Marte', 300, 175)">
     </div>
     <div id = "plutao">
-     <img id = "plutao" src="imagens/plutao.gif" ondblclick="Quiz('Plutão')">
+     <img id = "plutao" src="imagens/plutao.gif" ondblclick="Quiz('Plutão', 2050, 180)">
     </div>
      <div id = "venus">
-     <img id = "venus" src="imagens/venus.gif" ondblclick="Quiz('Vênus')">
+     <img id = "venus" src="imagens/venus.gif" ondblclick="Quiz('Vênus', -65, 160)">
     </div>
     <div id = "terra">
-     <img id = "terra" src="imagens/terra.gif" ondblclick="Quiz('Terra')">
+     <img id = "terra" src="imagens/terra.gif" ondblclick="Quiz('Terra', 120, 160)">
     </div> 
     <div id = "saturno">
-     <img id = "saturno" src="imagens/saturno.gif" ondblclick="Quiz('Saturno')">
+     <img id = "saturno" src="imagens/saturno.gif" ondblclick="Quiz('Saturno',918, 100)">
     </div>
      <div id = "urano">
-     <img id = "urano" src="imagens/urano.gif" ondblclick="Quiz('Urano')">
+     <img id = "urano" src="imagens/urano.gif" ondblclick="Quiz('Urano', 1400, 140)">
     </div>
      <div id = "sol">
-     <img id = "sol" src="imagens/sol.gif" ondblclick="Quiz('Sol')">
+     <img id = "sol" src="imagens/sol.gif" ondblclick="Quiz('Sol', -700, 5)">
     </div>
 
     <button type="button" id="quiz" class="classeBotao" onclick="window.open('quiz.html')">QUIZ</button>
 
-      <div id="tela" 
-     style="background-color: lightgreen;position: absolute;
-         width: 50%; 
-         height: 500px; 
-         border-radius: 20%; 
-         display: none;">
+      <div id="tela">
 
           <form name = "form" method="post">
 
-         <center> <h1 id="qual" style="font-size: 30px;color: blue; "></h1> </center>
+         <center> <h1 id="qual"></h1> </center>
 
-         <h2 id="escrever" style="font-size: 18px; color: black; position: absolute; left: 40px; top: 80px;"></h2>
+         <h2 id="escrever"></h2>
 
-         <button id="btn" style="position: absolute; left: 360px; top: 460px; width: 5%; height: 5%;" onclick="sair()">OK</button>
+         <button id="btn" onclick="sair()">OK</button>
 
-        
-            
              </form>
      </div>
 
