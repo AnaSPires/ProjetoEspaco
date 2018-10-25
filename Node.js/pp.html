@@ -5,12 +5,17 @@
   <link rel="shortcut icon" href="favicon.ico" >
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
 
   <script>
+    var nivel =  1;
 
     /*-----------------------------------------------------------------------------------------------------------------------------------------*/
 
-    function aquiii(qual)
+    /*function aquiii(qual)
     {
       //alert(event.clientX);
       //alert(event.clientY);
@@ -19,18 +24,18 @@
         return event.clientX;
       else
         return event.clientY;
-    }
+    }*/
 
    function Quiz(qual, x, y) {
 
-    alert(y);
+   // alert("Y: " + y + "X: " + x);
 
     var xmlhttp = new XMLHttpRequest();
     var url = "http://localhost:3000/elementos";
 
     xmlhttp.onreadystatechange=function(){
         if (this.readyState == 4 && this.status == 200){
-            ExibeDados(this.responseText, aquiii(0), aquiii(27));
+            ExibeDados(this.responseText, qual, x, y);
           }
         }
 
@@ -39,18 +44,7 @@
     xmlhttp.send();
 } 
 
-function ExibeDados(response, x, y) {
-
-  var sy = document.getElementById("body").scrollY;
-
-  var sx = document.getElementById("body").scrollX;
-
-  //alert(typeof sx + sx);
-
-  document.getElementById("tela").style.display = "block";
-  document.getElementById("tela").style.position = "absolute";
-  document.getElementById("tela").style.left = x; 
-  document.getElementById("tela").style.top = y;
+function ExibeDados(response,qual, x, y) {
 
     var arr = JSON.parse(response);
     
@@ -79,6 +73,11 @@ function ExibeDados(response, x, y) {
     out2 += "</h2>";
     document.getElementById("qual").innerHTML = out;   
     document.getElementById("escrever").innerHTML = out2;
+
+      document.getElementById("tela").style.display = "block";
+  document.getElementById("tela").style.position = "relative";
+  document.getElementById("tela").style.left = x; 
+  document.getElementById("tela").style.top = y;
 }
 
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -131,40 +130,40 @@ document.onmouseup=new Function("isdrag=false");
 
  <link href="pp.css" rel="stylesheet" type="text/css">
 
-   <body id="body" class="dragme" onclick="aquiii()">
+   <body id="body" class="dragme">
 
     <div id = "jupiter">
-     <img id = "jupiter" src="imagens/jupiter.gif" ondblclick="Quiz('Júpiter', 510, 67)" >
+     <img class="responsive-img" class="circle" id = "jupiter" src="imagens/jupiter.gif" ondblclick="Quiz('Júpiter', 510, 67)" >
     </div>
-    <div id = "netuno">
-     <img id = "netuno" src="imagens/netuno.gif" ondblclick="Quiz('Netuno', 1700, 150)" >
+    <div  id = "netuno">
+     <img class="responsive-img" class="circle" id = "netuno" src="imagens/netuno.gif" ondblclick="Quiz('Netuno', 1700, 150)" >
     </div>
     <div id = "mercurio">
-     <img id = "mercurio" src="imagens/mercurio.gif" ondblclick="Quiz('Mercúrio', -240, 170)">
+     <img class="responsive-img" class="circle" id = "mercurio" src="imagens/mercurio.gif" ondblclick="Quiz('Mercúrio', -240, 170)">
     </div>
     <div id = "marte">
-     <img id = "marte" src="imagens/marte.gif" ondblclick="Quiz('Marte', 300, 175)">
+     <img class="responsive-img" class="circle" id = "marte" src="imagens/marte.gif" ondblclick="Quiz('Marte', 300, 175)">
     </div>
     <div id = "plutao">
-     <img id = "plutao" src="imagens/plutao.gif" ondblclick="Quiz('Plutão', 2050, 180)">
+     <img class="responsive-img" class="circle" id = "plutao" src="imagens/plutao.gif" ondblclick="Quiz('Plutão', 2050, 180)">
     </div>
      <div id = "venus">
-     <img id = "venus" src="imagens/venus.gif" ondblclick="Quiz('Vênus', -65, 160)">
+     <img class="responsive-img" class="circle" id = "venus" src="imagens/venus.gif" ondblclick="Quiz('Vênus', -65, 160)">
     </div>
     <div id = "terra">
-     <img id = "terra" src="imagens/terra.gif" ondblclick="Quiz('Terra', 120, 160)">
+     <img class="responsive-img" class="circle" id = "terra" src="imagens/terra.gif" ondblclick="Quiz('Terra', 120, 160)">
     </div> 
     <div id = "saturno">
-     <img id = "saturno" src="imagens/saturno.gif" ondblclick="Quiz('Saturno',918, 100)">
+     <img class="responsive-img" class="circle" id = "saturno" src="imagens/saturno.gif" ondblclick="Quiz('Saturno',918, 100)">
     </div>
      <div id = "urano">
-     <img id = "urano" src="imagens/urano.gif" ondblclick="Quiz('Urano', 1400, 140)">
+     <img class="responsive-img" class="circle" id = "urano" src="imagens/urano.gif" ondblclick="Quiz('Urano', 1400, 140)">
     </div>
      <div id = "sol">
-     <img id = "sol" src="imagens/sol.gif" ondblclick="Quiz('Sol', -700, 5)">
+     <img class="responsive-img" class="circle" id = "sol" src="imagens/sol.gif" ondblclick="Quiz('Sol', -700, 5)">
     </div>
 
-    <button type="button" id="quiz" class="classeBotao" onclick="window.open('quiz.html')">QUIZ</button>
+    <button type="button" class="circle" id="quiz" class="classeBotao" onclick="window.open('quiz.html')">QUIZ</button>
 
       <div id="tela">
 
