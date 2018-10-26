@@ -11,8 +11,20 @@
   <!--Let browser know website is optimized for mobile-->
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script>
-
-
+            
+            valido = true;
+           function Alo()
+            {
+                var senha1 = document.getElementById("password").value;
+                 var senha2 = document.getElementById("password2").value;
+                if(senha1!=senha2)
+                    {
+                     document.getElementsByClassName("tooltiptext")[0].style.display = "block";
+                        document.getElementsByClassName("tooltiptext")[0].style. visibility = "visible";
+                     document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
+                    }
+                    
+            }
 
             function Cadastro()
             {
@@ -21,38 +33,29 @@
                document.getElementsByClassName("transparencia")[0].style.filter = "brightness(20%)";
 
             }
-
-           
-            function Verificar()
+            
+            function Validar()
             {
-                var username = document.getElementById("username").value;
-                 var senha = document.getElementById("senha").value;
-                if(username =="" || senha == "" )
+                debugger;
+                    if(senha1!=senha2)
                     {
-                    
-                   document.getElementById("username").value = "";
-                    document.getElementById("senha").value = "";
-                    document.getElementById("username").focus();
+                        document.getElementsByClassName("tooltiptext")[0].style.display = "block";
+                        document.getElementsByClassName("tooltiptext")[0].style. visibility = "visible";
+                        document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
+                         valido = false;
                     }
-                else
-                {
-                    if(usuario.length <5 || senha.length<6)
-                        {
-                        alert(" Seu usu\u00e1rio ou senha est\u00e3o incorretos. Por favor, tente novamente");
-                            document.getElementById("username").value = "";
-                            document.getElementById("senha").value = "";
-                            document.getElementById("username").focus();
-                        }
-                    else
-                        {
-                        window.open("./html/pp.html");
-                        }
-                    
-        
-                }
+                return valido;
             }
             
-        </script>
+            function Abrir()
+            {
+                if(Validar())
+                window.open('http://www.google.com.br');
+            }
+            
+            
+            
+                    </script>
 
     </head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
@@ -109,7 +112,7 @@
                 <div class="posicao">  
                 <br><br>
                 <div class="row">
-            <form class="col s12">
+            <form class="col s12" onsubmit="Validar()">
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
@@ -152,16 +155,15 @@
                 <div class="input-field col s16">
                   <div class="tooltip">
                     <i class="material-icons prefix">lock</i>
-                  <input id="password2" type="password" class="validate" required>
+                  <input id="password2" type="password" onblur="Alo()" class="validate" required>
                   
-                  <label for="password2">Confirmar senha</label>
+                  <label for="password2" >Confirmar senha</label>
                   <span class="tooltiptext">Tooltip text</span>
                 </div>
                 </div>
               </div>
-              
-              <button  onclick="Verificar('frmCont')" class="css3button" id = "botao"> Cadastrar </button><br><br><br>
-              
+              <input type="submit" class="txtSubmit" id = "botao" value="Cadastrar"> <br><br><br>
+               
             </form>
            
           </div>

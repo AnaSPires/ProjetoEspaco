@@ -22,7 +22,6 @@ header
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
 /* Tooltip text */
@@ -34,7 +33,7 @@ header
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-
+    display: none;
     /* Position the tooltip text */
     position: absolute;
     z-index: 1;
@@ -60,9 +59,47 @@ header
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+
+.txtSubmit
+{
+
+border: 1px solid #eee;
+position: relative;
+border-radius: 20px;
+left: 100px;
+box-shadow: 5px 5px 5px #eee;
+
+text-shadow:none;
+	font-size: 14px;
+	color: #123d54;
+	padding: 10px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#afd9fa 0%,
+		#ffffff 75%,
+		#588fad);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#afd9fa),
+		color-stop(0.75, #ffffff),
+		to(#588fad));
+    border: 1px solid #003366;
+	-moz-box-shadow:
+		4px 3px 10px rgba(137,78,204,1),
+		inset 0px 0px 1px rgba(144,192,209,1);
+	-webkit-box-shadow:
+		4px 3px 10px rgba(137,78,204,1),
+		inset 0px 0px 1px rgba(144,192,209,1);
+	box-shadow:
+		4px 3px 10px rgba(137,78,204,1),
+		inset 0px 0px 1px rgba(144,192,209,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.7),
+		-1px 1px 0px rgba(240,247,250,1);
+    font-family:"Century Gothic";
+    font-weight: 600;
+    font-size: 20px;
+
 }
 
 .logo
@@ -129,7 +166,13 @@ header
 {
      border-bottom: 1px solid red;
      box-shadow: 0 1px 0 0 red;
-   }
+}
+
+#password2.valid
+{
+     border-bottom: 1px solid #088A68;
+     box-shadow: 0 1px 0 0 #088A68;
+}
 
 .transparencia
 {
@@ -156,8 +199,8 @@ header
     height: 850px;
     background-color: white;
     position: absolute;
-    top: 200px;
-    left: 550px;
+    top: 150px;
+    left: 450px;
     z-index: 100;
     display: none;
 }
