@@ -1,93 +1,37 @@
-<html>
-<head>
- 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <script type="text/javascript">
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  	document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
-   
-    var instance = M.Sidenav.getInstance(elem);
-    instance.open();
+     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    
+     <script>
+ $(function(){
+     $(".button-collapse").sideNav();
+ });
+ </script>
 
+ </head>
+ <body>    
+     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
-  	
-  </script>
+       <nav>
+     <div class="nav-wrapper">
+         <a href="#" class="brand-logo" data-activates="menu-mobile" class="button-collapse">
+             <i class="material-icons">menu</i>
+         </a>
+  
+        <ul class="side-nav" id="menu-mobile">
+             <li><a href="#">Angular</a></li>
+            <li><a href="#">Ionic</a></li>
+             <li><a href="#">TypeScript</a></li>
+             <li><a href="#">Cordova</a></li>
+         </ul>
+     </div>
+ </nav>
 
-</head>
-<body>
- <nav> <!-- navbar content here  --> </nav>
-
-  <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="sol.gif">
-      </div>
-      <a href="#user"><img class="circle" src="sol.gif"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        
-
-  <ul id="slide-out" class="sidenav">
-      <li><a class="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
-
-
-    <ul id="slide-out" class="sidenav">
-      <li><a href="#!">First Sidebar Link</a></li>
-      <li><a href="#!">Second Sidebar Link</a></li>
-      <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Dropdown<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#!">First</a></li>
-                <li><a href="#!">Second</a></li>
-                <li><a href="#!">Third</a></li>
-                <li><a href="#!">Fourth</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="#!">First Sidebar Link</a></li>
-      <li><a href="#!">Second Sidebar Link</a></li>
-      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-      <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="#!">First</a></li>
-        <li><a href="#!">Second</a></li>
-        <li><a href="#!">Third</a></li>
-        <li><a href="#!">Fourth</a></li>
-      </ul>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
-
-    <ul id="slide-out" class="sidenav">
-      <li><a href="#!">First Sidebar Link</a></li>
-      <li><a href="#!">Second Sidebar Link</a></li>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-        
-     
-</body>
-      </html>
+ </body>
+ </html>
