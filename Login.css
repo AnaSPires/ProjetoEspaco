@@ -162,6 +162,8 @@ text-shadow:none;
     color: red;
     
 }
+
+
 .input-field input[type=text].invalid 
 {
      border-bottom: 1px solid red;
@@ -170,8 +172,8 @@ text-shadow:none;
 
 #password2.valid
 {
-     border-bottom: 1px solid #088A68;
-     box-shadow: 0 1px 0 0 #088A68;
+     border-bottom: 1px solid green;
+     box-shadow: 0 1px 0 0 green;
 }
 
 .transparencia

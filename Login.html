@@ -27,28 +27,43 @@
                 var senha1 = document.getElementById("password").value;
                  var senha2 = document.getElementById("password2").value;
                 
-                    if(senha1!=senha2)
+                    if(senha1!=senha2 && senha2!="")
                     {
                         document.getElementsByClassName("tooltiptext")[0].style.display = "block";
                         document.getElementsByClassName("tooltiptext")[0].style. visibility = "visible";
                         document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
+                        valido = false;
+                    }
+                    else
+                    {
+                       document.getElementsByClassName("tooltiptext")[0].style.display = "none";
+                        document.getElementsByClassName("tooltiptext")[0].style. visibility = "hidden";
+                        document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
+                        valido = true;
                     }
             }
-            
-            function onLoad()
+
+            function Data()
             {
-                var senha1 = document.getElementById("password").value;
-                 var senha2 = document.getElementById("password2").value;
-                
-                if(senha1!=senha2)
-                    valido = false;
-                return valido;
+              debugger;
+              alert("ALOUI");
+              var data = hAPI.getCardValue("data"); //pega o valor do campo date no html
+              alert(data);
+              var firstDate = new Date(data); //coloca dentro de firstDate o valor de retorno da variavel data.
+
+              
             }
+            
+           
             
             function Abrir()
             {
-                if(onLoad())
-                window.open('http://www.google.com.br');
+                if(onLoad()){
+                   window.open('http://www.google.com.br');
+                   alert("entrou onload");
+                 } 
+                 else 
+                 alert("ue");
             }
             
             
@@ -110,7 +125,7 @@
                 <div class="posicao">  
                 <br><br>
                 <div class="row">
-            <form class="col s12" onsubmit="onLoad()">
+            <form class="col s12" name = "form1" onsubmit=" return false;">
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
@@ -137,7 +152,7 @@
             <div class="row">    
             <div class="input-field col s6">
                  <i class="material-icons prefix">insert_invitation</i>
-                <input type="date" name='aniversario' class="datepicker">
+                <input type="date" name='aniversario' class="datepicker" onblur="Data()">
                 <label for="aniversario">Data Nascimento</label>
             </div>
                 </div>
@@ -145,7 +160,7 @@
               <div class="row">
                 <div class="input-field col s16">
                     <i class="material-icons prefix">lock</i>
-                  <input id="password" type="password" class="validate" required pattern=".{8,}" >
+                  <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()">
                   <label for="password">Senha</label>
                 </div>
               </div>
@@ -156,11 +171,11 @@
                   <input id="password2" type="password" onblur="Tool()" class="validate" required>
                   
                   <label for="password2" >Confirmar senha</label>
-                  <span class="tooltiptext">Tooltip text</span>
+                  <span class="tooltiptext">As senhas não batem.</span>
                 </div>
                 </div>
               </div>
-              <input type="submit" class="txtSubmit" id = "botao" value="Cadastrar"> <br><br><br>
+              <button class="txtSubmit" id = "botao">Cadastrar</button><br><br><br>
                
             </form>
            
