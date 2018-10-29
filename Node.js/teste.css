@@ -1,0 +1,13 @@
+html
+{
+  background-color: grey;
+}
+
+#menu
+{
+	background-color: black;
+}
+.side-nav
+{
+	display: block;
+}

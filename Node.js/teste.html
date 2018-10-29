@@ -10,15 +10,14 @@
      <script>
         window.onload = function(){
             var urlString = window.location.toString();
-            //alert(urlString);
             var url = new URL(urlString);
-            alert(url);
-            var param = url.searchParams.get("planeta");
-            alert(param);
+            var param = location.search.substring(url.length); 
+            var planeta = param.substring(8);
+            alert(planeta);
         }
 
 
- $(function(){
+ /*$(function(){
      $(".button-collapse").sideNav();
  });
 
@@ -79,15 +78,22 @@ function ExibeDados(response,qual, x, y) {
 
        <nav>
      <div class="nav-wrapper">
-         <a href="#" data-activates="menu-mobile" class="button-collapse" class="brand-logo">menu</a>
+      
+         <a href="#" data-activates="menu-mobile" class="button-collapse" class="brand-logo">
              <i class="material-icons">menu</i>
          </a>
   
         <ul class="side-nav" id="menu-mobile">
-             <li><a href="#">Angular</a></li>
-            <li><a href="#">Ionic</a></li>
-             <li><a href="#">TypeScript</a></li>
-             <li><a href="#">Cordova</a></li>
+             <li><a href="#">Descrição</a></li>
+             <li><a href="#">Tamanho</a></li>
+             <li><a href="#">Massa</a></li>
+             <li><a href="#">Distância</a></li>
+             <li><a href="#">Período Orbital</a></li>
+             <li><a href="#">Período de Rotação</a></li>
+             <li><a href="#">Gravidade</a></li>
+             <li><a href="#">Temperatura</a></li>
+             <li><a href="#">Composição</a></li>
+             <li><a href="#">Estrutura</a></li>
          </ul>
      </div>
  </nav>
