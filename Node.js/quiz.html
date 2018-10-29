@@ -1,4 +1,4 @@
-<html>
+<html class="responsive-img">
 <head>
 	<title>QUIZ</title>
 
@@ -8,8 +8,6 @@
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <script>
-
-//https://materializecss.com/media.html
 
     //Atualizar -- AJAX
 
@@ -31,11 +29,6 @@
 
  window.onbeforeunload = function() {
 
-    /*document.getElementById("a").toggle();
-    document.getElementById("b").toggle();
-    document.getElementById("c").toggle();
-    document.getElementById("d").toggle();*/
- 
     var xmlhttp = new XMLHttpRequest();
     var url = "http://localhost:3000/perguntas/" + nivel;
 
@@ -49,10 +42,7 @@
    
     xmlhttp.send(); 
  
-     return "Os dados do formulário serão perdidos.";
-
- 
-
+    //return "Os dados do formulário serão perdidos.";
 }
 
     /*----------------------------------------------------------------------------------------------------------------------------------------*/

@@ -1,4 +1,4 @@
-<html>
+<html class="responsive-img">
  <head>
 
  <title>Projeto Pr&aacute;ticas Profissionais</title>
@@ -15,20 +15,20 @@
 
     /*-----------------------------------------------------------------------------------------------------------------------------------------*/
 
-    /*function aquiii(qual)
+    function aquiii(qual)
     {
-      //alert(event.clientX);
-      //alert(event.clientY);
+      alert("Event: " + event.clientX);
+      alert("Event: " + event.clientY);
 
       if (qual == 0)
         return event.clientX;
       else
         return event.clientY;
-    }*/
+    }
 
    function Quiz(qual, x, y) {
 
-   // alert("Y: " + y + "X: " + x);
+    alert("Y: " + y + "X: " + x);
 
     var xmlhttp = new XMLHttpRequest();
     var url = "http://localhost:3000/elementos";
@@ -165,13 +165,15 @@ document.onmouseup=new Function("isdrag=false");
 
     <button type="button" class="circle" id="quiz" class="classeBotao" onclick="window.open('quiz.html')">QUIZ</button>
 
-      <div id="tela">
+      <div class="center-align" id="tela">
 
           <form name = "form" method="post">
 
-         <center> <h1 id="qual"></h1> </center>
+         <div class="center-align">
+                <h1 id="qual"></h1>
+        </div> 
 
-         <h2 id="escrever"></h2>
+       <div class="left-align">  <h2 id="escrever"></h2> </div>
 
          <button id="btn" onclick="sair()">OK</button>
 

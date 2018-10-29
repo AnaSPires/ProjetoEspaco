@@ -34,6 +34,32 @@ insert into Perguntas values('Qual o maior planeta do sistema solar?', 'Plutão',
 insert into Perguntas values('Qual o menor planeta do sistema solar?', 'Mercúrio', 'Netuno', 'Marte', 'Terra', 'a');
 insert into Perguntas values('Qual o planeta mais legal do sistema solar?', 'Plutão', 'Júpiter', 'Saturno', 'Terra', 'd');
 
+update Perguntas set enunciado = 'Existem quantos Planetas no Sistema solar?' where codPergunta = 3
+update Perguntas set alternativaA = '5' where codPergunta = 3
+update Perguntas set alternativaB = '6' where codPergunta = 3
+update Perguntas set alternativaC = '7' where codPergunta = 3
+update Perguntas set alternativaD = '8' where codPergunta = 3
+
+insert into Perguntas values('Existem quantos "planetas anões", no Sistema Solar?', '1', '3', '5', '4', 'c')
+
+insert into Perguntas values('A partir de 2006, qual destes planetas deixou de ser considerado um Planeta?', 'Mercúrio', 'Plutão', 'Vênus', 'Netuno', 'b')
+
+insert into Perguntas values('Qual o planeta que está mais próximo do Sol?', 'Terra', 'Urano', 'Vênus', 'Mercúrio', 'd')
+insert into Perguntas values('O Planeta Terra tem aproximadamente quantos bilhões de anos ?', '4,5', '5,5', '6,6', '5,6', 'a')
+insert into Perguntas values('Quais são os planetas telúricos do sistema solar?', 'Urano, Marte, Plutão e Mercúrio', '
+Terra, Saturno, Vênus e Marte', '
+Mercúrio, Vênus, Terra e Marte', 'Plutão, Vênus, Júpiter e Mercúrio', 'c')
+
+update Perguntas set enunciado = 'Qual é a maior estrela do sistema solar?' where codPergunta = 9
+update Perguntas set alternativaA = 'Rigel' where codPergunta = 9
+update Perguntas set alternativaB = 'Polaris' where codPergunta = 9
+update Perguntas set alternativaC = 'Deneb' where codPergunta = 9
+update Perguntas set alternativaD = 'Sol' where codPergunta = 9
+update Perguntas set correta = 'd' where codPergunta = 9
+
+insert into Perguntas values('Qual é o planeta que é composto por 75% de água?', 'Terra', 'Urano', 'Netuno', 'Mercúrio', 'a')
+
+
 create table Arquivos(
 imagens varchar(30),
 sons varchar(30),
