@@ -11,9 +11,16 @@
 
 
   <script>
-    var nivel =  1;
 
-    /*-----------------------------------------------------------------------------------------------------------------------------------------*/
+   function Quiz(qual)
+   {
+      var parametro = "?planeta" + qual;//btoa(sla), encriptação js
+      //alert(parametro);
+      window.open("teste.html" + parametro);
+   }
+
+
+    /*var nivel =  1;
 
     function aquiii(qual)
     {
@@ -78,7 +85,7 @@ function ExibeDados(response,qual, x, y) {
   document.getElementById("tela").style.position = "relative";
   document.getElementById("tela").style.left = x; 
   document.getElementById("tela").style.top = y;
-}
+}*/
 
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 

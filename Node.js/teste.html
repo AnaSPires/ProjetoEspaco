@@ -8,9 +8,68 @@
      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     
      <script>
+        window.onload = function(){
+            var urlString = window.location.toString();
+            //alert(urlString);
+            var url = new URL(urlString);
+            alert(url);
+            var param = url.searchParams.get("planeta");
+            alert(param);
+        }
+
+
  $(function(){
      $(".button-collapse").sideNav();
  });
+
+ 
+   function Quiz(qual) {
+
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://localhost:3000/elementos";
+
+    xmlhttp.onreadystatechange=function(){
+        if (this.readyState == 4 && this.status == 200){
+            ExibeDados(this.responseText, qual);
+          }
+        }
+
+        xmlhttp.open("GET", url, true);
+   
+    xmlhttp.send();
+} 
+
+function ExibeDados(response,qual, x, y) {
+
+    var arr = JSON.parse(response);
+    
+    var out = "<h1>";
+    var out2 = "<h2>";
+
+    for(var i = 0; i < arr.length; i++) 
+    {
+      if(qual == arr[i].nome){
+        out += arr[i].nome;
+        out2 += 
+        arr[i].descricao + "<br>" +  
+        arr[i].tamanho +  "<br>" +
+        arr[i].massa +  "<br>" +
+        arr[i].distancia +  "<br>" +
+        arr[i].periodoOrbital +  "<br>" +
+        arr[i].periodoRotacao +  "<br>" +
+        arr[i].gravidade +  "<br>" +
+        arr[i].temperatura +  "<br>" +
+        arr[i].composicao +  "<br>" +
+        arr[i].estrutura;
+      }
+
+    }
+    out += "</h1>";
+    out2 += "</h2>";
+    document.getElementById("qual").innerHTML = out;   
+    document.getElementById("escrever").innerHTML = out2;
+}
+
  </script>
 
  </head>
@@ -20,7 +79,7 @@
 
        <nav>
      <div class="nav-wrapper">
-         <a href="#" class="brand-logo" data-activates="menu-mobile" class="button-collapse">
+         <a href="#" data-activates="menu-mobile" class="button-collapse" class="brand-logo">menu</a>
              <i class="material-icons">menu</i>
          </a>
   
@@ -32,6 +91,13 @@
          </ul>
      </div>
  </nav>
+
+
+         <div class="center-align">
+                <h1 id="qual"></h1>
+        </div> 
+
+       <div class="left-align">  <h2 id="escrever"></h2> </div>
 
  </body>
  </html>
