@@ -3,6 +3,7 @@ html
 {
    background-image: url('imagens/fundo.gif');
    cursor: grab;
+   
 }
 
 html:active

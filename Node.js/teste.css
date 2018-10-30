@@ -2,12 +2,51 @@ html
 {
   background-color: grey;
 }
-
 #menu
 {
+	display: block;
 	background-color: black;
 }
-.side-nav
+.center-align {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font: bold;
+}
+
+.center-align2 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font: bold;
+}
+#numero1
 {
-	display: block;
+	border-radius: 100%;
+	position: relative;
+	width: 2%;
+	height: 2%;
+	background-color: red;
+}
+#numero2
+{
+	border-radius: 100%;
+	position: relative;
+	width: 2%;
+	height: 2%;
+	background-color: red;
+}
+#numero3
+{
+	border-radius: 100%;
+	position: relative;
+	top: 300px;
+	left: 600px;
+	width: 2%;
+	height: 2%;
+	background-color: red;
 }

@@ -8,19 +8,21 @@
      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     
      <script>
+
+       var arr;
+       var planeta;
+
         window.onload = function(){
             var urlString = window.location.toString();
             var url = new URL(urlString);
             var param = location.search.substring(url.length); 
-            var planeta = param.substring(8);
-            alert(planeta);
+            planeta = param.substring(8);
+             document.getElementById("qualPlaneta").innerHTML = planeta;
+             
+            Quiz(planeta);
+
+            //$(".button-collapse").sideNav();
         }
-
-
- /*$(function(){
-     $(".button-collapse").sideNav();
- });
-
  
    function Quiz(qual) {
 
@@ -38,72 +40,88 @@
     xmlhttp.send();
 } 
 
-function ExibeDados(response,qual, x, y) {
+function ExibeDados(response,qual) {
+    arr = JSON.parse(response);   
+}
 
-    var arr = JSON.parse(response);
-    
-    var out = "<h1>";
-    var out2 = "<h2>";
-
-    for(var i = 0; i < arr.length; i++) 
+function menu(oq){
+	for(var i = 0; i < arr.length; i++) 
     {
-      if(qual == arr[i].nome){
-        out += arr[i].nome;
-        out2 += 
-        arr[i].descricao + "<br>" +  
-        arr[i].tamanho +  "<br>" +
-        arr[i].massa +  "<br>" +
-        arr[i].distancia +  "<br>" +
-        arr[i].periodoOrbital +  "<br>" +
-        arr[i].periodoRotacao +  "<br>" +
-        arr[i].gravidade +  "<br>" +
-        arr[i].temperatura +  "<br>" +
-        arr[i].composicao +  "<br>" +
-        arr[i].estrutura;
-      }
-
+    	if(planeta == arr[i].nome){
+    	if(oq == descricao)
+          document.getElementById("escrever").innerHTML = arr[i].descricao;
+      else{
+      	if(oq == tamanho)
+           document.getElementById("escrever").innerHTML = arr[i].tamanho;
+        else{
+        	if(oq == distancia)
+               document.getElementById("escrever").innerHTML = arr[i].massa;
+           else{
+           	if(oq == distancia)
+               document.getElementById("escrever").innerHTML = arr[i].distancia;
+           else{
+           	if(oq == orbital)
+               document.getElementById("escrever").innerHTML = arr[i].periodoOrbital;
+           else{
+           	if(oq == rotacao)
+               document.getElementById("escrever").innerHTML = arr[i].periodoRotacao;
+           else{
+           	if(oq == gravidade)
+              document.getElementById("escrever").innerHTML = arr[i].gravidade;
+          else{
+          	if(oq == temperatura)
+               document.getElementById("escrever").innerHTML = arr[i].temperatura;
+           else{
+           	if(oq == composicao)
+              document.getElementById("escrever").innerHTML = arr[i].composicao;
+          else
+              document.getElementById("escrever").innerHTML = arr[i].estrutura;
     }
-    out += "</h1>";
-    out2 += "</h2>";
-    document.getElementById("qual").innerHTML = out;   
-    document.getElementById("escrever").innerHTML = out2;
+    }}}}}}}}}
+      
 }
 
  </script>
 
  </head>
+
+ <link href="teste.css" rel="stylesheet" type="text/css">
+
  <body>    
      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
        <nav>
      <div class="nav-wrapper">
-      
-         <a href="#" data-activates="menu-mobile" class="button-collapse" class="brand-logo">
-             <i class="material-icons">menu</i>
-         </a>
-  
-        <ul class="side-nav" id="menu-mobile">
-             <li><a href="#">Descrição</a></li>
-             <li><a href="#">Tamanho</a></li>
-             <li><a href="#">Massa</a></li>
-             <li><a href="#">Distância</a></li>
-             <li><a href="#">Período Orbital</a></li>
-             <li><a href="#">Período de Rotação</a></li>
-             <li><a href="#">Gravidade</a></li>
-             <li><a href="#">Temperatura</a></li>
-             <li><a href="#">Composição</a></li>
-             <li><a href="#">Estrutura</a></li>
-         </ul>
+          <a id="qualPlaneta" href="#" class="brand-logo" value=""></a>
+         
      </div>
  </nav>
 
+
+      <nav id="menu">
+
+        <ul class="sidenav">
+             <li id="descricao" onclick="menu(descricao)"><a href="#">Descrição</a></li>
+             <li id="tamanho"   onclick="menu(tamanho)"><a href="#">Tamanho</a></li>
+             <li id="massa"     onclick="menu(massa)"><a href="#">Massa</a></li>
+             <li id="distancia" onclick="menu(distancia)"><a href="#">Distância</a></li>
+             <li id="orbital"   onclick="menu(orbital)"><a href="#">Período Orbital</a></li>
+             <li id="rotacao"   onclick="menu(rotacao)"><a href="#">Período de Rotação</a></li>
+             <li id="gravidade" onclick="menu(gravidade)"><a href="#">Gravidade</a></li>
+             <li id="temperatura" onclick="menu(temperatura)"><a href="#">Temperatura</a></li>
+             <li id="composicao"  onclick="menu(composicao)"><a href="#">Composição</a></li>
+             <li id="estrutura"   onclick="menu(estrutura)"><a href="#">Estrutura</a></li>
+         </ul>
+          </nav>
+    
 
          <div class="center-align">
                 <h1 id="qual"></h1>
         </div> 
 
-       <div class="left-align">  <h2 id="escrever"></h2> </div>
+       <div class="center-align2">  <h2 id="escrever"></h2> </div>
+
 
  </body>
  </html>

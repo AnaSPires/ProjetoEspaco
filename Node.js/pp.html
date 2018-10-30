@@ -20,73 +20,6 @@
    }
 
 
-    /*var nivel =  1;
-
-    function aquiii(qual)
-    {
-      alert("Event: " + event.clientX);
-      alert("Event: " + event.clientY);
-
-      if (qual == 0)
-        return event.clientX;
-      else
-        return event.clientY;
-    }
-
-   function Quiz(qual, x, y) {
-
-    alert("Y: " + y + "X: " + x);
-
-    var xmlhttp = new XMLHttpRequest();
-    var url = "http://localhost:3000/elementos";
-
-    xmlhttp.onreadystatechange=function(){
-        if (this.readyState == 4 && this.status == 200){
-            ExibeDados(this.responseText, qual, x, y);
-          }
-        }
-
-        xmlhttp.open("GET", url, true);
-   
-    xmlhttp.send();
-} 
-
-function ExibeDados(response,qual, x, y) {
-
-    var arr = JSON.parse(response);
-    
-    var out = "<h1>";
-    var out2 = "<h2>";
-
-    for(var i = 0; i < arr.length; i++) 
-    {
-      if(qual == arr[i].nome){
-        out += arr[i].nome;
-        out2 += 
-        arr[i].descricao + "<br>" +  
-        arr[i].tamanho +  "<br>" +
-        arr[i].massa +  "<br>" +
-        arr[i].distancia +  "<br>" +
-        arr[i].periodoOrbital +  "<br>" +
-        arr[i].periodoRotacao +  "<br>" +
-        arr[i].gravidade +  "<br>" +
-        arr[i].temperatura +  "<br>" +
-        arr[i].composicao +  "<br>" +
-        arr[i].estrutura;
-      }
-
-    }
-    out += "</h1>";
-    out2 += "</h2>";
-    document.getElementById("qual").innerHTML = out;   
-    document.getElementById("escrever").innerHTML = out2;
-
-      document.getElementById("tela").style.display = "block";
-  document.getElementById("tela").style.position = "relative";
-  document.getElementById("tela").style.left = x; 
-  document.getElementById("tela").style.top = y;
-}*/
-
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 var ie=document.all;
@@ -137,7 +70,9 @@ document.onmouseup=new Function("isdrag=false");
 
  <link href="pp.css" rel="stylesheet" type="text/css">
 
-   <body id="body" class="dragme">
+   <body id="body" class="dragme"> 
+
+   
 
     <div id = "jupiter">
      <img class="responsive-img" class="circle" id = "jupiter" src="imagens/jupiter.gif" ondblclick="Quiz('Júpiter', 510, 67)" >
@@ -170,9 +105,7 @@ document.onmouseup=new Function("isdrag=false");
      <img class="responsive-img" class="circle" id = "sol" src="imagens/sol.gif" ondblclick="Quiz('Sol', -700, 5)">
     </div>
 
-    <button type="button" class="circle" id="quiz" class="classeBotao" onclick="window.open('quiz.html')">QUIZ</button>
-
-      <div class="center-align" id="tela">
+   <div class="center-align" id="tela">
 
           <form name = "form" method="post">
 
