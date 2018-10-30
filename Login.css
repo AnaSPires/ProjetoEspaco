@@ -172,8 +172,8 @@ text-shadow:none;
 
 #password2.valid
 {
-     border-bottom: 1px solid green;
-     box-shadow: 0 1px 0 0 green;
+     border-bottom: 1px solid #57A856;
+     box-shadow: 0 1px 0 0 #57A856;
 }
 
 .transparencia

@@ -32,26 +32,34 @@
                         document.getElementsByClassName("tooltiptext")[0].style.display = "block";
                         document.getElementsByClassName("tooltiptext")[0].style. visibility = "visible";
                         document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
-                        valido = false;
+                       document.getElementById("password2").style.borderBottom = "1px solid red";
+                        document.getElementById("password2").style.boxShadow = "0 1px 0 0 red";
+                       //document.getElementById("password2")[0].valid = "false";
                     }
                     else
                     {
                        document.getElementsByClassName("tooltiptext")[0].style.display = "none";
                         document.getElementsByClassName("tooltiptext")[0].style. visibility = "hidden";
-                        document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
-                        valido = true;
+                        document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";        
+                         document.getElementById("password2").style.borderBottom = "1px solid #57A856";
+                         document.getElementById("password2").style.boxShadow = "0 1px 0 0 #57A856";
+                         valido = true;
                     }
             }
 
-            function Data()
+             function TirarTool()
             {
-              debugger;
-              alert("ALOUI");
-             var data = hAPI.getCardValue("aniversario");
-              var firstDate = new Date(data); //coloca dentro de firstDate o valor de retorno da variavel data.
-              alert(firstDate.getDate());
+                var senha1 = document.getElementById("password").value;
+                 var senha2 = document.getElementById("password2").value;
+                
+                    
+                        document.getElementsByClassName("tooltiptext")[0].style.display = "none";
+                        document.getElementsByClassName("tooltiptext")[0].style. visibility = "hidden";
+                        document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
+                     
+                   
             }
-            
+
            
             
             function Abrir()
@@ -127,7 +135,7 @@
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="username2" type="text" class="validate" required pattern=".{6,10}" title="De 6 a 10 caracteres">
+                  <input id="username2" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres">
                   <label for="username2">Username</label>
                 </div>
                 </div>
@@ -142,7 +150,7 @@
                 <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">phone</i>
-                  <input id="tel" type="tel" pattern="^\d{2}-\d{5}-\d{4}$" class="validate" required >
+                  <input id="tel" type="tel" pattern="^\(d{2})\d{5}-\d{4}$" class="validate" required >
                   <label for="tel">Telefone(99-99999-9999)</label>
                 </div>
               </div>
@@ -150,7 +158,7 @@
             <div class="row">    
             <div class="input-field col s6">
                  <i class="material-icons prefix">insert_invitation</i>
-                <input type="date" name="aniversario" class="datepicker" onblur="Data()">
+                <input type="date" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
                 <label for="aniversario">Data Nascimento</label>
             </div>
                 </div>
@@ -166,7 +174,7 @@
                 <div class="input-field col s16">
                   <div class="tooltip">
                     <i class="material-icons prefix">lock</i>
-                  <input id="password2" type="password" onblur="Tool()" class="validate" required>
+                  <input id="password2" type="password" onblur="Tool()" class="validate" onfocus="TirarTool()" required>
                   
                   <label for="password2" >Confirmar senha</label>
                   <span class="tooltiptext">As senhas não batem.</span>
