@@ -47,11 +47,9 @@
             {
               debugger;
               alert("ALOUI");
-              var data = hAPI.getCardValue("data"); //pega o valor do campo date no html
-              alert(data);
+             var data = hAPI.getCardValue("aniversario");
               var firstDate = new Date(data); //coloca dentro de firstDate o valor de retorno da variavel data.
-
-              
+              alert(firstDate.getDate());
             }
             
            
@@ -152,7 +150,7 @@
             <div class="row">    
             <div class="input-field col s6">
                  <i class="material-icons prefix">insert_invitation</i>
-                <input type="date" name='aniversario' class="datepicker" onblur="Data()">
+                <input type="date" name="aniversario" class="datepicker" onblur="Data()">
                 <label for="aniversario">Data Nascimento</label>
             </div>
                 </div>
