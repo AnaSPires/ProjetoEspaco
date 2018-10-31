@@ -16,14 +16,6 @@ html
     font: bold;
 }
 
-.center-align2 {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    font: bold;
-}
 #numero1
 {
 	border-radius: 100%;
@@ -49,4 +41,12 @@ html
 	width: 2%;
 	height: 2%;
 	background-color: red;
+}
+
+#escrever
+{
+	padding-left: 20px;52
+	font-size: 30px;
+	position: absolute;
+	top: 120px;
 }
