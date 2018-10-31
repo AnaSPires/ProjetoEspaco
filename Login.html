@@ -13,7 +13,8 @@
         <script>
             
             valido = true;
-         
+         var regExTel = /[A-Z]/;
+                 alert(regExTel.test("A"));
             function Cadastro()
             {
                document.getElementsByTagName("body")[0].style.background = "white";
@@ -151,7 +152,7 @@
                 <div class="input-field col s6">
                     <i class="material-icons prefix">phone</i>
                   <input id="tel" type="tel" pattern="^\(d{2})\d{5}-\d{4}$" class="validate" required >
-                  <label for="tel">Telefone(99-99999-9999)</label>
+                  <label for="tel">Telefone((99) 99999-9999)</label>
                 </div>
               </div>
                 
