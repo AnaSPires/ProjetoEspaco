@@ -76,13 +76,14 @@ function ExibeDados(response) {
 
     for(var i = 0; i < arr.length; i++) 
     {
-      if(nivel == arr[Math.random() * (arr.length - i - 1) + i].codPergunta)
+      var qual = Math.random() * (arr.length - i - 1) + i;
+      if(nivel == (arr[qual]).codPergunta)
       {
-        alert(nivel);
-        p += arr[Math.random() * (arr.length - i - 1) + i].enunciado;
-        a += arr[Math.random() * (arr.length - i - 1) + i].alternativaA;  
-        b += arr[Math.random() * (arr.length - i - 1) + i].alternativaB;
-        c += arr[Math.random() * (arr.length - i - 1) + i].alternativaC;
+
+        p += arr[qual].enunciado;
+        a += arr[qual].alternativaA;  
+        b += arr[qual].alternativaB;
+        c += arr[qual].alternativaC;
         d += arr[Math.random() * (arr.length - i - 1) + i].alternativaD;
         certa = arr[Math.random() * (arr.length - i - 1) + i].correta;  
       }   
