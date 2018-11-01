@@ -8,7 +8,7 @@
      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     
      <script>
-
+   
        var arr;
        var planeta;
 
@@ -17,11 +17,30 @@
             var url = new URL(urlString);
             var param = location.search.substring(url.length); 
             planeta = param.substring(8);
-             document.getElementById("qualPlaneta").innerHTML = planeta;
-             
-            Quiz(planeta);
 
-            //$(".button-collapse").sideNav();
+             if(planeta == 'Mercúrio')
+             {
+             	planeta = 'Mercúrio';
+             }
+             else
+             	if(planeta == 'Vênus')
+             		planeta = 'Vênus';
+             	
+             	else
+             		if(planeta == 'J%C3%BApiter')
+             		{
+             			planeta = 'Júpiter';
+             		}
+             		else
+             			if(planeta == 'Plut%C3%A3o')
+             			{   
+             				planeta = 'Plutão';
+             			}
+
+
+            document.getElementById("qualPlaneta").innerHTML = planeta;
+
+            Quiz(planeta);
         }
  
    function Quiz(qual) {
@@ -49,33 +68,33 @@ function menu(oq){
     {
     	if(planeta == arr[i].nome){
     	if(oq == descricao)
-          document.getElementById("escrever").innerHTML = arr[i].descricao;
+          document.getElementById("escrever").innerHTML = "<p class='descricao'>" + arr[i].descricao + "</p>";
       else{
       	if(oq == tamanho)
-           document.getElementById("escrever").innerHTML = arr[i].tamanho;
+           document.getElementById("escrever").innerHTML = "<p class='diametro'>Diâmetro: " + arr[i].tamanho + "</p>";
         else{
-        	if(oq == distancia)
-               document.getElementById("escrever").innerHTML = arr[i].massa;
+        	if(oq == massa)
+               document.getElementById("escrever").innerHTML = "<p class='massa'>Massa: " + arr[i].massa + "</p>";
            else{
            	if(oq == distancia)
-               document.getElementById("escrever").innerHTML = arr[i].distancia;
+               document.getElementById("escrever").innerHTML = "<p class='dis'>Distância: " + arr[i].distancia + "</p>";
            else{
            	if(oq == orbital)
-               document.getElementById("escrever").innerHTML = arr[i].periodoOrbital;
+               document.getElementById("escrever").innerHTML = "<p class='orbital'>Período orbital: " + arr[i].periodoOrbital + "</p>";
            else{
            	if(oq == rotacao)
-               document.getElementById("escrever").innerHTML = arr[i].periodoRotacao;
+               document.getElementById("escrever").innerHTML = "<p class='rotacao'>Período de Rotação: " + arr[i].periodoRotacao + "</p>";
            else{
            	if(oq == gravidade)
-              document.getElementById("escrever").innerHTML = arr[i].gravidade;
+              document.getElementById("escrever").innerHTML = "<p class='gravidade'>Gravidade: " + arr[i].gravidade + "</p>";
           else{
           	if(oq == temperatura)
-               document.getElementById("escrever").innerHTML = arr[i].temperatura;
+               document.getElementById("escrever").innerHTML = "<p class='temp'>Temperatura: " + arr[i].temperatura + "</p>";
            else{
            	if(oq == composicao)
-              document.getElementById("escrever").innerHTML = arr[i].composicao;
+              document.getElementById("escrever").innerHTML = "<p class='comp'>Composição" + "\n\n" + arr[i].composicao + "</p>";
           else
-              document.getElementById("escrever").innerHTML = arr[i].estrutura;
+              document.getElementById("escrever").innerHTML = "<p class='est'>Estrutura"+ "\n\n" + arr[i].est + "</p>";
     }}}}}}}}}} 
 }
 
