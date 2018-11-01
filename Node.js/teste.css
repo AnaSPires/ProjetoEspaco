@@ -46,7 +46,67 @@ html
 #escrever
 {
 	padding-left: 20px;52
-	font-size: 30px;
+	font-size: 1px;
 	position: absolute;
 	top: 120px;
+}
+
+.descricao{
+	text-indent: 50px;
+	font-size: 20px;
+	color: red;
+}
+
+.diametro{
+	text-indent: 50px;
+	font-size: 70px;
+	color: blue;
+}
+
+.massa{
+	text-indent: 50px;
+	font-size: 20px;
+	color: red;
+}
+
+.dis{
+	text-indent: 50px;
+	font-size: 20px;
+	color: red;
+}
+
+.orbital{
+	text-indent: 50px;
+	font-size: 70px;
+	color: blue;
+}
+
+.rotacao{
+	text-indent: 50px;
+	font-size: 20px;
+	color: red;
+}
+
+.gravidade{
+	text-indent: 50px;
+	font-size: 20px;
+	color: red;
+}
+
+.temp{
+	text-indent: 50px;
+	font-size: 70px;
+	color: blue;
+}
+
+.comp{
+	text-indent: 50px;
+	font-size: 20px;
+	color: red;
+}
+
+.est{
+	text-indent: 50px;
+	font-size: 20px;
+	color: red;
 }

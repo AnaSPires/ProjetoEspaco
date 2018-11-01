@@ -42,7 +42,7 @@
    
     xmlhttp.send(); 
  
-    //return "Os dados do formulário serão perdidos.";
+    return false;
 }
 
     /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -74,17 +74,17 @@ function ExibeDados(response) {
     c = "<span>";
     d = "<span>";
 
-
     for(var i = 0; i < arr.length; i++) 
     {
-      if(nivel == arr[i].codPergunta)
+      if(nivel == arr[Math.random() * (arr.length - i - 1) + i].codPergunta)
       {
-        p += arr[i].enunciado;
-        a += arr[i].alternativaA;  
-        b += arr[i].alternativaB;
-        c += arr[i].alternativaC;
-        d += arr[i].alternativaD;
-        certa = arr[i].correta;  
+        alert(nivel);
+        p += arr[Math.random() * (arr.length - i - 1) + i].enunciado;
+        a += arr[Math.random() * (arr.length - i - 1) + i].alternativaA;  
+        b += arr[Math.random() * (arr.length - i - 1) + i].alternativaB;
+        c += arr[Math.random() * (arr.length - i - 1) + i].alternativaC;
+        d += arr[Math.random() * (arr.length - i - 1) + i].alternativaD;
+        certa = arr[Math.random() * (arr.length - i - 1) + i].correta;  
       }   
     }
 
