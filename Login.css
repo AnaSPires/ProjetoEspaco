@@ -61,6 +61,8 @@ header
 .seta
 {
     width: 100px;
+    height: 100px;
+    background: url("seta.jpg");
 }
 
 .txtSubmit
