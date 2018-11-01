@@ -11,15 +11,16 @@
   <!--Let browser know website is optimized for mobile-->
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script>
-            
-            valido = true;
-         var regExTel = /[A-Z]/;
-                 alert(regExTel.test("A"));
+            var valido = false;
+            var valido2 = false;
+           
             function Cadastro()
             {
                document.getElementsByTagName("body")[0].style.background = "white";
                document.getElementsByClassName("cadastro")[0].style.display = "block";
                document.getElementsByClassName("transparencia")[0].style.filter = "brightness(20%)";
+               document.getElementById("password2").style.borderBottom = "0.4px solid darkgray";
+               document.getElementById("password2").style.boxShadow = "0 0.4px 0 0 darkgray";
 
             }
             
@@ -27,15 +28,17 @@
             {
                 var senha1 = document.getElementById("password").value;
                  var senha2 = document.getElementById("password2").value;
-                
-                    if(senha1!=senha2 && senha2!="")
+                if(senha2!="")
+                {
+                    if(senha1!=senha2  )
                     {
                         document.getElementsByClassName("tooltiptext")[0].style.display = "block";
                         document.getElementsByClassName("tooltiptext")[0].style. visibility = "visible";
                         document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
                        document.getElementById("password2").style.borderBottom = "1px solid red";
                         document.getElementById("password2").style.boxShadow = "0 1px 0 0 red";
-                       //document.getElementById("password2")[0].valid = "false";
+                        document.getElementById("frase").style.color = "red";
+                       valido = false;
                     }
                     else
                     {
@@ -44,8 +47,10 @@
                         document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";        
                          document.getElementById("password2").style.borderBottom = "1px solid #57A856";
                          document.getElementById("password2").style.boxShadow = "0 1px 0 0 #57A856";
+                         document.getElementById("frase").style.color = "green";
                          valido = true;
                     }
+                  }
             }
 
              function TirarTool()
@@ -61,16 +66,32 @@
                    
             }
 
-           
+           function Validar()
+           {
+              if(document.form1.checkValidity ())
+                valido2 = true;
+               
+           }
             
             function Abrir()
             {
-                if(onLoad()){
-                   window.open('http://www.google.com.br');
+              Validar();
+                if(valido && valido2)
+                {
+                   window.open('Login.html');
                    alert("entrou onload");
                  } 
                  else 
-                 alert("ue");
+                 {
+                          if(!document.form1.user.validity.patternMismatch)
+                          alert("user");
+                        if(!document.form1.email.validity.patternMismatch)
+                          alert("email");
+                        if(!document.form1.senha.validity.patternMismatch)
+                          alert("senha");
+                        if(!document.form1.tel.validity.patternMismatch)
+                          alert("tel");
+                 }
             }
             
             
@@ -117,13 +138,14 @@
                     <input type="password" id = "senha" onkeydown="ParaCima()">
                     
                              <button  onclick="Verificar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
-                             <button  onclick="Ola()" id = "na"> Ola </button><br>
+                             
                          <a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a>    
                              </center>
                     </div>
             </div>
                 </div>
             <div class="cadastro">
+              <div class="seta"></div>
                 <div class="tit"></div>
                 <br><br>
                 <div class="dados">
@@ -136,14 +158,14 @@
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="username2" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres">
+                  <input id="username2" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
                   <label for="username2">Username</label>
                 </div>
                 </div>
              <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">email</i>
-                  <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required>
+                  <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
                   <label for="email">Email</label>
                 </div>
               </div>
@@ -151,7 +173,7 @@
                 <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">phone</i>
-                  <input id="tel" type="tel" pattern="^\(d{2})\d{5}-\d{4}$" class="validate" required >
+                  <input id="tel" type="tel" pattern="[\(]\d{2}[\)] \d{5}[\-]\d{4}" class="validate" required name="tel">
                   <label for="tel">Telefone((99) 99999-9999)</label>
                 </div>
               </div>
@@ -167,7 +189,7 @@
               <div class="row">
                 <div class="input-field col s16">
                     <i class="material-icons prefix">lock</i>
-                  <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()">
+                  <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">
                   <label for="password">Senha</label>
                 </div>
               </div>
@@ -177,12 +199,12 @@
                     <i class="material-icons prefix">lock</i>
                   <input id="password2" type="password" onblur="Tool()" class="validate" onfocus="TirarTool()" required>
                   
-                  <label for="password2" >Confirmar senha</label>
+                  <label for="password2" id="frase">Confirmar senha</label>
                   <span class="tooltiptext">As senhas não batem.</span>
                 </div>
                 </div>
               </div>
-              <button class="txtSubmit" id = "botao">Cadastrar</button><br><br><br>
+              <button class="txtSubmit" id = "botao" onclick="Abrir()">Cadastrar</button><br><br><br>
                
             </form>
            
