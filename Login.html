@@ -13,13 +13,14 @@
         <script>
             
             valido = true;
-         var regExTel = /[A-Z]/;
-                 alert(regExTel.test("A"));
+         
             function Cadastro()
             {
                document.getElementsByTagName("body")[0].style.background = "white";
                document.getElementsByClassName("cadastro")[0].style.display = "block";
                document.getElementsByClassName("transparencia")[0].style.filter = "brightness(20%)";
+                document.getElementById("password2").style.borderBottom = "0.1px solid gray";
+                document.getElementById("password2").style.boxShadow = "0 0.1px 0 0 gray";
 
             }
             
@@ -27,8 +28,9 @@
             {
                 var senha1 = document.getElementById("password").value;
                  var senha2 = document.getElementById("password2").value;
-                
-                    if(senha1!=senha2 && senha2!="")
+                if(senha2!="")
+                    {
+                    if(senha1!=senha2 )
                     {
                         document.getElementsByClassName("tooltiptext")[0].style.display = "block";
                         document.getElementsByClassName("tooltiptext")[0].style. visibility = "visible";
@@ -46,6 +48,7 @@
                          document.getElementById("password2").style.boxShadow = "0 1px 0 0 #57A856";
                          valido = true;
                     }
+            }
             }
 
              function TirarTool()
@@ -65,12 +68,39 @@
             
             function Abrir()
             {
-                if(onLoad()){
-                   window.open('http://www.google.com.br');
+                //alert("func");
+                if(document.form1.username.validity.patternMismatch && document.form1.email.validity.patternMismatch  &&
+                  document.form1.tel.validity.patternMismatch  && document.form1.senha.validity.patternMismatch  
+                  )
+                {
+                      window.open('http://www.google.com.br');
                    alert("entrou onload");
+                  
                  } 
                  else 
-                 alert("ue");
+                     {
+                        
+                          
+                       if(!document.form1.username.validity.patternMismatch) 
+                    alert("username");
+                    if(!document.form1.email.validity.patternMismatch)
+                        alert("email");
+                         if(!document.form1.tel.validity.patternMismatch) 
+                         alert("tel");
+                         if(!document.form1.senha.validity.patternMismatch)
+                         alert("senha");
+                        
+                     }
+            }
+            
+             function onLoad()
+            {
+                var senha1 = document.getElementById("password").value;
+                 var senha2 = document.getElementById("password2").value;
+                
+                if(senha1!=senha2)
+                    valido = false;
+                
             }
             
             
@@ -132,18 +162,18 @@
                 <div class="posicao">  
                 <br><br>
                 <div class="row">
-            <form class="col s12" name = "form1" onsubmit=" return false;">
+            <form class="col s12" name = "form1" onsubmit=" return false">
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="username2" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres">
+                  <input id="username2" name = "username" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres">
                   <label for="username2">Username</label>
                 </div>
                 </div>
              <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">email</i>
-                  <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required>
+                  <input id="email" type="email" name = "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required>
                   <label for="email">Email</label>
                 </div>
               </div>
@@ -151,7 +181,7 @@
                 <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">phone</i>
-                  <input id="tel" type="tel" pattern="^\(d{2})\d{5}-\d{4}$" class="validate" required >
+                  <input id="tel" type="tel" name = "tel" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required >
                   <label for="tel">Telefone((99) 99999-9999)</label>
                 </div>
               </div>
@@ -159,7 +189,7 @@
             <div class="row">    
             <div class="input-field col s6">
                  <i class="material-icons prefix">insert_invitation</i>
-                <input type="date" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
+                <input type="date" name="aniversario" name = "data" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
                 <label for="aniversario">Data Nascimento</label>
             </div>
                 </div>
@@ -167,7 +197,7 @@
               <div class="row">
                 <div class="input-field col s16">
                     <i class="material-icons prefix">lock</i>
-                  <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()">
+                  <input id="password" type="password" name = "senha" class="validate" required pattern=".{8,}" onblur="Tool()">
                   <label for="password">Senha</label>
                 </div>
               </div>
@@ -182,7 +212,7 @@
                 </div>
                 </div>
               </div>
-              <button class="txtSubmit" id = "botao">Cadastrar</button><br><br><br>
+              <button class="txtSubmit" id = "botao" onclick="Abrir()">Cadastrar</button><br><br><br>
                
             </form>
            
