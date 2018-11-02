@@ -11,28 +11,17 @@
   <!--Let browser know website is optimized for mobile-->
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script>
-<<<<<<< HEAD
-            
-            valido = true;
-         
-=======
 
             var valido = false;
             var valido2 = false;
     
->>>>>>> 3d94653a55fc5ab5a8b439c99694c6951ae98eb7
             function Cadastro()
             {
                document.getElementsByTagName("body")[0].style.background = "white";
                document.getElementsByClassName("cadastro")[0].style.display = "block";
                document.getElementsByClassName("transparencia")[0].style.filter = "brightness(20%)";
-<<<<<<< HEAD
-                document.getElementById("password2").style.borderBottom = "0.1px solid gray";
-                document.getElementById("password2").style.boxShadow = "0 0.1px 0 0 gray";
-=======
                document.getElementById("password2").style.borderBottom = "0.4px solid darkgray";
                document.getElementById("password2").style.boxShadow = "0 0.4px 0 0 darkgray";
->>>>>>> 3d94653a55fc5ab5a8b439c99694c6951ae98eb7
 
             }
             
@@ -41,13 +30,8 @@
                 var senha1 = document.getElementById("password").value;
                  var senha2 = document.getElementById("password2").value;
                 if(senha2!="")
-<<<<<<< HEAD
-                    {
-                    if(senha1!=senha2 )
-=======
                 {
                     if(senha1!=senha2  )
->>>>>>> 3d94653a55fc5ab5a8b439c99694c6951ae98eb7
                     {
                         document.getElementsByClassName("tooltiptext")[0].style.display = "block";
                         document.getElementsByClassName("tooltiptext")[0].style. visibility = "visible";
@@ -68,7 +52,6 @@
                          valido = true;
                     }
                   }
-            }
             }
 
              function TirarTool()
@@ -93,48 +76,13 @@
             
             function Abrir()
             {
-<<<<<<< HEAD
-                //alert("func");
-                if(document.form1.username.validity.patternMismatch && document.form1.email.validity.patternMismatch  &&
-                  document.form1.tel.validity.patternMismatch  && document.form1.senha.validity.patternMismatch  
-                  )
-                {
-                      window.open('http://www.google.com.br');
-=======
               Validar();
                 if(valido && valido2)
                 {
                    window.open('Node.js/pp.html');
->>>>>>> 3d94653a55fc5ab5a8b439c99694c6951ae98eb7
                    alert("entrou onload");
-                  
                  } 
                  else 
-<<<<<<< HEAD
-                     {
-                        
-                          
-                       if(!document.form1.username.validity.patternMismatch) 
-                    alert("username");
-                    if(!document.form1.email.validity.patternMismatch)
-                        alert("email");
-                         if(!document.form1.tel.validity.patternMismatch) 
-                         alert("tel");
-                         if(!document.form1.senha.validity.patternMismatch)
-                         alert("senha");
-                        
-                     }
-            }
-            
-             function onLoad()
-            {
-                var senha1 = document.getElementById("password").value;
-                 var senha2 = document.getElementById("password2").value;
-                
-                if(senha1!=senha2)
-                    valido = false;
-                
-=======
                  {
                           if(!document.form1.user.validity.patternMismatch)
                           alert("user");
@@ -145,7 +93,6 @@
                         if(!document.form1.tel.validity.patternMismatch)
                           alert("tel");
                  }
->>>>>>> 3d94653a55fc5ab5a8b439c99694c6951ae98eb7
             }
             
             //teste
@@ -208,26 +155,18 @@
                 <div class="posicao">  
                 <br><br>
                 <div class="row">
-            <form class="col s12" name = "form1" onsubmit=" return false">
+            <form class="col s12" name = "form1" onsubmit=" return false;">
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
-<<<<<<< HEAD
-                  <input id="username2" name = "username" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres">
-=======
                   <input id="username2" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
->>>>>>> 3d94653a55fc5ab5a8b439c99694c6951ae98eb7
                   <label for="username2">Username</label>
                 </div>
                 </div>
              <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">email</i>
-<<<<<<< HEAD
-                  <input id="email" type="email" name = "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required>
-=======
                   <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
->>>>>>> 3d94653a55fc5ab5a8b439c99694c6951ae98eb7
                   <label for="email">Email</label>
                 </div>
               </div>
@@ -235,11 +174,7 @@
                 <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">phone</i>
-<<<<<<< HEAD
-                  <input id="tel" type="tel" name = "tel" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required >
-=======
                   <input id="tel" type="tel" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required name="tel">
->>>>>>> 3d94653a55fc5ab5a8b439c99694c6951ae98eb7
                   <label for="tel">Telefone((99) 99999-9999)</label>
                 </div>
               </div>
@@ -247,7 +182,7 @@
             <div class="row">    
             <div class="input-field col s6">
                  <i class="material-icons prefix">insert_invitation</i>
-                <input type="date" name="aniversario" name = "data" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
+                <input type="date" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
                 <label for="aniversario">Data Nascimento</label>
             </div>
                 </div>
@@ -255,11 +190,7 @@
               <div class="row">
                 <div class="input-field col s16">
                     <i class="material-icons prefix">lock</i>
-<<<<<<< HEAD
-                  <input id="password" type="password" name = "senha" class="validate" required pattern=".{8,}" onblur="Tool()">
-=======
                   <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">
->>>>>>> 3d94653a55fc5ab5a8b439c99694c6951ae98eb7
                   <label for="password">Senha</label>
                 </div>
               </div>
