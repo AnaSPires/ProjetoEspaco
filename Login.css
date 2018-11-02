@@ -58,7 +58,12 @@ header
     border-color: #555 transparent transparent transparent;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
+.seta
+{
+    width: 100px;
+    height: 100px;
+    background: url("seta.jpg");
+}
 
 .txtSubmit
 {
