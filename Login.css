@@ -8,7 +8,7 @@ body
 header
 {
     position: absolute;
-    left: -1px;
+    left: 8px;
     background-image: url("Imagens/ain.png");
     height: 330px;
     width: 100%;
@@ -60,9 +60,17 @@ header
 
 .seta
 {
-    width: 100px;
-    height: 100px;
+    width: 40px;
+    height: 40px;
     background: url("Imagens/seta.jpg");
+    position: relative;
+    left: 30px;
+    top: 20px;
+}
+
+#topSenha
+{
+    top: -20px;
 }
 
 .txtSubmit
@@ -119,8 +127,8 @@ text-shadow:none;
     width: 150px;
     height: 100px;
     position: absolute;
-    top: 0px;
-    left: 90%;
+    top: 10px;
+    left: 88%;
     color: white;
     font-size: 25px;
     font-weight: 900;
@@ -151,20 +159,22 @@ text-shadow:none;
 {
      color: #0B3861;
     font-family:"Century Gothic";
-    font-weight: 600;
-    font-size: 17px;
+    font-weight: 800;
+    font-size: 16px;
+    position: relative;
+    top: -58px;
 }
 
 .titulo
 {
     
     background: url("Imagens/TITULO.png");
-    width: 500px;
-    height: 200px;
-    position: absolute;
-    top: -20px;
-    left:37%;
-    color: red;
+    width: 433px;
+    height: 239px;
+    position: relative;
+    top: -220px;
+     margin-left: auto;
+     margin-right: auto;
     
 }
 
@@ -192,6 +202,8 @@ text-shadow:none;
 	width: 100%;
 	height:1800;
     background-image: url("./Node.js/imagens/fundo.gif"); 
+     align-content: center;
+     text-align: center;
     /*display:none;*/
 }
 
@@ -201,7 +213,6 @@ text-shadow:none;
 .cadastro
 {
     filter: brightness(100%);
-    display: block;
     width: 500px;
     height: 850px;
     background-color: white;
@@ -219,68 +230,55 @@ text-shadow:none;
     font-family:"Century Gothic";
     font-weight: 300;
     font-size: 15px;
-    color: gray;
     position: relative;
-    top: 20px;
+    top: 5px;
     left: 10%;
+    text-align: center;
 }
 
 button.css3button {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: #123d54;
-	padding: 10px 20px;
-	background: -moz-linear-gradient(
-		top,
-		#afd9fa 0%,
-		#ffffff 75%,
-		#588fad);
-	background: -webkit-gradient(
-		linear, left top, left bottom,
-		from(#afd9fa),
-		color-stop(0.75, #ffffff),
-		to(#588fad));
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-	border: 1px solid #003366;
-	-moz-box-shadow:
-		4px 3px 10px rgba(137,78,204,1),
-		inset 0px 0px 1px rgba(144,192,209,1);
-	-webkit-box-shadow:
-		4px 3px 10px rgba(137,78,204,1),
-		inset 0px 0px 1px rgba(144,192,209,1);
-	box-shadow:
-		4px 3px 10px rgba(137,78,204,1),
-		inset 0px 0px 1px rgba(144,192,209,1);
-	text-shadow:
-		0px -1px 0px rgba(000,000,000,0.7),
-		-1px 1px 0px rgba(240,247,250,1);
+	border: 1px solid #eee;
+border-radius: 20px;
+box-shadow: 5px 5px 5px #eee;
+
+text-shadow:none;
+    font-size: 14px;
+    color: #123d54;
+    padding: 10px 20px;
+    background: -moz-linear-gradient(
+        top,
+        #afd9fa 0%,
+        #ffffff 75%,
+        #588fad);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#afd9fa),
+        color-stop(0.75, #ffffff),
+        to(#588fad));
+    border: 1px solid #003366;
+    -moz-box-shadow:
+        4px 3px 10px rgba(137,78,204,1),
+        inset 0px 0px 1px rgba(144,192,209,1);
+    -webkit-box-shadow:
+        4px 3px 10px rgba(137,78,204,1),
+        inset 0px 0px 1px rgba(144,192,209,1);
+    box-shadow:
+        4px 3px 10px rgba(137,78,204,1),
+        inset 0px 0px 1px rgba(144,192,209,1);
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.7),
+        -1px 1px 0px rgba(240,247,250,1);
 
     position: relative;
-    top: 25px;
+    top: -28px;
     font-family:"Century Gothic";
     font-weight: 600;
-    font-size: 20px;
+    font-size: 15px;
+
     
 }
 
-input[type=text] {
-    border: none;
-    border-bottom: 2px solid purple;
-    font-family:"Century Gothic";
-    font-weight: 700;
-    font-size: 15px;
-    
-}
 
-input[type=password] {
-    border: none;
-    border-bottom: 2px solid purple;
-      font-family:"Century Gothic";
-    font-weight: 700;
-    font-size: 15px;
-}
 
 .dados
 {
@@ -311,10 +309,11 @@ input[type=password] {
 {
     background: white;
     width: 250px;
-    height: 240px;
+    height: 300px;
     position: relative;
-    top: 260px;
-    left: 42%;
+    top: 280px;
+    margin-left: auto;
+     margin-right: auto;
     font-size: 25px;
     font-family:"Century Gothic";
     font-weight: 400;
@@ -325,10 +324,17 @@ input[type=password] {
     background: url("Imagens/user.png");
     width: 72px;
     height: 66px;
-    position: absolute;
-    left: 48%;
-    top: 150px;
-    
+    position: relative;
+    top: -300px;
+    margin-left: auto;
+     margin-right: auto;
+     
+}
 
-    
+.frase
+{
+    width: 400px;
+    height: 100px;
+    position: relative;
+    top: -320px;
 }

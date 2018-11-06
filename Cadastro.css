@@ -61,8 +61,8 @@ header
 }
 .seta
 {
-    width: 70px;
-    height: 42px;
+    width: 4px;
+    height: 2px;
     background-image: url("Imagens/seta.png");
     position: absolute;
     top: 20px;

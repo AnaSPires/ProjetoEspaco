@@ -14,7 +14,13 @@
 
             var valido = false;
             var valido2 = false;
-    
+
+            function Verificar()
+            {
+              if(document.form2.checkValidity ())
+                 window.open('Node.js/pp.html');
+            }
+
             function Cadastro()
             {
                document.getElementsByTagName("body")[0].style.background = "white";
@@ -22,6 +28,15 @@
                document.getElementsByClassName("transparencia")[0].style.filter = "brightness(20%)";
                document.getElementById("password2").style.borderBottom = "0.4px solid darkgray";
                document.getElementById("password2").style.boxShadow = "0 0.4px 0 0 darkgray";
+
+            }
+
+             function Sumir()
+            {
+               document.getElementsByTagName("body")[0].style.background = "url(\"./Node.js/imagens/fundo.gif\");";
+               document.getElementsByClassName("cadastro")[0].style.display = "none";
+               document.getElementsByClassName("transparencia")[0].style.filter = " brightness(100%)";
+              
 
             }
             
@@ -80,7 +95,6 @@
                 if(valido && valido2)
                 {
                    window.open('Node.js/pp.html');
-                   alert("entrou onload");
                  } 
                  else 
                  {
@@ -111,12 +125,13 @@
     <header>
         <p class = "logo"></p>
         <center>
-        <div class="titulo"></div>
+       <div class="titulo" ></div>
     </center>
         
                         <center>
                 <div class="user"></div><br>
-                Ol&aacute;! Digite o seu usu&aacute;rio e senha
+                <div class="frase">Ol&aacute;! Digite o seu usu&aacute;rio e senha</div>
+                
         </center>
         
         <div class="contato">
@@ -128,25 +143,31 @@
             <div class="bloco">
                 
                     <div class="peq">
-                    
-                    Usu&aacute;rio
-                        <center>
-                    <input type="text" id = "usuario" onkeydown="ParaBaixo()">
-                        </center>
-                       <CENTER> </CENTER>
-                    Senha
-                         <center>
-                    <input type="password" id = "senha" onkeydown="ParaCima()">
+                     <form class="col s12" name = "form2" onsubmit=" return false;">
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="usuario" type="text" class="validate" required name="usu">
+                  <label for="usuario"> Usu&aacute;rio</label>
+                </div>
+                </div>
+                <div class="row">
+                <div class="input-field col s12" id = "topSenha">
+                    <i class="material-icons prefix">lock</i>
+                  <input id="senha" type="password" class="validate" required  name="senhaa">
+                  <label for="senha">Senha</label>
+                </div>
+              </div>                   
                     
                              <button  onclick="Verificar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
                              
-                         <a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a>    
-                             </center>
+                         <u><a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
+                            </form> 
                     </div>
             </div>
                 </div>
             <div class="cadastro">
-              <div class="seta"></div>
+              <div class="seta" onclick="Sumir()"></div>
                 <div class="tit"></div>
                 <br><br>
                 <div class="dados">
@@ -164,7 +185,7 @@
                 </div>
                 </div>
              <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                     <i class="material-icons prefix">email</i>
                   <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
                   <label for="email">Email</label>
