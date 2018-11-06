@@ -53,60 +53,60 @@ html
 
 .descricao{
 	text-indent: 50px;
-	font-size: 20px;
-	color: red;
+	font-size: 45px;
+	color: green;
 }
 
 .diametro{
 	text-indent: 50px;
-	font-size: 70px;
+	font-size: 50px;
 	color: blue;
 }
 
 .massa{
 	text-indent: 50px;
-	font-size: 20px;
-	color: red;
+	font-size: 50px;
+	color: green;
 }
 
 .dis{
 	text-indent: 50px;
-	font-size: 20px;
-	color: red;
+	font-size: 50px;
+	color: green;
 }
 
 .orbital{
 	text-indent: 50px;
-	font-size: 70px;
+	font-size: 50px;
 	color: blue;
 }
 
 .rotacao{
 	text-indent: 50px;
-	font-size: 20px;
-	color: red;
+	font-size: 50px;
+	color: green;
 }
 
 .gravidade{
 	text-indent: 50px;
-	font-size: 20px;
+	font-size: 50px;
 	color: red;
 }
 
 .temp{
 	text-indent: 50px;
-	font-size: 70px;
+	font-size: 80px;
 	color: blue;
 }
 
 .comp{
 	text-indent: 50px;
-	font-size: 20px;
-	color: red;
+	font-size: 80px;
+	color: green;
 }
 
 .est{
 	text-indent: 50px;
-	font-size: 20px;
-	color: red;
+	font-size: 80px;
+	color: green;
 }

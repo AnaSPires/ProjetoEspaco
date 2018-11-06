@@ -1,13 +1,13 @@
 body
 {
-    background-image: url("contatinho.png");
+    background-image: url("Imagens/contatinho.png");
 }
 
 header
 {
     position: absolute;
     left: -1px;
-    background-image: url("ain.png");
+    background-image: url("Imagens/ain.png");
     height: 330px;
     width: 100%;
     top: -1px;
@@ -18,7 +18,7 @@ header
 
 .logo
 {
-    background-image: url("logo.png");
+    background-image: url("Imagens/logo.png");
     height: 150px;
     width: 150px;
 }

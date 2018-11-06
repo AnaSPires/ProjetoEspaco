@@ -30,7 +30,7 @@
  window.onbeforeunload = function() {
 
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://localhost:3000/perguntas/" + nivel;
+    var url = "http://localhost:3000/perguntas";
 
     xmlhttp.onreadystatechange=function()
     {
@@ -49,11 +49,12 @@
 
   window.onload =  function pegarInfo() {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://localhost:3000/perguntas/" + nivel;
+    var url = "http://localhost:3000/perguntas";
 
     xmlhttp.onreadystatechange=function()
     {
         if (this.readyState == 4 && this.status == 200) 
+  
             ExibeDados(this.responseText);
         }
 
@@ -74,20 +75,14 @@ function ExibeDados(response) {
     c = "<span>";
     d = "<span>";
 
-    for(var i = 0; i < arr.length; i++) 
-    {
-      var qual = Math.random() * (arr.length - i - 1) + i;
-      if(nivel == (arr[qual]).codPergunta)
-      {
+   var qual = parseInt(Math.random() * (arr.length - 1));
 
-        p += arr[qual].enunciado;
-        a += arr[qual].alternativaA;  
-        b += arr[qual].alternativaB;
-        c += arr[qual].alternativaC;
-        d += arr[Math.random() * (arr.length - i - 1) + i].alternativaD;
-        certa = arr[Math.random() * (arr.length - i - 1) + i].correta;  
-      }   
-    }
+   p += arr[qual].enunciado;
+   a += arr[qual].alternativaA;  
+   b += arr[qual].alternativaB;
+   c += arr[qual].alternativaC;
+   d += arr[qual].alternativaD;
+   certa = arr[qual].correta;      
 
     p += "</h1>";
     a += "</span>";

@@ -6,7 +6,7 @@ senha  varchar(10))
 
 select * from Usuario
 insert into Usuario values( 1, 'Amanda', '03/05/2009',25632514)
-
+-------------------------------------------------------------------------------------------------------
 create table Acesso(
 codAcesso int primary key,
 codUsuario int not null,
@@ -16,7 +16,7 @@ constraint fkUsuario foreign key(codUsuario) references Usuario(CodUsuario)
 )
    
 select * from Acesso
-
+-------------------------------------------------------------------------------------------------------
 create table Perguntas(
 codPergunta int identity(1, 1) primary key not null, 
 enunciado ntext not null,
@@ -57,15 +57,6 @@ update Perguntas set alternativaD = 'Sol' where codPergunta = 9
 update Perguntas set correta = 'd' where codPergunta = 9
 
 insert into Perguntas values('Qual é o planeta que é composto por 75% de água?', 'Terra', 'Urano', 'Netuno', 'Mercúrio', 'a')
-
-
-create table Arquivos(
-imagens varchar(30),
-sons varchar(30),
-videos varchar(30)
-)
-
-select * from Arquivos
 
 create table SistemaSolar(
 codSistema int primary key,
