@@ -1,8 +1,12 @@
-body
+.ou
 {
-    background: url("./Imagens/fundoAnimado.gif");
-    width: 2048px;
-    height: 10px;
+	background: url("./Imagens/ain.png");
+	width: 2048px;
+	height: 500px;
+}
+
+.parallax-container {
+  height: 400px;
 }
 
 /*
