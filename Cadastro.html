@@ -10,13 +10,44 @@
                  title="8 caracteres ou mais";
            }*/
               
+//isso é no login
+     function seExiste() {
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://localhost:3000/perguntas";
 
-            function Verificar()
-            {
-             
-            } 
+    xmlhttp.onreadystatechange=function()
+    {
+        if (this.readyState == 4 && this.status == 200) 
+  
+            ExibeDados(this.responseText);
+        }
+
+    xmlhttp.open("GET", url, true);
+   
+    xmlhttp.send();
+  
+   }
+   function se(response)
+   {
+    var arr = JSON.parse(response);
+
+    for(int i = 0; i < arr.length; i ++)
+    {
+        if(arr[i].nome == getElementById("nome").value && arr[i].senha == getElementById("Senha").value)
+           alert("ok");
+        else
+            alert("Os dados não existem! Deseja fazer um cadastro?");
+
+    }
+   }
+///aquiii
 
         //placeholder
+
+        function seExiste()
+        {
+
+        }
     
 			window.onload = function(){
             document.getElementById("nome").focus();
@@ -39,7 +70,7 @@
                 <div class="posicao">  
                 <br><br>
             
-				<form id="frmCont" method="post" action="">                   
+				<form id="frmCont" method="post" action="http://localhost:3000/usuario">                   
 				Username<br>
                 <input type="text" id = "nome" required pattern=".{6,10}" title="De 6 a 10 caracteres"><br><br>
                 Email<br>

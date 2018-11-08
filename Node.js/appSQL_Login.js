@@ -37,30 +37,27 @@ function execSQL(sql, resposta) {
     .catch(erro => resposta.json(erro));
 }
 
-rota.get('/usuario', (requisicao, resposta) =>{
-execSQL('SELECT * FROM Usuario', resposta);
+rota.get('/acesso', (requisicao, resposta) =>{
+execSQL('SELECT * FROM Acesso', resposta);
 })
 //Deletar
-rota.get('/usuario/:CodUsuario?', (requisicao, resposta) => {
+rota.get('/acesso/:codAcesso?', (requisicao, resposta) => {
   let filtro = '';
   if (requisicao.params.id) 
-    filtro = ' WHERE CodUsuario=' + parseInt(requisicao.params.id);
-  execSQL('SELECT * from Usuario' + filtro, resposta);
+    filtro = ' WHERE codAcesso=' + parseInt(requisicao.params.id);
+  execSQL('SELECT * from Acesso' + filtro, resposta);
 })
 
-// testar no POSTMAN
-rota.delete('/usuario/:CodUsuario', (requisicao, resposta) =>{
-  execSQL('DELETE Usuario WHERE CodUsuario=' + parseInt(requisicao.params.CodUsuario), resposta);
-  resposta.end(resposta.json({ mensagem: 'Deletado!'}));
-})
-
-//debugger;
-rota.get('/usuario', (requisicao, resposta) =>{
+rota.get('/acesso', (requisicao, resposta) =>{
     const nome = requisicao.body.nome.substring(0,40);
-    const email = requisicao.body.email.substring(0,40);
-    const data = requisicao.body.dataNascimento.substring(0,11);
-    const senha = requisicao.body.Senha.substring(0,20);
-    const telefone = requisicao.body.telefone.substring(0,20);
-    execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}´), resposta);
+   
+    execSQL(`select @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha})`, resposta);
     resposta.end(resposta.json({ mensagem: 'Incluído!'}));    
 })
+/*
+codAcesso int primary key,
+codUsuario int not null,
+dataAcesso datetime not null,
+horaAcesso datetime not null,
+constraint fkUsuario foreign key(codUsuario) references Usuario(CodUsuario)
+*/

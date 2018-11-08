@@ -33,7 +33,10 @@ begin
 end
 
 Inserir_sp @nome='Teste', @email ='@', @telefone='43241', @data = '12/12/12', @senha='12345678'
+Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}
 
+delete from Usuario where CodUsuario = 4
+select * from 
 sp_help Usuario
 
 -------------------------------------------------------------------------------------------------------
@@ -48,6 +51,8 @@ constraint fkUsuario foreign key(codUsuario) references Usuario(CodUsuario)
    select COUNT(CodUsuario) from Usuario
 
 select * from Acesso
+
+
 -------------------------------------------------------------------------------------------------------
 create table Perguntas(
 codPergunta int identity(1, 1) primary key not null, 
