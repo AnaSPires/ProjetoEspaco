@@ -4,8 +4,38 @@ Nome varchar(30),
 dataNascimento datetime,
 senha  varchar(10))
 
+alter table Usuario
+add telefone varchar(20)
+
+alter table Usuario
+add email varchar(40)
+
+alter table Usuario
+alter column senha varchar(30)
+
 select * from Usuario
 insert into Usuario values( 1, 'Amanda', '03/05/2009',25632514)
+
+create proc Inserir_sp 
+@nome ntext,
+@email ntext,
+@telefone ntext,
+@data datetime,
+@senha varchar(30)
+as
+begin
+  declare @codigo int
+  set @codigo = (select COUNT(CodUsuario) from Usuario) + 1
+
+  insert into Usuario values (@codigo, @nome, @data, @senha, @telefone, @email)
+
+  select * from Usuario where CodUsuario = @codigo
+end
+
+Inserir_sp @nome='Teste', @email ='@', @telefone='43241', @data = '12/12/12', @senha='12345678'
+
+sp_help Usuario
+
 -------------------------------------------------------------------------------------------------------
 create table Acesso(
 codAcesso int primary key,
@@ -15,6 +45,8 @@ horaAcesso datetime not null,
 constraint fkUsuario foreign key(codUsuario) references Usuario(CodUsuario)
 )
    
+   select COUNT(CodUsuario) from Usuario
+
 select * from Acesso
 -------------------------------------------------------------------------------------------------------
 create table Perguntas(
