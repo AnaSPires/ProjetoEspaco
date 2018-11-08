@@ -1,12 +1,69 @@
-.ou
-{
-	background: url("./Imagens/ain.png");
-	width: 2048px;
-	height: 500px;
+body, html {
+    height: 100%;
 }
 
-.parallax-container {
-  height: 400px;
+.parallax {
+    /* The image used */
+    background-image: url("Imagens/universe.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nav {
+  background-color: #4224D7 !important;
+    height: 100px;
+}
+.logo
+{
+    width: 100px;
+    height: 100px;
+    background: url(Imagens/logo.png);
+   
+}
+
+.nome
+{
+    position: relative;
+    left: 150px;
+    top: 20px;
+    width: 400px;
+    height: 100px;
+     color: white;
+   font-family:"Century Gothic";
+    font-size: 40px;
+    font-weight: 600;
+}
+.page-footer
+{
+    background-color:#75DED9; 
+}
+
+.right hide-on-med-and-down
+{
+    position: relative;
+    top: 100px;
+}
+
+.txt1
+{
+    color: #777;
+    background-color:white;
+    text-align:center;
+    padding:50px 80px;
+    text-align: justify;
+    position: absolute;
+    top: 580px;
+}
+
+h3
+{
+    text-align:center;
 }
 
 /*
