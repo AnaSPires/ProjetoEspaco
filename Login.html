@@ -8,17 +8,44 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-  <!--Let browser know website is optimized for mobile-->
+
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script>
 
             var valido = false;
             var valido2 = false;
+            var arr;
 
-            function Verificar()
+     function carregar() {
+      var xmlhttp = new XMLHttpRequest();
+      var url = "http://localhost:3000/Usuario";
+
+      xmlhttp.onreadystatechange=function()
+      {
+        alert("aqui");
+        alert(this.readyState);
+        alert(this.status);
+          if (this.readyState == 4 && this.status == 200)
+              //alert("aqui"); 
+              arr = JSON.parse(this.responseText);
+      }
+
+      xmlhttp.open("GET", url, true);
+     
+      xmlhttp.send();
+     }
+
+           function Verificar()
             {
-              if(document.form2.checkValidity ())
-                 window.open('Node.js/pp.html');
+               for(var i = 0; i < arr.length; i ++)
+              {
+                 if(arr[i].nome == getElementById("nome").value && arr[i].senha == getElementById("Senha").value)
+                        window.open('Node.js/pp.html');
+                else
+                  alert("Os dados não existem! Deseja fazer um cadastro?");
+
+           }
+                 
             }
 
             function Cadastro()
@@ -159,7 +186,7 @@
                 </div>
               </div>                   
                     
-                             <button  onclick="Verificar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
+                             <button  onclick="carregar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
                              
                          <u><a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
                             </form> 

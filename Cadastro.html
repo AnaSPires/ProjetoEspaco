@@ -11,35 +11,7 @@
            }*/
               
 //isso é no login
-     function seExiste() {
-    var xmlhttp = new XMLHttpRequest();
-    var url = "http://localhost:3000/perguntas";
-
-    xmlhttp.onreadystatechange=function()
-    {
-        if (this.readyState == 4 && this.status == 200) 
-  
-            ExibeDados(this.responseText);
-        }
-
-    xmlhttp.open("GET", url, true);
    
-    xmlhttp.send();
-  
-   }
-   function se(response)
-   {
-    var arr = JSON.parse(response);
-
-    for(int i = 0; i < arr.length; i ++)
-    {
-        if(arr[i].nome == getElementById("nome").value && arr[i].senha == getElementById("Senha").value)
-           alert("ok");
-        else
-            alert("Os dados não existem! Deseja fazer um cadastro?");
-
-    }
-   }
 ///aquiii
 
         //placeholder

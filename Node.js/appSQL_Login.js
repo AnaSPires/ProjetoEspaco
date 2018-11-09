@@ -37,27 +37,26 @@ function execSQL(sql, resposta) {
     .catch(erro => resposta.json(erro));
 }
 
-rota.get('/acesso', (requisicao, resposta) =>{
-execSQL('SELECT * FROM Acesso', resposta);
+rota.get('/usuario', (requisicao, resposta) =>{
+execSQL('SELECT * FROM Usuario', resposta);
 })
 //Deletar
-rota.get('/acesso/:codAcesso?', (requisicao, resposta) => {
+rota.get('/usuario/:CodUsuario?', (requisicao, resposta) => {
   let filtro = '';
   if (requisicao.params.id) 
-    filtro = ' WHERE codAcesso=' + parseInt(requisicao.params.id);
-  execSQL('SELECT * from Acesso' + filtro, resposta);
+    filtro = ' WHERE CodUsuario=' + parseInt(requisicao.params.id);
+  execSQL('SELECT * from Usuario' + filtro, resposta);
 })
 
-rota.get('/acesso', (requisicao, resposta) =>{
+rota.get('/Usuario', (requisicao, resposta) =>{
     const nome = requisicao.body.nome.substring(0,40);
-   
     execSQL(`select @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha})`, resposta);
     resposta.end(resposta.json({ mensagem: 'Incluído!'}));    
 })
 /*
-codAcesso int primary key,
+codusuario int primary key,
 codUsuario int not null,
-dataAcesso datetime not null,
-horaAcesso datetime not null,
+datausuario datetime not null,
+horausuario datetime not null,
 constraint fkUsuario foreign key(codUsuario) references Usuario(CodUsuario)
 */
