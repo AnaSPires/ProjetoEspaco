@@ -49,7 +49,7 @@ a.hover
 {
     position:   absolute;
     top:        23px;
-    left:       790px;
+    left:       770px;
     width:      500px;
     font-family:"Century Gothic";
     font-size:  40px;
@@ -88,6 +88,68 @@ h3
     width: 50px;
     height: 50px;
     background: url("Imagens/logoo.png");
+}
+
+.face img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+     position: relative;
+    bottom: 25px;
+    left: 250px;
+}
+.twitter img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+    bottom: 65px;
+    left: 290px;
+}
+.insta img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 105px;
+    left: 330px;
+}
+.goo img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 145px;
+    left: 370px;
+}
+
+#termos
+{
+    position: relative;
+    bottom: 170px;
+    right: 250px;
+    font-size:  16px;
+}
+
+#rodape
+{
+    height: 40px;
+}
+
+.video
+{
+    width: 560px;
+    height: 315px;
 }
 
 
