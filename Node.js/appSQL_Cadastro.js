@@ -41,26 +41,27 @@ rota.get('/usuario', (requisicao, resposta) =>{
 execSQL('SELECT * FROM Usuario', resposta);
 })
 //Deletar
-rota.get('/usuario/:CodUsuario?', (requisicao, resposta) => {
+rota.get('/usuario/:id?', (requisicao, resposta) => {
   let filtro = '';
   if (requisicao.params.id) 
-    filtro = ' WHERE CodUsuario=' + parseInt(requisicao.params.id);
+    filtro = ' WHERE ID=' + parseInt(requisicao.params.id);
   execSQL('SELECT * from Usuario' + filtro, resposta);
 })
 
 // testar no POSTMAN
-rota.delete('/usuario/:CodUsuario', (requisicao, resposta) =>{
-  execSQL('DELETE Usuario WHERE CodUsuario=' + parseInt(requisicao.params.CodUsuario), resposta);
+rota.delete('/usuario/:id', (requisicao, resposta) =>{
+  execSQL('DELETE Usuario WHERE ID=' + parseInt(requisicao.params.CodUsuario), resposta);
   resposta.end(resposta.json({ mensagem: 'Deletado!'}));
 })
 
-//debugger;
+
+
 rota.get('/usuario', (requisicao, resposta) =>{
     const nome = requisicao.body.nome.substring(0,40);
     const email = requisicao.body.email.substring(0,40);
     const data = requisicao.body.dataNascimento.substring(0,11);
     const senha = requisicao.body.Senha.substring(0,20);
     const telefone = requisicao.body.telefone.substring(0,20);
-    execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}´), resposta);
+    execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha})`, resposta);
     resposta.end(resposta.json({ mensagem: 'Incluído!'}));    
 })

@@ -13,8 +13,9 @@
         <script>
 
             var valido = false;
-            var valido2 = false;
-            var arr;
+            var validoSenha = false;
+
+            var resposta; //Node
 
      function carregar() {
       var xmlhttp = new XMLHttpRequest();
@@ -22,12 +23,9 @@
 
       xmlhttp.onreadystatechange=function()
       {
-        alert("aqui");
-        alert(this.readyState);
-        alert(this.status);
-          if (this.readyState == 4 && this.status == 200)
-              //alert("aqui"); 
-              arr = JSON.parse(this.responseText);
+          if (this.readyState == 4 && this.status == 200){
+              Verificar(this.responseText);
+          }
       }
 
       xmlhttp.open("GET", url, true);
@@ -35,16 +33,17 @@
       xmlhttp.send();
      }
 
-           function Verificar()
+           function Verificar(res)
             {
-               for(var i = 0; i < arr.length; i ++)
+              resposta= JSON.parse(res);
+
+              for(var i =0; i < resposta.length; i++)
               {
-                 if(arr[i].nome == getElementById("nome").value && arr[i].senha == getElementById("Senha").value)
-                        window.open('Node.js/pp.html');
+                if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
+                    window.open('Node.js/pp.html');
                 else
                   alert("Os dados não existem! Deseja fazer um cadastro?");
-
-           }
+              }      
                  
             }
 
@@ -67,10 +66,11 @@
 
             }
             
-            function Tool()
+            function boolean Tool()
             {
                 var senha1 = document.getElementById("password").value;
-                 var senha2 = document.getElementById("password2").value;
+                var senha2 = document.getElementById("password2").value;
+
                 if(senha2!="")
                 {
                     if(senha1!=senha2  )
@@ -78,10 +78,10 @@
                         document.getElementsByClassName("tooltiptext")[0].style.display = "block";
                         document.getElementsByClassName("tooltiptext")[0].style. visibility = "visible";
                         document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
-                       document.getElementById("password2").style.borderBottom = "1px solid red";
+                        document.getElementById("password2").style.borderBottom = "1px solid red";
                         document.getElementById("password2").style.boxShadow = "0 1px 0 0 red";
                         document.getElementById("frase").style.color = "red";
-                       valido = false;
+                       validoSenha = false;
                     }
                     else
                     {
@@ -91,9 +91,11 @@
                          document.getElementById("password2").style.borderBottom = "1px solid #57A856";
                          document.getElementById("password2").style.boxShadow = "0 1px 0 0 #57A856";
                          document.getElementById("frase").style.color = "green";
-                         valido = true;
+                         validoSenha = true;
                     }
                   }
+
+                  return validoSenha;
             }
 
              function TirarTool()
@@ -108,16 +110,22 @@
                    
                    
             }
-
+            //?
+            /*
            function Validar()
            {
               if(document.form1.checkValidity ())
                 valido2 = true;
                
-           }
-            
+           }*/
+            /*
             function Abrir()
             {
+               //Parte Node
+                nodeCadastro();
+
+
+              
               Validar();
                 if(valido && valido2)
                 {
@@ -134,8 +142,39 @@
                         if(!document.form1.tel.validity.patternMismatch)
                           alert("tel");
                  }
-            }
+            }*/
             
+            function nodeCadastro()
+            {
+              for(var i =0; i < resposta.length; i++)
+              {
+                if(resposta[i].Nome = document.getElementById("username2").value)
+                {
+                  alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");      
+                }
+                if(resposta[i].email = document.getElementById("email").value)
+                {
+                  alert("Esse e-mail já foi cadastrado! Forneça um diferente para prosseguir.");
+                }
+                if(resposta[i].telefone = document.getElementById("tel").value)
+                {
+                  alert("Esse telefone já foi cadastrado! Forneça um diferente para prosseguir.");    
+                }
+    
+                else  
+                {                    
+                  if(Tool)
+                  {
+                    valido = true;
+                     window.open('Node.js/pp.html');
+                  }
+                  else
+                   alert("Verifique se as senhas estão corretas");
+                }
+              }
+
+            }
+
             //teste
             
                     </script>
@@ -162,7 +201,7 @@
         </center>
         
         <div class="contato">
-            |
+            
         <a href="Contato.html" class="cont"> Contato </a>
         </div>
     </header>
@@ -253,7 +292,7 @@
                 </div>
                 </div>
               </div>
-              <button class="txtSubmit" id = "botao" onclick="Abrir()">Cadastrar</button><br><br><br>
+              <button class="txtSubmit" id = "botao" onclick="nodeCadastro()">Cadastrar</button><br><br><br>
                
             </form>
            

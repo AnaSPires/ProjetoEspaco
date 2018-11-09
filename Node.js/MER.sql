@@ -2,7 +2,8 @@ create table Usuario(
 CodUsuario int primary key,
 Nome varchar(30),
 dataNascimento datetime,
-senha  varchar(10))
+senha  varchar(30)
+)
 
 alter table Usuario
 add telefone varchar(20)
@@ -14,7 +15,20 @@ alter table Usuario
 alter column senha varchar(30)
 
 select * from Usuario
-insert into Usuario values( 1, 'Amanda', '03/05/2009',25632514)
+insert into Usuario values( 1, 'Amanda', '03/05/2009','25632514', '99-99999-9999', 'ana@gmail.com')
+
+go
+
+create proc logar_sp @nome varchar(40), @senha varchar(30)
+as
+begin
+ if (Exists(select * from Usuario where nome = @nome and senha = @senha))
+    select * from Usuario where nome = @nome and senha = @senha
+  else
+    return 0
+end
+
+logar_sp 'Amanda', '25632514'
 
 create proc Inserir_sp 
 @nome ntext,

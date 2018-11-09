@@ -42,21 +42,15 @@ execSQL('SELECT * FROM Usuario', resposta);
 })
 //Deletar
 rota.get('/usuario/:CodUsuario?', (requisicao, resposta) => {
-  let filtro = '';
-  if (requisicao.params.id) 
-    filtro = ' WHERE CodUsuario=' + parseInt(requisicao.params.id);
-  execSQL('SELECT * from Usuario' + filtro, resposta);
+  //let filtro = '';
+  // (requisicao.params.id) 
+    //filtro = ' WHERE CodUsuario=' + parseInt(requisicao.params.id);
+  //execSQL('if((select nome from Usuario where senha = ${senha}) = ${nome}' + filtro, resposta);
 })
 
 rota.get('/Usuario', (requisicao, resposta) =>{
     const nome = requisicao.body.nome.substring(0,40);
-    execSQL(`select @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha})`, resposta);
+    const senha = requisicao.body.Senha;
+    execSQL(`logar_sp @nome = ${nome}, @senha = ${senha}`, resposta);
     resposta.end(resposta.json({ mensagem: 'Incluído!'}));    
 })
-/*
-codusuario int primary key,
-codUsuario int not null,
-datausuario datetime not null,
-horausuario datetime not null,
-constraint fkUsuario foreign key(codUsuario) references Usuario(CodUsuario)
-*/
