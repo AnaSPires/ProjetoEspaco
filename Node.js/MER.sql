@@ -18,7 +18,7 @@ select * from Usuario
 insert into Usuario values( 1, 'Amanda', '03/05/2009','25632514', '99-99999-9999', 'ana@gmail.com')
 
 go
-
+update Usuario set senha = 'senha123' where CodUsuario = 1
 create proc logar_sp @nome varchar(40), @senha varchar(30)
 as
 begin
