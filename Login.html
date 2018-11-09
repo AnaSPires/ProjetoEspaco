@@ -36,13 +36,14 @@
            function Verificar(res)
             {
               resposta= JSON.parse(res);
+              alert(resposta[0].tel);
 
               for(var i =0; i < resposta.length; i++)
               {
                 if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
                     window.open('Node.js/pp.html');
                 else
-                  alert("Os dados não existem! Deseja fazer um cadastro?");
+                  alert("Informações inválidas! Deseja fazer um cadastro?");
               }      
                  
             }
@@ -66,7 +67,7 @@
 
             }
             
-            function boolean Tool()
+            function Tool()
             {
                 var senha1 = document.getElementById("password").value;
                 var senha2 = document.getElementById("password2").value;
@@ -175,13 +176,43 @@
 
             }
 
+            function carregar2() {
+              var xmlhttp = new XMLHttpRequest();
+              var url = "http://localhost:3000/Usuario";
+
+              xmlhttp.onreadystatechange=function()
+              {
+                  if (this.readyState == 4 && this.status == 200){
+                      Verificar(this.responseText);
+                  }
+              }
+
+              xmlhttp.open("GET", url, true);
+             
+              xmlhttp.send();
+             }
+
+           function Verificar2(res)
+            {
+              resposta= JSON.parse(res);
+              alert(resposta);
+
+              for(var i =0; i < resposta.length; i++)
+              {
+                if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
+                    window.open('Node.js/pp.html');
+                else
+                  alert("Informações inválidas! Deseja fazer um cadastro?");
+              }      
+                 
+            }
+
             //teste
             
                     </script>
 
     </head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-  <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="Login.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
