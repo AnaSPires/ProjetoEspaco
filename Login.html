@@ -29,7 +29,7 @@
       }
 
       xmlhttp.open("GET", url, true);
-     
+
       xmlhttp.send();
      }
 
@@ -44,8 +44,8 @@
                     window.open('Node.js/pp.html');
                 else
                   alert("Informações inválidas! Deseja fazer um cadastro?");
-              }      
-                 
+              }
+
             }
 
             function Cadastro()
@@ -63,10 +63,10 @@
                document.getElementsByTagName("body")[0].style.background = "url(\"./Node.js/imagens/fundo.gif\");";
                document.getElementsByClassName("cadastro")[0].style.display = "none";
                document.getElementsByClassName("transparencia")[0].style.filter = " brightness(100%)";
-              
+
 
             }
-            
+
             function Tool()
             {
                 var senha1 = document.getElementById("password").value;
@@ -88,7 +88,7 @@
                     {
                        document.getElementsByClassName("tooltiptext")[0].style.display = "none";
                         document.getElementsByClassName("tooltiptext")[0].style. visibility = "hidden";
-                        document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";        
+                        document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
                          document.getElementById("password2").style.borderBottom = "1px solid #57A856";
                          document.getElementById("password2").style.boxShadow = "0 1px 0 0 #57A856";
                          document.getElementById("frase").style.color = "green";
@@ -103,13 +103,13 @@
             {
              var senha1 = document.getElementById("password").value;
              var senha2 = document.getElementById("password2").value;
-              
-        
+
+
             document.getElementsByClassName("tooltiptext")[0].style.display = "none";
             document.getElementsByClassName("tooltiptext")[0].style. visibility = "hidden";
             document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
-                   
-                   
+
+
             }
             //?
             /*
@@ -117,7 +117,7 @@
            {
               if(document.form1.checkValidity ())
                 valido2 = true;
-               
+
            }*/
             /*
             function Abrir()
@@ -126,13 +126,13 @@
                 nodeCadastro();
 
 
-              
+
               Validar();
                 if(valido && valido2)
                 {
                    window.open('Node.js/pp.html');
-                 } 
-                 else 
+                 }
+                 else
                  {
                           if(!document.form1.user.validity.patternMismatch)
                           alert("user");
@@ -144,14 +144,14 @@
                           alert("tel");
                  }
             }*/
-            
+
             function nodeCadastro()
             {
               for(var i =0; i < resposta.length; i++)
               {
                 if(resposta[i].Nome = document.getElementById("username2").value)
                 {
-                  alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");      
+                  alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");
                 }
                 if(resposta[i].email = document.getElementById("email").value)
                 {
@@ -159,11 +159,11 @@
                 }
                 if(resposta[i].telefone = document.getElementById("tel").value)
                 {
-                  alert("Esse telefone já foi cadastrado! Forneça um diferente para prosseguir.");    
+                  alert("Esse telefone já foi cadastrado! Forneça um diferente para prosseguir.");
                 }
-    
-                else  
-                {                    
+
+                else
+                {
                   if(Tool)
                   {
                     valido = true;
@@ -188,7 +188,7 @@
               }
 
               xmlhttp.open("GET", url, true);
-             
+
               xmlhttp.send();
              }
 
@@ -203,12 +203,12 @@
                     window.open('Node.js/pp.html');
                 else
                   alert("Informações inválidas! Deseja fazer um cadastro?");
-              }      
-                 
+              }
+
             }
 
             //teste
-            
+
                     </script>
 
     </head>
@@ -217,28 +217,28 @@
     <link href="Login.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <body>
-      
+
             <div class="transparencia">
     <header>
         <p class = "logo"></p>
         <center>
        <div class="titulo" ></div>
     </center>
-        
+
                         <center>
                 <div class="user"></div><br>
                 <div class="frase">Ol&aacute;! Digite o seu usu&aacute;rio e senha</div>
-                
+
         </center>
-        
+
         <div class="contato">
-            
+
         <a href="Contato.html" class="cont"> Contato </a>
         </div>
     </header>
-    
+
             <div class="bloco">
-                
+
                     <div class="peq">
                      <form class="col s12" name = "form2" onsubmit=" return false;">
               <div class="row">
@@ -254,15 +254,16 @@
                   <input id="senha" type="password" class="validate" required  name="senhaa">
                   <label for="senha">Senha</label>
                 </div>
-              </div>                   
-                    
+              </div>
+
                              <button  onclick="carregar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
-                             
-                         <u><a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
-                            </form> 
+
+                         <u><a onclick="window.open('Cadastro.html')" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
+                            </form>
                     </div>
             </div>
                 </div>
+                /*
             <div class="cadastro">
               <div class="seta" onclick="Sumir()"></div>
                 <div class="tit"></div>
@@ -270,7 +271,7 @@
                 <div class="dados">
                 Preencha o formulário com seus dados pessoais
                 </div>
-                <div class="posicao">  
+                <div class="posicao">
                 <br><br>
                 <div class="row">
             <form class="col s12" name = "form1" onsubmit=" return false;">
@@ -288,7 +289,7 @@
                   <label for="email">Email</label>
                 </div>
               </div>
-                
+
                 <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">phone</i>
@@ -296,15 +297,15 @@
                   <label for="tel">Telefone((99) 99999-9999)</label>
                 </div>
               </div>
-                
-            <div class="row">    
+
+            <div class="row">
             <div class="input-field col s6">
                  <i class="material-icons prefix">insert_invitation</i>
                 <input type="date" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
                 <label for="aniversario">Data Nascimento</label>
             </div>
                 </div>
-                
+
               <div class="row">
                 <div class="input-field col s16">
                     <i class="material-icons prefix">lock</i>
@@ -317,23 +318,22 @@
                   <div class="tooltip">
                     <i class="material-icons prefix">lock</i>
                   <input id="password2" type="password" onblur="Tool()" class="validate" onfocus="TirarTool()" required>
-                  
+
                   <label for="password2" id="frase">Confirmar senha</label>
                   <span class="tooltiptext">As senhas não batem.</span>
                 </div>
                 </div>
               </div>
               <button class="txtSubmit" id = "botao" onclick="nodeCadastro()">Cadastrar</button><br><br><br>
-               
+
             </form>
-           
+
           </div>
-                              
+
                     </div>
-                    
+
             </div>
-           
-    </body>
+
+    </body>*/
 </html>
 
-                

@@ -1,4 +1,4 @@
-<html>
+<html class="responsive-img">
 <head>
 	<title>QUIZ</title>
 
@@ -9,13 +9,14 @@
 
   <script>
 
-//https://materializecss.com/media.html
-
     //Atualizar -- AJAX
 
 
   var nivel = 1;
   var certa;
+
+  var vetor;
+  var qtd = 0;
 
   var p;
   var a;
@@ -37,13 +38,13 @@
     document.getElementById("d").toggle();*/
 
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://localhost:3000/perguntas/" + nivel;
+    var url = "http://localhost:3000/perguntas";
 
     xmlhttp.onreadystatechange=function()
     {
         if (this.readyState == 4 && this.status == 200)
             ExibeDados(this.responseText);
-        }
+      }
 
     xmlhttp.open("GET", url, true);
 
@@ -56,7 +57,7 @@
 
   window.onload =  function pegarInfo() {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://localhost:3000/perguntas/" + nivel;
+    var url = "http://localhost:3000/perguntas";
 
     xmlhttp.onreadystatechange=function()
     {
@@ -81,6 +82,17 @@ function ExibeDados(response) {
     c = "<span>";
     d = "<span>";
 
+   var qual = parseInt(Math.random() * (arr.length - 1));
+   vetor[qtd] = qual;
+   qtd++;
+
+   //Verificar se a pergunta não aparecerá mais de uma vez
+   for(var i = 0; i < vetor.length; i++)
+   {
+     if(vetor[i] == qual)
+       qual = parseInt(Math.random() * (arr.length - 1));
+
+   }
 
     for(var i = 0; i < arr.length; i++)
     {
@@ -286,7 +298,7 @@ function ExibeDados(response) {
              </form>
 
      <button id="btn1"></button>
-     <button id="btn2""></button>
+     <button id="btn2"></button>
      <button id="btn3"></button>
      <button id="btn4"></button>
      <button id="btn5"></button>
