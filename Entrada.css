@@ -2,10 +2,6 @@ body, html {
     height: 100%;
 }
 
-a.hover
-{
-
-}
 
 .parallax {
     /* The image used */
@@ -32,13 +28,13 @@ a.hover
 {
     position:        relative;
     left:            150px;
-    top:        20px;
-    width: 400px;
-    height: 100px;
-     color: white;
-   font-family:"Century Gothic";
-    font-size: 40px;
-    font-weight: 600;
+    top:       		 20px;
+    width: 			 400px;
+    height: 		 100px;
+    color: 		 	 white;
+  	font-family:	 "Century Gothic";
+    font-size: 		 40px;
+    font-weight: 	 600;
 }
 .page-footer
 {
@@ -146,10 +142,24 @@ h3
     height: 40px;
 }
 
-.video
+
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 1000px;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption img
 {
-    width: 560px;
-    height: 315px;
+	max-width:400px;
+    width: auto;
+    height: auto;
+    position: relative;
+    
 }
 
 
