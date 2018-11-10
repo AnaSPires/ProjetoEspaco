@@ -1,0 +1,144 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    
+     <script>
+   
+       var arr;
+       var planeta;
+
+        window.onload = function(){
+            var urlString = window.location.toString();
+            var url = new URL(urlString);
+            var param = location.search.substring(url.length); 
+            planeta = param.substring(8);
+
+             if(planeta == 'Mercúrio')
+             {
+             	planeta = 'Mercúrio';
+             }
+             else
+             	if(planeta == 'Vênus')
+             		planeta = 'Vênus';
+             	
+             	else
+             		if(planeta == 'J%C3%BApiter')
+             		{
+             			planeta = 'Júpiter';
+             		}
+             		else
+             			if(planeta == 'Plut%C3%A3o')
+             			{   
+             				planeta = 'Plutão';
+             			}
+
+
+            document.getElementById("qualPlaneta").innerHTML = planeta;
+
+            Quiz(planeta);
+        }
+ 
+   function Quiz(qual) {
+
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://localhost:3000/elementos";
+
+    xmlhttp.onreadystatechange=function(){
+        if (this.readyState == 4 && this.status == 200){
+            ExibeDados(this.responseText, qual);
+          }
+        }
+
+        xmlhttp.open("GET", url, true);
+   
+    xmlhttp.send();
+} 
+
+function ExibeDados(response,qual) {
+    arr = JSON.parse(response);   
+}
+
+function menu(oq){
+	for(var i = 0; i < arr.length; i++) 
+    {
+    	if(planeta == arr[i].nome){
+    	if(oq == descricao)
+          document.getElementById("escrever").innerHTML = "<p class='descricao'>" + arr[i].descricao + "</p>";
+      else{
+      	if(oq == tamanho)
+           document.getElementById("escrever").innerHTML = "<p class='diametro'>Diâmetro: " + arr[i].tamanho + "</p>";
+        else{
+        	if(oq == massa)
+               document.getElementById("escrever").innerHTML = "<p class='massa'>Massa: " + arr[i].massa + "</p>";
+           else{
+           	if(oq == distancia)
+               document.getElementById("escrever").innerHTML = "<p class='dis'>" + arr[i].distancia + "</p>";
+           else{
+           	if(oq == orbital)
+               document.getElementById("escrever").innerHTML = "<p class='orbital'>Período orbital: " + arr[i].periodoOrbital + "</p>";
+           else{
+           	if(oq == rotacao)
+               document.getElementById("escrever").innerHTML = "<p class='rotacao'>Período de Rotação: " + arr[i].periodoRotacao + "</p>";
+           else{
+           	if(oq == gravidade)
+              document.getElementById("escrever").innerHTML = "<p class='gravidade'>Gravidade: " + arr[i].gravidade + "</p>";
+          else{
+          	if(oq == temperatura)
+               document.getElementById("escrever").innerHTML = "<p class='temp'>Temperatura: " + arr[i].temperatura + "</p>";
+           else{
+           	if(oq == composicao)
+              document.getElementById("escrever").innerHTML = "<p class='comp'>Composição" + "\n\n" + arr[i].composicao + "</p>";
+          else
+              document.getElementById("escrever").innerHTML = "<p class='est'>Estrutura"+ "\n\n" + arr[i].est + "<img class='responsive-img 'class='circle' src='imagens/" + planeta + "Estrutura'></p>";
+    }}}}}}}}}} 
+}
+
+ </script>
+
+ </head>
+
+ <link href="teste.css" rel="stylesheet" type="text/css">
+
+ <body>    
+     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+       <nav>
+     <div class="nav-wrapper">
+          <a id="qualPlaneta" href="#" class="brand-logo" value=""></a>
+         
+     </div>
+ </nav>
+
+
+      <nav id="menu">
+
+        <ul class="sidenav">
+             <li id="descricao" onclick="menu(descricao)"><a href="#">Descrição</a></li>
+             <li id="tamanho"   onclick="menu(tamanho)"><a href="#">Diâmetro</a></li>
+             <li id="massa"     onclick="menu(massa)"><a href="#">Massa Atômica</a></li>
+             <li id="distancia" onclick="menu(distancia)"><a href="#">Distância</a></li>
+             <li id="orbital"   onclick="menu(orbital)"><a href="#">Período Orbital</a></li>
+             <li id="rotacao"   onclick="menu(rotacao)"><a href="#">Período de Rotação</a></li>
+             <li id="gravidade" onclick="menu(gravidade)"><a href="#">Gravidade</a></li>
+             <li id="temperatura" onclick="menu(temperatura)"><a href="#">T°</a></li>
+             <li id="composicao"  onclick="menu(composicao)"><a href="#">Composição</a></li>
+             <li id="estrutura"   onclick="menu(estrutura)"><a href="#">Estrutura</a></li>
+         </ul>
+          </nav>
+    
+
+         <div class="center-align">
+                <h1 id="qual"></h1>
+        </div> 
+
+       <div> <h2 id="escrever"></h2> </div>
+
+
+ </body>
+ </html>

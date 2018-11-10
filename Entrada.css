@@ -1,0 +1,165 @@
+body, html {
+    height: 100%;
+}
+
+
+.parallax {
+    /* The image used */
+    background-image: url("Imagens/universe.jpg");
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nav {
+  background-color: #4224D7 !important;
+    height: 100px;
+}
+.logo
+{
+    width: 100px;
+    height: 100px;
+    background: url(Imagens/logo.png);
+   
+}
+
+.nome
+{
+    position:        relative;
+    left:            150px;
+    top:       		 20px;
+    width: 			 400px;
+    height: 		 100px;
+    color: 		 	 white;
+  	font-family:	 "Century Gothic";
+    font-size: 		 40px;
+    font-weight: 	 600;
+}
+.page-footer
+{
+    background-color:#75DED9; 
+}
+
+#menu
+{
+    position:   absolute;
+    top:        23px;
+    left:       770px;
+    width:      500px;
+    font-family:"Century Gothic";
+    font-size:  40px;
+}
+
+.txt1
+{
+    color: #777;
+    background-color:white;
+    text-align:center;
+    padding:50px 80px;
+    text-align: justify;
+    position: absolute;
+    top: 730px;
+    width: 100%;
+}
+
+h3
+{
+    text-align:center;
+}
+
+#myCarousel
+{
+    position: absolute;
+    top: 330px;
+}
+
+.active
+{
+    font-size: 16px;
+}
+
+.logoo
+{
+    width: 50px;
+    height: 50px;
+    background: url("Imagens/logoo.png");
+}
+
+.face img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+     position: relative;
+    bottom: 25px;
+    left: 250px;
+}
+.twitter img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+    bottom: 65px;
+    left: 290px;
+}
+.insta img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 105px;
+    left: 330px;
+}
+.goo img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 145px;
+    left: 370px;
+}
+
+#termos
+{
+    position: relative;
+    bottom: 170px;
+    right: 250px;
+    font-size:  16px;
+}
+
+#rodape
+{
+    height: 40px;
+}
+
+
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 1000px;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption img
+{
+	max-width:400px;
+    width: auto;
+    height: auto;
+    position: relative;
+    
+}
+
+

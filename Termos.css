@@ -1,0 +1,13 @@
+body {
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1.5;
+    font-family: 'Open Sans',X-LocaleSpecific,sans-serif;
+    color: #333;
+    background: #fff;
+}
+
+html {
+    background: #fff;
+    font-size: 100%;
+}

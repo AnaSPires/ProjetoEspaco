@@ -27,7 +27,7 @@ nav
 	border-radius: 100%;
 	border: 5px solid blue;
 	width:85px; 
-	height:50px;
+	height:75px;
 }
 
 
@@ -153,9 +153,9 @@ nav
 {
 	background-color: lightgreen;
 	position: absolute; 
-    left: 400px; 
+    left: 240px; 
     top: 20px; 
-    width: 48%; 
+    width: 58%; 
     height: 500px; 
     border-radius: 20%; 
 }
@@ -163,9 +163,13 @@ nav
 #btnVer
 {
 	position: absolute;
-	 left: 300px; 
-	 top: 430px;
-	 display: none;
+	left: 360px; 
+	top: 430px;
+	position: absolute;
+	width: 12%;
+	height: 11%;
+	display: none;
+    border-radius: 25%; 
 }
 
 #a

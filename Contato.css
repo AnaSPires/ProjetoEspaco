@@ -1,13 +1,13 @@
 body
 {
-    background-image: url("contatinho.png");
+    background-image: url("Imagens/contatinho.png");
 }
 
 header
 {
     position: absolute;
     left: -1px;
-    background-image: url("ain.png");
+    background-image: url("Imagens/ain.png");
     height: 330px;
     width: 100%;
     top: -1px;
@@ -16,39 +16,6 @@ header
     font-weight: 400;
 }
 
-.logo
-{
-    background-image: url("logo.png");
-    height: 150px;
-    width: 150px;
-}
-
-.contato
-{
-    width: 150px;
-    height: 100px;
-    position: absolute;
-    top: 0px;
-    left: 1200px;
-    color: white;
-    font-size: 25px;
-    font-weight: 900;
-}
-.cont
-{
-    color: white;
-    font-family:"Century Gothic";
-    font-weight: 600;
-    font-size: 25px;
-}
-
-.cad
-{
-     color: #0B3861;
-    font-family:"Century Gothic";
-    font-weight: 600;
-    font-size: 17px;
-}
 
 
 .peq
@@ -94,51 +61,20 @@ button.css3button {
 		-1px 1px 0px rgba(240,247,250,1);
 
     position: relative;
-    top: 25px;
+    top: 0px;
     font-family:"Century Gothic";
     font-weight: 600;
     font-size: 20px;
     
 }
 
-input[type=text] {
-    border: none;
-    background-color: #E6E6E6;
-    border-bottom: 2px solid purple;
-    font-family:"Century Gothic";
-    font-weight: 700;
-    font-size: 15px;
-    width: 180px;
-    height: 40px;
-    
-}
 
-input[type=email] {
-    border: none;
-    background-color: #E6E6E6;
-    border-bottom: 2px solid purple;
-    font-family:"Century Gothic";
-    font-weight: 700;
-    font-size: 15px;
-    width: 180px;
-    height: 40px;
-}
 
-textarea {
-    border: none;
-    background-color: #E6E6E6;
-    border-bottom: 2px solid purple;
-    font-family:"Century Gothic";
-    font-weight: 700;
-    font-size: 15px;
-    width: 190px;
-    height: 100px; 
-}
 .bloco
 {
     background: white;
     width: 800px;
-    height: 700px;
+    height: 730px;
     position: relative;
     top: 80px;
     left: 200px;;
@@ -154,14 +90,18 @@ iframe
 	top: 20px;
 }
 
-hr.oi
+.um
 {
+    color:  #01DFA5;
     border-color:  #01DFA5;
+    border-width: medium;
 }
 
-hr{
+.dois{
     border-width: medium;
      border-color:#DF3A01;
+
+     color:#DF3A01;
 }
 .dados
 {
@@ -182,7 +122,7 @@ hr{
     left: 40px;
     font-family:"Century Gothic";
     font-weight: 900;
-    color: #01DFA5;
+    
 }
     
 

@@ -1,0 +1,112 @@
+html
+{
+  background-color: grey;
+}
+#menu
+{
+	display: block;
+	background-color: black;
+}
+.center-align {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font: bold;
+}
+
+#numero1
+{
+	border-radius: 100%;
+	position: relative;
+	width: 2%;
+	height: 2%;
+	background-color: red;
+}
+#numero2
+{
+	border-radius: 100%;
+	position: relative;
+	width: 2%;
+	height: 2%;
+	background-color: red;
+}
+#numero3
+{
+	border-radius: 100%;
+	position: relative;
+	top: 300px;
+	left: 600px;
+	width: 2%;
+	height: 2%;
+	background-color: red;
+}
+
+#escrever
+{
+	padding-left: 20px;52
+	font-size: 1px;
+	position: absolute;
+	top: 120px;
+}
+
+.descricao{
+	text-indent: 50px;
+	font-size: 45px;
+	color: green;
+}
+
+.diametro{
+	text-indent: 50px;
+	font-size: 50px;
+	color: blue;
+}
+
+.massa{
+	text-indent: 50px;
+	font-size: 50px;
+	color: green;
+}
+
+.dis{
+	text-indent: 50px;
+	font-size: 50px;
+	color: green;
+}
+
+.orbital{
+	text-indent: 50px;
+	font-size: 50px;
+	color: blue;
+}
+
+.rotacao{
+	text-indent: 50px;
+	font-size: 50px;
+	color: green;
+}
+
+.gravidade{
+	text-indent: 50px;
+	font-size: 50px;
+	color: red;
+}
+
+.temp{
+	text-indent: 50px;
+	font-size: 80px;
+	color: blue;
+}
+
+.comp{
+	text-indent: 50px;
+	font-size: 80px;
+	color: green;
+}
+
+.est{
+	text-indent: 50px;
+	font-size: 80px;
+	color: green;
+}

@@ -3,6 +3,7 @@ html
 {
    background-image: url('imagens/fundo.gif');
    cursor: grab;
+   
 }
 
 html:active
@@ -23,7 +24,7 @@ html:active
 	position: absolute;
 	top: 5px;
 	left: -700px;
-	width: 68%;
+	width: 73%;
 	height: 780px;
 }
 
@@ -162,7 +163,7 @@ html:active
 #tela
 {
 	background-color: lightgreen;
-	position: sticky;
+	position: relative;
     width: 50%; 
     height: 500px; 
     border-radius: 20%; 
