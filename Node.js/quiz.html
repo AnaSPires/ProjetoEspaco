@@ -15,6 +15,9 @@
   var nivel = 1;
   var certa;
 
+  var vetor;
+  var qtd = 0;
+
   var p;
   var a;
   var b;
@@ -24,25 +27,30 @@
   var quantosAcertos = 0;
   var quantosErros = 0;
 
- 
+
   var escolhida;
 
  window.onbeforeunload = function() {
+
+    /*document.getElementById("a").toggle();
+    document.getElementById("b").toggle();
+    document.getElementById("c").toggle();
+    document.getElementById("d").toggle();*/
 
     var xmlhttp = new XMLHttpRequest();
     var url = "http://localhost:3000/perguntas";
 
     xmlhttp.onreadystatechange=function()
     {
-        if (this.readyState == 4 && this.status == 200) 
+        if (this.readyState == 4 && this.status == 200)
             ExibeDados(this.responseText);
       }
 
     xmlhttp.open("GET", url, true);
-   
-    xmlhttp.send(); 
- 
-    return false;
+
+    xmlhttp.send();
+
+     return "Os dados do formulário serão perdidos.";
 }
 
     /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -53,22 +61,21 @@
 
     xmlhttp.onreadystatechange=function()
     {
-        if (this.readyState == 4 && this.status == 200) 
-  
+        if (this.readyState == 4 && this.status == 200)
             ExibeDados(this.responseText);
         }
 
     xmlhttp.open("GET", url, true);
-   
+
     xmlhttp.send();
-  
+
    }
 
 
 function ExibeDados(response) {
 
     var arr = JSON.parse(response);
-    
+
     p = "<h1>";
     a = "<span>";
     b = "<span>";
@@ -76,13 +83,29 @@ function ExibeDados(response) {
     d = "<span>";
 
    var qual = parseInt(Math.random() * (arr.length - 1));
+   vetor[qtd] = qual;
+   qtd++;
 
-   p += arr[qual].enunciado;
-   a += arr[qual].alternativaA;  
-   b += arr[qual].alternativaB;
-   c += arr[qual].alternativaC;
-   d += arr[qual].alternativaD;
-   certa = arr[qual].correta;      
+   //Verificar se a pergunta não aparecerá mais de uma vez
+   for(var i = 0; i < vetor.length; i++)
+   {
+     if(vetor[i] == qual)
+       qual = parseInt(Math.random() * (arr.length - 1));
+
+   }
+
+    for(var i = 0; i < arr.length; i++)
+    {
+      if(nivel == arr[i].codPergunta)
+      {
+        p += arr[i].enunciado;
+        a += arr[i].alternativaA;
+        b += arr[i].alternativaB;
+        c += arr[i].alternativaC;
+        d += arr[i].alternativaD;
+        certa = arr[i].correta;
+      }
+    }
 
     p += "</h1>";
     a += "</span>";
@@ -95,14 +118,14 @@ function ExibeDados(response) {
     document.getElementById("c").style.display = "block";
     document.getElementById("d").style.display = "block";
     document.getElementById("btnVer").style.display = "block";
-    
-    document.getElementById("pergunta").innerHTML = p;   
+
+    document.getElementById("pergunta").innerHTML = p;
     document.getElementById("r_Primeira").innerHTML = a;
     document.getElementById("r_Segunda").innerHTML = b;
     document.getElementById("r_Terceira").innerHTML = c;
     document.getElementById("r_Quarta").innerHTML = d;
   }
- 
+
 
     function Verificar()
     {
@@ -136,7 +159,7 @@ function ExibeDados(response) {
           else
           {
            quantosErros++;
-           trocarCorBtn('errou'); 
+           trocarCorBtn('errou');
            break;
           }
         }
@@ -171,7 +194,7 @@ function ExibeDados(response) {
          document.getElementById("btn1").style.background = "green";
        else
         document.getElementById("btn1").style.background = "red";
-  
+
       }
     else
      if(nivel == 2){
@@ -179,7 +202,7 @@ function ExibeDados(response) {
          document.getElementById("btn2").style.background = "green";
        else
         document.getElementById("btn2").style.background = "red";
-  
+
       }
     else
      if(nivel == 3){
@@ -187,7 +210,7 @@ function ExibeDados(response) {
          document.getElementById("btn3").style.background = "green";
        else
         document.getElementById("btn3").style.background = "red";
-  
+
       }
      else
       if(nivel == 4){
@@ -195,7 +218,7 @@ function ExibeDados(response) {
          document.getElementById("btn4").style.background = "green";
        else
         document.getElementById("btn4").style.background = "red";
-  
+
       }
     else
       if(nivel == 5){
@@ -216,7 +239,7 @@ function ExibeDados(response) {
        if(se == "acertou")
          document.getElementById("btn7").style.background = "green";
        else
-        document.getElementById("btn7").style.background = "red";  
+        document.getElementById("btn7").style.background = "red";
       }
      else
      if(nivel == 8){
@@ -238,14 +261,14 @@ function ExibeDados(response) {
          document.getElementById("btn10").style.background = "green";
        else
         document.getElementById("btn10").style.background = "red";
-      } 
+      }
     }
 
 	</script>
 	</head>
 <link href="quizCSS.css" rel="stylesheet" type="text/css">
 <body id="body">
-    
+
 
      <img id="terra" src="imagens/terraQuiz.png">
      <img id="gif" src="imagens/emoji.gif">
@@ -253,27 +276,27 @@ function ExibeDados(response) {
      <section id="tela">
 
           <form name = "form" method="post">
-        
+
           <center>
         <h1 id="pergunta"></h1>
          </center>
          <br><br>
-        
+
          <input id="a" type="radio" name="res" style="display: none"><span id="r_Primeira"></span>
          <br>
          <input id="b" type="radio" name="res" style="display: none"><span id="r_Segunda"></span>
-         <br>     
+         <br>
          <input id="c" type="radio" name="res" style="display: none"><span id="r_Terceira"></span>
          <br>
          <input id="d" type="radio" name="res" style="display: none"><span id="r_Quarta"></span>
          <br>
-        
+
          <button id="btnVer" onclick="Verificar()" style="display: none">Verificar</button>
 
             </section>
-            
+
              </form>
-     
+
      <button id="btn1"></button>
      <button id="btn2"></button>
      <button id="btn3"></button>

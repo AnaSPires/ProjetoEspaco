@@ -6,16 +6,16 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    
+
      <script>
-   
+
        var arr;
        var planeta;
 
         window.onload = function(){
             var urlString = window.location.toString();
             var url = new URL(urlString);
-            var param = location.search.substring(url.length); 
+            var param = location.search.substring(url.length);
             planeta = param.substring(8);
 
              if(planeta == 'Mercúrio')
@@ -25,7 +25,7 @@
              else
              	if(planeta == 'Vênus')
              		planeta = 'Vênus';
-             	
+
              	else
              		if(planeta == 'J%C3%BApiter')
              		{
@@ -33,7 +33,7 @@
              		}
              		else
              			if(planeta == 'Plut%C3%A3o')
-             			{   
+             			{
              				planeta = 'Plutão';
              			}
 
@@ -42,7 +42,7 @@
 
             Quiz(planeta);
         }
- 
+
    function Quiz(qual) {
 
     var xmlhttp = new XMLHttpRequest();
@@ -55,16 +55,16 @@
         }
 
         xmlhttp.open("GET", url, true);
-   
+
     xmlhttp.send();
-} 
+}
 
 function ExibeDados(response,qual) {
-    arr = JSON.parse(response);   
+    arr = JSON.parse(response);
 }
 
 function menu(oq){
-	for(var i = 0; i < arr.length; i++) 
+	for(var i = 0; i < arr.length; i++)
     {
     	if(planeta == arr[i].nome){
     	if(oq == descricao)
@@ -95,7 +95,7 @@ function menu(oq){
               document.getElementById("escrever").innerHTML = "<p class='comp'>Composição" + "\n\n" + arr[i].composicao + "</p>";
           else
               document.getElementById("escrever").innerHTML = "<p class='est'>Estrutura"+ "\n\n" + arr[i].est + "<img class='responsive-img 'class='circle' src='imagens/" + planeta + "Estrutura'></p>";
-    }}}}}}}}}} 
+    }}}}}}}}}}
 }
 
  </script>
@@ -104,40 +104,63 @@ function menu(oq){
 
  <link href="teste.css" rel="stylesheet" type="text/css">
 
- <body>    
+ <body>
      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
-       <nav>
-     <div class="nav-wrapper">
+     <div class="nav-wrapper grey">
           <a id="qualPlaneta" href="#" class="brand-logo" value=""></a>
-         
+
      </div>
- </nav>
 
 
-      <nav id="menu">
+       <nav>
+        <ul id="menu" class="sidenav">
 
-        <ul class="sidenav">
-             <li id="descricao" onclick="menu(descricao)"><a href="#">Descrição</a></li>
+             <li><a href="#" id="descricao" onclick="menu(descricao)">Descrição</a></li>
+             <br>
              <li id="tamanho"   onclick="menu(tamanho)"><a href="#">Diâmetro</a></li>
+             <br>
              <li id="massa"     onclick="menu(massa)"><a href="#">Massa Atômica</a></li>
+             <br>
              <li id="distancia" onclick="menu(distancia)"><a href="#">Distância</a></li>
+             <br>
              <li id="orbital"   onclick="menu(orbital)"><a href="#">Período Orbital</a></li>
+             <br>
              <li id="rotacao"   onclick="menu(rotacao)"><a href="#">Período de Rotação</a></li>
+             <br>
              <li id="gravidade" onclick="menu(gravidade)"><a href="#">Gravidade</a></li>
+             <br>
              <li id="temperatura" onclick="menu(temperatura)"><a href="#">T°</a></li>
+             <br>
              <li id="composicao"  onclick="menu(composicao)"><a href="#">Composição</a></li>
+             <br>
              <li id="estrutura"   onclick="menu(estrutura)"><a href="#">Estrutura</a></li>
-         </ul>
-          </nav>
-    
+             <br>
+
+        </ul>
+        </nav>
+
 
          <div class="center-align">
                 <h1 id="qual"></h1>
-        </div> 
+        </div>
 
        <div> <h2 id="escrever"></h2> </div>
+
+
+  <span>Click here...</span>
+  <div id="one"></div>
+  <div id="two"></div>
+  <div id="three"></div>
+
+  <script>
+  $( document.body ).click(function() {
+    $( "div:hidden:first" ).fadeIn( "slow" );
+  });
+</script>
+
 
 
  </body>
