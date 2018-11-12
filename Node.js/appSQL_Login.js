@@ -52,5 +52,15 @@ rota.get('/Usuario', (requisicao, resposta) =>{
     const nome = requisicao.body.nome.substring(0,40);
     const senha = requisicao.body.Senha;
     execSQL(`logar_sp @nome = ${nome}, @senha = ${senha}`, resposta);
+})
+
+rota.post('/usuario', (requisicao, resposta) =>{
+    const nome = requisicao.body.nome.substring(0,40);
+    const email = requisicao.body.email.substring(0,40);
+    const data = requisicao.body.dataNascimento.substring(0,11);
+    const senha = requisicao.body.Senha.substring(0,20);
+    const telefone = requisicao.body.telefone.substring(0,20);
+    execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha})`, resposta);
     resposta.end(resposta.json({ mensagem: 'Incluído!'}));    
 })
+

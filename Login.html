@@ -1,7 +1,6 @@
 <html>
     <head>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-  <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> MAGNIFIG SPACE  </title>
         <link rel="shortcut icon" href="favicon.ico" >
@@ -16,6 +15,7 @@
             var validoSenha = false;
 
             var resposta; //Node
+            var log = false;
 
      function carregar() {
       var xmlhttp = new XMLHttpRequest();
@@ -23,12 +23,19 @@
 
       xmlhttp.onreadystatechange=function()
       {
-          if (this.readyState == 4 && this.status == 200){
+          if (this.readyState == 4 && this.status == 200)
+          {
+            if(!log)
               Verificar(this.responseText);
+            else
+              nodeCadastro(this.responseText);
           }
       }
 
-      xmlhttp.open("GET", url, true);
+
+      xmlhttp.open("POST", url, true);
+
+      
      
       xmlhttp.send();
      }
@@ -42,9 +49,15 @@
                 if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
                     window.open('Node.js/pp.html');
                 else
-                  alert("Os dados não existem! Deseja fazer um cadastro?");
+                {
+                  var res = confirm("Os dados não existem! Deseja fazer um cadastro?");
+                  log = true;
+                  if(res)
+                  Cadastro();
+                }
               }      
                  
+                 log = true;
             }
 
             function Cadastro()
@@ -66,7 +79,7 @@
 
             }
             
-            function boolean Tool()
+            function Tool()
             {
                 var senha1 = document.getElementById("password").value;
                 var senha2 = document.getElementById("password2").value;
@@ -110,78 +123,41 @@
                    
                    
             }
-            //?
-            /*
-           function Validar()
-           {
-              if(document.form1.checkValidity ())
-                valido2 = true;
-               
-           }*/
-            /*
-            function Abrir()
+           
+            function nodeCadastro(res)
             {
-               //Parte Node
-                nodeCadastro();
+              resposta = JSON.parse(res);
 
-
-              
-              Validar();
-                if(valido && valido2)
-                {
-                   window.open('Node.js/pp.html');
-                 } 
-                 else 
-                 {
-                          if(!document.form1.user.validity.patternMismatch)
-                          alert("user");
-                        if(!document.form1.email.validity.patternMismatch)
-                          alert("email");
-                        if(!document.form1.senha.validity.patternMismatch)
-                          alert("senha");
-                        if(!document.form1.tel.validity.patternMismatch)
-                          alert("tel");
-                 }
-            }*/
-            
-            function nodeCadastro()
-            {
               for(var i =0; i < resposta.length; i++)
               {
-                if(resposta[i].Nome = document.getElementById("username2").value)
+                if(resposta[i].Nome == document.getElementById("username2").value)
                 {
+                  alert(resposta[i].Nome);
                   alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");      
                 }
-                if(resposta[i].email = document.getElementById("email").value)
+                if(resposta[i].email == document.getElementById("email").value)
                 {
                   alert("Esse e-mail já foi cadastrado! Forneça um diferente para prosseguir.");
                 }
-                if(resposta[i].telefone = document.getElementById("tel").value)
+                if(resposta[i].telefone == document.getElementById("tel").value)
                 {
                   alert("Esse telefone já foi cadastrado! Forneça um diferente para prosseguir.");    
                 }
     
-                else  
-                {                    
-                  if(Tool)
+                  if(resposta[i].Nome != document.getElementById("username2").value && resposta[i].email != document.getElementById("email").value 
+                    && resposta[i].telefone != document.getElementById("tel").value)
                   {
-                    valido = true;
+
                      window.open('Node.js/pp.html');
                   }
                   else
-                   alert("Verifique se as senhas estão corretas");
+                   alert("Errooooo");
                 }
-              }
-
             }
-
-            //teste
-            
                     </script>
 
     </head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-  <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="Login.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -225,7 +201,7 @@
                 </div>
               </div>                   
                     
-                             <button  onclick="carregar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
+                             <button  onclick="carregar()" class="css3button" id = "botao"> ENTRAR </button><br><br><br>
                              
                          <u><a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
                             </form> 
@@ -292,7 +268,7 @@
                 </div>
                 </div>
               </div>
-              <button class="txtSubmit" id = "botao" onclick="nodeCadastro()">Cadastrar</button><br><br><br>
+              <button class="txtSubmit" id = "botao" onclick="carregar()">Cadastrar</button><br><br><br>
                
             </form>
            
