@@ -39,6 +39,7 @@ body, html {
 .page-footer
 {
     background-color:#75DED9; 
+
 }
 
 #menu
@@ -147,7 +148,7 @@ h3
 .caption {
     position: absolute;
     left: 0;
-    top: 1000px;
+    top: 1090px;
     width: 100%;
     text-align: center;
     color: #000;
@@ -155,11 +156,13 @@ h3
 
 .caption img
 {
-	max-width:400px;
+	max-width:600px;
     width: auto;
     height: auto;
     position: relative;
     
 }
+
+
 
 
