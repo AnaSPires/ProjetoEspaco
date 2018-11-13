@@ -18,16 +18,194 @@
 
         }
     
+    
+     function carregar() {
+      var xmlhttp = new XMLHttpRequest();
+      var url = "http://localhost:3000/Usuario";
+
+      xmlhttp.onreadystatechange=function()
+      {
+          if (this.readyState == 4 && this.status == 200)
+          {
+            
+              nodeCadastro(this.responseText);
+          }
+      }
+      xmlhttp.open("GET", url, true);
+
+      xmlhttp.send();
+     }
+
+
 			window.onload = function(){
             document.getElementById("nome").focus();
             }
+
+             function Tool()
+            {
+                var senha1 = document.getElementById("password").value;
+                var senha2 = document.getElementById("password2").value;
+
+                if(senha2!="")
+                {
+                    if(senha1!=senha2  )
+                    {
+                        document.getElementsByClassName("tooltiptext")[0].style.display = "block";
+                        document.getElementsByClassName("tooltiptext")[0].style. visibility = "visible";
+                        document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
+                        document.getElementById("password2").style.borderBottom = "1px solid red";
+                        document.getElementById("password2").style.boxShadow = "0 1px 0 0 red";
+                        document.getElementById("frase").style.color = "red";
+                       validoSenha = false;
+                    }
+                    else
+                    {
+                       document.getElementsByClassName("tooltiptext")[0].style.display = "none";
+                        document.getElementsByClassName("tooltiptext")[0].style. visibility = "hidden";
+                        document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
+                         document.getElementById("password2").style.borderBottom = "1px solid #57A856";
+                         document.getElementById("password2").style.boxShadow = "0 1px 0 0 #57A856";
+                         document.getElementById("frase").style.color = "green";
+                         validoSenha = true;
+                    }
+                  }
+
+                  return validoSenha;
+            }
+
+             function TirarTool()
+            {
+             var senha1 = document.getElementById("password").value;
+             var senha2 = document.getElementById("password2").value;
+
+
+            document.getElementsByClassName("tooltiptext")[0].style.display = "none";
+            document.getElementsByClassName("tooltiptext")[0].style. visibility = "hidden";
+            document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
+
+
+            }
+
+            function nodeCadastro(res)
+            {
+              resposta = JSON.parse(res);
+
+              for(var i =0; i < resposta.length; i++)
+              {
+                if(resposta[i].Nome == document.getElementById("username2").value)
+                {
+                  alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");
+                }
+                if(resposta[i].email == document.getElementById("email").value)
+                {
+                  alert("Esse e-mail já foi cadastrado! Forneça um diferente para prosseguir.");
+                }
+                if(resposta[i].telefone == document.getElementById("tel").value)
+                {
+                  alert("Esse telefone já foi cadastrado! Forneça um diferente para prosseguir.");
+                }
+    
+                  if(resposta[i].Nome != document.getElementById("username2").value && resposta[i].email != document.getElementById("email").value 
+                    && resposta[i].telefone != document.getElementById("tel").value && validoSenha)
+                  {
+                     var xmlhttp = new XMLHttpRequest();
+                      var url = "http://localhost:3000/UsuarioCadastra";
+
+                      xmlhttp.onreadystatechange=function()
+                      {
+                          if (this.readyState == 4 && this.status == 200)
+                          {
+                           alert("ok");
+                          }
+                      }
+                      xmlhttp.open("GET", url, true);
+
+                      xmlhttp.send();
+
+                      window.open('Node.js/pp.html');
+                  }
+                else
+                   alert("Errooooo");
+            }
+          }
             
        	 </script>
 
    		 </head>
    		 <link href="Cadastro.css" rel="stylesheet" type="text/css">
     <body>
-        <div class="transparencia">
+
+         <div class="cadastro">
+              <div class="seta" onclick="Sumir()"></div>
+                <div class="tit"></div>
+                <br><br>
+                <div class="dados">
+                Preencha o formulário com seus dados pessoais
+                </div>
+                <div class="posicao">
+                <br><br>
+                <div class="row">
+            <form class="col s12" name = "form1" onsubmit=" return false;">
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="username2" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
+                  <label for="username2">Username</label>
+                </div>
+                </div>
+             <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                  <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+
+                <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                  <input id="tel" type="tel" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required name="tel">
+                  <label for="tel">Telefone((99) 99999-9999)</label>
+                </div>
+              </div>
+
+            <div class="row">
+            <div class="input-field col s6">
+                 <i class="material-icons prefix">insert_invitation</i>
+                <input type="date" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
+                <label for="aniversario">Data Nascimento</label>
+            </div>
+                </div>
+
+              <div class="row">
+                <div class="input-field col s16">
+                    <i class="material-icons prefix">lock</i>
+                  <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">
+                  <label for="password">Senha</label>
+                </div>
+              </div>
+                  <div class="row">
+                <div class="input-field col s16">
+                  <div class="tooltip">
+                    <i class="material-icons prefix">lock</i>
+                  <input id="password2" type="password" onblur="Tool()" class="validate" onfocus="TirarTool()" required>
+
+                  <label for="password2" id="frase">Confirmar senha</label>
+                  <span class="tooltiptext">As senhas não batem.</span>
+                </div>
+                </div>
+              </div>
+
+              <button class="txtSubmit" id = "botao" onclick="carregar()">Cadastrar</button><br><br><br>
+            </form>
+
+          </div>
+
+                    </div>
+
+            </div>
+
+        <!--<div class="transparencia">
         <div class="pag">
             <div class="bloco" >
                <a href = "Login.html"> <div class="seta"></div></a>
@@ -51,13 +229,13 @@
                 Senha<br>
                 <input type="password" id="Senha" name="senha" required pattern=".{8,}" title="8 caracteres ou mais"><br><br>
                  Confirmar senha <br>
-                <input type="password" name="senhaconf" required }><br> <!-- onblur="senha()"  -->
+                <input type="password" name="senhaconf" required }><br>
       			<button  onclick="Verificar('frmCont')" class="css3button" id = "botao"> Enviar </button><br><br><br>  
 
                         </form>        
                     </div>
                     </div>
-           			 </div>
+           			 </div>-->
                      
 
 	    </body>

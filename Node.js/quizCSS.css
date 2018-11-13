@@ -19,18 +19,6 @@ nav
 	height:250px;
 }
 
-#gif
-{
-	position: absolute;
-	top:30px;
-	left: 30px;
-	border-radius: 100%;
-	border: 5px solid blue;
-	width:85px; 
-	height:75px;
-}
-
-
 #caminho
 {
 	position: absolute;

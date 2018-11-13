@@ -68,33 +68,33 @@ function menu(oq){
     {
     	if(planeta == arr[i].nome){
     	if(oq == descricao)
-          document.getElementById("escrever").innerHTML = "<p class='descricao'>" + arr[i].descricao + "</p>";
+          document.getElementById("escrever").innerHTML = "<center><p class='descricao'>" + arr[i].descricao + "</p></center>";
       else{
       	if(oq == tamanho)
-           document.getElementById("escrever").innerHTML = "<p class='diametro'>Diâmetro: " + arr[i].tamanho + "</p>";
+           document.getElementById("escrever").innerHTML = "<center><p class='diametro'>Diâmetro: " + arr[i].tamanho + "</p></center>";
         else{
         	if(oq == massa)
-               document.getElementById("escrever").innerHTML = "<p class='massa'>Massa: " + arr[i].massa + "</p>";
+               document.getElementById("escrever").innerHTML = "<center><p class='massa'>Massa: " + arr[i].massa + "</p></center>";
            else{
            	if(oq == distancia)
-               document.getElementById("escrever").innerHTML = "<p class='dis'>" + arr[i].distancia + "</p>";
+               document.getElementById("escrever").innerHTML = "<center><p class='dis'>" + arr[i].distancia + "</p></center>";
            else{
            	if(oq == orbital)
-               document.getElementById("escrever").innerHTML = "<p class='orbital'>Período orbital: " + arr[i].periodoOrbital + "</p>";
+               document.getElementById("escrever").innerHTML = "<center><p class='orbital'>Período orbital: " + arr[i].periodoOrbital + "</p></center>";
            else{
            	if(oq == rotacao)
-               document.getElementById("escrever").innerHTML = "<p class='rotacao'>Período de Rotação: " + arr[i].periodoRotacao + "</p>";
+               document.getElementById("escrever").innerHTML = "<center><p class='rotacao'>Período de Rotação: " + arr[i].periodoRotacao + "</p></center>";
            else{
            	if(oq == gravidade)
-              document.getElementById("escrever").innerHTML = "<p class='gravidade'>Gravidade: " + arr[i].gravidade + "</p>";
+              document.getElementById("escrever").innerHTML = "<center><p class='gravidade'>Gravidade: " + arr[i].gravidade + "</p></center>";
           else{
           	if(oq == temperatura)
-               document.getElementById("escrever").innerHTML = "<p class='temp'>Temperatura: " + arr[i].temperatura + "</p>";
+               document.getElementById("escrever").innerHTML = "<center><p class='temp'>Temperatura: " + arr[i].temperatura + "</p></center>";
            else{
            	if(oq == composicao)
-              document.getElementById("escrever").innerHTML = "<p class='comp'>Composição" + "\n\n" + arr[i].composicao + "</p>";
+              document.getElementById("escrever").innerHTML = "<center><p class='comp'>Composição" + "\n\n" + arr[i].composicao + "</p></center>";
           else
-              document.getElementById("escrever").innerHTML = "<p class='est'>Estrutura"+ "\n\n" + arr[i].est + "<img class='responsive-img 'class='circle' src='imagens/" + planeta + "Estrutura'></p>";
+              document.getElementById("escrever").innerHTML = "<center><p class='est'>Estrutura"+ "\n\n" + arr[i].est + "<img class='responsive-img'  class='circle' src='imagens/" + planeta + "Estrutura.png></p></center>";
     }}}}}}}}}}
 }
 
@@ -109,38 +109,39 @@ function menu(oq){
      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
-     <div class="nav-wrapper grey">
+     <div class="nav-extended">
+      <center>
           <a id="qualPlaneta" href="#" class="brand-logo" value=""></a>
-
+      </center>
      </div>
 
 
-       <nav>
+       
         <ul id="menu" class="sidenav">
 
              <li><a href="#" id="descricao" onclick="menu(descricao)">Descrição</a></li>
-             <br>
+             <br><br>
              <li id="tamanho"   onclick="menu(tamanho)"><a href="#">Diâmetro</a></li>
-             <br>
+             <br><br>
              <li id="massa"     onclick="menu(massa)"><a href="#">Massa Atômica</a></li>
-             <br>
+             <br><br>
              <li id="distancia" onclick="menu(distancia)"><a href="#">Distância</a></li>
-             <br>
+             <br><br>
              <li id="orbital"   onclick="menu(orbital)"><a href="#">Período Orbital</a></li>
-             <br>
+             <br><br>
              <li id="rotacao"   onclick="menu(rotacao)"><a href="#">Período de Rotação</a></li>
-             <br>
+             <br><br>
              <li id="gravidade" onclick="menu(gravidade)"><a href="#">Gravidade</a></li>
-             <br>
+             <br><br>
              <li id="temperatura" onclick="menu(temperatura)"><a href="#">T°</a></li>
-             <br>
+             <br><br>
              <li id="composicao"  onclick="menu(composicao)"><a href="#">Composição</a></li>
-             <br>
+             <br><br>
              <li id="estrutura"   onclick="menu(estrutura)"><a href="#">Estrutura</a></li>
-             <br>
+             <br><br>
 
         </ul>
-        </nav>
+        
 
 
          <div class="center-align">
@@ -150,7 +151,16 @@ function menu(oq){
        <div> <h2 id="escrever"></h2> </div>
 
 
-  <span>Click here...</span>
+ 
+
+
+ </body>
+ </html>
+
+ <!--
+  (HTML)
+
+   <span>Click here...</span>
   <div id="one"></div>
   <div id="two"></div>
   <div id="three"></div>
@@ -161,7 +171,26 @@ function menu(oq){
   });
 </script>
 
+  (CSS)
+span {
+    color: red;
+    cursor: pointer;
+  }
+  div {
+    margin: 3px;
+    width: 80px;
+    display: none;
+    height: 80px;
+    float: left;
+  }
+  #one {
+    background: #f00;
+  }
+  #two {
+    background: #0f0;
+  }
+  #three {
+    background: #00f;
+  }
 
-
- </body>
- </html>
+  -->
