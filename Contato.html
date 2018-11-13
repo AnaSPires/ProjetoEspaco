@@ -15,22 +15,41 @@
             
             function Verificar()
             {
-                var Formulario = document.getElementById("frmCont");
-                if(Formulario.required)
+                if(document.form1.checkValidity ())
                 {
-                    if(Formulario.pattern)
-                      alert("Mensagem enviada com sucesso!!!");   
+                      alert("Mensagem enviada com sucesso!!!"); 
+                    document.getElementById("nome").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("area").value = "";
                 }
 
 
              }
+            
+            function Voltar()
+            {
+                window.open('Entrada.html');
+                window.close();
+            }
     
 			
        	 </script>
 
    		 </head>
    		 <link href="Contato.css" rel="stylesheet" type="text/css">
-            <div class="seta" href = "Entrada.html"><img src="Imagens/seta.png"></div>
+    <nav class="nav">
+  <div class="nav-wrapper container">
+    <a href="#" class="brand-logo"><div class="logo"></div>
+      </a>    <div class="nome">  MAGNIFIC SPACE</div>
+    <ul id ="menu" class="right hide-on-med-and-down">
+        <li class="hoverable"><a id ="home" href="Entrada.html" style = "font-size : 16px;color : white;">HOME</a></li>
+        <li class="active"><center style = "width: 75px;">SOBRE </center> </li>
+        <li class="hoverable"><a id = "login" href="Login.html" style = "font-size : 16px;color : white;" onmouseenter="" >LOGIN</a></li>
+        <li class="hoverable"><a id = "cadastro" href="Cadastro.html" style = "font-size : 16px;color : white;" >CADASTRE-SE</a></li>
+        <li class="hoverable"><a id = "contato" href="Contato.html" style = "font-size : 16px;color : white;" >CONTATO</a></li>
+    </ul>
+  </div>
+</nav>
             <div class="bloco" >
                 <br>
                 <div class="posicao">
@@ -39,7 +58,7 @@
                     <hr class="um">
                 </div>
                 <div class="dados">
-                EMAIL : magnificspace@gmail.com<br>
+                EMAIL :magnificspace@gmail.com<br>
                 TEL:(19)9999-9999</div>
                     
                         <div class="dois"> 
@@ -66,8 +85,8 @@
                    <div class="row">
             <div class="input-field col s10">
               <i class="material-icons prefix">mode_edit</i>
-              <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-              <label for="icon_prefix2">Mensagem</label>
+              <textarea id="area" class="materialize-textarea" required></textarea>
+              <label for="area">Mensagem</label>
             </div>
           </div>
                 
@@ -79,6 +98,34 @@
                     
                     </div>
            			 </div>
+    <footer class="page-footer" id = "outro">
+          <div class="container" >
+            <div class="row" >
+              <div class="col l6 s12" >
+                <h5 class="white-text"><div class="logoo"></div></h5>
+                <p class="grey-text text-lighten-4" style="font-size: 20px;">Magnific Space Enterprises</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="Sobre.html">Sobre nós</a></li>
+                  <li><a class="grey-text text-lighten-3" href="Contato.html">Contato</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright" id="rodape" >
+            <div class="container" >
+            © 2018 Copyright Text
+                <div class="face"><img src="Imagens/face.ico"></div>
+                     <div class="twitter"><img src="Imagens/twitter.png"></div>
+                <div class="insta"><img src="Imagens/insta.png"></div>
+                 <div class="goo"><img src="Imagens/goo.png"></div>
+            <a class="grey-text text-lighten-4 right" id = "termos" href="Termos.html">TERMOS DE USO</a>
+            </div>
+          </div>
+        </footer>
 
-	    </body>
+
 	</html>

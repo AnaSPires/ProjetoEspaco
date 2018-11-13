@@ -16,8 +16,6 @@ header
     font-weight: 400;
 }
 
-
-
 .peq
 {
     width: 300px;
@@ -61,23 +59,135 @@ button.css3button {
 		-1px 1px 0px rgba(240,247,250,1);
 
     position: relative;
-    top: 0px;
+    bottom: 10px;
     font-family:"Century Gothic";
     font-weight: 600;
     font-size: 20px;
     
 }
 
+.nav {
+  background-color: #4224D7 !important;
+    height: 90px;
+}
+.nome
+{
+    position:        relative;
+    left:            150px;
+    top:       		 20px;
+    width: 			 400px;
+    height: 		 100px;
+    color: 		 	 white;
+  	font-family:	 "Century Gothic";
+    font-size: 		 40px;
+    font-weight: 	 600;
+}
+
+.logo
+{
+    width: 100px;
+    height: 100px;
+    background: url(Imagens/logo.png);
+   
+}
+
+.logoo
+{
+    width: 50px;
+    height: 50px;
+    background: url("Imagens/logoo.png");
+}
+
+.face img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+     position: relative;
+    bottom: 45px;
+    left: 250px;
+}
+.twitter img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+    bottom: 85px;
+    left: 290px;
+}
+.insta img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 125px;
+    left: 330px;
+}
+.goo img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 165px;
+    left: 370px;
+}
+
+#termos
+{
+    position: relative;
+    bottom: 170px;
+    right: 250px;
+    font-size:  16px;
+}
+
+#rodape
+{
+    position: relative;
+    bottom: 20px;
+    height: 50px;
+}
+
+#outro
+{
+   height: 200px;
+    position: relative;
+    top: 80px;
+}
+
+.input-field input[type=text].invalid 
+{
+     border-bottom: 1px solid red;
+     box-shadow: 0 1px 0 0 red;
+}
+
+#menu
+{
+    position:   absolute;
+    top:        23px;
+    left:       770px;
+    width:      500px;
+    font-family:"Century Gothic";
+    font-size:  16px;
+}
 
 
 .bloco
 {
     background: white;
-    width: 800px;
-    height: 730px;
+    width: 830px;
+    height: 700px;
     position: relative;
-    top: 80px;
-    left: 200px;;
+    top: 30px;
+    left: 250px;;
     font-size: 30px;
     
 }
@@ -86,7 +196,7 @@ iframe
 	position: absolute;
 	width: 410px;
 	height: 600px;
-	left: 320px;
+	left: 350px;
 	top: 20px;
 }
 
@@ -105,7 +215,7 @@ iframe
 }
 .dados
 {
-    width: 200px;
+    width: 350px;
     height: 100px;
      font-family:"Century Gothic";
     font-weight: 600;
@@ -122,7 +232,7 @@ iframe
     left: 40px;
     font-family:"Century Gothic";
     font-weight: 900;
-    
+    bottom: 20px;
 }
     
 
