@@ -12,7 +12,6 @@ header
     background-image: url("Imagens/ain.png");
     height: 330px;
     width: 100%;
-    top: -1px;
     font-size: 25px;
     font-family:"Century Gothic";
     font-weight: 400;
@@ -115,11 +114,14 @@ text-shadow:none;
 
 }
 
-.logo
+.logo img
 {
-    background-image: url("Imagens/logo.png");
-    height: 150px;
-    width: 150px;
+    background-image: url();
+    min-height:  120px;
+    height: auto;
+    width: auto;
+    position: absolute;
+    left: 0px;
 }
 
 .contato
@@ -172,7 +174,7 @@ text-shadow:none;
     width: 433px;
     height: 239px;
     position: relative;
-    top: -220px;
+    bottom: 50px;
      margin-left: auto;
      margin-right: auto;
     

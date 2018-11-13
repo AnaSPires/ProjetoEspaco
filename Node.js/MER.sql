@@ -51,7 +51,7 @@ Inserir_sp @nome='Teste', @email ='@', @telefone='43241', @data = '12/12/12', @s
 Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}
 
 delete from Usuario where CodUsuario = 4
-select * from 
+select * from Usuario
 sp_help Usuario
 
 -------------------------------------------------------------------------------------------------------

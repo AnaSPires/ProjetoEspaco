@@ -49,17 +49,17 @@ rota.get('/usuario/:CodUsuario?', (requisicao, resposta) => {
 })
 
 rota.get('/Usuario', (requisicao, resposta) =>{
-    const nome = requisicao.body.nome.substring(0,40);
-    const senha = requisicao.body.Senha;
+    const nome = requisicao.body.user.substring(0,40);
+    const senha = requisicao.body.senha.substring(0,20);
     execSQL(`logar_sp @nome = ${nome}, @senha = ${senha}`, resposta);
 })
 
-rota.post('/usuario', (requisicao, resposta) =>{
-    const nome = requisicao.body.nome.substring(0,40);
-    const email = requisicao.body.email.substring(0,40);
-    const data = requisicao.body.dataNascimento.substring(0,11);
-    const senha = requisicao.body.Senha.substring(0,20);
-    const telefone = requisicao.body.telefone.substring(0,20);
+rota.get('/UsuarioCadastra', (requisicao, resposta) =>{
+    const nome = requisicao.body.user;
+    const email = requisicao.body.email;
+    const data = requisicao.body.aniversario;
+    const senha = requisicao.body.senha;
+    const telefone = requisicao.body.tel;
     execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha})`, resposta);
     resposta.end(resposta.json({ mensagem: 'Incluído!'}));    
 })

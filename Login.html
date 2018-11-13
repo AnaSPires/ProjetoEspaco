@@ -31,49 +31,60 @@
               nodeCadastro(this.responseText);
           }
       }
-
 <<<<<<< HEAD
-
-      xmlhttp.open("POST", url, true);
-
-      
-     
-=======
       xmlhttp.open("GET", url, true);
 
->>>>>>> 70ac003379d27835122b78acba4ffec9d997a1b1
+=======
+      xmlhttp.open("POST", url, true);
+      xmlhttp.open("GET", url, true);
+>>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
       xmlhttp.send();
      }
 
            function Verificar(res)
             {
               resposta= JSON.parse(res);
-              alert(resposta[0].telefone);
+              //alert(resposta[0].telefone);
 
               for(var i =0; i < resposta.length; i++)
               {
                 if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
+<<<<<<< HEAD
+=======
                     window.open('Node.js/pp.html');
                 else
-<<<<<<< HEAD
+
+>>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
                 {
+                    window.open('Node.js/pp.html');
+                    return;
+                }
+              }  
+
                   var res = confirm("Os dados não existem! Deseja fazer um cadastro?");
-                  log = true;
                   if(res)
+<<<<<<< HEAD
+                    Cadastro();                       
+              }
+
+          
+=======
                   Cadastro();
                 }
               }      
                  
                  log = true;
-=======
+
                   alert("Informações inválidas! Deseja fazer um cadastro?");
               }
 
->>>>>>> 70ac003379d27835122b78acba4ffec9d997a1b1
             }
+>>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
 
             function Cadastro()
             {
+              log = true;
+
                document.getElementsByTagName("body")[0].style.background = "white";
                document.getElementsByClassName("cadastro")[0].style.display = "block";
                document.getElementsByClassName("transparencia")[0].style.filter = "brightness(20%)";
@@ -91,10 +102,10 @@
 
             }
 <<<<<<< HEAD
-            
 =======
+            
+>>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
 
->>>>>>> 70ac003379d27835122b78acba4ffec9d997a1b1
             function Tool()
             {
                 var senha1 = document.getElementById("password").value;
@@ -140,9 +151,14 @@
 
             }
 <<<<<<< HEAD
+
+            function nodeCadastro(res)
+            {
+              resposta = JSON.parse(res);
+
+=======
            
             function nodeCadastro(res)
-=======
             //?
             /*
            function Validar()
@@ -153,12 +169,10 @@
            }*/
             /*
             function Abrir()
->>>>>>> 70ac003379d27835122b78acba4ffec9d997a1b1
             {
               resposta = JSON.parse(res);
 
-<<<<<<< HEAD
-=======
+
 
               Validar();
                 if(valido && valido2)
@@ -180,17 +194,17 @@
 
             function nodeCadastro()
             {
->>>>>>> 70ac003379d27835122b78acba4ffec9d997a1b1
+>>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
               for(var i =0; i < resposta.length; i++)
               {
                 if(resposta[i].Nome == document.getElementById("username2").value)
                 {
 <<<<<<< HEAD
+=======
                   alert(resposta[i].Nome);
                   alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");      
-=======
+>>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
                   alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");
->>>>>>> 70ac003379d27835122b78acba4ffec9d997a1b1
                 }
                 if(resposta[i].email == document.getElementById("email").value)
                 {
@@ -200,61 +214,43 @@
                 {
                   alert("Esse telefone já foi cadastrado! Forneça um diferente para prosseguir.");
                 }
-<<<<<<< HEAD
     
                   if(resposta[i].Nome != document.getElementById("username2").value && resposta[i].email != document.getElementById("email").value 
-                    && resposta[i].telefone != document.getElementById("tel").value)
+<<<<<<< HEAD
+                    && resposta[i].telefone != document.getElementById("tel").value && validoSenha)
 =======
+                    && resposta[i].telefone != document.getElementById("tel").value)
 
                 else
                 {
                   if(Tool)
->>>>>>> 70ac003379d27835122b78acba4ffec9d997a1b1
+>>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
                   {
+                     var xmlhttp = new XMLHttpRequest();
+                      var url = "http://localhost:3000/UsuarioCadastra";
 
-                     window.open('Node.js/pp.html');
+                      xmlhttp.onreadystatechange=function()
+                      {
+                          if (this.readyState == 4 && this.status == 200)
+                          {
+                           alert("ok");
+                          }
+                      }
+                      xmlhttp.open("GET", url, true);
+
+                      xmlhttp.send();
+
+                      window.open('Node.js/pp.html');
                   }
-                  else
+                else
                    alert("Errooooo");
-                }
             }
+          }
+
 <<<<<<< HEAD
 =======
-
-            function carregar2() {
-              var xmlhttp = new XMLHttpRequest();
-              var url = "http://localhost:3000/Usuario";
-
-              xmlhttp.onreadystatechange=function()
-              {
-                  if (this.readyState == 4 && this.status == 200){
-                      Verificar(this.responseText);
-                  }
-              }
-
-              xmlhttp.open("GET", url, true);
-
-              xmlhttp.send();
-             }
-
-           function Verificar2(res)
-            {
-              resposta= JSON.parse(res);
-              alert(resposta);
-
-              for(var i =0; i < resposta.length; i++)
-              {
-                if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
-                    window.open('Node.js/pp.html');
-                else
-                  alert("Informações inválidas! Deseja fazer um cadastro?");
-              }
-
-            }
-
-            //teste
-
->>>>>>> 70ac003379d27835122b78acba4ffec9d997a1b1
+        
+>>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
                     </script>
 
     </head>
@@ -266,12 +262,14 @@
 
             <div class="transparencia">
     <header>
-        <p class = "logo"></p>
+        <p class = "logo"><img src = "Imagens/logo.png"></p>
         <center>
        <div class="titulo" ></div>
     </center>
 
                         <center>
+                            <br><br>
+                            <br><br><br>
                 <div class="user"></div><br>
                 <div class="frase">Ol&aacute;! Digite o seu usu&aacute;rio e senha</div>
 
@@ -300,25 +298,29 @@
                   <input id="senha" type="password" class="validate" required  name="senhaa">
                   <label for="senha">Senha</label>
                 </div>
-<<<<<<< HEAD
               </div>                   
                     
                              <button  onclick="carregar()" class="css3button" id = "botao"> ENTRAR </button><br><br><br>
                              
                          <u><a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
                             </form> 
+<<<<<<< HEAD
+
+                    </div>
+            </div>
+                </div>
 =======
               </div>
 
                              <button  onclick="carregar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
 
                          <u><a onclick="window.open('Cadastro.html')" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
-                            </form>
->>>>>>> 70ac003379d27835122b78acba4ffec9d997a1b1
+                            
                     </div>
             </div>
-                </div>
-                /*
+                
+>>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
+               
             <div class="cadastro">
               <div class="seta" onclick="Sumir()"></div>
                 <div class="tit"></div>
@@ -380,12 +382,16 @@
                 </div>
               </div>
 <<<<<<< HEAD
+
+              <button class="txtSubmit" id = "botao" onclick="carregar()">Cadastrar</button><br><br><br>
+=======
+
               <button class="txtSubmit" id = "botao" onclick="carregar()">Cadastrar</button><br><br><br>
                
-=======
+
               <button class="txtSubmit" id = "botao" onclick="nodeCadastro()">Cadastrar</button><br><br><br>
 
->>>>>>> 70ac003379d27835122b78acba4ffec9d997a1b1
+>>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
             </form>
 
           </div>
@@ -394,6 +400,6 @@
 
             </div>
 
-    </body>*/
+    </body>
 </html>
 

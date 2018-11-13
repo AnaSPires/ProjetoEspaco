@@ -15,7 +15,7 @@
   var nivel = 1;
   var certa;
 
-  var vetor;
+  var vetor = new Array();
   var qtd = 0;
 
   var p;
@@ -32,10 +32,6 @@
 
  window.onbeforeunload = function() {
 
-    /*document.getElementById("a").toggle();
-    document.getElementById("b").toggle();
-    document.getElementById("c").toggle();
-    document.getElementById("d").toggle();*/
 
     var xmlhttp = new XMLHttpRequest();
     var url = "http://localhost:3000/perguntas";
@@ -87,25 +83,21 @@ function ExibeDados(response) {
    qtd++;
 
    //Verificar se a pergunta não aparecerá mais de uma vez
-   for(var i = 0; i < vetor.length; i++)
+   for(var i = 0; i < qtd; i++)
    {
      if(vetor[i] == qual)
        qual = parseInt(Math.random() * (arr.length - 1));
 
    }
 
-    for(var i = 0; i < arr.length; i++)
-    {
-      if(nivel == arr[i].codPergunta)
-      {
-        p += arr[i].enunciado;
-        a += arr[i].alternativaA;
-        b += arr[i].alternativaB;
-        c += arr[i].alternativaC;
-        d += arr[i].alternativaD;
-        certa = arr[i].correta;
-      }
-    }
+        p += arr[qual].enunciado;
+        a += arr[qual].alternativaA;
+        b += arr[qual].alternativaB;
+        c += arr[qual].alternativaC;
+        d += arr[qual].alternativaD;
+        certa = arr[qual].correta;
+ 
+    
 
     p += "</h1>";
     a += "</span>";
@@ -148,8 +140,10 @@ function ExibeDados(response) {
       for(x in opcoes)
       {
         var valor = Number(x);
+
         if(opcoes[parseInt(x)].checked)
           {
+             document.getElementById(opcoes[x].id).checked = false;
           if(valor == certa)
           {
             quantosAcertos++;
@@ -163,15 +157,12 @@ function ExibeDados(response) {
            break;
           }
         }
-      }
 
-     /* if(nivel == 10)
-        alert("Acertos: " + quantosAcertos +"\n" +  "Erros: " + quantosErros);
-      else
-        alert("Acertos: " + quantosAcertos +"\n" + "Erros: " + quantosErros);
-           */
+      }
       nivel++;
       alert("Nível: " + nivel);
+
+
 
       if(nivel > 10){
         alert('Acabou');
@@ -271,7 +262,6 @@ function ExibeDados(response) {
 
 
      <img id="terra" src="imagens/terraQuiz.png">
-     <img id="gif" src="imagens/emoji.gif">
      <img id="caminho" src="imagens/caminho1.png">
      <section id="tela">
 

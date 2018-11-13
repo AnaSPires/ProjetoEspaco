@@ -55,8 +55,7 @@ rota.delete('/usuario/:id', (requisicao, resposta) =>{
 })
 
 
-
-rota.post('/usuario', (requisicao, resposta) =>{
+rota.get('/UsuarioCadastra', (requisicao, resposta) =>{
     const nome = requisicao.body.nome.substring(0,40);
     const email = requisicao.body.email.substring(0,40);
     const data = requisicao.body.dataNascimento.substring(0,11);
