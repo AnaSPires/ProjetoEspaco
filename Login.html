@@ -11,7 +11,6 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script>
 
-            var valido = false;
             var validoSenha = false;
 
             var resposta; //Node
@@ -31,55 +30,26 @@
               nodeCadastro(this.responseText);
           }
       }
-<<<<<<< HEAD
-      xmlhttp.open("GET", url, true);
 
-=======
-      xmlhttp.open("POST", url, true);
       xmlhttp.open("GET", url, true);
->>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
       xmlhttp.send();
      }
 
            function Verificar(res)
             {
               resposta= JSON.parse(res);
-              //alert(resposta[0].telefone);
 
-              for(var i =0; i < resposta.length; i++)
-              {
-                if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
-<<<<<<< HEAD
-=======
-                    window.open('Node.js/pp.html');
-                else
-
->>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
-                {
-                    window.open('Node.js/pp.html');
-                    return;
-                }
-              }  
-
-                  var res = confirm("Os dados não existem! Deseja fazer um cadastro?");
-                  if(res)
-<<<<<<< HEAD
-                    Cadastro();                       
-              }
-
-          
-=======
-                  Cadastro();
-                }
-              }      
-                 
-                 log = true;
-
-                  alert("Informações inválidas! Deseja fazer um cadastro?");
-              }
-
+             if(resposta.indexOf(document.getElementById("usuario").value == -1))
+             {
+               var res = confirm("Os dados não existem! Deseja fazer um cadastro?");
+               if(res)
+                  Cadastro();    
+             }
+             else
+              window.open('Node.js/pp.html');
+              
+              log = true;
             }
->>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
 
             function Cadastro()
             {
@@ -101,10 +71,7 @@
 
 
             }
-<<<<<<< HEAD
-=======
-            
->>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
+
 
             function Tool()
             {
@@ -147,64 +114,17 @@
             document.getElementsByClassName("tooltiptext")[0].style.display = "none";
             document.getElementsByClassName("tooltiptext")[0].style. visibility = "hidden";
             document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
-
-
             }
-<<<<<<< HEAD
 
             function nodeCadastro(res)
             {
               resposta = JSON.parse(res);
 
-=======
-           
-            function nodeCadastro(res)
-            //?
-            /*
-           function Validar()
-           {
-              if(document.form1.checkValidity ())
-                valido2 = true;
-
-           }*/
-            /*
-            function Abrir()
-            {
-              resposta = JSON.parse(res);
-
-
-
-              Validar();
-                if(valido && valido2)
-                {
-                   window.open('Node.js/pp.html');
-                 }
-                 else
-                 {
-                          if(!document.form1.user.validity.patternMismatch)
-                          alert("user");
-                        if(!document.form1.email.validity.patternMismatch)
-                          alert("email");
-                        if(!document.form1.senha.validity.patternMismatch)
-                          alert("senha");
-                        if(!document.form1.tel.validity.patternMismatch)
-                          alert("tel");
-                 }
-            }*/
-
-            function nodeCadastro()
-            {
->>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
               for(var i =0; i < resposta.length; i++)
               {
                 if(resposta[i].Nome == document.getElementById("username2").value)
                 {
-<<<<<<< HEAD
-=======
-                  alert(resposta[i].Nome);
                   alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");      
->>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
-                  alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");
                 }
                 if(resposta[i].email == document.getElementById("email").value)
                 {
@@ -216,17 +136,9 @@
                 }
     
                   if(resposta[i].Nome != document.getElementById("username2").value && resposta[i].email != document.getElementById("email").value 
-<<<<<<< HEAD
                     && resposta[i].telefone != document.getElementById("tel").value && validoSenha)
-=======
-                    && resposta[i].telefone != document.getElementById("tel").value)
-
-                else
-                {
-                  if(Tool)
->>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
                   {
-                     var xmlhttp = new XMLHttpRequest();
+                      var xmlhttp2 = new XMLHttpRequest();
                       var url = "http://localhost:3000/UsuarioCadastra";
 
                       xmlhttp.onreadystatechange=function()
@@ -236,22 +148,18 @@
                            alert("ok");
                           }
                       }
-                      xmlhttp.open("GET", url, true);
+                      xmlhttp2.open("POST", url, true);
 
-                      xmlhttp.send();
+                      xmlhttp2.send();
 
                       window.open('Node.js/pp.html');
                   }
                 else
-                   alert("Errooooo");
+                   alert("Tem alguma coisa errada ae");
+
             }
           }
-
-<<<<<<< HEAD
-=======
-        
->>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
-                    </script>
+           </script>
 
     </head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
@@ -304,22 +212,6 @@
                              
                          <u><a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
                             </form> 
-<<<<<<< HEAD
-
-                    </div>
-            </div>
-                </div>
-=======
-              </div>
-
-                             <button  onclick="carregar()"class="css3button" id = "botao"> ENTRAR </button><br><br><br>
-
-                         <u><a onclick="window.open('Cadastro.html')" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
-                            
-                    </div>
-            </div>
-                
->>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
                
             <div class="cadastro">
               <div class="seta" onclick="Sumir()"></div>
@@ -381,17 +273,9 @@
                 </div>
                 </div>
               </div>
-<<<<<<< HEAD
 
               <button class="txtSubmit" id = "botao" onclick="carregar()">Cadastrar</button><br><br><br>
-=======
 
-              <button class="txtSubmit" id = "botao" onclick="carregar()">Cadastrar</button><br><br><br>
-               
-
-              <button class="txtSubmit" id = "botao" onclick="nodeCadastro()">Cadastrar</button><br><br><br>
-
->>>>>>> 684d64b9893ea9840f0da8d0af9faf99d563b499
             </form>
 
           </div>

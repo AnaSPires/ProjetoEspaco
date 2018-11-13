@@ -34,6 +34,7 @@ html:active
 	top: 170px;
 	left: -240px;
 	width: 30%;
+	z-index: 200;
 	height: 98px;
 }
 
@@ -42,6 +43,7 @@ html:active
 	position: absolute;
 	top: 160px;
 	left: -65px;
+	z-index: 200;
 	width: 36%;
 	height: 150px;
 }
@@ -51,6 +53,7 @@ html:active
 	position: absolute;
 	top: 160px;
 	left: 120px;
+	z-index: 200;
 	width: 34%;
 	height: 183px;
 }

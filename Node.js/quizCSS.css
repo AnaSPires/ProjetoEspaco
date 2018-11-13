@@ -160,6 +160,16 @@ nav
     border-radius: 25%; 
 }
 
+#btnC
+{
+    position: absolute;
+	top: 400px;
+	left:1360px;
+	width:90%;
+	height: 30px;
+	border-radius: 70%;
+}
+
 #a
 {
   position: absolute; 

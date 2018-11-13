@@ -54,7 +54,7 @@ rota.get('/Usuario', (requisicao, resposta) =>{
     execSQL(`logar_sp @nome = ${nome}, @senha = ${senha}`, resposta);
 })
 
-rota.get('/UsuarioCadastra', (requisicao, resposta) =>{
+rota.post('/UsuarioCadastra', (requisicao, resposta) =>{
     const nome = requisicao.body.user;
     const email = requisicao.body.email;
     const data = requisicao.body.aniversario;
