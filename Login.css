@@ -93,8 +93,7 @@ text-shadow:none;
 	background: -webkit-gradient(
 		linear, left top, left bottom,
 		from(#afd9fa),
-		color-stop(0.75, #ffffff),
-		to(#588fad));
+		color-stop(0.75, #ffffff),to(#588fad));
     border: 1px solid #003366;
 	-moz-box-shadow:
 		4px 3px 10px rgba(137,78,204,1),

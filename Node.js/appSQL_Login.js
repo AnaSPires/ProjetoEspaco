@@ -49,18 +49,21 @@ rota.get('/usuario/:CodUsuario?', (requisicao, resposta) => {
 })
 
 rota.get('/Usuario', (requisicao, resposta) =>{
-    const nome = requisicao.body.user.substring(0,40);
-    const senha = requisicao.body.senha.substring(0,20);
+    const nome = requisicao.body.usu.substring(0,40);
+    const senha = requisicao.body.senhaa.substring(0,20);
     execSQL(`logar_sp @nome = ${nome}, @senha = ${senha}`, resposta);
+    resposta.end('resposta');
 })
 
 rota.post('/UsuarioCadastra', (requisicao, resposta) =>{
     const nome = requisicao.body.user;
     const email = requisicao.body.email;
+    const telefone = requisicao.body.tel;
     const data = requisicao.body.aniversario;
     const senha = requisicao.body.senha;
-    const telefone = requisicao.body.tel;
-    execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha})`, resposta);
-    resposta.end(resposta.json({ mensagem: 'Incluído!'}));    
+    //console.log(requisicao.body);
+    console.log(nome);
+    execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}`, resposta);
+    resposta.end(resposta.json({mensagem: 'foi'}));
 })
 

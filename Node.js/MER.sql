@@ -29,7 +29,7 @@ begin
     return 0
 end
 
-logar_sp 'Amanda', '25632514'
+logar_sp 'Amanda', 'senha123'
 
 create proc Inserir_sp 
 @nome ntext,
@@ -50,7 +50,7 @@ end
 Inserir_sp @nome='Teste', @email ='@', @telefone='43241', @data = '12/12/12', @senha='12345678'
 Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}
 
-delete from Usuario where CodUsuario = 4
+delete from Usuario where CodUsuario = 2
 select * from Usuario
 sp_help Usuario
 

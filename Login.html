@@ -27,29 +27,54 @@
             if(!log)
               Verificar(this.responseText);
             else
+            {
               nodeCadastro(this.responseText);
+              //alert(this.responseText);
+            }
+          
           }
       }
 
       xmlhttp.open("GET", url, true);
       xmlhttp.send();
+
      }
 
            function Verificar(res)
             {
               resposta= JSON.parse(res);
 
-             if(resposta.indexOf(document.getElementById("usuario").value == -1))
+            /* if(resposta.indexOf(document.getElementById("usuario").value == -1))
              {
                var res = confirm("Os dados não existem! Deseja fazer um cadastro?");
                if(res)
                   Cadastro();    
              }
              else
-              window.open('Node.js/pp.html');
+              window.open('Node.js/pp.html');*/
+            for(var i =0; i < resposta.length; i++)
+            {
+              alert(resposta[i].Nome + resposta[i].senha + "VC" + document.getElementById("usuario").value + document.getElementById("senha").value);
+            if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
+             {
+               window.open('Node.js/pp.html');
+               break;
+             }
+             else
+              {
+        if(resposta.indexOf(document.getElementById("usuario").value == -1) || resposta[resposta.indexOf(document.getElementById("usuario").value)].senha != document.getElementById("senha").value)
+              {
+               var res = confirm("Os dados não existem! Deseja fazer um cadastro?");
+               if(res)
+                  Cadastro(); 
+               else
+                alert("aha");
+              }         
               
-              log = true;
             }
+            }
+            log = true;
+          }
 
             function Cadastro()
             {
@@ -60,7 +85,6 @@
                document.getElementsByClassName("transparencia")[0].style.filter = "brightness(20%)";
                document.getElementById("password2").style.borderBottom = "0.4px solid darkgray";
                document.getElementById("password2").style.boxShadow = "0 0.4px 0 0 darkgray";
-
             }
 
              function Sumir()
@@ -118,46 +142,60 @@
 
             function nodeCadastro(res)
             {
-              resposta = JSON.parse(res);
+              var resposta2 = JSON.parse(res);
+              var podeProsseguir = true;
 
-              for(var i =0; i < resposta.length; i++)
+              for(var i =0; i < resposta2.length; i++)
               {
-                if(resposta[i].Nome == document.getElementById("username2").value)
+                if(resposta2[i].Nome == document.getElementById("username2").value)
                 {
+                  podeProsseguir=false;
                   alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");      
                 }
-                if(resposta[i].email == document.getElementById("email").value)
+                if(resposta2[i].email == document.getElementById("email").value)
                 {
+                  podeProsseguir=false;
                   alert("Esse e-mail já foi cadastrado! Forneça um diferente para prosseguir.");
                 }
-                if(resposta[i].telefone == document.getElementById("tel").value)
+                if(resposta2[i].telefone == document.getElementById("tel").value)
                 {
+                  podeProsseguir=false;
                   alert("Esse telefone já foi cadastrado! Forneça um diferente para prosseguir.");
                 }
+
+                if(!validoSenha)
+                {
+                  podeProsseguir = false;
+                
+                }
+              }
     
-                  if(resposta[i].Nome != document.getElementById("username2").value && resposta[i].email != document.getElementById("email").value 
-                    && resposta[i].telefone != document.getElementById("tel").value && validoSenha)
+                ///if(resposta[i].Nome != document.getElementById("username2").value && resposta[i].email != document.getElementById("email").value && resposta[i].telefone != document.getElementById("tel").value && validoSenha)
+                if(podeProsseguir)
                   {
                       var xmlhttp2 = new XMLHttpRequest();
-                      var url = "http://localhost:3000/UsuarioCadastra";
+                      //alert(document.getElementById("username2").value);
+                      //var url2 = "http://localhost:3000/UsuarioCadastra";
 
-                      xmlhttp.onreadystatechange=function()
+                      xmlhttp2.onreadystatechange=function()
                       {
+                         // alert(this.readyState);
+                         // alert(this.status);
                           if (this.readyState == 4 && this.status == 200)
                           {
-                           alert("ok");
+                           //alert(this.responseText);
+                           //alert("aqui");
+                           
+                           window.open('Node.js/pp.html');
                           }
                       }
-                      xmlhttp2.open("POST", url, true);
-
+                      
+                      xmlhttp2.open("POST", "http://localhost:3000/UsuarioCadastra", true);
                       xmlhttp2.send();
-
-                      window.open('Node.js/pp.html');
+                      //xmlhttp2.send(document.getElementsByName("form1"));
+                      //break;
                   }
-                else
-                   alert("Tem alguma coisa errada ae");
-
-            }
+             
           }
            </script>
 
@@ -211,9 +249,10 @@
                              <button  onclick="carregar()" class="css3button" id = "botao"> ENTRAR </button><br><br><br>
                              
                          <u><a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
+
                             </form> 
-               
-            <div class="cadastro">
+           
+         <div class="cadastro">
               <div class="seta" onclick="Sumir()"></div>
                 <div class="tit"></div>
                 <br><br>
@@ -273,17 +312,14 @@
                 </div>
                 </div>
               </div>
+ 
 
               <button class="txtSubmit" id = "botao" onclick="carregar()">Cadastrar</button><br><br><br>
-
             </form>
 
-          </div>
+         </div>
+        </div>
+      </div>
 
-                    </div>
-
-            </div>
-
-    </body>
+</body>
 </html>
-
