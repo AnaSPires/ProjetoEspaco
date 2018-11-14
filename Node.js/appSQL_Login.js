@@ -52,6 +52,7 @@ rota.get('/Usuario', (requisicao, resposta) =>{
     const nome = requisicao.body.usu.substring(0,40);
     const senha = requisicao.body.senhaa.substring(0,20);
     execSQL(`logar_sp @nome = ${nome}, @senha = ${senha}`, resposta);
+    console.log("aqui era pra ter saido");
     resposta.end('resposta');
 })
 
