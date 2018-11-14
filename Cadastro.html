@@ -1,25 +1,16 @@
 <html>
     <head>
-    <title> MAGNIFIG SPACE
-        </title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> MAGNIFIG SPACE  </title>
         <link rel="shortcut icon" href="favicon.ico" >
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script>
-
-       /* function senha()
-           {
-                 title="8 caracteres ou mais";
-           }*/
- 
-
-        //placeholder
-
-        function seExiste()
-        {
-
-        }
-    
-    
-     function carregar() {
+            function carregar() {
       var xmlhttp = new XMLHttpRequest();
       var url = "http://localhost:3000/Usuario";
 
@@ -37,7 +28,7 @@
      }
 
 
-			window.onload = function(){
+      window.onload = function(){
             document.getElementById("nome").focus();
             }
 
@@ -71,19 +62,6 @@
                   }
 
                   return validoSenha;
-            }
-
-             function TirarTool()
-            {
-             var senha1 = document.getElementById("password").value;
-             var senha2 = document.getElementById("password2").value;
-
-
-            document.getElementsByClassName("tooltiptext")[0].style.display = "none";
-            document.getElementsByClassName("tooltiptext")[0].style. visibility = "hidden";
-            document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
-
-
             }
 
             function nodeCadastro(res)
@@ -128,21 +106,84 @@
                    alert("Errooooo");
             }
           }
+           
+
+
+            function Tool()
+            {
+                var senha1 = document.getElementById("password").value;
+                var senha2 = document.getElementById("password2").value;
+
+                if(senha2!="")
+                {
+                    if(senha1!=senha2  )
+                    {
+                        document.getElementsByClassName("tooltiptext")[0].style.display = "block";
+                        document.getElementsByClassName("tooltiptext")[0].style. visibility = "visible";
+                        document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
+                        document.getElementById("password2").style.borderBottom = "1px solid red";
+                        document.getElementById("password2").style.boxShadow = "0 1px 0 0 red";
+                        document.getElementById("frase").style.color = "red";
+                       validoSenha = false;
+                    }
+                    else
+                    {
+                       document.getElementsByClassName("tooltiptext")[0].style.display = "none";
+                        document.getElementsByClassName("tooltiptext")[0].style. visibility = "hidden";
+                        document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
+                         document.getElementById("password2").style.borderBottom = "1px solid #57A856";
+                         document.getElementById("password2").style.boxShadow = "0 1px 0 0 #57A856";
+                         document.getElementById("frase").style.color = "green";
+                         validoSenha = true;
+                    }
+                  }
+
+                  return validoSenha;
+            }
+
+             function TirarTool()
+            {
+             var senha1 = document.getElementById("password").value;
+             var senha2 = document.getElementById("password2").value;
+
+
+            document.getElementsByClassName("tooltiptext")[0].style.display = "none";
+            document.getElementsByClassName("tooltiptext")[0].style. visibility = "hidden";
+            document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
+            }
+
             
-       	 </script>
+           </script>
 
-   		 </head>
-   		 <link href="Cadastro.css" rel="stylesheet" type="text/css">
-    <body>
+    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="Cadastro.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <body>
+    <header>
+        <p class = "logo"><img src = "Imagens/logo.png"></p>
+        <center>
+      <div class="tit"></div>
+    </center>
 
-         <div class="cadastro">
-              <div class="seta" onclick="Sumir()"></div>
-                <div class="tit"></div>
-                <br><br>
-                <div class="dados">
-                Preencha o formulário com seus dados pessoais
-                </div>
-                <div class="posicao">
+                        <center>
+                            <br><br>
+                            <br><br><br>
+                <div class="user"></div><br>
+                <div class="frase">Ol&aacute;! Preencha o formulário com seus dados pessoais.</div>
+
+        </center>
+
+        <div class="contato">
+
+        <a href="Contato.html" class="cont"> Contato </a>
+        </div>
+    </header>
+
+            <div class="bloco">
+
+                    <div class="posicao">
                 <br><br>
                 <div class="row">
             <form class="col s12" name = "form1" onsubmit=" return false;">
@@ -197,46 +238,13 @@
               </div>
 
               <button class="txtSubmit" id = "botao" onclick="carregar()">Cadastrar</button><br><br><br>
+
             </form>
 
           </div>
 
-                    </div>
+                    </div>               
 
-            </div>
+    </body>
+</html>
 
-        <!--<div class="transparencia">
-        <div class="pag">
-            <div class="bloco" >
-               <a href = "Login.html"> <div class="seta"></div></a>
-                <div class="tit"></div>
-                <br><br>
-                <div class="dados">
-                Preencha o formulário com seus dados pessoais
-                </div>
-                <div class="posicao">  
-                <br><br>
-            
-				<form id="frmCont" method="post" action="http://localhost:3000/usuario">                   
-				Username<br>
-                <input type="text" id = "nome" required pattern=".{6,10}" title="De 6 a 10 caracteres"><br><br>
-                Email<br>
-                <input type="email" id = "email"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ><br><br>
-                <label for="lb_Telefone">Telefone : (99-99999-9999)</label><br>
-                <input type ="tel" name ="txt_Tel" id ="telefone" required pattern="^\d{2}-\d{5}-\d{4}$"><br><br>
-                <td>Data de nascimento</td><br>
-                <td><input type="date" id="dataNascimento" name="txt_Data" required></td><br><br>
-                Senha<br>
-                <input type="password" id="Senha" name="senha" required pattern=".{8,}" title="8 caracteres ou mais"><br><br>
-                 Confirmar senha <br>
-                <input type="password" name="senhaconf" required }><br>
-      			<button  onclick="Verificar('frmCont')" class="css3button" id = "botao"> Enviar </button><br><br><br>  
-
-                        </form>        
-                    </div>
-                    </div>
-           			 </div>-->
-                     
-
-	    </body>
-	</html>
