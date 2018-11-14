@@ -43,6 +43,7 @@
            function Verificar(res)
             {
               resposta= JSON.parse(res);
+              var existe = false;
 
             /* if(resposta.indexOf(document.getElementById("usuario").value == -1))
              {
@@ -57,23 +58,21 @@
               alert(resposta[i].Nome + resposta[i].senha + "VC" + document.getElementById("usuario").value + document.getElementById("senha").value);
             if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
              {
-               window.open('Node.js/pp.html');
-               break;
-             }
-             else
-              {
-        if(resposta.indexOf(document.getElementById("usuario").value == -1) || resposta[resposta.indexOf(document.getElementById("usuario").value)].senha != document.getElementById("senha").value)
-              {
-               var res = confirm("Os dados não existem! Deseja fazer um cadastro?");
-               if(res)
-                  Cadastro(); 
-               else
-                alert("aha");
-              }         
-              
+              existe = true;
             }
-            }
-            log = true;
+          }
+          
+          if(existe)
+            window.open('Node.js/pp.html');
+         else
+          {
+           var res = confirm("Os dados não existem! Deseja fazer um cadastro?");
+           if(res)
+              Cadastro(); 
+           else
+            alert("aha");
+          }         
+            log = true;//?
           }
 
             function Cadastro()
