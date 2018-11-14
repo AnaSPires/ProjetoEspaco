@@ -1,4 +1,6 @@
 body, html {
+    background-size: cover;
+
 } 
 
 .parallax {
@@ -61,7 +63,17 @@ body, html {
 .row
 {
     height: 550px;
+    text-align: center;
+    color: white;
 }
+
+h3
+{
+        font-size: 60px;
+        font-weight: 600;
+        font-family:"Century Gothic";
+}
+
 .bgimg-1 {
     background: url("Imagens/buraco.png");
     position: relative;
@@ -76,7 +88,7 @@ body, html {
 .bgimg-2 {
     background: url("Imagens/uni.jpg");
     position: relative;
-    height:1080px ;
+    height:575px ;
     width: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -84,7 +96,25 @@ body, html {
     background-size: cover;
 }
 
+.bgimg-3 {
+    background: url("Imagens/paralax.jpg");
+    position: relative;
+    height:575px ;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
+#sobre
+{
+    background-color: #F78181;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
 
 #um
 {
@@ -131,6 +161,7 @@ body, html {
 
 h1
 {
+    font-family: "Century Gothic";
     font-size: 30px;
     font-weight: 600px;
 }
@@ -149,7 +180,9 @@ h1
 
 h3
 {
-    text-align:center;
+     font-family: "Century Gothic";
+    font-size: 60px;
+    font-weight: 600px;
 }
 
 #myCarousel
@@ -187,7 +220,7 @@ h3
     width: auto;
     height: auto;
     position: relative;
-    bottom: 65px;
+    bottom: 67px;
     left: 290px;
 }
 .insta img
@@ -230,13 +263,13 @@ h3
 #alo
 {
     position: relative;
-    bottom: 450px; 
+    bottom: 80px; 
 }
 
 #footer
 {
     position: relative;
-    top: 1000px;
+      
     height: 200px;
 }
 
@@ -258,7 +291,12 @@ h3
 #botao
 {
    background: #A4A4A4; 
+   color: white;
 }
 
+#linha
+{
+    height: 180px;
+}
 
 
