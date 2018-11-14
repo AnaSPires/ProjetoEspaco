@@ -1,13 +1,9 @@
 body, html {
-    height: 100%;
-    background-color: #00ff00;
 } 
 
-Oi Ana, o Gitzel deu a ideia de colocar border radio e box shadow no blocos. Ele concorda comigo, é pra colocar verde neon de fundo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 .parallax {
     /* The image used */
     background-image: url("Imagens/uni.jpg");
-    height: 50%; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,7 +13,6 @@ Oi Ana, o Gitzel deu a ideia de colocar border radio e box shadow no blocos. Ele
 .parallax2 {
     /* The image used */
     background-image: url("Imagens/bur.jpg");
-    height: 30%; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -79,9 +74,9 @@ Oi Ana, o Gitzel deu a ideia de colocar border radio e box shadow no blocos. Ele
 }
 
 .bgimg-2 {
-    background: url("Imagens/bur.jpg");
+    background: url("Imagens/uni.jpg");
     position: relative;
-    height: 575px;
+    height:1080px ;
     width: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -93,9 +88,9 @@ Oi Ana, o Gitzel deu a ideia de colocar border radio e box shadow no blocos. Ele
 
 #um
 {
-    background-color: #000000;
+    background-color: #00bfa5;
     width: 400px;
-    height: 400px;
+    height: 450px;
     position: relative;
     left: 150px;
     top: 90px;
@@ -103,32 +98,35 @@ Oi Ana, o Gitzel deu a ideia de colocar border radio e box shadow no blocos. Ele
     font-size: 20px;
     font-family: "Century Gothic";
     text-align: center;
+     border-radius: 15px 60px;
 }
 #dois
 {
-    background-color: #000000;
+    background-color: #00bfa5;
     width: 400px;
-    height: 400px;
+    height: 450px;
     position: relative;
     left: 600px;
-    bottom: 310px;
+    bottom: 360px;
     color: white;
      font-size: 20px;
     font-family: "Century Gothic";
     text-align: center;
+      border-radius: 15px 60px;
 }
 #tres
 {
-    background-color: #000000;
+    background-color: #00bfa5;
     width: 400px;
-    height: 400px;
+    height: 450px;
     position: relative;
     left: 1100px;
-    bottom: 710px;
+    bottom: 800px;
     color: white;
      font-size: 20px;
     font-family: "Century Gothic";
     text-align: center;
+     border-radius: 15px 60px;
 }
 
 h1
@@ -253,15 +251,14 @@ h3
     color: #000;
 }
 
-.caption img
+.waves-effect.waves-brown .waves-ripple {
+    background-color: rgba(121, 85, 72, 0.65);
+  }
+
+#botao
 {
-	max-width:400px;
-    width: auto;
-    height: auto;
-    position: relative;
-    
+   background: #A4A4A4; 
 }
 
-Borda ridge
 
 
