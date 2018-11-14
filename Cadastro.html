@@ -142,7 +142,7 @@
             }
 
              function TirarTool()
-            {
+            {s
              var senha1 = document.getElementById("password").value;
              var senha2 = document.getElementById("password2").value;
 
@@ -161,8 +161,20 @@
     <link href="Cadastro.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <body>
+        	   <nav class="nav">
+  <div class="nav-wrapper container">
+    <a href="#" class="brand-logo"><div class="logo"></div>
+      </a>    <div class="nome">  MAGNIFIC SPACE</div>
+    <ul id ="menu" class="right hide-on-med-and-down">
+      <li class="hoverable"><a id = "home" href="Entrada.html" style = "font-size : 16px;color : white;" >HOME</a></li>
+        <li class="hoverable"><a id = "sobre" href="Sobre.html" style = "font-size : 16px; color : white;">SOBRE </a> </li>
+        <li class="hoverable"><a id = "login" href="Login.html" style = "font-size : 16px;color : white;" onmouseenter="" >LOGIN</a></li>
+        <li class="active"><center style = "width: 125px;""> CADASTRE-SE </center></li>
+        <li class="hoverable"><a id = "contato" href="Contato.html" style = "font-size : 16px;color : white;" >CONTATO</a></li>
+    </ul>
+  </div>
+</nav>
     <header>
-        <p class = "logo"><img src = "Imagens/logo.png"></p>
         <center>
       <div class="tit"></div>
     </center>
@@ -174,11 +186,6 @@
                 <div class="frase">Ol&aacute;! Preencha o formulário com seus dados pessoais.</div>
 
         </center>
-
-        <div class="contato">
-
-        <a href="Contato.html" class="cont"> Contato </a>
-        </div>
     </header>
 
             <div class="bloco">
@@ -230,8 +237,7 @@
                   <div class="tooltip">
                     <i class="material-icons prefix">lock</i>
                   <input id="password2" type="password" onblur="Tool()" class="validate" onfocus="TirarTool()" required>
-
-                  <label for="password2" id="frase">Confirmar senha</label>
+                  <label for="password2">Confirmar senha</label>
                   <span class="tooltiptext">As senhas não batem.</span>
                   </div>
                   </div>

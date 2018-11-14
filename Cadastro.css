@@ -2,7 +2,45 @@ body
 {
     background:  url("./Node.js/imagens/fundo.gif"); 
 }
+.nav {
+  background-color: #0D3CB2 ;
+    height: 90px;
+}
+.logo
+{
+    width: 100px;
+    height: 100px;
+    background: url(Imagens/logo.png);
+   
+}
 
+.nome
+{
+    position:        relative;
+    left:            150px;
+    top:       		 20px;
+    width: 			 400px;
+    height: 		 100px;
+    color: 		 	 white;
+  	font-family:	 "Century Gothic";
+    font-size: 		 40px;
+    font-weight: 	 600;
+}
+.page-footer
+{
+    background-color:#75DED9; 
+
+}
+
+#menu
+{
+    position:   absolute;
+    top:        15px;
+    left:       770px;
+    width:      500px;
+    font-family:"Century Gothic";
+    font-size:  40px;
+}
 
 
 header
@@ -114,15 +152,7 @@ text-shadow:none;
 
 }
 
-.logo img
-{
-    background-image: url();
-    min-height:  120px;
-    height: auto;
-    width: auto;
-    position: absolute;
-    left: 0px;
-}
+
 
 .contato
 {
@@ -135,6 +165,11 @@ text-shadow:none;
     font-size: 25px;
     font-weight: 900;
    
+}
+
+.active
+{
+    font-size: 16px;
 }
 
 .tit
@@ -165,6 +200,7 @@ text-shadow:none;
     font-size: 16px;
     position: relative;
     top: -58px;
+    left: 95px;
    
 }
 
@@ -301,8 +337,8 @@ text-shadow:none;
     width: 700px;
     height: 900px;
     position: relative;
-    left: 70px;
-    top: 0px;
+    left: 50px;
+    bottom: 40px;
     font-family:"Trebuchet MS";
     font-weight: 900;
     color: black;
@@ -311,7 +347,7 @@ text-shadow:none;
 .bloco
 {
     background: white;
-    width: 500px;
+    width: 450px;
     height: 800px;
     position: relative;
     top: 280px;
@@ -320,7 +356,7 @@ text-shadow:none;
     font-size: 25px;
     font-family:"Century Gothic";
     font-weight: 400;
-    text-align: center;
+    
 }
 
 .user
@@ -329,7 +365,7 @@ text-shadow:none;
     width: 72px;
     height: 66px;
     position: relative;
-    bottom: 80px;
+    bottom: 60px;
     margin-left: auto;
      margin-right: auto;
      
@@ -340,5 +376,7 @@ text-shadow:none;
     width: 400px;
     height: 100px;
     position: relative;
-    bottom: 120px;
+    bottom: 100px;
 }
+
+

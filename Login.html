@@ -82,6 +82,7 @@
                document.getElementsByTagName("body")[0].style.background = "white";
                document.getElementsByClassName("cadastro")[0].style.display = "block";
                document.getElementsByClassName("transparencia")[0].style.filter = "brightness(20%)";
+                 document.getElementsByClassName("transparencia2")[0].style.filter = "brightness(20%)";
                document.getElementById("password2").style.borderBottom = "0.4px solid darkgray";
                document.getElementById("password2").style.boxShadow = "0 0.4px 0 0 darkgray";
             }
@@ -204,10 +205,23 @@
     <link href="Login.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <body>
+          <div class="transparencia">
+             <nav class="nav">
+  <div class="nav-wrapper container">
+    <a href="#" class="brand-logo"><div class="logo"></div>
+      </a>    <div class="nome">  MAGNIFIC SPACE</div>
+    <ul id ="menu" class="right hide-on-med-and-down">
+      <li class="hoverable"><a id = "home" href="Entrada.html" style = "font-size : 16px;color : white;" >HOME</a></li>
+        <li class="hoverable"><a id = "sobre" href="Sobre.html" style = "font-size : 16px; color : white;">SOBRE </a> </li>
+        <li class="active"><center style = "width: 85px;"">LOGIN</center></li>
+        <li class="hoverable"><a id = "login" href="Cadastro.html" style = "font-size : 16px;color : white;" onmouseenter="" > CADASTRE-SE </a></li>
+        <li class="hoverable"><a id = "contato" href="Contato.html" style = "font-size : 16px;color : white;" >CONTATO</a></li>
+    </ul>
+  </div>
+</nav>
 
-            <div class="transparencia">
+            
     <header>
-        <p class = "logo"><img src = "Imagens/logo.png"></p>
         <center>
        <div class="titulo" ></div>
     </center>
@@ -219,11 +233,6 @@
                 <div class="frase">Ol&aacute;! Digite o seu usu&aacute;rio e senha</div>
 
         </center>
-
-        <div class="contato">
-
-        <a href="Contato.html" class="cont"> Contato </a>
-        </div>
     </header>
 
             <div class="bloco">
@@ -250,11 +259,14 @@
                          <u><a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
 
                             </form> 
+                          </div>
+                        </div>
+                      </div>
            
          <div class="cadastro">
               <div class="seta" onclick="Sumir()"></div>
                 <div class="tit"></div>
-                <br><br>
+                <br>
                 <div class="dados">
                 Preencha o formulário com seus dados pessoais
                 </div>
@@ -319,6 +331,35 @@
          </div>
         </div>
       </div>
+      <div class="transparencia2">
+        <footer class="page-footer" id = "outro">
+          <div class="container" >
+            <div class="row" >
+              <div class="col l6 s12" >
+                <h5 class="white-text"><div class="logoo"></div></h5>
+                <p class="grey-text text-lighten-4" style="font-size: 20px;">Magnific Space Enterprises</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="Sobre.html">Sobre nós</a></li>
+                  <li><a class="grey-text text-lighten-3" href="Contato.html">Contato</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright" id="rodape" >
+            <div class="container" >
+            <h1 style="font-size: 20px;"> © 2018 Copyright Text </h1>
+                <div class="face"><img src="Imagens/face.ico"></div>
+                     <div class="twitter"><img src="Imagens/twitter.png"></div>
+                <div class="insta"><img src="Imagens/insta.png"></div>
+                 <div class="goo"><img src="Imagens/goo.png"></div>
+            <a class="grey-text text-lighten-4 right" id = "termos" href="Termos.html">TERMOS DE USO</a>
+            </div>
+          </div>
+        </footer></div>
 
 </body>
 </html>

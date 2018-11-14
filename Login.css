@@ -3,18 +3,65 @@ body
 	background:  url("./Node.js/imagens/fundo.gif"); 
 }
 
-
-
 header
 {
-    position: absolute;
+    position: relative;
     left: 8px;
+    top: 90px;
     background-image: url("Imagens/ain.png");
     height: 330px;
     width: 100%;
     font-size: 25px;
     font-family:"Century Gothic";
     font-weight: 400;
+}
+
+.nav {
+    position: absolute;
+    right: 0px;
+    background-color: #0D3CB2 ;
+    height: 90px;
+    z-index: 9999;
+}
+.logo
+{
+    width: 100px;
+    height: 100px;
+    background: url(Imagens/logo.png);
+   
+}
+
+.nome
+{
+    position:        relative;
+    left:            150px;
+    top:             20px;
+    width:           400px;
+    height:          100px;
+    color:           white;
+    font-family:     "Century Gothic";
+    font-size:       40px;
+    font-weight:     600;
+}
+.page-footer
+{
+    background-color:#75DED9; 
+
+}
+
+.active
+{
+    font-size: 16px;
+}
+
+#menu
+{
+    position:   absolute;
+    top:        15px;
+    left:       770px;
+    width:      500px;
+    font-family:"Century Gothic";
+    font-size:  40px;
 }
 
 
@@ -65,6 +112,7 @@ header
     position: relative;
     left: 30px;
     top: 20px;
+    cursor: hand;
 }
 
 #topSenha
@@ -113,15 +161,6 @@ text-shadow:none;
 
 }
 
-.logo img
-{
-    background-image: url();
-    min-height:  120px;
-    height: auto;
-    width: auto;
-    position: absolute;
-    left: 0px;
-}
 
 .contato
 {
@@ -201,11 +240,21 @@ text-shadow:none;
 	top: -10px;
 	left: -10px;
 	width: 100%;
-	height:1800;
+	height:1000;
     background-image: url("./Node.js/imagens/fundo.gif"); 
-     align-content: center;
-     text-align: center;
     /*display:none;*/
+}
+
+.transparencia2
+{
+    filter: brightness(100%);
+    z-index: 10;
+    position: absolute;
+    top: 900px;
+    width: 100%;
+    height:11px;
+    background-image: url("./Node.js/imagens/fundo.gif"); 
+    
 }
 
 
@@ -218,9 +267,9 @@ text-shadow:none;
     height: 850px;
     background-color: white;
     position: absolute;
-    top: 150px;
-    left: 450px;
-    z-index: 100;
+    top: 50px;
+    left: 550px;
+    z-index: 999;
     display: none;
 }
 
@@ -312,7 +361,7 @@ text-shadow:none;
     width: 250px;
     height: 300px;
     position: relative;
-    top: 280px;
+    top: 50px;
     margin-left: auto;
      margin-right: auto;
     font-size: 25px;
@@ -338,4 +387,82 @@ text-shadow:none;
     height: 100px;
     position: relative;
     top: -320px;
+}
+
+.logoo
+{
+    width: 50px;
+    height: 50px;
+    background: url("Imagens/logoo.png");
+}
+
+.face img
+{
+    max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+     position: relative;
+    top: 15px;
+    left: 250px;
+}
+.twitter img
+{
+    max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+    bottom: 25px;
+    left: 290px;
+}
+.insta img
+{
+    max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 65px;
+    left: 330px;
+}
+.goo img
+{
+    max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 105px;
+    left: 370px;
+}
+
+h1
+{
+    position: relative;
+    top: 60px;
+    font-size: 25px;
+    font-family:"Century Gothic";
+}
+
+#termos
+{
+    position: relative;
+    bottom: 150px;
+    right: 250px;
+    font-size:  16px;
+}
+
+#rodape
+{
+    position: relative;
+    bottom: 20px;
+    height: 0px;
+}
+#outro
+{
+   height: 200px;
+    position: relative;
 }

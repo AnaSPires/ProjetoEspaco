@@ -144,8 +144,8 @@ button.css3button {
 #termos
 {
     position: relative;
-    bottom: 170px;
-    right: 250px;
+    bottom: 215px;
+    right: 450px;
     font-size:  16px;
 }
 
@@ -154,6 +154,12 @@ button.css3button {
     position: relative;
     bottom: 20px;
     height: 50px;
+}
+
+h1
+{
+    position: relative;
+    top: 60px;
 }
 
 #outro
@@ -245,4 +251,4 @@ iframe
     width: auto;
     height: auto;
 }
-ave
+
