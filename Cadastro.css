@@ -36,7 +36,7 @@ body
 {
     position:   absolute;
     top:        15px;
-    left:       770px;
+    left:       620px;
     width:      500px;
     font-family:"Century Gothic";
     font-size:  40px;
@@ -46,7 +46,7 @@ body
 header
 {
     position: absolute;
-    left: 8px;
+    left: 0px;
     background-image: url("Imagens/ain.png");
     height: 330px;
     width: 100%;
@@ -174,9 +174,10 @@ text-shadow:none;
 
 .tit
 {
-    position: absolute;
-    left: 450px;
-    bottom: 120px;
+    position: relative;
+    margin-left: auto;
+     margin-right: auto;
+    bottom: 50px;
     background: url("Imagens/cad.png");
     width: 697px;
     height: 257px;
@@ -202,19 +203,6 @@ text-shadow:none;
     top: -58px;
     left: 95px;
    
-}
-
-.titulo
-{
-    
-    background: url("Imagens/TITULO.png");
-    width: 433px;
-    height: 239px;
-    position: relative;
-    bottom: 50px;
-     margin-left: auto;
-     margin-right: auto;
-    
 }
 
 
@@ -312,12 +300,8 @@ text-shadow:none;
     top: -28px;
     font-family:"Century Gothic";
     font-weight: 600;
-    font-size: 15px;
-
-    
+    font-size: 15px;   
 }
-
-
 
 .dados
 {
@@ -365,7 +349,7 @@ text-shadow:none;
     width: 72px;
     height: 66px;
     position: relative;
-    bottom: 60px;
+    bottom: 320px;
     margin-left: auto;
      margin-right: auto;
      
@@ -373,10 +357,94 @@ text-shadow:none;
 
 .frase
 {
-    width: 400px;
+    width: 600px;
     height: 100px;
     position: relative;
-    bottom: 100px;
+    bottom: 350px;
+}
+.face img
+{
+    max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+     position: relative;
+    top: 35px;
+    left: 250px;
+}
+.twitter img
+{
+    max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+    bottom: 5px;
+    left: 290px;
+}
+.insta img
+{
+    max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 45px;
+    left: 330px;
+}
+.goo img
+{
+    max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 85px;
+    left: 370px;
+}
+
+h1
+{
+    position: relative;
+    top: 100px;
+    font-size: 20px;
+    font-family:Arial;
+}
+
+#termos
+{
+    position: relative;
+    bottom: 130px;
+    right: 250px;
+    font-size:  16px;
+}
+
+#rodape
+{
+    position: relative;
+    bottom: 70px;
+    height: 0px;
+}
+#outro
+{
+    font-family: Arial;
+   height: 180px;
+    position: relative;
+    top: 300px;
+}
+.logoo
+{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: url("Imagens/logoo.png");
+}
+#cima
+{
+    position: relative;
+    bottom: 40px;
 }
 
 
