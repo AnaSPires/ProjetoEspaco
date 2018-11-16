@@ -10,22 +10,70 @@
 
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script>
-            function carregar() {
-      var xmlhttp = new XMLHttpRequest();
-      var url = "http://localhost:3000/Usuario";
+        var validoSenha = false;
 
-      xmlhttp.onreadystatechange=function()
-      {
-          if (this.readyState == 4 && this.status == 200)
-          {
-            
-              nodeCadastro(this.responseText);
-          }
-      }
-      xmlhttp.open("GET", url, true);
+        function carregar() {
+		  var xmlhttp = new XMLHttpRequest();
+		  var url = "http://localhost:3000/Usuario";
 
-      xmlhttp.send();
+		  xmlhttp.onreadystatechange=function()
+		  {
+			  if (this.readyState == 4 && this.status == 200)
+			  {
+				  nodeCadastro(this.responseText);
+			  }
+		  }
+		  xmlhttp.open("GET", url, true);
+
+		  xmlhttp.send();
      }
+
+       function nodeCadastro(res)
+	             {
+	               resposta = JSON.parse(res);
+	               var prosseguir = true;
+
+	               for(var i =0; i < resposta.length; i++)
+	               {
+	                 if(resposta[i].Nome == document.getElementById("username2").value)
+	                 {
+	                   alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");
+	                   prosseguir = false;
+	                 }
+	                 if(resposta[i].email == document.getElementById("email").value)
+	                 {
+	                   alert("Esse e-mail já foi cadastrado! Forneça um diferente para prosseguir.");
+	                   prosseguir = false;
+	                 }
+	                 if(resposta[i].telefone == document.getElementById("tel").value)
+	                 {
+	                   alert("Esse telefone já foi cadastrado! Forneça um diferente para prosseguir.");
+	                   prosseguir = false;
+	                 }
+
+	                 if(!validoSenha)
+	                    prosseguir = false;
+
+	                   if(prosseguir)
+	                   {
+	                      var xmlhttp = new XMLHttpRequest();
+	                       var url = "http://localhost:3000/UsuarioCadastra";
+	                       xmlhttp.open("POST", url, true);
+	                       //xmlhttp.send(document.getElementById("username2").value, document.getElementById("email").value, document.getElementById("tel").value, document.getElementById("password").value);
+
+	                       xmlhttp.onreadystatechange=function()
+	                       {
+	                           if (this.readyState == 4 && this.status == 200)
+	                           {
+	                            alert("ok");
+	                           }
+	                       }
+	                       window.open('Node.js/pp.html');
+	                       xmlhttp.send();
+	                   }
+
+	             }
+	           }
 
 
       window.onload = function(){
@@ -64,49 +112,6 @@
                   return validoSenha;
             }
 
-            function nodeCadastro(res)
-            {
-              resposta = JSON.parse(res);
-
-              for(var i =0; i < resposta.length; i++)
-              {
-                if(resposta[i].Nome == document.getElementById("username2").value)
-                {
-                  alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");
-                }
-                if(resposta[i].email == document.getElementById("email").value)
-                {
-                  alert("Esse e-mail já foi cadastrado! Forneça um diferente para prosseguir.");
-                }
-                if(resposta[i].telefone == document.getElementById("tel").value)
-                {
-                  alert("Esse telefone já foi cadastrado! Forneça um diferente para prosseguir.");
-                }
-    
-                  if(resposta[i].Nome != document.getElementById("username2").value && resposta[i].email != document.getElementById("email").value 
-                    && resposta[i].telefone != document.getElementById("tel").value && validoSenha)
-                  {
-                     var xmlhttp = new XMLHttpRequest();
-                      var url = "http://localhost:3000/UsuarioCadastra";
-
-                      xmlhttp.onreadystatechange=function()
-                      {
-                          if (this.readyState == 4 && this.status == 200)
-                          {
-                           alert("ok");
-                          }
-                      }
-                      xmlhttp.open("GET", url, true);
-
-                      xmlhttp.send();
-
-                      window.open('Node.js/pp.html');
-                  }
-                else
-                   alert("Errooooo");
-            }
-          }
-           
 
 
             function Tool()
@@ -152,7 +157,7 @@
             document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
             }
 
-            
+
            </script>
 
     </head>
@@ -248,7 +253,7 @@
             </form>
           </div>
 
-        </div> 
+        </div>
             </div>
             <footer class="page-footer" id = "outro">
           <div class="container" >

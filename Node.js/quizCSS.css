@@ -150,24 +150,26 @@ nav
 
 #btnVer
 {
-	position: absolute;
-	left: 360px; 
-	top: 430px;
-	position: absolute;
-	width: 12%;
-	height: 11%;
-	display: none;
+position: absolute;
+left: 360px; 
+top: 430px;
+position: absolute;
+width: 12%;
+height: 11%;
+display: none;
     border-radius: 25%; 
 }
 
 #btnC
 {
-    position: absolute;
-	top: 400px;
-	left:1360px;
-	width:90%;
-	height: 30px;
-	border-radius: 70%;
+   position: absolute;
+left: 360px; 
+top: 530px;
+position: absolute;
+width: 12%;
+height: 11%;
+display: none;
+    border-radius: 25%; 
 }
 
 #a
