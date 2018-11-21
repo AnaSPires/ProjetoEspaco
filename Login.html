@@ -63,16 +63,21 @@
           }
           
           if(existe)
+          {
             window.open('Node.js/pp.html');
+            log = true;
+          }
          else
           {
            var res = confirm("Os dados não existem! Deseja fazer um cadastro?");
            if(res)
-              Cadastro(); 
+           {
+              Cadastro();
+              log = true; 
+           }
            else
-            alert("aha");
+            log = false;
           }         
-            log = true;//?
           }
 
             function Cadastro()

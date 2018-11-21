@@ -19,7 +19,7 @@
             var param = location.search.substring(url.length);
             planeta = param.substring(8);
 
-             if(planeta == 'Mercúrio')
+           /*  if(planeta == 'Mercúrio')
              {
              	planeta = 'Mercúrio';
              }
@@ -36,7 +36,7 @@
              			if(planeta == 'Plut%C3%A3o')
              			{
              				planeta = 'Plutão';
-             			}
+             			}*/
 
 
             document.getElementById("qualPlaneta").innerHTML = planeta;
@@ -93,9 +93,9 @@ function menu(oq){
                document.getElementById("escrever").innerHTML = "<center><p class='temp'>Temperatura: " + arr[i].temperatura + "</p></center>";
            else{
            	if(oq == composicao)
-              document.getElementById("escrever").innerHTML = "<center><p class='comp'>Composição" + "\n\n" + arr[i].composicao + "</p></center>";
+              document.getElementById("escrever").innerHTML = "<center><p class='comp'>Composição"  + arr[i].composicao + "</p></center>";
           else
-              document.getElementById("escrever").innerHTML = "<center><p class='est'>Estrutura"+ "\n\n" + arr[i].est + "<img class='responsive-img'  class='circle' src='imagens/" + planeta + "Estrutura.png></p></center>";
+              document.getElementById("escrever").innerHTML = "<center><p class='est'>Estrutura <br>" + arr[i].est + "<img class='responsive-img'  class='circle' src='imagens/" + planeta + "Estrutura.png'></p></center>";
     }}}}}}}}}}
 }
 
