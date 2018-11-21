@@ -62,24 +62,24 @@ rota.post('/UsuarioCadastra', (requisicao, resposta) =>{
     const telefone = requisicao.body.tel;
     const data = requisicao.body.aniversario;
     const senha = requisicao.body.senha;
+   // console.log(requisicao.body);
     console.log(requisicao.body);
-    console.log(nome);
-    console.log(email);
-    console.log(telefone);
-    execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}`, resposta);
-    //execSQL(`insert into Usuario(Nome,Data, Senha,Telefone, Email) values(${nome}, ${email}, ${telefone}, ${data}, ${senha}`, resposta);
-    resposta.end(resposta.json({mensagem: 'foi'}));
+   // console.log(email);
+   // console.log(telefone);
+    //execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}`, resposta);
+    execSQL(`insert into Usuario(Nome,Data, Senha,Telefone, Email) values(${nome}, ${email}, ${telefone}, ${data}, ${senha}`, resposta);
+    resposta.end(resposta.json({mensagem: requisicao.body}));
 })
 
-/*const get = async () => {
-  return Promise.reject('Oops!').catch(err => {
-    throw new Error(err);
-  });
-};
+/*
 
-get()
-  .then(console.log)
-  .catch(function(e) {
-    console.log(e);
-  });*/
+rota.post('/clientes', (requisicao, resposta) =>{
+    const id = parseInt(requisicao.body.id);
+    const nome = requisicao.body.nome.substring(0,150);
+    const cpf = requisicao.body.cpf.substring(0,11);
+    execSQL(`INSERT INTO Clientes(ID, Nome, CPF) VALUES(${id},'${nome}','${cpf}')`, resposta);
+    resposta.end(resposta.json({ mensagem: 'Incluído!'}));    
+})
 
+
+*/

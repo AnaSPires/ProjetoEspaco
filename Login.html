@@ -7,7 +7,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-
+          <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script>
 
@@ -175,15 +175,14 @@
                 
                 }
               }
-    
-                ///if(resposta[i].Nome != document.getElementById("username2").value && resposta[i].email != document.getElementById("email").value && resposta[i].telefone != document.getElementById("tel").value && validoSenha)
+
                 if(podeProsseguir)
                   {
                       var xmlhttp2 = new XMLHttpRequest();
                       //alert(document.getElementById("username2").value);
                       //var url2 = "http://localhost:3000/UsuarioCadastra";
 
-                       xmlhttp2.open("POST", "http://localhost:3000/UsuarioCadastra", true);
+                      xmlhttp2.open("POST", "http://localhost:3000/UsuarioCadastra", true);
                       xmlhttp2.send();
 
                       xmlhttp2.onreadystatechange=function()
@@ -192,8 +191,8 @@
                          // alert(this.status);
                           if (this.readyState == 4 && this.status == 200)
                           {
-                           //alert(this.responseText);
-                           //alert("aqui");
+                           alert("olha aqui: " + this.responseText);
+                           alert("aqui");
                            
                            window.open('Node.js/pp.html');
                           }
@@ -281,7 +280,7 @@
                 <div class="posicao">
                 <br><br>
                 <div class="row">
-            <form class="col s12" name = "form1" onsubmit=" return false;">
+            <form class="col s12" name = "form1" onsubmit=" return false;" action="http://localhost:3000/UsuarioCadastra" method="post">
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
