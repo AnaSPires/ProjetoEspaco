@@ -1,6 +1,6 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+var express = require('express');//biblioteca
+var app = express();//inicia o express
+var bodyParser = require('body-parser');//bibliotaca
 var porta = 3000; //porta padrão
 var sql = require('mssql');
 var conexaoStr = "Server=regulus;Database=PR118201;User Id=PR118201;Password=PR118201;";
@@ -62,9 +62,24 @@ rota.post('/UsuarioCadastra', (requisicao, resposta) =>{
     const telefone = requisicao.body.tel;
     const data = requisicao.body.aniversario;
     const senha = requisicao.body.senha;
-    //console.log(requisicao.body);
+    console.log(requisicao.body);
     console.log(nome);
+    console.log(email);
+    console.log(telefone);
     execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}`, resposta);
+    //execSQL(`insert into Usuario(Nome,Data, Senha,Telefone, Email) values(${nome}, ${email}, ${telefone}, ${data}, ${senha}`, resposta);
     resposta.end(resposta.json({mensagem: 'foi'}));
 })
+
+/*const get = async () => {
+  return Promise.reject('Oops!').catch(err => {
+    throw new Error(err);
+  });
+};
+
+get()
+  .then(console.log)
+  .catch(function(e) {
+    console.log(e);
+  });*/
 

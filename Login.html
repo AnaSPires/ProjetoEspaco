@@ -55,11 +55,11 @@
               window.open('Node.js/pp.html');*/
             for(var i =0; i < resposta.length; i++)
             {
-              alert(resposta[i].Nome + resposta[i].senha + "VC" + document.getElementById("usuario").value + document.getElementById("senha").value);
-            if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
+              //alert(resposta[i].Nome + resposta[i].senha + "VC" + document.getElementById("usuario").value + document.getElementById("senha").value);
+            if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value && !existe)
              {
               existe = true;
-            }
+              }
           }
           
           if(existe)
@@ -178,6 +178,9 @@
                       //alert(document.getElementById("username2").value);
                       //var url2 = "http://localhost:3000/UsuarioCadastra";
 
+                       xmlhttp2.open("POST", "http://localhost:3000/UsuarioCadastra", true);
+                      xmlhttp2.send();
+
                       xmlhttp2.onreadystatechange=function()
                       {
                          // alert(this.readyState);
@@ -191,8 +194,7 @@
                           }
                       }
                       
-                      xmlhttp2.open("POST", "http://localhost:3000/UsuarioCadastra", true);
-                      xmlhttp2.send();
+                     
                       //xmlhttp2.send(document.getElementsByName("form1"));
                       //break;
                   }

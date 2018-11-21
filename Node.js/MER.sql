@@ -14,7 +14,7 @@ add email varchar(40)
 alter table Usuario
 alter column senha varchar(30)
 
-select * from Usuario
+	
 insert into Usuario values( 1, 'Amanda', '03/05/2009','25632514', '99-99999-9999', 'ana@gmail.com')
 update Usuario set telefone = '(99)99999-9999' where Nome = 'Amanda'
 

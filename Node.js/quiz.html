@@ -9,13 +9,17 @@
 
   <script>
 
-    //Atualizar -- AJAX
+    //pop up
+    //repetição de perguntas
+    //cadastro
+    //
 
 
   var nivel = 1;
   var certa;
+  var arr;
 
-  var vetor = new Array();
+  var vetor;
   var qtd = 0;
 
   var p;
@@ -58,7 +62,10 @@
     xmlhttp.onreadystatechange=function()
     {
         if (this.readyState == 4 && this.status == 200)
-            ExibeDados(this.responseText);
+        {
+            arr = JSON.parse(this.responseText);
+            ExibeDados();
+        }
         }
 
     xmlhttp.open("GET", url, true);
@@ -67,37 +74,36 @@
 
    }
 
+   function updateArray(arr, excludeIndex)
+   {
+      for(var i = 0; i < arr.length; i++)
+        if (i == excludeIndex)
+          break;
 
-function ExibeDados(response) {
+      var newArray = new Array();
+      for (var j = 0; j < arr.length; j++)
+        if (j != i)
+          newArray.push(arr[j]);
 
-    var arr = JSON.parse(response);
+        return newArray;
+   }
+
+
+function ExibeDados() {
+    var qual = parseInt(Math.random() * (arr.length)-1);
 
     p = "<h1>";
     a = "<span>";
     b = "<span>";
     c = "<span>";
     d = "<span>";
-
-   var qual = parseInt(Math.random() * (arr.length - 1));
-   vetor[qtd] = qual;
-   qtd++;
-
-   //Verificar se a pergunta não aparecerá mais de uma vez
-   for(var i = 0; i < qtd; i++)
-   {
-     if(vetor[i] == qual)
-       qual = parseInt(Math.random() * (arr.length - 1));
-
-   }
-
+  
         p += arr[qual].enunciado;
         a += arr[qual].alternativaA;
         b += arr[qual].alternativaB;
         c += arr[qual].alternativaC;
         d += arr[qual].alternativaD;
         certa = arr[qual].correta;
-
-
 
     p += "</h1>";
     a += "</span>";
@@ -116,6 +122,8 @@ function ExibeDados(response) {
     document.getElementById("r_Segunda").innerHTML = b;
     document.getElementById("r_Terceira").innerHTML = c;
     document.getElementById("r_Quarta").innerHTML = d;
+
+    arr = updateArray(arr, qual);
   }
 
 
@@ -161,7 +169,7 @@ function ExibeDados(response) {
 
       }
       nivel++;
-      alert("Nível: " + nivel);
+      //alert("Nível: " + nivel);
 
 
 
@@ -256,11 +264,6 @@ function ExibeDados(response) {
       }
     }
 
-    function Curiosidades()
-    {
-      window.open('curiosidades.html');
-    }
-
 	</script>
 	</head>
 <link href="quizCSS.css" rel="stylesheet" type="text/css">
@@ -306,7 +309,6 @@ function ExibeDados(response) {
 
     <button type="button" id="pp" onclick="window.open('pp.html')">Página Principal</button>
 
-    <button type="button" id="btnC" onclick="Curiosidades()">Curiosidades</button>
 </body>
 
 </html>
