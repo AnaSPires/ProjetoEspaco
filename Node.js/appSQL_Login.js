@@ -66,8 +66,8 @@ rota.post('/UsuarioCadastra', (requisicao, resposta) =>{
     console.log(requisicao.body);
    // console.log(email);
    // console.log(telefone);
-    //execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}`, resposta);
-    execSQL(`insert into Usuario(Nome,Data, Senha,Telefone, Email) values(${nome}, ${email}, ${telefone}, ${data}, ${senha}`, resposta);
+    execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}`, resposta);
+    //execSQL(`insert into Usuario(Nome,Data, Senha,Telefone, Email) values(${nome}, ${email}, ${telefone}, ${data}, ${senha}`, resposta);
     resposta.end(resposta.json({mensagem: requisicao.body}));
 })
 

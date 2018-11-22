@@ -5,6 +5,7 @@
     <title> MAGNIFIG SPACE  </title>
         <link rel="shortcut icon" href="favicon.ico" >
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
           <meta charset="UTF-8">
@@ -56,11 +57,9 @@
             for(var i =0; i < resposta.length; i++)
             {
               //alert(resposta[i].Nome + resposta[i].senha + "VC" + document.getElementById("usuario").value + document.getElementById("senha").value);
-            if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value && !existe)
-             {
+            if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
               existe = true;
-              }
-          }
+            }
           
           if(existe)
           {
@@ -178,25 +177,33 @@
 
                 if(podeProsseguir)
                   {
-                      var xmlhttp2 = new XMLHttpRequest();
-                      //alert(document.getElementById("username2").value);
-                      //var url2 = "http://localhost:3000/UsuarioCadastra";
+                    $.ajax({ 
+                      url:"http://localhost:3000/UsuarioCadastra",
+                      type: "post"
+                    }).done(function(){
+                      window.open('Node.js/pp.html', '_self');
+                    });
 
-                      xmlhttp2.open("POST", "http://localhost:3000/UsuarioCadastra", true);
-                      xmlhttp2.send();
-
-                      xmlhttp2.onreadystatechange=function()
-                      {
-                         // alert(this.readyState);
-                         // alert(this.status);
-                          if (this.readyState == 4 && this.status == 200)
-                          {
-                           alert("olha aqui: " + this.responseText);
-                           alert("aqui");
+                      // var xmlhttp2 = new XMLHttpRequest();
+                      // //alert(document.getElementById("username2").value);
+                      // //var url2 = "http://localhost:3000/UsuarioCadastra";
+                      //  xmlhttp2.onreadystatechange=function()
+                      // {
+                      //    // alert(this.readyState);
+                      //    // alert(this.status);
+                      //     if (this.readyState == 4 && this.status == 200)
+                      //     {
+                      //      //alert("olha aqui: " + this.responseText);
+                      //      alert("aqui");
                            
-                           window.open('Node.js/pp.html');
-                          }
-                      }
+                      //      //window.open('Node.js/pp.html');
+                      //     }
+                      // }
+
+                      // xmlhttp2.open("POST", "http://localhost:3000/UsuarioCadastra", true);
+                      // xmlhttp2.send();
+
+                     
                       
                      
                       //xmlhttp2.send(document.getElementsByName("form1"));
@@ -204,7 +211,13 @@
                   }
              
           }
-           </script>
+
+          function logRecebeTrue()
+          {
+            log = true;
+          }
+
+          </script>
 
     </head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
@@ -230,7 +243,7 @@
             
     <header>
         <center>
-       <div class="titulo" ></div>
+       <div class="titulo"></div>
     </center>
 
                         <center>
@@ -249,14 +262,14 @@
               <div class="row">
                 <div class="input-field col s12">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="usuario" type="text" class="validate" required name="usu">
+                  <input id="usuario" type="text" class="validate" required name="usu" onfocus="logRecebeTrue()">
                   <label for="usuario"> Usu&aacute;rio</label>
                 </div>
                 </div>
                 <div class="row">
                 <div class="input-field col s12" id = "topSenha">
                     <i class="material-icons prefix">lock</i>
-                  <input id="senha" type="password" class="validate" required  name="senhaa">
+                  <input id="senha" type="password" class="validate" required  name="senhaa" onfocus="logRecebeTrue()">
                   <label for="senha">Senha</label>
                 </div>
               </div>                   
