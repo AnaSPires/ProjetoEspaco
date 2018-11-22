@@ -62,5 +62,6 @@ rota.get('/UsuarioCadastra', (requisicao, resposta) =>{
     const senha = requisicao.body.Senha.substring(0,20);
     const telefone = requisicao.body.telefone.substring(0,20);
     execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha})`, resposta);
+    //execSQL(`insert into Usuario(Nome,Data, Senha,Telefone, Email) values(${nome}, ${email}, ${telefone}, ${data}, ${senha}`, resposta);
     resposta.end(resposta.json({ mensagem: 'Incluído!'}));    
 })
