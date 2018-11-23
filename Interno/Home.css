@@ -5,7 +5,7 @@ body, html {
 
 .parallax {
     /* The image used */
-    background-image: url("Imagens/universe.jpg");
+    background-image: url("Fotos/fundo.gif");
     height: 100%; 
     background-attachment: fixed;
     background-position: center;
@@ -20,7 +20,7 @@ body, html {
 {
     width: 100px;
     height: 100px;
-    background: url(Fotos/logo.png);
+    background: url(Fotos/logo.png) repeat;
    
 }
 
@@ -36,11 +36,7 @@ body, html {
     font-size: 		 40px;
     font-weight: 	 600;
 }
-.page-footer
-{
-    background-color:#75DED9; 
 
-}
 
 
 #menu
@@ -55,25 +51,28 @@ body, html {
 
 .txt1
 {
-    color: #777;
-    background-color:white;
+    color: #E8D2D5;
+    background-color:#64DBC4;#14F2E9;
     text-align:center;
-    padding:50px 80px;
+    padding:40px 80px;
     text-align: justify;
     position: absolute;
-    top: 730px;
+    top: 230px;
     width: 100%;
 }
 
 h3
 {
     text-align:center;
+    font-size: 30px;
+    font-family: "Century Gothic";
+    font-weight: 400;
 }
 
 #myCarousel
 {
     position: absolute;
-    top: 330px;
+    top: 530px;
 }
 
 .active
@@ -85,7 +84,7 @@ h3
 {
     width: 50px;
     height: 50px;
-    background: url("Imagens/logoo.png");
+    background: url("Fotos/logoo.png");
 }
 
 .face img
