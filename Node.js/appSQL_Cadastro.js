@@ -55,13 +55,19 @@ rota.delete('/usuario/:id', (requisicao, resposta) =>{
 })
 
 
-rota.get('/UsuarioCadastra', (requisicao, resposta) =>{
-    const nome = requisicao.body.nome.substring(0,40);
-    const email = requisicao.body.email.substring(0,40);
-    const data = requisicao.body.dataNascimento.substring(0,11);
-    const senha = requisicao.body.Senha.substring(0,20);
-    const telefone = requisicao.body.telefone.substring(0,20);
-    execSQL(`Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha})`, resposta);
-    //execSQL(`insert into Usuario(Nome,Data, Senha,Telefone, Email) values(${nome}, ${email}, ${telefone}, ${data}, ${senha}`, resposta);
-    resposta.end(resposta.json({ mensagem: 'Incluído!'}));    
+rota.post('/UsuarioCadastra', (requisicao, resposta) =>{
+  const nome = requisicao.body.user;
+  const email = requisicao.body.email;
+  const data = requisicao.body.aniversario;
+  const senha = requisicao.body.senha;
+  const telefone = requisicao.body.tel;
+
+  console.log("AQUI: " + data);
+
+  let dataArray = data.split('-');
+  let inverseData = dataArray[2] + '/' + dataArray[1] + '/' + dataArray[0];
+  console.log(inverseData);
+  execSQL(`Inserir_sp @nome = '${nome}', @email = '${email}', @telefone = '${telefone}', @data = '${inverseData}', @senha = '${senha}'`, resposta);
+  //execSQL(`insert into Usuario(Nome,Data, Senha,Telefone, Email) values(${nome}, ${email}, ${telefone}, ${data}, ${senha}`, resposta);
+  //resposta.end(resposta.json({ mensagem: 'Incluído!'}));
 })

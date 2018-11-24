@@ -13,9 +13,9 @@
         <script>
 
             var validoSenha = false;
-
+             var log = true;
             var resposta; //Node
-            var log = false;
+         
 
      function carregar() {
       var xmlhttp = new XMLHttpRequest();
@@ -25,11 +25,16 @@
       {
           if (this.readyState == 4 && this.status == 200)
           {
-            if(!log)
+            if(log)
+            {
+              alert("oi");
               Verificar(this.responseText);
+
+            }
             else
             {
               nodeCadastro(this.responseText);
+              alert("n");
               //alert(this.responseText);
             }
           
@@ -54,6 +59,9 @@
              }
              else
               window.open('Node.js/pp.html');*/
+
+            alert(document.getElementById("usuario").value + document.getElementById("senha").value);
+
             for(var i =0; i < resposta.length; i++)
             {
               //alert(resposta[i].Nome + resposta[i].senha + "VC" + document.getElementById("usuario").value + document.getElementById("senha").value);
@@ -72,16 +80,16 @@
            if(res)
            {
               Cadastro();
-              log = true; 
+              log = false; 
            }
            else
-            log = false;
+            log = true;
           }         
           }
 
             function Cadastro()
             {
-              log = true;
+              log = false;
 
                document.getElementsByTagName("body")[0].style.background = "white";
                document.getElementsByClassName("cadastro")[0].style.display = "block";

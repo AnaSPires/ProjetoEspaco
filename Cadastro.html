@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> MAGNIFIG SPACE  </title>
         <link rel="shortcut icon" href="favicon.ico" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
@@ -54,30 +55,69 @@
 	                 if(!validoSenha)
 	                    prosseguir = false;
 
-	                   if(prosseguir)
-	                   {
-	                      var xmlhttp = new XMLHttpRequest();
-	                       var url = "http://localhost:3000/UsuarioCadastra";
-	                       xmlhttp.open("POST", url, true);
-	                       //xmlhttp.send(document.getElementById("username2").value, document.getElementById("email").value, document.getElementById("tel").value, document.getElementById("password").value);
-
-	                       xmlhttp.onreadystatechange=function()
-	                       {
-	                           if (this.readyState == 4 && this.status == 200)
-	                           {
-	                            alert("ok");
-	                           }
-	                       }
-	                       window.open('Node.js/pp.html');
-	                       xmlhttp.send();
-	                   }
+	                   
 
 	             }
-	           }
+
+               //debugger;
+
+
+                     /*{
+                        var xmlhttp = new XMLHttpRequest();
+                         var url = "http://localhost:3000/UsuarioCadastra";
+                         xmlhttp.open("POST", url, true);
+                         //xmlhttp.send(document.getElementById("username2").value, document.getElementById("email").value, document.getElementById("tel").value, document.getElementById("password").value);
+
+                         xmlhttp.onreadystatechange=function()
+                         {
+                             if (this.readyState == 4 && this.status == 200)
+                             {
+                              alert("ok");
+                             }
+                         }
+                        // window.open('Node.js/pp.html');
+                         xmlhttp.send();
+                     }*/
+
+
+                let form = $('#frmCadastro');
+                if(prosseguir)
+                {
+                    /*$.post( "http://localhost:3000/UsuarioCadastra", form.serialize() ).done(function(data){
+                      if (!data.erro) {
+                        form.each(function(data){
+                                //limpar formulário
+                                this.reset();
+                        });*/
+
+
+                    let dados =
+                    {
+                      "user": $('#username2').val(),
+                      "email": $('#email').val(),
+                      "aniversario": $('#data').val(),
+                      "senha": $('#password').val(),
+                      "tel": $('#tel').val()
+                    }
+
+
+                    $.post("http://localhost:3000/UsuarioCadastra", dados).done(function(data){
+                      debugger;
+                      if (data.erro) {
+                         alert('Deu erro!');
+                      };
+                  });
+
+                alert(data.mensagem);
+
+                //chamar outra página depois da inclusão
+                window.location.href = "Node.js/pp.html";
+              }
+	     }
 
 
       window.onload = function(){
-            document.getElementById("nome").focus();
+            document.getElementById("username2").focus();
             }
 
              function Tool()
@@ -121,14 +161,14 @@
 
                 if(senha2!="")
                 {
-                    if(senha1!=senha2  )
+                    if(senha1!=senha2)
                     {
                         document.getElementsByClassName("tooltiptext")[0].style.display = "block";
                         document.getElementsByClassName("tooltiptext")[0].style. visibility = "visible";
                         document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
                         document.getElementById("password2").style.borderBottom = "1px solid red";
                         document.getElementById("password2").style.boxShadow = "0 1px 0 0 red";
-                        document.getElementById("frase").style.color = "red";
+                        //document.getElementById("frase").style.color = "red";
                        validoSenha = false;
                     }
                     else
@@ -138,7 +178,7 @@
                         document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
                          document.getElementById("password2").style.borderBottom = "1px solid #57A856";
                          document.getElementById("password2").style.boxShadow = "0 1px 0 0 #57A856";
-                         document.getElementById("frase").style.color = "green";
+                        //document.getElementById("frase").style.color = "green";
                          validoSenha = true;
                     }
                   }
@@ -147,7 +187,7 @@
             }
 
              function TirarTool()
-            {s
+            {
              var senha1 = document.getElementById("password").value;
              var senha2 = document.getElementById("password2").value;
 
@@ -199,7 +239,7 @@
                     <div class="posicao">
                 <br><br>
                 <div class="row">
-            <form class="col s12" name = "form1" onsubmit=" return false;">
+            <form class="col s12" name = "form1" id="frmCadastro" onsubmit=" return false;" action="" method="post">
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
@@ -226,7 +266,7 @@
             <div class="row">
             <div class="input-field col s6">
                  <i class="material-icons prefix">insert_invitation</i>
-                <input type="date" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
+                <input type="date" id="data" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
                 <label for="aniversario">Data Nascimento</label>
             </div>
                 </div>

@@ -50,7 +50,7 @@ end
 Inserir_sp @nome='Teste', @email ='@', @telefone='43241', @data = '12/12/12', @senha='12345678'
 Inserir_sp @nome = ${nome}, @email = ${email}, @telefone = ${telefone}, @data = ${data}, @senha = ${senha}
 
-delete from Usuario where CodUsuario = 2
+delete from Usuario where CodUsuario = 25
 select * from Usuario
 sp_help Usuario
 
