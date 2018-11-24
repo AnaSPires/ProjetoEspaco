@@ -27,15 +27,12 @@
           {
             if(log)
             {
-              alert("oi");
               Verificar(this.responseText);
 
             }
             else
             {
               nodeCadastro(this.responseText);
-              alert("n");
-              //alert(this.responseText);
             }
           
           }
@@ -51,20 +48,11 @@
               resposta= JSON.parse(res);
               var existe = false;
 
-            /* if(resposta.indexOf(document.getElementById("usuario").value == -1))
-             {
-               var res = confirm("Os dados não existem! Deseja fazer um cadastro?");
-               if(res)
-                  Cadastro();    
-             }
-             else
-              window.open('Node.js/pp.html');*/
-
-            alert(document.getElementById("usuario").value + document.getElementById("senha").value);
+           // alert(document.getElementById("usuario").value + document.getElementById("senha").value);
 
             for(var i =0; i < resposta.length; i++)
             {
-              //alert(resposta[i].Nome + resposta[i].senha + "VC" + document.getElementById("usuario").value + document.getElementById("senha").value);
+          
             if(resposta[i].Nome + resposta[i].senha == document.getElementById("usuario").value + document.getElementById("senha").value)
               existe = true;
             }
@@ -94,9 +82,16 @@
                document.getElementsByTagName("body")[0].style.background = "white";
                document.getElementsByClassName("cadastro")[0].style.display = "block";
                document.getElementsByClassName("transparencia")[0].style.filter = "brightness(20%)";
-                 document.getElementsByClassName("transparencia2")[0].style.filter = "brightness(20%)";
+               document.getElementsByClassName("transparencia2")[0].style.filter = "brightness(20%)";
                document.getElementById("password2").style.borderBottom = "0.4px solid darkgray";
                document.getElementById("password2").style.boxShadow = "0 0.4px 0 0 darkgray";
+
+
+               document.getElementById("username2").value = "";
+               document.getElementById("data").value= "";
+               document.getElementById("tel").value = ""
+               document.getElementById("password").value = "";
+              document.getElementById("email").value = "";
             }
 
              function Sumir()
@@ -104,7 +99,7 @@
                document.getElementsByTagName("body")[0].style.background = "url(\"./Node.js/imagens/fundo.gif\");";
                document.getElementsByClassName("cadastro")[0].style.display = "none";
                document.getElementsByClassName("transparencia")[0].style.filter = " brightness(100%)";
-                 document.getElementsByClassName("transparencia2")[0].style.filter = " brightness(100%)";
+              document.getElementsByClassName("transparencia2")[0].style.filter = " brightness(100%)";
 
 
             }
@@ -153,72 +148,64 @@
             document.getElementsByClassName("tooltiptext")[0].style.opacity = "1";
             }
 
-            function nodeCadastro(res)
-            {
-              var resposta2 = JSON.parse(res);
-              var podeProsseguir = true;
+         function nodeCadastro(res)
+               {
+                 resposta = JSON.parse(res);
+                 var prosseguir = true;
 
-              for(var i =0; i < resposta2.length; i++)
-              {
-                if(resposta2[i].Nome == document.getElementById("username2").value)
-                {
-                  podeProsseguir=false;
-                  alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");      
-                }
-                if(resposta2[i].email == document.getElementById("email").value)
-                {
-                  podeProsseguir=false;
-                  alert("Esse e-mail já foi cadastrado! Forneça um diferente para prosseguir.");
-                }
-                if(resposta2[i].telefone == document.getElementById("tel").value)
-                {
-                  podeProsseguir=false;
-                  alert("Esse telefone já foi cadastrado! Forneça um diferente para prosseguir.");
-                }
+                 for(var i =0; i < resposta.length; i++)
+                 {
+                   if(resposta[i].Nome == document.getElementById("username2").value)
+                   {
+                     alert("Esse nome já foi cadastrado! Forneça um diferente para prosseguir.");
+                     prosseguir = false;
+                   }
+                   if(resposta[i].email == document.getElementById("email").value)
+                   {
+                     alert("Esse e-mail já foi cadastrado! Forneça um diferente para prosseguir.");
+                     prosseguir = false;
+                   }
+                   if(resposta[i].telefone == document.getElementById("tel").value)
+                   {
+                     alert("Esse telefone já foi cadastrado! Forneça um diferente para prosseguir.");
+                     prosseguir = false;
+                   }
 
-                if(!validoSenha)
+                   if(!validoSenha)
+                      prosseguir = false;
+
+                     
+
+               }
+
+                let form = $('#frmCadastro');
+                if(prosseguir)
                 {
-                  podeProsseguir = false;
-                
-                }
+                   
+                    let dados =
+                    {
+                      "user": $('#username2').val(),
+                      "email": $('#email').val(),
+                      "aniversario": $('#data').val(),
+                      "senha": $('#password').val(),
+                      "tel": $('#tel').val()
+                    }
+
+
+                    $.post("http://localhost:3000/UsuarioCadastra", dados).done(function(data){
+                      //debugger;
+                      if (data.erro) {
+                         alert('Deu erro!');
+                      };
+                  });
+
+               // alert(data.mensagem);
+
+                //chamar outra página depois da inclusão
+                window.location.href = "Node.js/pp.html";
               }
+       }
 
-                if(podeProsseguir)
-                  {
-                    $.ajax({ 
-                      url:"http://localhost:3000/UsuarioCadastra",
-                      type: "post"
-                    }).done(function(){
-                      window.open('Node.js/pp.html', '_self');
-                    });
-
-                      // var xmlhttp2 = new XMLHttpRequest();
-                      // //alert(document.getElementById("username2").value);
-                      // //var url2 = "http://localhost:3000/UsuarioCadastra";
-                      //  xmlhttp2.onreadystatechange=function()
-                      // {
-                      //    // alert(this.readyState);
-                      //    // alert(this.status);
-                      //     if (this.readyState == 4 && this.status == 200)
-                      //     {
-                      //      //alert("olha aqui: " + this.responseText);
-                      //      alert("aqui");
-                           
-                      //      //window.open('Node.js/pp.html');
-                      //     }
-                      // }
-
-                      // xmlhttp2.open("POST", "http://localhost:3000/UsuarioCadastra", true);
-                      // xmlhttp2.send();
-
-                     
-                      
-                     
-                      //xmlhttp2.send(document.getElementsByName("form1"));
-                      //break;
-                  }
-             
-          }
 
           function logRecebeTrue()
           {
@@ -328,7 +315,7 @@
             <div class="row">
             <div class="input-field col s6">
                  <i class="material-icons prefix">insert_invitation</i>
-                <input type="date" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
+                <input type="date" id="data" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
                 <label for="aniversario">Data Nascimento</label>
             </div>
                 </div>
