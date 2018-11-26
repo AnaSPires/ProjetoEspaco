@@ -55,7 +55,9 @@
 
     /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
-  window.onload =  function pegarInfo() {
+  window.onload =  pegarInfo;
+
+  function pegarInfo() {
     var xmlhttp = new XMLHttpRequest();
     var url = "http://localhost:3000/perguntas";
 

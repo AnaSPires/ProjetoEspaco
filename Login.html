@@ -1,55 +1,57 @@
 <html>
-    <head>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> MAGNIFIG SPACE  </title>
-        <link rel="shortcut icon" href="favicon.ico" >
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script>
 
-            var validoSenha = false;
-             var log = true;
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> MAGNIFIG SPACE </title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+
+        var validoSenha = false;
+            var log = true;
             var resposta; //Node
 
             function EnviarNome(qual)
             {
 
                 var nome = "";
-               nome = qual.replace(" ","*").replace(" ","*");
-              var parametro = "?nome"+nome;
+                nome = qual.replace(" ","*").replace(" ","*");
+                var parametro = "?nome"+nome;
 
-              alert(nome);
-              alert("Parametro"+parametro);
+                // alert(nome);
+                //alert("Parametro"+parametro);
 
-              window.open("Interno/Home.html"+ parametro);
+                window.open("Interno/Home.html"+ parametro);
             }
          
 
-     function carregar() {
-      var xmlhttp = new XMLHttpRequest();
-      var url = "http://localhost:3000/Usuario";
-
-      xmlhttp.onreadystatechange=function()
-      {
-          if (this.readyState == 4 && this.status == 200)
-          {
-            if(log)
+            function carregar()
             {
-              Verificar(this.responseText);
+                var xmlhttp = new XMLHttpRequest();
+                var url = "http://localhost:3000/Usuario";
 
-            }
-            else
-            {
-              nodeCadastro(this.responseText);
-            }
-          
-          }
-      }
+                xmlhttp.onreadystatechange=function()
+                {
+                    if (this.readyState == 4 && this.status == 200)
+                    {
+                        if(log)
+                        {
+                        Verificar(this.responseText);
+
+                      }
+                      else
+                      {
+                        nodeCadastro(this.responseText);
+                      }
+                    
+                    }
+              }
 
       xmlhttp.open("GET", url, true);
       xmlhttp.send();
@@ -60,8 +62,6 @@
             {
               resposta= JSON.parse(res);
               var existe = false;
-
-           // alert(document.getElementById("usuario").value + document.getElementById("senha").value);
 
             for(var i =0; i < resposta.length; i++)
             {
@@ -187,8 +187,6 @@
                    if(!validoSenha)
                       prosseguir = false;
 
-                     
-
                }
 
                 let form = $('#frmCadastro');
@@ -206,16 +204,11 @@
 
 
                     $.post("http://localhost:3000/UsuarioCadastra", dados).done(function(data){
-                      //debugger;
+                     
                       if (data.erro) {
                          alert('Deu erro!');
                       };
                   });
-
-               // alert(data.mensagem);
-
-                //chamar outra página depois da inclusão
-                //window.location.href = "Node.js/pp.html";
 
                  EnviarNome(document.getElementById("username2").value);
               }
@@ -229,166 +222,175 @@
 
           </script>
 
-    </head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="Login.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <body>
-          <div class="transparencia">
-             <nav class="nav">
-  <div class="nav-wrapper container">
-    <a href="#" class="brand-logo"><div class="logo"></div>
-      </a>    <div class="nome">  MAGNIFIC SPACE</div>
-    <ul id ="menu" class="right hide-on-med-and-down">
-      <li class="hoverable"><a id = "home" href="Entrada.html" style = "font-size : 16px;color : white;" >HOME</a></li>
-        <li class="hoverable"><a id = "sobre" href="Sobre.html" style = "font-size : 16px; color : white;">SOBRE </a> </li>
-        <li class="active"><center style = "width: 85px;">LOGIN</center></li>
-        <li class="hoverable"><a id = "login" href="Cadastro.html" style = "font-size : 16px;color : white;" onmouseenter="" > CADASTRE-SE </a></li>
-        <li class="hoverable"><a id = "contato" href="Contato.html" style = "font-size : 16px;color : white;" >CONTATO</a></li>
-    </ul>
-  </div>
-</nav>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="Login.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-            
-    <header>
-        <center>
-       <div class="titulo"></div>
-    </center>
+<body>
+    <div class="transparencia">
+        <nav class="nav">
+            <div class="nav-wrapper container">
+                <a href="#" class="brand-logo">
+                    <div class="logo"></div>
+                </a>
+                <div class="nome"> MAGNIFIC SPACE</div>
+                <ul id="menu" class="right hide-on-med-and-down">
+                    <li class="hoverable"><a id="home" href="Entrada.html" style="font-size : 16px;color : white;">HOME</a></li>
+                    <li class="hoverable"><a id="sobre" href="Sobre.html" style="font-size : 16px; color : white;">SOBRE </a> </li>
+                    <li class="active">
+                        <center style="width: 85px;">LOGIN</center>
+                    </li>
+                    <li class="hoverable"><a id="login" href="Cadastro.html" style="font-size : 16px;color : white;" onmouseenter=""> CADASTRE-SE </a></li>
+                    <li class="hoverable"><a id="contato" href="Contato.html" style="font-size : 16px;color : white;">CONTATO</a></li>
+                </ul>
+            </div>
+        </nav>
 
-                        <center>
-                            <br><br>
-                            <br><br><br>
+
+        <header>
+            <center>
+                <div class="titulo"></div>
+            </center>
+
+            <center>
+                <br><br>
+                <br><br><br>
                 <div class="user"></div><br>
                 <div class="frase">Ol&aacute;! Digite o seu usu&aacute;rio e senha</div>
 
-        </center>
-    </header>
+            </center>
+        </header>
 
-            <div class="bloco">
+        <div class="bloco">
 
-                    <div class="peq">
-                     <form class="col s12" name = "form2" onsubmit=" return false;">
-              <div class="row">
-                <div class="input-field col s12">
-                  <i class="material-icons prefix">account_circle</i>
-                  <input id="usuario" type="text" class="validate" required name="usu" onfocus="logRecebeTrue()">
-                  <label for="usuario"> Usu&aacute;rio</label>
-                </div>
-                </div>
-                <div class="row">
-                <div class="input-field col s12" id = "topSenha">
-                    <i class="material-icons prefix">lock</i>
-                  <input id="senha" type="password" class="validate" required  name="senhaa" onfocus="logRecebeTrue()">
-                  <label for="senha">Senha</label>
-                </div>
-              </div>                   
-                    
-                             <button  onclick="carregar()" class="css3button" id = "botao"> ENTRAR </button><br><br><br>
-                             
-                         <u><a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
-
-                            </form> 
-                          </div>
+            <div class="peq">
+                <form class="col s12" name="form2" onsubmit=" return false;">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="usuario" type="text" class="validate" required name="usu" onfocus="logRecebeTrue()">
+                            <label for="usuario"> Usu&aacute;rio</label>
                         </div>
-                      </div>
-           
-         <div class="cadastro">
-              <div class="seta" onclick="Sumir()"></div>
-                <div class="tit"></div>
-                <br>
-                <div class="dados">
-                Preencha o formulário com seus dados pessoais
-                </div>
-                <div class="posicao">
-                <br><br>
-                <div class="row">
-            <form class="col s12" name = "form1" onsubmit=" return false;" action="http://localhost:3000/UsuarioCadastra" method="post">
-              <div class="row">
-                <div class="input-field col s6">
-                  <i class="material-icons prefix">account_circle</i>
-                  <input id="username2" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
-                  <label for="username2">Username</label>
-                </div>
-                </div>
-             <div class="row">
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">email</i>
-                  <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
-                  <label for="email">Email</label>
-                </div>
-              </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12" id="topSenha">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="senha" type="password" class="validate" required name="senhaa" onfocus="logRecebeTrue()">
+                            <label for="senha">Senha</label>
+                        </div>
+                    </div>
 
-                <div class="row">
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">phone</i>
-                  <input id="tel" type="tel" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required name="tel">
-                  <label for="tel">Telefone((99) 99999-9999)</label>
-                </div>
-              </div>
+                    <button onclick="carregar()" class="css3button" id="botao"> ENTRAR </button><br><br><br>
 
-            <div class="row">
-            <div class="input-field col s6">
-                 <i class="material-icons prefix">insert_invitation</i>
-                <input type="date" id="data" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
-                <label for="aniversario">Data Nascimento</label>
+                    <u><a onclick="Cadastro()" class="cad"> Ainda n&atilde;o tem cadastro?! </a></u>
+
+                </form>
             </div>
-                </div>
-
-              <div class="row">
-                <div class="input-field col s16">
-                    <i class="material-icons prefix">lock</i>
-                  <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">
-                  <label for="password">Senha</label>
-                </div>
-              </div>
-                  <div class="row">
-                <div class="input-field col s16">
-                  <div class="tooltip">
-                    <i class="material-icons prefix">lock</i>
-                  <input id="password2" type="password" onblur="Tool()" class="validate" onfocus="TirarTool()" required>
-
-                  <label for="password2" id="frase">Confirmar senha</label>
-                  <span class="tooltiptext">As senhas não batem.</span>
-                </div>
-                </div>
-              </div>
- 
-
-              <button class="txtSubmit" id = "botao" onclick="carregar()">Cadastrar</button><br><br><br>
-            </form>
-
-         </div>
         </div>
-      </div>
-      <div class="transparencia2">
-        <footer class="page-footer" id = "outro">
-          <div class="container" >
-            <div class="row" >
-              <div class="col l6 s12" >
-                <h5 class="white-text"><div class="logoo"></div></h5>
-                <p class="grey-text text-lighten-4" style="font-size: 20px;">Magnific Space Enterprises</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="Sobre.html">Sobre nós</a></li>
-                  <li><a class="grey-text text-lighten-3" href="Contato.html">Contato</a></li>
-                </ul>
-              </div>
+    </div>
+
+    <div class="cadastro">
+        <div class="seta" onclick="Sumir()"></div>
+        <div class="tit"></div>
+        <br>
+        <div class="dados">
+            Preencha o formulário com seus dados pessoais
+        </div>
+        <div class="posicao">
+            <br><br>
+            <div class="row">
+                <form class="col s12" name="form1" onsubmit=" return false;" action="http://localhost:3000/UsuarioCadastra" method="post">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="username2" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
+                            <label for="username2">Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$" class="validate" required name="email">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="tel" type="tel" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required name="tel">
+                            <label for="tel">Telefone((99) 99999-9999)</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">insert_invitation</i>
+                            <input type="date" id="data" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
+                            <label for="aniversario">Data Nascimento</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s16">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">
+                            <label for="password">Senha</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s16">
+                            <div class="tooltip">
+                                <i class="material-icons prefix">lock</i>
+                                <input id="password2" type="password" onblur="Tool()" class="validate" onfocus="TirarTool()" required>
+
+                                <label for="password2" id="frase">Confirmar senha</label>
+                                <span class="tooltiptext">As senhas não batem.</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <button class="txtSubmit" id="botao" onclick="carregar()">Cadastrar</button><br><br><br>
+                </form>
+
             </div>
-          </div>
-          <div class="footer-copyright" id="rodape" >
-            <div class="container" >
-            <h1 style="font-size: 20px;"> © 2018 Copyright Text </h1>
-                <div class="face"><img src="Imagens/face.ico"></div>
-                     <div class="twitter"><img src="Imagens/twitter.png"></div>
-                <div class="insta"><img src="Imagens/insta.png"></div>
-                 <div class="goo"><img src="Imagens/goo.png"></div>
-            <a class="grey-text text-lighten-4 right" id = "termos" href="Termos.html">TERMOS DE USO</a>
+        </div>
+    </div>
+    <div class="transparencia2">
+        <footer class="page-footer" id="outro">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">
+                            <div class="logoo"></div>
+                        </h5>
+                        <p class="grey-text text-lighten-4" style="font-size: 20px;">Magnific Space Enterprises</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="Sobre.html">Sobre nós</a></li>
+                            <li><a class="grey-text text-lighten-3" href="Contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
-        </footer></div>
+            <div class="footer-copyright" id="rodape">
+                <div class="container">
+                    <h1 style="font-size: 20px;"> © 2018 Copyright Text </h1>
+                    <div class="face"><img src="Imagens/face.ico"></div>
+                    <div class="twitter"><img src="Imagens/twitter.png"></div>
+                    <div class="insta"><img src="Imagens/insta.png"></div>
+                    <div class="goo"><img src="Imagens/goo.png"></div>
+                    <a class="grey-text text-lighten-4 right" id="termos" href="Termos.html">TERMOS DE USO</a>
+                </div>
+            </div>
+        </footer>
+    </div>
 
 </body>
+
 </html>
