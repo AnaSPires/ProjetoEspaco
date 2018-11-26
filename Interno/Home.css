@@ -20,7 +20,7 @@ body, html {
 {
     width: 100px;
     height: 100px;
-    background: url(Fotos/logo.png) repeat;
+    background: url(Fotos/logo.png);
    
 }
 
@@ -36,7 +36,11 @@ body, html {
     font-size: 		 40px;
     font-weight: 	 600;
 }
+.page-footer
+{
+    background-color:#75DED9; 
 
+}
 
 
 #menu
@@ -49,30 +53,134 @@ body, html {
     font-size:  40px;
 }
 
-.txt1
+.text-item
 {
-    color: #E8D2D5;
-    background-color:#64DBC4;#14F2E9;
-    text-align:center;
-    padding:40px 80px;
-    text-align: justify;
+    position: relative;
+    top: 1230px;
+    width: 500px;
+    text-align: left;
+}
+
+.lua
+{
     position: absolute;
-    top: 230px;
-    width: 100%;
+    left: 110px;
+    bottom: 270px;
+    font-size: 25px;
+    text-align: left;
+}
+
+h2:hover
+{
+    color: #75DED9;
+}
+
+.zoom {
+    overflow: hidden;
+    position: relative;
+    bottom: 950px;
+    width: 500px;
+    left: 160px;
+}
+
+.zoom img {
+    max-width: 80%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.zoom:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.aviao
+{
+    position: absolute;
+    left: 510px;
+    bottom: 270px;
+    font-size: 25px;
+    text-align: left;
+    width: 350px;
+}
+
+.zoom2 {
+    overflow: hidden;
+    position: relative;
+    bottom: 1145px;
+    width: 500px;
+    left: 590px;
+}
+
+.zoom2 img {
+    max-width: 80%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.zoom2:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.am
+{
+    position: absolute;
+    left: 950px;
+    bottom: 250px;
+    font-size: 25px;
+    text-align: left;
+    width: 350px;
+}
+
+.zoom3 {
+    overflow: hidden;
+    position: relative;
+    bottom: 1345px;
+    width: 500px;
+    left: 1020px;
+}
+
+.zoom3 img {
+    max-width: 80%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.zoom3:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.text-item {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 20px;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 
 h3
 {
     text-align:center;
-    font-size: 30px;
-    font-family: "Century Gothic";
-    font-weight: 400;
 }
 
 #myCarousel
 {
     position: absolute;
-    top: 530px;
+    top: 200px;
 }
 
 .active
@@ -163,4 +271,3 @@ h3
     
 }
 
-https://seuhistory.com/noticias/7-curiosidades-sobre-o-universo-e-o-sistema-solar-que-provavelmente-voce-nao-conhecia

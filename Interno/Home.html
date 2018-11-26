@@ -15,17 +15,26 @@
 
 <link href="Home.css" rel="stylesheet" type="text/css">
       <script type="text/javascript">
-     
+        window.onload = function(){
+          var nome;
+          var urlString = window.location.toString();
+          var url = new URL(urlString);
+          var param = location.search.substring(url.length);
+          nome = param.substring(5);
+          nome = nome.replace("*"," ").replace("*"," ");
+
+          alert("Bem-vindo(a), " + nome +"\n"+ "Aproveite ao máximo e descubra os misterios e curiosidades do maravilhoso universo!");
+        }
+
+        function abrir(url)
+        {
+          window.open(url);
+        }
+
+
      </script>
 </head>
 <body>
-
-	<div class = "txt1">
-  <center>
-  <h3 >SEJA BEM-VINDO</h3>
-
-</div>
-</center>
 
      <nav class="nav">
   <div class="nav-wrapper container">
@@ -42,8 +51,6 @@
     
 <div class="parallax"></div>
 
-0
-
 <div class="parallax"></div>
     
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -57,10 +64,6 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="Fotos/fundo.png" alt="Principal" class = "responsive-img">
-    </div>
-
-    <div class="item">
       <img src="Fotos/gala.jpg" alt="Slide1" class = "responsive-img">
     </div>
 
@@ -75,19 +78,6 @@
     <div class="item">
       <img src="Fotos/stars.jpg" alt="Slide4" class = "responsive-img">
     </div>
-
-    <div class="item">
-      <img src="Fotos/can.jpeg" alt="Slide5" class = "responsive-img">
-    </div>
-
-    <div class="item">
-      <img src="Fotos/sun.jpg" alt="Slide6" class = "responsive-img">
-    </div>
-
-    <div class="item">
-      <img src="Fotos/det.jpg" alt="Slide7" class = "responsive-img">
-    </div>
-
   </div>
 
   <!-- Left and right controls -->
@@ -100,7 +90,28 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
- 
+
+<div class="zoom">
+  <img src="Fotos/lua.jpg" class="img-responsive" onclick="abrir('https://www.megacurioso.com.br/astronomia/98819-15-curiosidades-divertidas-para-quem-vive-no-mundo-das-luas.htm')">
+</div>
+<div class="text-item">
+    <h2 onclick="abri('https://www.megacurioso.com.br/astronomia/98819-15-curiosidades-divertidas-para-quem-vive-no-mundo-das-luas.htm')" class="lua">15 curiosidades divertidas para quem vive no mundo da lua</h2>
+  </div>
+
+  <div class="zoom2">
+  <img src="Fotos/aviao.png" class="img-responsive" onclick="abrir('https://www.megacurioso.com.br/ciencia/110179-mit-realiza-o-primeiro-voo-de-avioes-sem-pecas-moveis.htm')">
+</div>
+<div class="text-item">
+    <h2 onclick="abrir('https://www.megacurioso.com.br/ciencia/110179-mit-realiza-o-primeiro-voo-de-avioes-sem-pecas-moveis.htm')" class="aviao">MIT realiza o primeiro voo de aviões sem peças móveis</h2>
+  </div>
+
+  <div class="zoom3">
+  <img src="Fotos/am.png" class="img-responsive" onclick="abrir('https://www.megacurioso.com.br/ciencia/110179-mit-realiza-o-primeiro-voo-de-avioes-sem-pecas-moveis.htm')">
+</div>
+<div class="text-item">
+    <h2 onclick="abrir('https://www.megacurioso.com.br/ciencia/110179-mit-realiza-o-primeiro-voo-de-avioes-sem-pecas-moveis.htm')" class="am">Russos pretendem "verificar" se os americanos realmente pisaram na lua</h2>
+  </div>
+
 
     <footer class="page-footer">
           <div class="container">
@@ -133,4 +144,6 @@
 
 </body>
 </html>
+
+System files
 
