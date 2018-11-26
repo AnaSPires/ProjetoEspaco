@@ -69,7 +69,6 @@ rota.get('/Usuario', (requisicao, resposta) =>{
     const nome = requisicao.body.usu.substring(0,40);
     const senha = requisicao.body.senhaa.substring(0,20);
     execSQL(`logar_sp @nome = ${nome}, @senha = ${senha}`, resposta);
-    console.log("aqui era pra ter saido");
     resposta.end('resposta');
 })
 
@@ -81,7 +80,7 @@ rota.post('/UsuarioCadastra', (requisicao, resposta) =>{
   const senha = requisicao.body.senha;
   const telefone = requisicao.body.tel;
 
-  console.log("AQUI: " + data);
+ // console.log("AQUI: " + data);
 
   let dataArray = data.split('-');
   let inverseData = dataArray[2] + '/' + dataArray[1] + '/' + dataArray[0];
