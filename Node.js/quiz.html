@@ -136,8 +136,6 @@ function ExibeDados()
       var opcoes = document.getElementsByName("res");
       var checou = 0;
 
-      //alert(opcoes.length);
-
      if(certa == "a")
         certa = 0;
       else
@@ -156,13 +154,8 @@ function ExibeDados()
 
       for(var x = 0; x < 4; x++)
       {
-       // debugger;
-       
         var valor = Number(x);
 
-         //alert(valor);
-         
-        
         if(opcoes[parseInt(x)].checked)
           { 
             checou++;
@@ -195,7 +188,6 @@ function ExibeDados()
 
       if(nivel > 10)
       {
-       // alert('Acabou');
         Acabou();
        
         document.getElementById("a").style.display = "none";
@@ -203,9 +195,6 @@ function ExibeDados()
         document.getElementById("c").style.display = "none";
         document.getElementById("d").style.display = "none";
         document.getElementById("btnVer").style.display = "none";
-
-       
-       
      }
       else
         pegarInfo();
@@ -290,17 +279,22 @@ function ExibeDados()
     function Acabou()
     {
       document.getElementById("tela").style.display = "none";
-     // alert("entrou no acabou");
+
       if(quantosAcertos > 7)
       {
-         alert("Parabéns!!!");
-       //  document.getElementsByClassName("rank")[0].style.display = "block";
-         
+        document.getElementById("mensagem").innerHTML += "Parabéns, ótimo desempenho!";  
+         document.getElementsByClassName("rank")[0].style.display = "block";  
+         document.getElementById("acertos").innerHTML += quantosAcertos + "/10";                      
       }
       else
-        alert("Sabemos que você consegue melhorar!!");
-      // else
-      //  alert("Mais sorte na próxima vez...");
+      {
+        document.getElementById("mensagem").innerHTML += "Sabemos qua você podemias!Tente novamente!";  
+        document.getElementsByClassName("rank")[0].style.display = "block";  
+        document.getElementById("acertos").innerHTML += quantosAcertos + "/10";        
+      }
+
+
+                                                
     }
 
 	</script>
@@ -335,9 +329,16 @@ function ExibeDados()
 
              </form>
 
-      <div class="rank">
-       <img id="parabens" src="imagens/ganhou.gif">
-      </div>
+     <center> <div class="rank">
+       <center>
+        <span id="mensagem"></span>
+        <br>
+        <span id="titulo">Sua pontuação: </span>
+        <br>
+       <span id="acertos"> </span>
+       <br>
+      <!-- <span id="erros">Erros: </span>--></center>
+      </div></center>
 
      <button id="btn1"></button>
      <button id="btn2"></button>
