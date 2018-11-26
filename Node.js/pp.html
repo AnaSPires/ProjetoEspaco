@@ -14,7 +14,10 @@
 
    function Quiz(qual)
    {
-      var parametro = "?planeta" + qual;//btoa(sla), encriptação js
+      var parametro = "?planeta" + qual;
+
+      alert(qual);
+      alert("Parametro" + parametro);
 
       window.open("teste.html" + parametro);
    }

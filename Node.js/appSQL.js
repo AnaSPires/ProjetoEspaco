@@ -37,6 +37,10 @@ function execSQL(sql, resposta) {
     .catch(erro => resposta.json(erro));
 }
 
+rota.get('/usuario', (requisicao, resposta) =>{
+execSQL('SELECT * FROM Usuario', resposta);
+})
+
 rota.get('/perguntas', (requisicao, resposta) =>{
 execSQL('SELECT * FROM Perguntas', resposta);
 })
@@ -60,48 +64,6 @@ if (requisicao.params.id)
 filtro = ' WHERE codAcesso=' + parseInt(requisicao.params.id);
 execSQL('SELECT * from Elementos' + filtro, resposta);
 })
-/////////////////////////////////////////////////////
-/*
-//cadastro
-rota.post('/UsuarioCadastra', (requisicao, resposta) =>{
-  const nome = requisicao.body.user;
-  const email = requisicao.body.email;
-  const data = requisicao.body.aniversario;
-  const senha = requisicao.body.senha;
-  const telefone = requisicao.body.tel;
-
-  console.log("AQUI: " + data);
-
-  let dataArray = data.split('-');
-  let inverseData = dataArray[2] + '/' + dataArray[1] + '/' + dataArray[0];
-  console.log(inverseData);
-  execSQL(`Inserir_sp @nome = '${nome}', @email = '${email}', @telefone = '${telefone}', @data = '${inverseData}', @senha = '${senha}'`, resposta);
-  //execSQL(`insert into Usuario(Nome,Data, Senha,Telefone, Email) values(${nome}, ${email}, ${telefone}, ${data}, ${senha}`, resposta);
-  //resposta.end(resposta.json({ mensagem: 'Incluído!'}));
-})
-
-
-//login
-rota.get('/Usuario', (requisicao, resposta) =>{
-    const nome = requisicao.body.usu.substring(0,40);
-    const senha = requisicao.body.senhaa.substring(0,20);
-    execSQL(`logar_sp @nome = ${nome}, @senha = ${senha}`, resposta);
-    console.log("aqui era pra ter saido");
-    resposta.end('resposta');
-})
-
-//quiz
-rota.get('/perguntas/:id?', (requisicao, resposta) => {
-let filtro = '';
-if (requisicao.params.id)
-filtro = ' WHERE codPergunta=' + parseInt(requisicao.params.id);
-execSQL('SELECT * from Perguntas' + filtro, resposta);
-})*/
-
-//rota.get('/usuario', (requisicao, resposta) =>{
-//execSQL('SELECT * FROM Usuario', resposta);
-//})
-
 
 rota.get('/Usuario', (requisicao, resposta) =>{
     const nome = requisicao.body.usu.substring(0,40);
@@ -123,7 +85,7 @@ rota.post('/UsuarioCadastra', (requisicao, resposta) =>{
 
   let dataArray = data.split('-');
   let inverseData = dataArray[2] + '/' + dataArray[1] + '/' + dataArray[0];
-  console.log(inverseData);
+ // console.log(inverseData);
   execSQL(`Inserir_sp @nome = '${nome}', @email = '${email}', @telefone = '${telefone}', @data = '${inverseData}', @senha = '${senha}'`, resposta);
   //execSQL(`insert into Usuario(Nome,Data, Senha,Telefone, Email) values(${nome}, ${email}, ${telefone}, ${data}, ${senha}`, resposta);
   //resposta.end(resposta.json({ mensagem: 'Incluído!'}));

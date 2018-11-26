@@ -10,7 +10,7 @@ html
    width: 15%;
    height: 60%;
    background-color: transparent;
-   color: #ffbf00;
+   color: #DF9185;
 }
 .center-align 
 {
@@ -62,9 +62,9 @@ html
 .descricao{
 	text-indent: 50px;
 	position: relative;
-	top: -80px;
+	top: 100px;
 	font-size: 20px;
-	color: green;
+	color: white;
 	text-align: center;
 	width: 70%;
 }
@@ -72,55 +72,55 @@ html
 .diametro{
 	text-indent: 50px;
 	font-size: 30px;
-	color: blue;
+	color: white;
 }
 
 .massa{
 	text-indent: 50px;
 	font-size: 30px;
-	color: green;
+	color: white;
 }
 
 .dis{
 	text-indent: 50px;
 	font-size: 30px;
-	color: green;
+	color: white;
 }
 
 .orbital{
 	text-indent: 50px;
 	font-size: 30px;
-	color: blue;
+	color: white;
 }
 
 .rotacao{
 	text-indent: 50px;
 	font-size: 30px;
-	color: green;
+	color: white;
 }
 
 .gravidade{
 	text-indent: 50px;
 	font-size: 30px;
-	color: red;
+	color: white;
 }
 
 .temp{
 	text-indent: 50px;
 	font-size: 30px;
-	color: blue;
+	color: white;
 }
 
 .comp{
 	text-indent: 50px;
 	font-size: 30px;
-	color: green;
+	color: white;
 }
 
 .est{
 	text-indent: 50px;
 	font-size: 30px;
-	color: green;
+	color: white;
 }
 #qualPlaneta
 {
@@ -130,7 +130,7 @@ html
 }
 .nav-extended
 {
-	background-color: grey;
+	background-color: #FA5858;
 }
 
 

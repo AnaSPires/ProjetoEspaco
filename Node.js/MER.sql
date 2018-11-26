@@ -91,6 +91,8 @@ update Perguntas set alternativaB = '6' where codPergunta = 3
 update Perguntas set alternativaC = '7' where codPergunta = 3
 update Perguntas set alternativaD = '8' where codPergunta = 3
 
+update Perguntas set enunciado = 'A partir de 2006, qual destes corpos celestes deixou de ser considerado um Planeta?' where codPergunta = 5
+
 insert into Perguntas values('Existem quantos "planetas anões", no Sistema Solar?', '1', '3', '5', '4', 'c')
 
 insert into Perguntas values('A partir de 2006, qual destes planetas deixou de ser considerado um Planeta?', 'Mercúrio', 'Plutão', 'Vênus', 'Netuno', 'b')
@@ -269,10 +271,10 @@ update Elementos set estrutura = '' where codAcesso = 8
 ---Plutão--
 update Elementos set descricao = '' where codAcesso = 9
 update Elementos set tamanho = '2.377 km' where codAcesso = 9
-update Elementos set massa = '?(1,305 ± 0,007) × 10^22 kg' where codAcesso = 9
+update Elementos set massa = '(1,305 ± 0,007) × 10^22 kg' where codAcesso = 9
 update Elementos set distancia = 'Do Sol: 32,9 UA Da Terra: ' where codAcesso = 9
 update Elementos set periodoOrbital = '248 anos' where codAcesso = 9
-update Elementos set periodoRotacao = '153 horas?' where codAcesso = 9
+update Elementos set periodoRotacao = '153 horas' where codAcesso = 9
 update Elementos set gravidade = '0,62 m/s²' where codAcesso = 9
 update Elementos set temperatura = '-233ºC ' where codAcesso = 9
 update Elementos set composicao = '' where codAcesso = 9
@@ -290,4 +292,37 @@ update Elementos set temperatura = '6.000°C(parte externa) e 15.000.000° C(no nú
 update Elementos set composicao = '' where codAcesso = 10
 update Elementos set estrutura = '' where codAcesso = 10
 
+update Elementos set descricao = 'Mercúrio é o menor planeta do nosso Sistema Solar e também o que 
+fica mais próximo do Sol. Apesar disso, ele não é o mais quente (e sim, Vênus), mas circunda o Sol mais rápido 
+do que todos os outros planetas. Por essa razão é que talvez os romanos antigos tenham lhe dado o nome de Mercúrio, que era o deus mensageiro mais veloz.'
+where codAcesso = 1
+
+update Elementos set descricao = 'Além de ser o segundo planeta do Sistema Solar a partir do Sol, 
+Vênus é o segundo objeto mais brilhante no céu noturno depois da Lua, e em dias bem claros também é 
+possível vê-lo a olho nu. É muitas vezes chamado de irmão da Terra devido à sua semelhança em tamanho 
+e massa com o nosso planeta, e existem apenas 638 quilômetros de diferença em diâmetro entre os dois.' where codAcesso = 2
+
+update Elementos set descricao = 'A Terra é o quinto maior planeta do Sistema Solar e o único a ter uma camada 
+de gases na atmosfera que garante condições para a existência de vida aqui.Cerca de 70% da superfície do planeta é 
+coberta por água em estado líquido, elemento essencial para a existência de formas de vida. Se a Terra não girasse, não existiria vida. É que o lado do planeta que ficasse voltado para o Sol 
+viraria um deserto muito quente e o outro lado ficaria muito escuro e gelado. ' where codAcesso = 3
+
+update Elementos set descricao = 'Júpiter é o maior planeta do Sistema Solar e o quinto a partir do Sol. Para fazer jus ao seu tamanho absurdo, ele recebeu o nome do rei dos deuses da mitologia romana — correspondente a Zeus na mitologia grega — e, só para que você tenha uma noção do tamanho da “criança”, mais de 1.300 Terras caberiam em seu interior!
+
+Júpiter também é o planeta mais massivo do Sistema Solar, contando com mais do que o dobro da massa de todos os demais planetas juntos. Além disso, se Júpiter tivesse 80 vezes mais massa do que tem, ele se tornaria uma estrela em vez de um planeta.' where codAcesso = 5
+
+update Elementos set descricao = 'Depois de Júpiter, Saturno é o planeta que gira mais depressa em todo o Sistema Solar, completando uma revolução a cada 10,5 horas. Como consequência disso, esse gigante gasoso conta com os polos mais achatados e o equador mais largo — mais precisamente, a circunferência em seu equador é 13 mil quilômetros maior do que a circunferência medida a partir dos polos!' where codAcesso = 6
+
+update Elementos set descricao = 'Urano é o sétimo planeta do Sistema Solar — a partir do Sol — e fica a 2.870.972.200 de quilômetros de distância da nossa estrela. Além disso, ele é o terceiro maior planeta e o quarto com maior massa e, basicamente, pode ser descrito como uma esfera gigantesca de líquido e gás. Aproximadamente 80% da massa de Urano é composta por uma mistura fluida de gelos de metano, água e amônia, e em sua atmosfera também é possível encontrar hidrogênio e hélio.' where codAcesso = 7
+
+update Elementos set descricao = 'Netuno é o oitavo planeta do Sistema Solar e se tornou o último em ordem de afastamento do Sol, desde a reclassificação de Plutão para a categoria de planeta-anão, em 2006. Ele foi descoberto em 23 de setembro de 1846, mas foi encontrado por uma previsão matemática e não através de uma observação.' where codAcesso = 8
+
+update Elementos set descricao = 'Plutão é um planeta anão que está localizado a 5,9 bilhões de quilômetros distante do Sol.Vale ressaltar que Plutão não é mais considerado um planeta do sistema solar desde 2006. Nesse ano, a União Astronômica Internacional o classificou como um "planeta anão" por conta das novas classificações que definiam um corpo celeste como planeta.' where codAcesso = 9
+
+update Elementos set descricao = 'O Sol é puro calor e energia em altíssimas escalas. Ele reina absoluto como o maior objeto do nosso sistema. De acordo com dados do Space.com, o astro detém 99,8% da massa do Sistema Solar, sendo essa 332.900 vezes maior que a da Terra. Para ter uma ideia da sua dimensão, se o Sol fosse oco, ele poderia ser preenchido com 960 mil Terras esféricas!Em se tratando do caldeirão ardente que o Sol é, a sua parte externa e visível (a fotosfera) emana um calor entre 5.500 a 6 mil graus Celsius, enquanto as temperaturas no núcleo podem chegar a mais de 15 milhões de graus Celsius, sendo esse valor impulsionado por reações nucleares.' where codAcesso = 10
+
+update Elementos set composicao = '' where codAcesso = 1
+
+
 select * from Elementos
+

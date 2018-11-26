@@ -62,11 +62,11 @@ rota.post('/UsuarioCadastra', (requisicao, resposta) =>{
   const senha = requisicao.body.senha;
   const telefone = requisicao.body.tel;
 
-  console.log("AQUI: " + data);
+  //console.log("AQUI: " + data);
 
   let dataArray = data.split('-');
   let inverseData = dataArray[2] + '/' + dataArray[1] + '/' + dataArray[0];
-  console.log(inverseData);
+  //console.log(inverseData);
   execSQL(`Inserir_sp @nome = '${nome}', @email = '${email}', @telefone = '${telefone}', @data = '${inverseData}', @senha = '${senha}'`, resposta);
   //execSQL(`insert into Usuario(Nome,Data, Senha,Telefone, Email) values(${nome}, ${email}, ${telefone}, ${data}, ${senha}`, resposta);
   //resposta.end(resposta.json({ mensagem: 'Incluído!'}));

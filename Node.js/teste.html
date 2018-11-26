@@ -4,7 +4,7 @@
      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-     <meta charset="utf-8">
+     <meta charset="UTF-8">
 
      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -19,7 +19,24 @@
             var param = location.search.substring(url.length);
             planeta = param.substring(8);
 
-            document.getElementById("qualPlaneta").innerHTML = planeta;
+            if(planeta == 'V%C3%AAnus')
+              planeta = 'Vênus';
+            else
+            {
+              if(planeta == 'Merc%C3%BArio')
+                  planeta = 'Mercúrio';
+                else
+                {
+                  if(planeta == 'Plut%C3%A3o')
+                    planeta = 'Plutão';
+                  else
+                  {
+                    if(planeta == 'J%C3%BApiter')
+                      planeta = 'Júpiter';
+                  }
+                }
+            }
+                     document.getElementById("qualPlaneta").innerHTML = planeta;
 
             Quiz(planeta);
         }
@@ -75,7 +92,7 @@ function menu(oq){
            	if(oq == composicao)
               document.getElementById("escrever").innerHTML = "<center><p class='comp'>Composição"  + arr[i].composicao + "</p></center>";
           else
-              document.getElementById("escrever").innerHTML = "<center><p class='est'>Estrutura <br>" + arr[i].est + "<img class='responsive-img'  class='circle' src='imagens/" + planeta + "Estrutura.png'></p></center>";
+              document.getElementById("escrever").innerHTML = "<center><p class='est'>Estrutura <br>" + arr[i].estrutura + "<img class='responsive-img'  class='circle' src='imagens/" + planeta + "Estrutura.png'></p></center>";
     }}}}}}}}}}
 }
 

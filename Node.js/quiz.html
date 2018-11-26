@@ -129,8 +129,9 @@ function ExibeDados() {
 
     function Verificar()
     {
-      var checou = false;
       var opcoes = document.getElementsByName("res");
+
+      alert(opcoes.length);
 
      if(certa == "a")
         certa = 0;
@@ -146,17 +147,21 @@ function ExibeDados() {
             else
               alert("Erro");
 
+      var seChecou = 0;
+
       for(x in opcoes)
       {
-        debugger;
+       // debugger;
 
         var valor = Number(x);
+
+         alert(valor);
         
         if(opcoes[parseInt(x)].checked)
           {
+            seChecou++;
             document.getElementById(opcoes[x].id).checked = false;
-             checou = true;
-    
+           
           if(valor == certa)
           {
             
@@ -174,14 +179,14 @@ function ExibeDados() {
 
       }     
 
-      if(!checou)
+      if(seChecou == 0)
       {
          alert("ok");
          quantosErros++;
          trocarCorBtn('errou');
       }
-      else
-       alert("comassim");
+     // else
+       //alert("comassim");
 
        nivel++;
 
