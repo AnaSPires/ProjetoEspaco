@@ -10,6 +10,15 @@ nav
 	display: inline;
 }
 
+.rank
+{
+	display: none;
+	position: center;
+	left: 300px;
+	top: 200px;
+	width: 100%;
+}
+
 #terra
 {
 	position: absolute;

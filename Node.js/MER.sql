@@ -112,12 +112,6 @@ update Perguntas set correta = 'd' where codPergunta = 9
 
 insert into Perguntas values('Qual é o planeta que é composto por 75% de água?', 'Terra', 'Urano', 'Netuno', 'Mercúrio', 'a')
 
-create table SistemaSolar(
-codSistema int primary key,
-descricao ntext)
-
-select * from SistemaSolar
-
 create table Elementos(
 codAcesso int not null,
 nome varchar(30) not null,
@@ -321,8 +315,18 @@ update Elementos set descricao = 'Plutão é um planeta anão que está localizado a
 
 update Elementos set descricao = 'O Sol é puro calor e energia em altíssimas escalas. Ele reina absoluto como o maior objeto do nosso sistema. De acordo com dados do Space.com, o astro detém 99,8% da massa do Sistema Solar, sendo essa 332.900 vezes maior que a da Terra. Para ter uma ideia da sua dimensão, se o Sol fosse oco, ele poderia ser preenchido com 960 mil Terras esféricas!Em se tratando do caldeirão ardente que o Sol é, a sua parte externa e visível (a fotosfera) emana um calor entre 5.500 a 6 mil graus Celsius, enquanto as temperaturas no núcleo podem chegar a mais de 15 milhões de graus Celsius, sendo esse valor impulsionado por reações nucleares.' where codAcesso = 10
 
-update Elementos set composicao = '' where codAcesso = 1
+update Elementos set composicao = 'Hélio, sódio e oxigênio' where codAcesso = 1
+update Elementos set composicao = 'Dióxido de carbono (96,5%), nitrogênio (3,5%) e outros gases em menor quantidade (dióxido de enxofre, argônio, monóxido de carbono, vapor de água, hélio, neônio).' where codAcesso = 2
+update Elementos set composicao = '71% da superfície da Terra está coberta por oceanos de água salgada, com o restante consistindo de continentes e ilhas, os quais contêm muitos lagos e outros corpos de água que contribuem para a hidrosfera. ' where codAcesso = 3
+update Elementos set composicao = 'É composto principalmente de hidrogênio, sendo um quarto de sua massa composta de hélio, embora o hélio corresponda a apenas um décimo do número total de moléculas.' where codAcesso = 5
+update Elementos set composicao = '97% de hidrogénio e 3% de hélio, com vestígios de gelo, metano, amónia, e materiais líticos.' where codAcesso = 6
+update Elementos set composicao = 'Hidrogênio e hélio, contém mais "gelos" tais como água, amônia e metano, assim como traços de hidrocarbonetos.' where codAcesso = 7
+update Elementos set composicao = 'Hidrogênio (80%), Hélio (19%), Metano (1,5%), Deutério (0,019%) e Etano (0,00015%). Porém, o interior deste planeta é formado basicamente por rochas e gelo.' where codAcesso = 8
+update Elementos set composicao = 'Nitrogênio (90%) e metano mais monóxido de carbono (10%).' where codAcesso = 9
+update Elementos set composicao = 'Hidrogênio (74% de sua massa, ou 92% de seu volume) e hélio (24% da massa solar, 7% do volume solar), com traços de outros elementos, incluindo ferro, níquel, oxigênio, silício, enxofre, magnésio, néon, cálcio e crômio.' where codAcesso = 10
 
+alter table Elementos
+drop column Estrutura
 
 select * from Elementos
 
