@@ -89,7 +89,10 @@
    }
 
 
-function ExibeDados() {
+function ExibeDados() 
+{
+  if(nivel <= 10)
+  {
     var qual = parseInt(Math.random() * (arr.length)-1);
 
     p = "<h1>";
@@ -124,14 +127,16 @@ function ExibeDados() {
     document.getElementById("r_Quarta").innerHTML = d;
 
     arr = updateArray(arr, qual);
+   }
   }
 
 
     function Verificar()
     {
       var opcoes = document.getElementsByName("res");
+      var checou = 0;
 
-      alert(opcoes.length);
+      //alert(opcoes.length);
 
      if(certa == "a")
         certa = 0;
@@ -147,21 +152,22 @@ function ExibeDados() {
             else
               alert("Erro");
 
-      var seChecou = 0;
 
-      for(x in opcoes)
+
+      for(var x = 0; x < 4; x++)
       {
        // debugger;
-
+       
         var valor = Number(x);
 
-         alert(valor);
+         //alert(valor);
+         
         
         if(opcoes[parseInt(x)].checked)
-          {
-            seChecou++;
+          { 
+            checou++;
             document.getElementById(opcoes[x].id).checked = false;
-           
+
           if(valor == certa)
           {
             
@@ -176,33 +182,33 @@ function ExibeDados() {
            break;
           }
         }
-
-      }     
-
-      if(seChecou == 0)
-      {
-         alert("ok");
+           
+      }   
+     
+      if(checou == 0)
+       {
          quantosErros++;
-         trocarCorBtn('errou');
-      }
-     // else
-       //alert("comassim");
+         trocarCorBtn('errou'); 
+       }
 
        nivel++;
 
-      if(nivel > 10){
-        alert('Acabou');
-        window.onbeforeunload = function() {
+      if(nivel > 10)
+      {
+       // alert('Acabou');
+        Acabou();
+       
         document.getElementById("a").style.display = "none";
         document.getElementById("b").style.display = "none";
         document.getElementById("c").style.display = "none";
         document.getElementById("d").style.display = "none";
         document.getElementById("btnVer").style.display = "none";
 
-       }
+       
+       
      }
       else
-         pegarInfo();
+        pegarInfo();
     }
 
     function trocarCorBtn(se){
@@ -281,6 +287,22 @@ function ExibeDados() {
       }
     }
 
+    function Acabou()
+    {
+      document.getElementById("tela").style.display = "none";
+     // alert("entrou no acabou");
+      if(quantosAcertos > 7)
+      {
+         alert("Parabéns!!!");
+       //  document.getElementsByClassName("rank")[0].style.display = "block";
+         
+      }
+      else
+        alert("Sabemos que você consegue melhorar!!");
+      // else
+      //  alert("Mais sorte na próxima vez...");
+    }
+
 	</script>
 	</head>
 <link href="quizCSS.css" rel="stylesheet" type="text/css">
@@ -312,6 +334,10 @@ function ExibeDados() {
             </section>
 
              </form>
+
+      <div class="rank">
+       <img id="parabens" src="imagens/ganhou.gif">
+      </div>
 
      <button id="btn1"></button>
      <button id="btn2"></button>
