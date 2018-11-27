@@ -84,11 +84,8 @@
         return newArray;
    }
 
-
 function ExibeDados() 
 {
-  if(nivel < 11)
-  {
     var qual = parseInt(Math.random() * (arr.length)-1);
 
     p = "<h1>";
@@ -123,7 +120,6 @@ function ExibeDados()
     document.getElementById("r_Quarta").innerHTML = d;
 
     arr = updateArray(arr, qual);
-   }
   }
 
 
