@@ -75,7 +75,7 @@ body, html {
 {
     position: absolute;
     left: 110px;
-    bottom: 270px;
+    bottom: 370px;
     font-size: 25px;
     text-align: left;
 }
@@ -110,7 +110,7 @@ h2:hover
 {
     position: absolute;
     left: 510px;
-    bottom: 270px;
+    bottom: 370px;
     font-size: 25px;
     text-align: left;
     width: 350px;
@@ -141,7 +141,7 @@ h2:hover
 {
     position: absolute;
     left: 950px;
-    bottom: 250px;
+    bottom: 350px;
     font-size: 25px;
     text-align: left;
     width: 350px;
@@ -163,6 +163,97 @@ h2:hover
 }
 
 .zoom3:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.img
+{
+    position: absolute;
+    left: 950px;
+    bottom: 50px;
+    font-size: 25px;
+    text-align: left;
+    width: 450px;
+}
+
+.zoom4 {
+    overflow: hidden;
+    position: relative;
+    bottom: 1245px;
+    width: 500px;
+    left: 1020px;
+}
+
+.zoom4 img {
+    max-width: 80%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.zoom4:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.est
+{
+    position: absolute;
+    left: 80px;
+    bottom: 70px;
+    font-size: 25px;
+    text-align: left;
+    width: 450px;
+}
+
+.zoom5 {
+    overflow: hidden;
+    position: relative;
+    bottom: 1445px;
+    width: 500px;
+    left: 160px;
+}
+
+.zoom5 img {
+    max-width: 80%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.zoom5:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.nave
+{
+    position: absolute;
+    left: 510px;
+    bottom: 50px;
+    font-size: 25px;
+    text-align: left;
+    width: 450px;
+}
+
+.zoom6 {
+    overflow: hidden;
+    position: relative;
+    bottom: 1645px;
+    width: 500px;
+    left: 590px;
+}
+
+.zoom6 img {
+    max-width: 80%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.zoom6:hover img {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -280,4 +371,81 @@ h3
     position: relative;
     
 }
+
+button.css3button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: black;
+    padding: 24px 30px;
+    background: -moz-linear-gradient(
+        top,
+        #fff3db 0%,
+        #ffffff 50%,
+        #ffffff);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#fff3db),
+        color-stop(0.50, #ffffff),
+        to(#ffffff));
+    -moz-border-radius: 46px;
+    -webkit-border-radius: 46px;
+    border-radius: 46px;
+    border: 1px solid #d6d1cb;
+    -moz-box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px -1px 0px rgba(255,255,255,0.7);
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px -1px 0px rgba(255,255,255,0.7);
+    box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px -1px 0px rgba(255,255,255,0.7);
+    text-shadow:
+        0px -1px 1px rgba(000,000,000,0.2),
+        0px 1px 0px rgba(255,255,255,0.3);
+        position: absolute;
+        top: 1300px;
+        left: 250px;
+        font-family: "Century Gothic";
+        font-weight: 900;
+}
+
+button.css3button2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: black;
+    padding: 24px 30px;
+    background: -moz-linear-gradient(
+        top,
+        #fff3db 0%,
+        #ffffff 50%,
+        #ffffff);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#fff3db),
+        color-stop(0.50, #ffffff),
+        to(#ffffff));
+    -moz-border-radius: 46px;
+    -webkit-border-radius: 46px;
+    border-radius: 46px;
+    border: 1px solid #d6d1cb;
+    -moz-box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px -1px 0px rgba(255,255,255,0.7);
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px -1px 0px rgba(255,255,255,0.7);
+    box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px -1px 0px rgba(255,255,255,0.7);
+    text-shadow:
+        0px -1px 1px rgba(000,000,000,0.2),
+        0px 1px 0px rgba(255,255,255,0.3);
+        position: absolute;
+        top: 1300px;
+        left: 750px;
+         font-family: "Century Gothic";
+         font-weight: 900;
+}
+
 

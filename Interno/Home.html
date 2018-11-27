@@ -30,6 +30,11 @@
         {
           window.open(url);
         }
+
+         function Abrir(pagina)
+        {
+          window.open(pagina);
+        }
         
      </script>
 </head>
@@ -42,7 +47,7 @@
       <li class="active"><center style = "width: 75px;">HOME</center></li>
         <li class="hoverable"><a id = "sobre" href="Segundo/Node.js/quiz.html" style = "font-size : 16px; color : white;">QUIZ </a> </li>
         <li class="hoverable"><a id = "ss" href="Segundo/Node.js/pp.html" style = "font-size : 16px;color : white;" >SISTEMA SOLAR</a></li>
-        <li class="hoverable"><a id = "contato" href="Segundo/Contato.html" style = "font-size : 16px;color : white;" >CONTATO</a></li>
+        
     </ul>
   </div>
 </nav>
@@ -109,8 +114,33 @@
 <div class="text-item">
     <h2 onclick="abrir('https://www.megacurioso.com.br/ciencia/110180-russos-pretendem-verificar-se-os-americanos-realmente-pisaram-na-lua.htm')" class="am">Russos pretendem "verificar" se os americanos realmente pisaram na lua</h2>
   </div>
-    </div>
+    
 
+<div class="zoom4">
+  <img src="Fotos/img.jpg" class="img-responsive" onclick="abrir('https://www.megacurioso.com.br/ciencia/110180-russos-pretendem-verificar-se-os-americanos-realmente-pisaram-na-lua.htm')">
+</div>
+<div class="text-item">
+    <h2 onclick="abrir('https://www.megacurioso.com.br/ciencia/110114-veja-a-1-imagem-da-terra-capturada-pela-estacao-espacial-internacional.htm')" class="img">Veja a 1ª imagem da terra capturada pela estação espacial internacional</h2>
+  </div>
+    
+
+    <div class="zoom5">
+  <img src="Fotos/est.jpg" class="img-responsive" onclick="abrir('https://www.megacurioso.com.br/ciencia/110108-ha-20-anos-a-estacao-espacial-internacional-iss-entrava-em-orbita.htm')">
+</div>
+<div class="text-item">
+    <h2 onclick="abrir('https://www.megacurioso.com.br/ciencia/110108-ha-20-anos-a-estacao-espacial-internacional-iss-entrava-em-orbita.htm')" class="est">Há 20 anos, a estação espacial internacional (iss) entrava em órbita</h2>
+  </div>
+
+     <div class="zoom6">
+  <img src="Fotos/nav.jpg" class="img-responsive" onclick="abrir('https://www.megacurioso.com.br/ciencia/110096-nave-da-spacex-que-vai-levar-passageiros-ate-marte-ganha-novo-nome.htm')">
+</div>
+<div class="text-item">
+    <h2 onclick="abrir('https://www.megacurioso.com.br/ciencia/110096-nave-da-spacex-que-vai-levar-passageiros-ate-marte-ganha-novo-nome.htm')" class="nave">Nave da spacex que vai levar passageiros até marte ganha novo nome</h2>
+  </div>
+  <button type="button" name="" value="" class="css3button" onclick="Abrir('Segundo/Node.js/pp.html')">EXPLORE O SISTEMA SOLAR!</button>
+  <button type="button" name="" value="" class="css3button2" onclick="Abrir('Segundo/Node.js/quiz.html')" >TESTE SEUS CONHECIMENTOS!</button>
+    </div>
+    
 
     <footer class="page-footer">
           <div class="container">
@@ -143,6 +173,4 @@
 
 </body>
 </html>
-
-System files
 

@@ -1,13 +1,13 @@
 body
 {
-    background-image: url("Imagens/contatinho.png");
+    background-image: url("Fotos/contatinho.png");
 }
 
 header
 {
     position: absolute;
     left: -1px;
-    background-image: url("Imagens/ain.png");
+    background-image: url("Fotos/ain.png");
     height: 330px;
     width: 100%;
     top: -1px;
@@ -87,7 +87,7 @@ button.css3button {
 {
     width: 100px;
     height: 100px;
-    background: url(Imagens/logo.png);
+    background: url(Fotos/logo.png);
    
 }
 
