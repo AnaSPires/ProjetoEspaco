@@ -55,9 +55,6 @@
 
 	                 if(!validoSenha)
 	                    prosseguir = false;
-
-	                   
-
 	             }
 
                 let form = $('#frmCadastro');
@@ -75,18 +72,26 @@
 
 
                     $.post("http://localhost:3000/UsuarioCadastra", dados).done(function(data){
-                      //debugger;
+   
                       if (data.erro) {
                          alert('Deu erro!');
                       };
                   });
 
-               // alert(data.mensagem);
-
-                //chamar outra página depois da inclusão
-                window.location.href = "Node.js/pp.html";
+              EnviarNome(document.getElementById("username2").value);
               }
 	     }
+
+           function EnviarNome(qual)
+            {
+
+                var nome = "";
+                nome = qual.replace(" ","*").replace(" ","*");
+                var parametro = "?nome"+nome;
+
+
+                window.open("Interno/Home.html"+ parametro);
+            }
 
 
       window.onload = function(){
