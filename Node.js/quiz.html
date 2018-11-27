@@ -9,12 +9,6 @@
 
   <script>
 
-    //pop up
-    //repetição de perguntas
-    //cadastro
-    //
-
-
   var nivel = 1;
   var certa;
   var arr;
@@ -53,7 +47,6 @@
      return "Os dados do formulário serão perdidos.";
 }
 
-    /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
   window.onload =  pegarInfo;
 
@@ -93,7 +86,7 @@
 
 function ExibeDados() 
 {
-  if(nivel <= 10)
+  if(nivel < 11)
   {
     var qual = parseInt(Math.random() * (arr.length)-1);
 
@@ -186,7 +179,7 @@ function ExibeDados()
          trocarCorBtn('errou'); 
        }
 
-       nivel++;
+   
 
       if(nivel > 10)
       {
@@ -200,6 +193,9 @@ function ExibeDados()
      }
       else
         pegarInfo();
+
+
+          nivel++;
     }
 
     function trocarCorBtn(se){
@@ -290,13 +286,10 @@ function ExibeDados()
       }
       else
       {
-        document.getElementById("mensagem").innerHTML += "Sabemos qua você podemias!Tente novamente!";  
+        document.getElementById("mensagem").innerHTML += "Sabemos que você consegue!Tente novamente!";  
         document.getElementsByClassName("rank")[0].style.display = "block";  
         document.getElementById("acertos").innerHTML += quantosAcertos + "/10";        
-      }
-
-
-                                                
+      }                                    
     }
 
 	</script>
@@ -304,8 +297,6 @@ function ExibeDados()
 <link href="quizCSS.css" rel="stylesheet" type="text/css">
 <body id="body">
 
-
-    <!-- <img id="terra" src="imagens/terraQuiz.png">-->
      <img id="caminho" src="imagens/caminho1.png">
      <section id="tela">
 
@@ -339,7 +330,7 @@ function ExibeDados()
         <br>
        <span id="acertos"> </span>
        <br>
-      <!-- <span id="erros">Erros: </span>--></center>
+    </center>
       </div></center>
 
      <button id="btn1"></button>

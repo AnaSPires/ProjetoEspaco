@@ -9,12 +9,6 @@
 
   <script>
 
-    //pop up
-    //repetição de perguntas
-    //cadastro
-    //
-
-
   var nivel = 1;
   var certa;
   var arr;
@@ -93,7 +87,7 @@
 
 function ExibeDados() 
 {
-  if(nivel <= 10)
+  if(nivel < 11)
   {
     var qual = parseInt(Math.random() * (arr.length)-1);
 
@@ -290,7 +284,7 @@ function ExibeDados()
       }
       else
       {
-        document.getElementById("mensagem").innerHTML += "Sabemos qua você podemias!Tente novamente!";  
+        document.getElementById("mensagem").innerHTML += "Sabemos que você pode mais!Tente novamente!";  
         document.getElementsByClassName("rank")[0].style.display = "block";  
         document.getElementById("acertos").innerHTML += quantosAcertos + "/10";        
       }
