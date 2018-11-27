@@ -1,0 +1,129 @@
+<html class="responsive-img">
+ <head>
+<meta charset="utf-8">
+ <title>Projeto Práticas Profissionais</title>
+  <link rel="shortcut icon" href="favicon.ico" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
+  <script>
+
+   function Quiz(qual)
+   {
+      var parametro = "?planeta" + qual;
+
+     // alert(qual);
+     // alert("Parametro" + parametro);
+
+      window.open("teste.html" + parametro);
+   }
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+var ie=document.all;
+var nn6=document.getElementById&&!document.all;
+var isdrag=false;
+var x,y;
+var dobj;
+ 
+function movemouse(e)
+{
+  if (isdrag)
+  {
+    dobj.style.left = nn6 ? tx + e.clientX - x : tx + event.clientX - x;
+    dobj.style.top  = nn6 ? ty + e.clientY - y : ty + event.clientY - y;
+    return false;
+  }
+}
+ 
+function selectmouse(e)
+{
+  var fobj       = nn6 ? e.target : event.srcElement;
+  var topelement = nn6 ? "HTML" : "BODY";
+  while (fobj.tagName != topelement && fobj.className != "dragme")
+  {
+    fobj = nn6 ? fobj.parentNode : fobj.parentElement;
+  }
+ 
+  if (fobj.className=="dragme")
+  {
+    isdrag = true;
+    dobj = fobj;
+    tx = parseInt(dobj.style.left+0);
+    ty = parseInt(dobj.style.top+0);
+    x = nn6 ? e.clientX : event.clientX;
+    y = nn6 ? e.clientY : event.clientY;
+    document.onmousemove=movemouse;
+    return false;
+  }
+ 
+}
+ 
+document.onmousedown=selectmouse;
+document.onmouseup=new Function("isdrag=false");
+
+  </script>
+
+ </head>
+
+ <link href="pp.css" rel="stylesheet" type="text/css">
+
+   <body id="body" class="dragme"> 
+
+   
+
+    <div id = "jupiter">
+     <img class="responsive-img" class="circle" id = "jupiter" src="imagens/jupiter.gif" ondblclick="Quiz('Júpiter', 510, 67)" >
+    </div>
+    <div  id = "netuno">
+     <img class="responsive-img" class="circle" id = "netuno" src="imagens/netuno.gif" ondblclick="Quiz('Netuno', 1700, 150)" >
+    </div>
+    <div id = "mercurio">
+     <img class="responsive-img" class="circle" id = "mercurio" src="imagens/mercurio.gif" ondblclick="Quiz('Mercúrio', -240, 170)">
+    </div>
+    <div id = "marte">
+     <img class="responsive-img" class="circle" id = "marte" src="imagens/marte.gif" ondblclick="Quiz('Marte', 300, 175)">
+    </div>
+    <div id = "plutao">
+     <img class="responsive-img" class="circle" id = "plutao" src="imagens/plutao.gif" ondblclick="Quiz('Plutão', 2050, 180)">
+    </div>
+     <div id = "venus">
+     <img class="responsive-img" class="circle" id = "venus" src="imagens/venus.gif" ondblclick="Quiz('Vênus', -65, 160)">
+    </div>
+    <div id = "terra">
+     <img class="responsive-img" class="circle" id = "terra" src="imagens/terra.gif" ondblclick="Quiz('Terra', 120, 160)">
+    </div> 
+    <div id = "saturno">
+     <img class="responsive-img" class="circle" id = "saturno" src="imagens/saturno.gif" ondblclick="Quiz('Saturno',918, 100)">
+    </div>
+     <div id = "urano">
+     <img class="responsive-img" class="circle" id = "urano" src="imagens/urano.gif" ondblclick="Quiz('Urano', 1400, 140)">
+    </div>
+     <div id = "sol">
+     <img class="responsive-img" class="circle" id = "sol" src="imagens/sol.gif" ondblclick="Quiz('Sol', -700, 5)">
+    </div>
+
+   <div class="center-align" id="tela">
+
+          <form name = "form" method="post">
+
+         <div class="center-align">
+                <h1 id="qual"></h1>
+        </div> 
+
+      
+     
+
+         <button id="btn" onclick="sair()">OK</button>
+
+             </form>
+     </div>
+
+   </body>
+
+</html>

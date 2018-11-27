@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> MAGNIFIG SPACE
+    </title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <script>
+
+
+
+        function Verificar()
+            {
+                if(document.form1.checkValidity ())
+                {
+                      alert("Mensagem enviada com sucesso!!!"); 
+                    document.getElementById("nome").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("area").value = "";
+                }
+
+
+             }
+            
+            function Voltar()
+            {
+                window.open('Entrada.html');
+                window.close();
+            }
+            
+            //oi
+    
+			
+       	 </script>
+
+</head>
+<link href="Contato.css" rel="stylesheet" type="text/css">
+<nav class="nav">
+    <div class="nav-wrapper container">
+        <a href="#" class="brand-logo">
+            <div class="logo"></div>
+        </a>
+        <div class="nome"> MAGNIFIC SPACE</div>
+        <ul id="menu" class="right hide-on-med-and-down">
+            <li class="hoverable"><a id="home" href="Entrada.html" style="font-size : 16px;color : white;">HOME</a></li>
+            <li class="hoverable"><a id="home" href="Sobre.html" style="font-size : 16px;color : white;">SOBRE </a> </li>
+            <li class="hoverable"><a id="login" href="Login.html" style="font-size : 16px;color : white;" onmouseenter="">LOGIN</a></li>
+            <li class="hoverable"><a id="contato" href="Cadastro.html" style="font-size : 16px;color : white;">CADASTRE-SE</a></li>
+            <li class="active">
+                <center style="width: 75px;">CONTATO</center>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="bloco">
+    <br>
+    <div class="posicao">
+        <div class="um">
+            CONTATE-NOS<br>
+            <hr class="um">
+        </div>
+        <div class="dados">
+            EMAIL :magnificspace@gmail.com<br>
+            TEL:(19)9999-9999</div>
+
+        <div class="dois">
+            ENTRE EM CONTATO<br>
+
+            <hr class="dois">
+        </div>
+        <form class="col s12" name="form1" onsubmit=" return false;">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="nome" type="text" class="validate" required pattern=".{10,}" title="No m&iacute;nimo 10 caracteres" name="nome">
+                    <label for="nome">Nome Completo</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s10">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s10">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="area" class="materialize-textarea" required></textarea>
+                    <label for="area">Mensagem</label>
+                </div>
+            </div>
+
+
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.327444316578!2d-47.04975655021503!3d-22.864359374238795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c8b01e362b09%3A0xd1c56cd0aa31fb38!2sCol%C3%A9gio+T%C3%A9cnico+de+Campinas+-+Unicamp!5e0!3m2!1spt-BR!2sbr!4v1538400214276" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <button onclick="Verificar()" class="css3button" id="botao"> Enviar </button><br><br><br>
+        </form>
+
+    </div>
+</div>
+<footer class="page-footer" id="outro">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">
+                    <div class="logoo"></div>
+                </h5>
+                <p class="grey-text text-lighten-4" style="font-size: 20px;">Magnific Space Enterprises</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="Sobre.html">Sobre nós</a></li>
+                    <li><a class="grey-text text-lighten-3" href="Contato.html">Contato</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright" id="rodape">
+        <div class="container">
+            © 2018 Copyright Text
+            <div class="face"><img src="Imagens/face.ico"></div>
+            <div class="twitter"><img src="Imagens/twitter.png"></div>
+            <div class="insta"><img src="Imagens/insta.png"></div>
+            <div class="goo"><img src="Imagens/goo.png"></div>
+            <a class="grey-text text-lighten-4 right" id="termos" href="Termos.html">TERMOS DE USO</a>
+        </div>
+    </div>
+</footer>
+
+
+</html>

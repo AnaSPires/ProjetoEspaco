@@ -1,0 +1,360 @@
+<html class="responsive-img">
+<head>
+	<title>QUIZ</title>
+
+ <link rel="shortcut icon" href="favicon.ico">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script>
+
+    //pop up
+    //repetição de perguntas
+    //cadastro
+    //
+
+
+  var nivel = 1;
+  var certa;
+  var arr;
+
+  var vetor;
+  var qtd = 0;
+
+  var p;
+  var a;
+  var b;
+  var c;
+  var d;
+
+  var quantosAcertos = 0;
+  var quantosErros = 0;
+
+
+  var escolhida;
+
+ window.onbeforeunload = function() {
+
+
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://localhost:3000/perguntas";
+
+    xmlhttp.onreadystatechange=function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+            ExibeDados(this.responseText);
+      }
+
+    xmlhttp.open("GET", url, true);
+
+    xmlhttp.send();
+
+     return "Os dados do formulário serão perdidos.";
+}
+
+    /*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+  window.onload =  pegarInfo;
+
+  function pegarInfo() {
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://localhost:3000/perguntas";
+
+    xmlhttp.onreadystatechange=function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            arr = JSON.parse(this.responseText);
+            ExibeDados();
+        }
+        }
+
+    xmlhttp.open("GET", url, true);
+
+    xmlhttp.send();
+
+   }
+
+   function updateArray(arr, excludeIndex)
+   {
+      for(var i = 0; i < arr.length; i++)
+        if (i == excludeIndex)
+          break;
+
+      var newArray = new Array();
+      for (var j = 0; j < arr.length; j++)
+        if (j != i)
+          newArray.push(arr[j]);
+
+        return newArray;
+   }
+
+
+function ExibeDados() 
+{
+  if(nivel <= 10)
+  {
+    var qual = parseInt(Math.random() * (arr.length)-1);
+
+    p = "<h1>";
+    a = "<span>";
+    b = "<span>";
+    c = "<span>";
+    d = "<span>";
+  
+        p += arr[qual].enunciado;
+        a += arr[qual].alternativaA;
+        b += arr[qual].alternativaB;
+        c += arr[qual].alternativaC;
+        d += arr[qual].alternativaD;
+        certa = arr[qual].correta;
+
+    p += "</h1>";
+    a += "</span>";
+    b += "</span>";
+    c += "</span>";
+    d += "</span>";
+
+    document.getElementById("a").style.display = "block";
+    document.getElementById("b").style.display = "block";
+    document.getElementById("c").style.display = "block";
+    document.getElementById("d").style.display = "block";
+    document.getElementById("btnVer").style.display = "block";
+
+    document.getElementById("pergunta").innerHTML = p;
+    document.getElementById("r_Primeira").innerHTML = a;
+    document.getElementById("r_Segunda").innerHTML = b;
+    document.getElementById("r_Terceira").innerHTML = c;
+    document.getElementById("r_Quarta").innerHTML = d;
+
+    arr = updateArray(arr, qual);
+   }
+  }
+
+
+    function Verificar()
+    {
+      var opcoes = document.getElementsByName("res");
+      var checou = 0;
+
+     if(certa == "a")
+        certa = 0;
+      else
+        if(certa == "b")
+          certa = 1;
+        else
+          if(certa == "c")
+            certa = 2;
+          else
+            if(certa == "d")
+              certa = 3;
+            else
+              alert("Erro");
+
+
+
+      for(var x = 0; x < 4; x++)
+      {
+        var valor = Number(x);
+
+        if(opcoes[parseInt(x)].checked)
+          { 
+            checou++;
+            document.getElementById(opcoes[x].id).checked = false;
+
+          if(valor == certa)
+          {
+            
+            quantosAcertos++;
+            trocarCorBtn('acertou');
+            break;
+          }
+          else
+          {
+           quantosErros++;
+           trocarCorBtn('errou');
+           break;
+          }
+        }
+           
+      }   
+     
+      if(checou == 0)
+       {
+         quantosErros++;
+         trocarCorBtn('errou'); 
+       }
+
+       nivel++;
+
+      if(nivel > 10)
+      {
+        Acabou();
+       
+        document.getElementById("a").style.display = "none";
+        document.getElementById("b").style.display = "none";
+        document.getElementById("c").style.display = "none";
+        document.getElementById("d").style.display = "none";
+        document.getElementById("btnVer").style.display = "none";
+     }
+      else
+        pegarInfo();
+    }
+
+    function trocarCorBtn(se){
+     if(nivel == 1){
+       if(se == 'acertou')
+         document.getElementById("btn1").style.background = "green";
+       else
+        document.getElementById("btn1").style.background = "red";
+
+      }
+    else
+     if(nivel == 2){
+       if(se == 'acertou')
+         document.getElementById("btn2").style.background = "green";
+       else
+        document.getElementById("btn2").style.background = "red";
+
+      }
+    else
+     if(nivel == 3){
+       if(se == "acertou")
+         document.getElementById("btn3").style.background = "green";
+       else
+        document.getElementById("btn3").style.background = "red";
+
+      }
+     else
+      if(nivel == 4){
+       if(se == "acertou")
+         document.getElementById("btn4").style.background = "green";
+       else
+        document.getElementById("btn4").style.background = "red";
+
+      }
+    else
+      if(nivel == 5){
+       if(se == "acertou")
+         document.getElementById("btn5").style.background = "green";
+       else
+        document.getElementById("btn5").style.background = "red";
+      }
+    else
+     if(nivel == 6){
+       if(se == "acertou")
+         document.getElementById("btn6").style.background = "green";
+       else
+        document.getElementById("btn6").style.background = "red";
+      }
+    else
+     if(nivel == 7){
+       if(se == "acertou")
+         document.getElementById("btn7").style.background = "green";
+       else
+        document.getElementById("btn7").style.background = "red";
+      }
+     else
+     if(nivel == 8){
+       if(se == "acertou")
+         document.getElementById("btn8").style.background = "green";
+       else
+        document.getElementById("btn8").style.background = "red";
+      }
+      else
+     if(nivel == 9){
+       if(se == "acertou")
+         document.getElementById("btn9").style.background = "green";
+       else
+        document.getElementById("btn9").style.background = "red";
+      }
+      else
+      if(nivel == 10){
+       if(se == "acertou")
+         document.getElementById("btn10").style.background = "green";
+       else
+        document.getElementById("btn10").style.background = "red";
+      }
+    }
+
+    function Acabou()
+    {
+      document.getElementById("tela").style.display = "none";
+
+      if(quantosAcertos > 7)
+      {
+        document.getElementById("mensagem").innerHTML += "Parabéns, ótimo desempenho!";  
+         document.getElementsByClassName("rank")[0].style.display = "block";  
+         document.getElementById("acertos").innerHTML += quantosAcertos + "/10";                      
+      }
+      else
+      {
+        document.getElementById("mensagem").innerHTML += "Sabemos qua você podemias!Tente novamente!";  
+        document.getElementsByClassName("rank")[0].style.display = "block";  
+        document.getElementById("acertos").innerHTML += quantosAcertos + "/10";        
+      }
+
+
+                                                
+    }
+
+	</script>
+	</head>
+<link href="quizCSS.css" rel="stylesheet" type="text/css">
+<body id="body">
+
+
+    <!-- <img id="terra" src="imagens/terraQuiz.png">-->
+     <img id="caminho" src="imagens/caminho1.png">
+     <section id="tela">
+
+          <form name = "form" method="post">
+
+          <center>
+        <h1 id="pergunta"></h1>
+         </center>
+         <br><br>
+
+         <input id="a" type="radio" name="res" style="display: none"><span id="r_Primeira"></span>
+         <br>
+         <input id="b" type="radio" name="res" style="display: none"><span id="r_Segunda"></span>
+         <br>
+         <input id="c" type="radio" name="res" style="display: none"><span id="r_Terceira"></span>
+         <br>
+         <input id="d" type="radio" name="res" style="display: none"><span id="r_Quarta"></span>
+         <br>
+
+         <button id="btnVer" onclick="Verificar()" style="display: none">Verificar</button>
+
+            </section>
+
+             </form>
+
+     <center> <div class="rank">
+       <center>
+        <span id="mensagem"></span>
+        <br>
+        <span id="titulo">Sua pontuação: </span>
+        <br>
+       <span id="acertos"> </span>
+       <br>
+      <!-- <span id="erros">Erros: </span>--></center>
+      </div></center>
+
+     <button id="btn1"></button>
+     <button id="btn2"></button>
+     <button id="btn3"></button>
+     <button id="btn4"></button>
+     <button id="btn5"></button>
+     <button id="btn6"></button>
+     <button id="btn7"></button>
+     <button id="btn8"></button>
+     <button id="btn9"></button>
+     <button id="btn10"></button>
+
+    <button type="button" id="pp" onclick="window.open('pp.html')">Página Principal</button>
+
+</body>
+
+</html>

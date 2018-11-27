@@ -1,0 +1,254 @@
+body
+{
+    background-image: url("Imagens/contatinho.png");
+}
+
+header
+{
+    position: absolute;
+    left: -1px;
+    background-image: url("Imagens/ain.png");
+    height: 330px;
+    width: 100%;
+    top: -1px;
+    font-size: 25px;
+    font-family:"Century Gothic";
+    font-weight: 400;
+}
+
+.peq
+{
+    width: 300px;
+    height: 500px;
+    font-family:"Century Gothic";
+    font-weight:600;
+    font-size: 23px;
+    color: #DF3A01;
+}
+
+button.css3button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #123d54;
+	padding: 10px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#afd9fa 0%,
+		#ffffff 75%,
+		#588fad);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#afd9fa),
+		color-stop(0.75, #ffffff),
+		to(#588fad));
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #003366;
+	-moz-box-shadow:
+		4px 3px 10px rgba(137,78,204,1),
+		inset 0px 0px 1px rgba(144,192,209,1);
+	-webkit-box-shadow:
+		4px 3px 10px rgba(137,78,204,1),
+		inset 0px 0px 1px rgba(144,192,209,1);
+	box-shadow:
+		4px 3px 10px rgba(137,78,204,1),
+		inset 0px 0px 1px rgba(144,192,209,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.7),
+		-1px 1px 0px rgba(240,247,250,1);
+
+    position: relative;
+    bottom: 10px;
+    font-family:"Century Gothic";
+    font-weight: 600;
+    font-size: 20px;
+    
+}
+
+.nav {
+  background-color: #4224D7 !important;
+    height: 90px;
+}
+.nome
+{
+    position:        relative;
+    left:            150px;
+    top:       		 20px;
+    width: 			 400px;
+    height: 		 100px;
+    color: 		 	 white;
+  	font-family:	 "Century Gothic";
+    font-size: 		 40px;
+    font-weight: 	 600;
+}
+
+.logo
+{
+    width: 100px;
+    height: 100px;
+    background: url(Imagens/logo.png);
+   
+}
+
+.logoo
+{
+    width: 50px;
+    height: 50px;
+    background: url("Imagens/logoo.png");
+}
+
+.face img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+     position: relative;
+    bottom: 45px;
+    left: 250px;
+}
+.twitter img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+    bottom: 85px;
+    left: 290px;
+}
+.insta img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 125px;
+    left: 330px;
+}
+.goo img
+{
+	max-width:40px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+    position: relative;
+     position: relative;
+    bottom: 165px;
+    left: 370px;
+}
+
+#termos
+{
+    position: relative;
+    bottom: 215px;
+    right: 450px;
+    font-size:  16px;
+}
+
+#rodape
+{
+    position: relative;
+    bottom: 20px;
+    height: 50px;
+}
+
+h1
+{
+    position: relative;
+    top: 60px;
+}
+
+#outro
+{
+   height: 200px;
+    position: relative;
+    top: 80px;
+}
+
+.input-field input[type=text].invalid 
+{
+     border-bottom: 1px solid red;
+     box-shadow: 0 1px 0 0 red;
+}
+
+#menu
+{
+    position:   absolute;
+    top:        23px;
+    left:       770px;
+    width:      500px;
+    font-family:"Century Gothic";
+    font-size:  16px;
+}
+
+
+.bloco
+{
+    background: white;
+    width: 830px;
+    height: 700px;
+    position: relative;
+    top: 30px;
+    left: 250px;;
+    font-size: 30px;
+    
+}
+iframe
+{
+	position: absolute;
+	width: 410px;
+	height: 600px;
+	left: 350px;
+	top: 20px;
+}
+
+.um
+{
+    color:  #01DFA5;
+    border-color:  #01DFA5;
+    border-width: medium;
+}
+
+.dois{
+    border-width: medium;
+     border-color:#DF3A01;
+
+     color:#DF3A01;
+}
+.dados
+{
+    width: 350px;
+    height: 100px;
+     font-family:"Century Gothic";
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+    
+}
+
+.posicao
+{
+    width: 300px;
+    height: 900px;
+    position: relative;
+    left: 40px;
+    font-family:"Century Gothic";
+    font-weight: 900;
+    bottom: 20px;
+}
+    
+
+    
+.seta img
+{
+    background:rgba(200,0,280,0.9);
+    max-width:100px;
+    max-height:100px;
+    width: auto;
+    height: auto;
+}
+

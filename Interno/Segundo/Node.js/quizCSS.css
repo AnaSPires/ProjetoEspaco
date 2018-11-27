@@ -1,0 +1,295 @@
+
+
+body
+{
+	background-image: url("imagens/fundo.gif");
+}
+
+nav
+{
+	display: inline;
+}
+
+#acertos
+{
+  font-size: 34px;
+}
+
+.rank
+{
+	display: none;
+	width: 60%;
+	background-color: white;
+	height: 200px;
+	font-weight:bold;
+	font-family: "Century Gothic";
+    font-size: 38px;
+    border-radius: 10%;
+    position: absolute;
+    top: 140px;
+    left: 600px;
+}
+
+#terra
+{
+	position: absolute;
+	top:50px;
+	left:1300px;
+	width:200px; 
+	height:250px;
+}
+
+#caminho
+{
+	position: absolute;
+	top: 560px;
+	left: 100px;
+	width:1202px; 
+	height:190px;
+}
+
+#btn1
+{
+	position: absolute;
+	left: 100px;
+	top: 670px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+
+#btn2
+{
+	position: absolute;
+	left: 230px;
+	top: 620px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn3
+{
+	position: absolute;
+	left: 370px;
+	top: 580px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn4
+{
+	position: absolute;
+	left: 526px;
+	top: 600px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn5
+{
+	position: absolute;
+	left: 630px;
+	top: 672px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn6
+{
+	position: absolute;
+	left: 770px;
+	top: 650px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn7
+{
+	position: absolute;
+	left: 880px;
+	top: 590px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn8
+{
+	position: absolute;
+	left: 1020px;
+	top: 555px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn9
+{
+	position: absolute;
+	left: 1140px;
+	top: 610px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+#btn10
+{
+	position: absolute;
+	left: 1240px;
+	top: 695px;
+	border-radius: 130%;
+	background-color: #5858FA;
+	width: 60px;
+	height: 50px;
+}
+
+#pergunta
+{
+	text-align: center;
+    font-size: 40px;
+    color: red; 
+}
+
+#tela
+{
+	background-color: lightgreen;
+	position: absolute; 
+    left: 240px; 
+    top: 20px; 
+    width: 58%; 
+    height: 500px; 
+    border-radius: 20%; 
+}
+
+#btnVer
+{
+position: absolute;
+left: 360px; 
+top: 430px;
+position: absolute;
+width: 12%;
+height: 11%;
+display: none;
+    border-radius: 25%; 
+}
+
+#btnC
+{
+   position: absolute;
+left: 360px; 
+top: 530px;
+position: absolute;
+width: 12%;
+height: 11%;
+display: none;
+    border-radius: 25%; 
+}
+
+#a
+{
+  position: absolute; 
+  left: 50px; 
+  top: 230px;
+  display: none;
+}
+
+#b
+{
+position: absolute; 
+left: 50px; 
+top: 280px;
+display: none;
+}
+
+#c
+{
+  position: absolute; 
+  left: 50px; 
+  top: 335px;
+  display: none;
+}
+
+#d
+{
+	position: absolute; 
+	left: 50px; 
+	top: 385px;
+	display: none;
+}
+
+#r_Primeira
+{
+  color:blue;
+  font-weight:bold;
+  font-size: 38px;
+  position: absolute; 
+  left: 80px; 
+  top: 220px;
+}
+
+#r_Segunda
+{
+  color:blue;
+  font-weight:bold;
+  font-size: 38px;
+  position: absolute; 
+  left: 80px; 
+  top: 270px;
+}
+
+#r_Terceira
+{
+   color:blue;
+   font-weight:bold;
+   font-size: 38px;
+   position: absolute; 
+   left: 80px; 
+   top: 320px;
+}
+
+#r_Quarta
+{
+	color:blue;
+	font-weight:bold;
+	font-size: 38px;
+    position: absolute; 
+    left: 80px; 
+    top: 370px;
+}
+
+#pp
+{
+	position: absolute;
+	top: 400px;
+	left:1360px;
+	width:90%;
+	height: 30px;
+	border-radius: 70%;
+}
+
+#pp
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #1a191a;
+	padding: 4px 4px;
+	background: -moz-linear-gradient(top,#42f9ff 0%,#ffffff 74%,#ad0303);
+	background: -webkit-gradient(linear, left top, left bottom,from(#42f9ff),color-stop(0.74, #ffffff),to(#ad0303));
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #0a0a0a;
+	-moz-box-shadow:0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow:0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:0px -1px 0px rgba(000,000,000,0.4),0px 1px 0px rgba(255,255,255,0.3);
+	width: 70px;
+	height: 50px;
+}

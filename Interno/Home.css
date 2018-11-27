@@ -16,6 +16,16 @@ body, html {
   background-color: #4224D7 !important;
     height: 100px;
 }
+
+.total
+{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("Fotos/fundo.gif"); 
+}
+
 .logo
 {
     width: 100px;
@@ -256,7 +266,7 @@ h3
 .caption {
     position: absolute;
     left: 0;
-    top: 1090px;
+    top: 1010px;
     width: 100%;
     text-align: center;
     color: #000;
